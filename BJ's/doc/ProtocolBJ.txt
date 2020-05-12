@@ -1,0 +1,24 @@
+Connection : 
+
+CLIENT
+
+1) Le client se connecte
+2) Le client attends les info de la partie
+3) Le client recoit "NoJoueur, MIN, MAX, CASH, NbJoueurs"
+4) Le client envois son nom
+5) Attend le nom des autres
+6) Recoit "Joueur1, Joueur2, Joueur3"
+7) Attend l'init de la game
+8) Recoit : "#A:#A,#A:#A,#A:#A,#A"
+9) Attend le premier coup du joueur1
+
+SERVEUR
+
+1) Attend connection
+2) Recoit connection
+3) Envois les info de la game a cette connection
+4) Attend le nom du joueur
+5) Vérifie si il manque des joueurs
+6) Recommencer si manque joueur
+7) Si fini envoit les noms a tous
+
