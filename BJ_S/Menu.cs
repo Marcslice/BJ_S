@@ -14,6 +14,7 @@ namespace BJ_S
     public partial class Menu : Form
     {
         BlackuJacku m_BJController;
+        Label titre;
         public Menu(BlackuJacku BJ)
         {
             m_BJController = BJ;
@@ -21,7 +22,7 @@ namespace BJ_S
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.lblIP.Text = m_BJController.QuelEstMonIP();           
+            this.lblIP.Text = m_BJController.QuelEstMonIP();
         }
 
         private void RetourAuMenu_Click(object sender, EventArgs e) {
@@ -81,7 +82,7 @@ namespace BJ_S
             this.Enabled = false;
             messages.BringToFront();
             messages.Show();
-          
+
         }
 
         private void Heberger_Click(object sender, EventArgs e)
@@ -143,7 +144,7 @@ namespace BJ_S
                 compteur++;
             }
         }
-   
+
         private void Quit_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -158,8 +159,8 @@ namespace BJ_S
         private void buttons_Out(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            if(btn.Name.Contains("btnQuitter"))
-                btn.BackColor = Color.SpringGreen;         
+            if (btn.Name.Contains("btnQuitter"))
+                btn.BackColor = Color.SpringGreen;
             else
                 btn.BackColor = Color.SteelBlue;
         }
@@ -178,7 +179,7 @@ namespace BJ_S
 
             Panel panelAttente = new Panel();
             
-            Label titre = new Label();
+            titre = new Label();
             titre.Text = "Recherche de partie.";
             titre.Size = new Size(300, 50);
             titre.Location = new Point(this.Width / 2 - 150, this.Height / 2 - 25);
