@@ -1,4 +1,5 @@
-﻿namespace BJ_S
+﻿using System.Drawing;
+namespace BJ_S
 {
     partial class Menu
     {
@@ -28,7 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelPrincipale = new System.Windows.Forms.Panel();
             this.lblYourIP = new System.Windows.Forms.Label();
             this.lblIP = new System.Windows.Forms.Label();
             this.btnLocal = new System.Windows.Forms.Button();
@@ -36,24 +37,24 @@
             this.btnRejoindre = new System.Windows.Forms.Button();
             this.btnQuitter = new System.Windows.Forms.Button();
             this.Titre = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // panelPrincipale
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.lblYourIP);
-            this.panel1.Controls.Add(this.lblIP);
-            this.panel1.ForeColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(97, 855);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(272, 113);
-            this.panel1.TabIndex = 1;
+            this.panelPrincipale.Location = new System.Drawing.Point(0, 0);
+            this.panelPrincipale.Name = "panelPrincipale";
+            this.panelPrincipale.AutoSize = false;
+            this.panelPrincipale.Height = 800;
+            this.panelPrincipale.Width = 1000;
+            this.panelPrincipale.Controls.Add(btnLocal);
+            this.panelPrincipale.Controls.Add(btnHeberger);
+            this.panelPrincipale.Controls.Add(btnRejoindre);
             // 
             // lblYourIP
             // 
             this.lblYourIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblYourIP.Location = new System.Drawing.Point(14, 16);
+            this.lblYourIP.Location = new System.Drawing.Point(100, 880);
+            this.lblYourIP.ForeColor = Color.White;
             this.lblYourIP.Name = "lblYourIP";
             this.lblYourIP.Size = new System.Drawing.Size(224, 32);
             this.lblYourIP.TabIndex = 0;
@@ -62,7 +63,8 @@
             // lblIP
             // 
             this.lblIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIP.Location = new System.Drawing.Point(14, 52);
+            this.lblIP.Location = new System.Drawing.Point(100, 930);
+            this.lblIP.ForeColor = Color.White;
             this.lblIP.Name = "lblIP";
             this.lblIP.Size = new System.Drawing.Size(224, 32);
             this.lblIP.TabIndex = 0;
@@ -77,7 +79,7 @@
             this.btnLocal.TabIndex = 0;
             this.btnLocal.Text = "Jeu Local";
             this.btnLocal.UseVisualStyleBackColor = false;
-            this.btnLocal.Click += new System.EventHandler(this.Local_Click);
+           // this.btnLocal.Click += new System.EventHandler(this.Local_Click);
             this.btnLocal.MouseEnter += new System.EventHandler(this.buttons_Hover);
             this.btnLocal.MouseLeave += new System.EventHandler(this.buttons_Out);
             // 
@@ -143,25 +145,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1079, 1003);
+            this.ClientSize = new System.Drawing.Size(1080, 1000);
             this.Controls.Add(this.Titre);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lblYourIP);
+            this.Controls.Add(this.lblIP);
+            this.Controls.Add(this.panelPrincipale);
             this.Controls.Add(this.btnQuitter);
-            this.Controls.Add(this.btnRejoindre);
-            this.Controls.Add(this.btnHeberger);
-            this.Controls.Add(this.btnLocal);
             this.Name = "Menu";
             this.Text = "BlackJack";
             this.Load += new System.EventHandler(this.Menu_Load);
-            this.SizeChanged += new System.EventHandler(this.ReCalc);
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Form messages;
         private System.Windows.Forms.Button btnLocal;
         private System.Windows.Forms.Button btnHeberger;
         private System.Windows.Forms.Button btnRejoindre;
@@ -169,6 +168,7 @@
         private System.Windows.Forms.Label lblYourIP;
         private System.Windows.Forms.Label lblIP;
         private System.Windows.Forms.Label Titre;
+        private System.Windows.Forms.Panel panelPrincipale;
     }
 }
 

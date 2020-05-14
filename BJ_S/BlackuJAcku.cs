@@ -17,7 +17,6 @@ namespace BJ_S
         Menu m_Menu;
         Partie m_Partie;
 
-
         public BlackuJacku() {
             m_Menu = new Menu(this);      
         }
@@ -27,8 +26,24 @@ namespace BJ_S
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            BlackuJacku Controller = new BlackuJacku();
-            Application.Run(Controller.m_Menu);
+            BlackuJacku BJ = new BlackuJacku();
+            Application.Run(BJ.m_Menu);
+        }
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="type">
+        /// 0 -> local Humain
+        /// 1 -> local Bot
+        /// 2 -> Online Humain Guest
+        /// 3 -> Online Bot Guest
+        /// 4 -> Online Humain Host
+        /// 5 -> ONline Bot Host
+        /// </param>
+        /// 
+        public void NouvellePartie(int type) {
+            //m_Partie = new Partie(type); 
         }
 
         public string QuelEstMonIP() {

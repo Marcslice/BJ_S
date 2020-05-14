@@ -46,6 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AI.cs" />
+    <Compile Include="Cartes.cs" />
+    <Compile Include="Paquets.cs" />
+    <Compile Include="Sabot.cs" />
+    <Compile Include="InterfaceDePartie.cs" />
+    <Compile Include="Joueurs.cs" />
+    <Compile Include="Croupier.cs" />
+    <Compile Include="Connexions.cs" />
     <Compile Include="Partie.cs" />
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
