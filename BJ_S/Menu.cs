@@ -13,8 +13,10 @@ namespace BJ_S
 {
     public partial class Menu : Form
     {
-        BlackuJacku m_BJController;
+        //main thread
         Label titre;
+        BlackuJacku m_BJController;
+
         public Menu(BlackuJacku BJ)
         {
             m_BJController = BJ;
@@ -225,21 +227,40 @@ namespace BJ_S
 
             panelAttente.BringToFront();
             this.Controls.Add(panelAttente);
-            int compteur = 1;
-
-            while (compteur < 22) {
-
-                if(compteur % 3 == 0)
-                    titre.Text = "Recherche de partie.";
-                else
-                    titre.Text += ".";
-
-                Thread.Sleep(400);
-                this.Refresh();
-                compteur++;
-            }
+          
+            Thread t = new Thread(new ThreadStart(deletageMessage));
+            t.Start();
             
         }
-           
+
+
+
+        //subThread
+
+
+        private void deletageMessage()
+        {
+          
+
+            int compteur = 1;
+            while (compteur < 22) //while connection pas connecter
+            {
+
+                if (compteur % 3 == 0)
+                    Invoke(new updateWaitingMessage(UpdateMessage), new object[] { "." });
+                else
+                    Invoke(new updateWaitingMessage(UpdateMessage), new object[] { "." });
+
+                Thread.Sleep(400);
+                compteur++;
+            }
+        }
+
+        private void UpdateMessage(string msg)
+        {
+            titre.Text += ".";
+        }
+
+        public delegate void updateWaitingMessage(string msg);
     }
 }
