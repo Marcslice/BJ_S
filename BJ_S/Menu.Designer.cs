@@ -30,13 +30,13 @@ namespace BJ_S
         private void InitializeComponent()
         {
             this.panelPrincipale = new System.Windows.Forms.Panel();
-            this.lblYourIP = new System.Windows.Forms.Label();
-            this.lblIP = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnLocal = new System.Windows.Forms.Button();
             this.btnHeberger = new System.Windows.Forms.Button();
             this.btnRejoindre = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lblYourIP = new System.Windows.Forms.Label();
+            this.lblIP = new System.Windows.Forms.Label();
             this.btnQuitter = new System.Windows.Forms.Button();
             this.panelPrincipale.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -55,29 +55,10 @@ namespace BJ_S
             this.panelPrincipale.Size = new System.Drawing.Size(889, 730);
             this.panelPrincipale.TabIndex = 5;
             // 
-            // lblYourIP
-            // 
-            this.lblYourIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblYourIP.ForeColor = System.Drawing.Color.White;
-            this.lblYourIP.Location = new System.Drawing.Point(100, 880);
-            this.lblYourIP.Name = "lblYourIP";
-            this.lblYourIP.Size = new System.Drawing.Size(224, 32);
-            this.lblYourIP.TabIndex = 0;
-            this.lblYourIP.Text = "Votre adresse IP";
-            // 
-            // lblIP
-            // 
-            this.lblIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIP.ForeColor = System.Drawing.Color.White;
-            this.lblIP.Location = new System.Drawing.Point(100, 930);
-            this.lblIP.Name = "lblIP";
-            this.lblIP.Size = new System.Drawing.Size(224, 32);
-            this.lblIP.TabIndex = 0;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::BJ_S.Properties.Resources.TitreJeu;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(452, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(437, 50);
@@ -132,12 +113,31 @@ namespace BJ_S
             // 
             this.pictureBox2.BackgroundImage = global::BJ_S.Properties.Resources.spotlight;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(62, 59);
+            this.pictureBox2.Location = new System.Drawing.Point(62, 99);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(824, 682);
+            this.pictureBox2.Size = new System.Drawing.Size(824, 631);
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // lblYourIP
+            // 
+            this.lblYourIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblYourIP.ForeColor = System.Drawing.Color.White;
+            this.lblYourIP.Location = new System.Drawing.Point(100, 880);
+            this.lblYourIP.Name = "lblYourIP";
+            this.lblYourIP.Size = new System.Drawing.Size(224, 32);
+            this.lblYourIP.TabIndex = 0;
+            this.lblYourIP.Text = "Votre adresse IP";
+            // 
+            // lblIP
+            // 
+            this.lblIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIP.ForeColor = System.Drawing.Color.White;
+            this.lblIP.Location = new System.Drawing.Point(100, 930);
+            this.lblIP.Name = "lblIP";
+            this.lblIP.Size = new System.Drawing.Size(224, 32);
+            this.lblIP.TabIndex = 0;
             // 
             // btnQuitter
             // 
