@@ -43,7 +43,12 @@ namespace BJ_S
         /// </param>
         /// 
         public void NouvellePartie(int type) {
-            //m_Partie = new Partie(type); 
+            m_Partie = new Partie(type, m_Menu.DemanderNomJoueur()); 
+        }
+
+        public void Quitter() {
+            //make sure threads are closed;
+            Application.Exit();
         }
 
         public string QuelEstMonIP() {

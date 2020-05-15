@@ -168,7 +168,6 @@ namespace BJ_S
             this.Controls.Add(this.btnQuitter);
             this.Name = "Menu";
             this.Text = "BlackJack";
-            this.Load += new System.EventHandler(this.Menu_Load);
             this.panelPrincipale.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

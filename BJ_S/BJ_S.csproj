@@ -56,7 +56,6 @@
     </Compile>
     <Compile Include="Paquets.cs" />
     <Compile Include="Sabot.cs" />
-    <Compile Include="InterfaceDePartie.cs" />
     <Compile Include="Joueurs.cs" />
     <Compile Include="Croupier.cs" />
     <Compile Include="Connexions.cs" />

@@ -28,6 +28,50 @@ namespace BJ_S
             this.lblIP.Text = m_BJController.QuelEstMonIP();
         }
 
+        public string DemanderNomJoueur() {
+            Form nom = new Form();
+
+            //PANEL
+            nom.AutoSize = true;
+            nom.MaximizeBox = false;
+            nom.MinimizeBox = false;
+            nom.Size = new Size(360, 100);
+            nom.Name = "Nom";
+            nom.Text = "Nom";
+            nom.StartPosition = FormStartPosition.Manual;
+            nom.Location = new Point(this.Location.X + this.Width / 2 - 200, this.Location.Y + this.Height / 2);
+            nom.FormClosing += new FormClosingEventHandler(this.RejoindreAdresse_Close);
+
+            //Controls
+            Label msg = new Label();
+            msg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            msg.Width = 350;
+            msg.Height = 30;
+            msg.Location = new Point(10, 10);
+            msg.Text = "Quel nom voulez-vous utiliser pour la partie ?";
+
+            TextBox qui = new TextBox();
+            qui.Size = new Size(200, 40);
+            qui.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            qui.Location = new Point(10, 50);
+
+            Button OK = new Button();
+            OK.Text = "Rejoindre";
+            OK.Size = new Size(100, 40);
+            OK.Location = new Point(messages.Width - 110, messages.Height - 60);
+            OK.Click += new EventHandler(this.AfficherRejoindre);
+
+            messages.Controls.Add(msg);
+            messages.Controls.Add(qui);
+            messages.Controls.Add(OK);
+
+            nom.BringToFront();
+            nom.Show();
+
+            return "skr";
+        
+        }
+
         private void RetourAuMenu_Click(object sender, EventArgs e) {
             Panel toRemove = (Panel)this.Controls[this.Controls.Count - 1];
             this.Controls.RemoveAt(this.Controls.Count - 1);
@@ -85,7 +129,6 @@ namespace BJ_S
             this.Enabled = false;
             messages.BringToFront();
             messages.Show();
-
         }
 
         private void Heberger_Click(object sender, EventArgs e)
@@ -93,8 +136,8 @@ namespace BJ_S
 
             Panel panelAttente = new Panel();
 
-            Label titre = new Label();
-            titre.Text = "En attente de joueurs";
+            titre = new Label();
+            titre.Text = "En attente de joueurs.";
             titre.Size = new Size(300, 50);
             titre.Location = new Point(this.Width / 2 - 150, this.Height / 2 - 25);
             titre.TextAlign = ContentAlignment.MiddleCenter;
@@ -119,7 +162,7 @@ namespace BJ_S
             retour.Click += new EventHandler(this.RetourAuMenu_Click);
 
             panelAttente.Size = new Size(1000, 800);
-            panelAttente.Location = this.panelPrincipale.Location;
+            panelAttente.Location = new Point(0, 0);
 
             this.panelPrincipale.Visible = false;
 
@@ -134,23 +177,13 @@ namespace BJ_S
             this.Controls.Add(panelAttente);
             int compteur = 1;
 
-            while (compteur < 22)
-            {
-
-                if (compteur % 3 == 0)
-                    titre.Text = "En attente de joueurs.";
-                else
-                    titre.Text += ".";
-
-                Thread.Sleep(400);
-                this.Refresh();
-                compteur++;
-            }
+            Thread t = new Thread(new ThreadStart(delegateMessage));
+            t.Start();
         }
 
         private void Quit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            m_BJController.Quitter();
         }
 
         private void button_Local_Hover(object sender, EventArgs e)
@@ -178,7 +211,6 @@ namespace BJ_S
             btn.BackgroundImage = Image.FromFile("../../images/porteOuverte.png");
         }
 
-
         private void button_Local_Out(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
@@ -200,12 +232,6 @@ namespace BJ_S
         {
             Button btn = (Button)sender;
             btn.BackgroundImage = Image.FromFile("../../images/porteFermer.png");
-        }
-
-
-        private void Menu_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void AfficherRejoindre(object sender, EventArgs e) 
@@ -249,7 +275,8 @@ namespace BJ_S
             retour.Click += new EventHandler(this.RetourAuMenu_Click);
 
             panelAttente.Size = new Size(1000, 800);
-            panelAttente.Location = this.panelPrincipale.Location;
+
+            panelAttente.Location = new Point(0, 0);
 
             this.panelPrincipale.Visible = false;
 
@@ -264,9 +291,9 @@ namespace BJ_S
             panelAttente.BringToFront();
             this.Controls.Add(panelAttente);
           
-            Thread t = new Thread(new ThreadStart(deletageMessage));
+            Thread t = new Thread(new ThreadStart(delegateMessage));
             t.Start();
-            
+                
         }
 
 
@@ -274,7 +301,9 @@ namespace BJ_S
         //subThread
 
 
-        private void deletageMessage()
+        //Loading animation
+        
+        private void delegateMessage()
         {
           
 
@@ -282,22 +311,25 @@ namespace BJ_S
             while (compteur < 22) //while connection pas connecter
             {
 
-                if (compteur % 3 == 0)
-                    Invoke(new updateWaitingMessage(UpdateMessage), new object[] { "." });
-                else
-                    Invoke(new updateWaitingMessage(UpdateMessage), new object[] { "." });
+                Invoke(new updateWaitingMessage(UpdateMessage));
+                compteur++;
 
                 Thread.Sleep(400);
                 compteur++;
             }
         }
 
-        private void UpdateMessage(string msg)
+        private void UpdateMessage()
         {
-            titre.Text += ".";
+            if (titre.Text.Equals("Recherche de partie..."))
+                titre.Text = "Recherche de partie.";
+            else if (titre.Text.Equals("En attente de joueurs..."))
+                titre.Text = "En attente de joueurs.";
+            else
+                titre.Text += ".";
         }
 
-        public delegate void updateWaitingMessage(string msg);
+        public delegate void updateWaitingMessage();
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
