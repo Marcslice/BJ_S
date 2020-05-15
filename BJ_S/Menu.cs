@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace BJ_S
 {
@@ -152,20 +153,55 @@ namespace BJ_S
             Application.Exit();
         }
 
-        private void buttons_Hover(object sender, EventArgs e)
+        private void button_Local_Hover(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            btn.BackColor = Color.Orange;
+            
+            btn.BackgroundImage = Image.FromFile("../../images/carteLocalOn.png");
+        }
+        private void button_Heberger_Hover(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+
+            btn.BackgroundImage = Image.FromFile("../../images/carteHebergerOn.png");
+        }
+        private void button_Rejoindre_Hover(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+
+            btn.BackgroundImage = Image.FromFile("../../images/carteRejoindreOn.png");
+        }
+        private void button_Quitter_Hover(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+
+            btn.BackgroundImage = Image.FromFile("../../images/porteOuverte.png");
         }
 
-        private void buttons_Out(object sender, EventArgs e)
+
+        private void button_Local_Out(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            if (btn.Name.Contains("btnQuitter"))
-                btn.BackColor = Color.SpringGreen;
-            else
-                btn.BackColor = Color.SteelBlue;
+            btn.BackgroundImage = Image.FromFile("../../images/carteLocalOut.png");
         }
+
+        private void button_Heberger_Out(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackgroundImage = Image.FromFile("../../images/carteHebergeOut.png");
+        }
+        private void button_Rejoindre_Out(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackgroundImage = Image.FromFile("../../images/carteRejoindreMouseOut.png");
+
+        }
+        private void button_Quitter_Out(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackgroundImage = Image.FromFile("../../images/porteFermer.png");
+        }
+
 
         private void Menu_Load(object sender, EventArgs e)
         {
@@ -262,5 +298,10 @@ namespace BJ_S
         }
 
         public delegate void updateWaitingMessage(string msg);
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -110,5 +110,23 @@
   <ItemGroup>
     <None Include="images\table.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="images\TitreJeu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\carteLocalOut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\carteRejoindreMouseOut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\porteFermer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\spotlight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\carteHebergeOut.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
