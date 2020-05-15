@@ -128,5 +128,29 @@
   <ItemGroup>
     <None Include="images\carteHebergeOut.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="images\buttonStandOut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\buttonHitOut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\jetton50Out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\jetton25Out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\jetton10Out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\feedExtended.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\buttonCloseFeed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\buttonExpendFeed.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

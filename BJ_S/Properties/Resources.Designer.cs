@@ -73,6 +73,56 @@ namespace BJ_S.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap buttonCloseFeed {
+            get {
+                object obj = ResourceManager.GetObject("buttonCloseFeed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap buttonExpendFeed {
+            get {
+                object obj = ResourceManager.GetObject("buttonExpendFeed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap buttonHitOut {
+            get {
+                object obj = ResourceManager.GetObject("buttonHitOut", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap buttonMiserOut {
+            get {
+                object obj = ResourceManager.GetObject("buttonMiserOut", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap buttonStandOut {
+            get {
+                object obj = ResourceManager.GetObject("buttonStandOut", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap carteHebergeOut {
             get {
                 object obj = ResourceManager.GetObject("carteHebergeOut", resourceCulture);
@@ -103,6 +153,16 @@ namespace BJ_S.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap feedExtended {
+            get {
+                object obj = ResourceManager.GetObject("feedExtended", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FondBoiteChoix {
             get {
                 object obj = ResourceManager.GetObject("FondBoiteChoix", resourceCulture);
@@ -113,9 +173,59 @@ namespace BJ_S.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FondBourse {
+            get {
+                object obj = ResourceManager.GetObject("FondBourse", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FondBourse1 {
+            get {
+                object obj = ResourceManager.GetObject("FondBourse1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FondMenu {
             get {
                 object obj = ResourceManager.GetObject("FondMenu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap jetton10Out {
+            get {
+                object obj = ResourceManager.GetObject("jetton10Out", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap jetton25Out {
+            get {
+                object obj = ResourceManager.GetObject("jetton25Out", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap jetton50Out {
+            get {
+                object obj = ResourceManager.GetObject("jetton50Out", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
