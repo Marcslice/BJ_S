@@ -48,6 +48,11 @@
   <ItemGroup>
     <Compile Include="AI.cs" />
     <Compile Include="Cartes.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="UI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,14 +78,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="UI.resx">
       <DependentUpon>UI.cs</DependentUpon>
     </EmbeddedResource>
@@ -150,6 +150,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="images\buttonExpendFeed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\jeton50Out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\jeton25Out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\jeton10Out.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

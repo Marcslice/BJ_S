@@ -203,9 +203,9 @@ namespace BJ_S.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap jetton10Out {
+        internal static System.Drawing.Bitmap jeton10Out {
             get {
-                object obj = ResourceManager.GetObject("jetton10Out", resourceCulture);
+                object obj = ResourceManager.GetObject("jeton10Out", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,9 +213,9 @@ namespace BJ_S.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap jetton25Out {
+        internal static System.Drawing.Bitmap jeton25Out {
             get {
-                object obj = ResourceManager.GetObject("jetton25Out", resourceCulture);
+                object obj = ResourceManager.GetObject("jeton25Out", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,9 +223,9 @@ namespace BJ_S.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap jetton50Out {
+        internal static System.Drawing.Bitmap jeton50Out {
             get {
-                object obj = ResourceManager.GetObject("jetton50Out", resourceCulture);
+                object obj = ResourceManager.GetObject("jeton50Out", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

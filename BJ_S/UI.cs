@@ -12,6 +12,9 @@ namespace BJ_S
 {
     public partial class UI : Form
     {
+        PictureBox selected;
+
+
         public UI()
         {
             InitializeComponent();
@@ -22,9 +25,49 @@ namespace BJ_S
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
+        private void btnMiser_hover(object sender, EventArgs e) {
+            this.btnMiser.BackgroundImage = Image.FromFile("../../images/buttonMiserOn.png");
+        }
 
+        private void btnMiser_Out(object sender, EventArgs e)
+        {
+            this.btnMiser.BackgroundImage = Image.FromFile("../../images/buttonMiserOut.png");
+        }
+
+        private void btnHit_hover(object sender, EventArgs e)
+        {
+            this.btnHit.BackgroundImage = Image.FromFile("../../images/buttonHitOn.png");
+        }
+
+        private void btnHit_Out(object sender, EventArgs e)
+        {
+            this.btnHit.BackgroundImage = Image.FromFile("../../images/buttonHitOut.png");
+        }
+
+        private void btnStand_hover(object sender, EventArgs e)
+        {
+            this.btnStand.BackgroundImage = Image.FromFile("../../images/buttonStandOn.png");
+        }
+
+        private void btnStand_Out(object sender, EventArgs e)
+        {
+            this.btnStand.BackgroundImage = Image.FromFile("../../images/buttonStandOut.png");
+        }
+
+        private void jetonsClick(object sender, EventArgs e) 
+        {
+            PictureBox clicked = (PictureBox)sender;
+            if (selected != null)
+            {
+                selected.BackgroundImage = Image.FromFile("../../images/" + selected.Name + "Out.png");
+            }
+            if (clicked == selected)
+                selected = null;
+            else
+            {
+                clicked.BackgroundImage = Image.FromFile("../../images/" + clicked.Name + "On.png");
+                selected = clicked;
+            }
         }
     }
 }

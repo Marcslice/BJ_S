@@ -293,7 +293,8 @@ namespace BJ_S
           
             Thread t = new Thread(new ThreadStart(delegateMessage));
             t.Start();
-                
+
+            m_BJController.NouvellePartie(2);
         }
 
 
