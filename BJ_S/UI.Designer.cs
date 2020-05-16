@@ -51,7 +51,7 @@
             this.imgSabot = new System.Windows.Forms.PictureBox();
             this.feedPanel = new System.Windows.Forms.Panel();
             this.btnExpendFeed = new System.Windows.Forms.Button();
-            this.lblTitreFeed = new System.Windows.Forms.Label();
+            this.lblFeed1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.jeton10 = new System.Windows.Forms.PictureBox();
             this.jeton25 = new System.Windows.Forms.PictureBox();
@@ -61,6 +61,10 @@
             this.btnMiser = new System.Windows.Forms.PictureBox();
             this.btnHit = new System.Windows.Forms.PictureBox();
             this.btnStand = new System.Windows.Forms.PictureBox();
+            this.lblFeed2 = new System.Windows.Forms.Label();
+            this.lblFeed3 = new System.Windows.Forms.Label();
+            this.lblFeed4 = new System.Windows.Forms.Label();
+            this.lblFeed5 = new System.Windows.Forms.Label();
             this.mainJ1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -152,7 +156,7 @@
             this.mainJ1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.mainJ1.Controls.Add(this.pictureBox8);
             this.mainJ1.Controls.Add(this.pictureBox7);
-            this.mainJ1.Location = new System.Drawing.Point(242, 505);
+            this.mainJ1.Location = new System.Drawing.Point(225, 505);
             this.mainJ1.Name = "mainJ1";
             this.mainJ1.Size = new System.Drawing.Size(233, 138);
             this.mainJ1.TabIndex = 5;
@@ -160,7 +164,7 @@
             // 
             // pictureBox8
             // 
-            this.pictureBox8.Location = new System.Drawing.Point(94, 5);
+            this.pictureBox8.Location = new System.Drawing.Point(117, 5);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(71, 129);
             this.pictureBox8.TabIndex = 18;
@@ -168,7 +172,7 @@
             // 
             // pictureBox7
             // 
-            this.pictureBox7.Location = new System.Drawing.Point(16, 5);
+            this.pictureBox7.Location = new System.Drawing.Point(39, 5);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(71, 129);
             this.pictureBox7.TabIndex = 17;
@@ -179,7 +183,7 @@
             this.mainJ2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.mainJ2.Controls.Add(this.pictureBox9);
             this.mainJ2.Controls.Add(this.pictureBox10);
-            this.mainJ2.Location = new System.Drawing.Point(529, 681);
+            this.mainJ2.Location = new System.Drawing.Point(524, 681);
             this.mainJ2.Name = "mainJ2";
             this.mainJ2.Size = new System.Drawing.Size(233, 136);
             this.mainJ2.TabIndex = 6;
@@ -187,7 +191,7 @@
             // 
             // pictureBox9
             // 
-            this.pictureBox9.Location = new System.Drawing.Point(101, 4);
+            this.pictureBox9.Location = new System.Drawing.Point(118, 4);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(71, 129);
             this.pictureBox9.TabIndex = 20;
@@ -195,7 +199,7 @@
             // 
             // pictureBox10
             // 
-            this.pictureBox10.Location = new System.Drawing.Point(24, 4);
+            this.pictureBox10.Location = new System.Drawing.Point(41, 4);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(71, 129);
             this.pictureBox10.TabIndex = 19;
@@ -206,7 +210,7 @@
             this.mainJ3.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.mainJ3.Controls.Add(this.pictureBox1);
             this.mainJ3.Controls.Add(this.pictureBox2);
-            this.mainJ3.Location = new System.Drawing.Point(958, 823);
+            this.mainJ3.Location = new System.Drawing.Point(952, 823);
             this.mainJ3.Name = "mainJ3";
             this.mainJ3.Size = new System.Drawing.Size(233, 135);
             this.mainJ3.TabIndex = 7;
@@ -233,15 +237,15 @@
             this.mainJ4.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.mainJ4.Controls.Add(this.pictureBox3);
             this.mainJ4.Controls.Add(this.pictureBox4);
-            this.mainJ4.Location = new System.Drawing.Point(1380, 667);
+            this.mainJ4.Location = new System.Drawing.Point(1384, 681);
             this.mainJ4.Name = "mainJ4";
-            this.mainJ4.Size = new System.Drawing.Size(233, 147);
+            this.mainJ4.Size = new System.Drawing.Size(233, 136);
             this.mainJ4.TabIndex = 8;
             this.mainJ4.Visible = false;
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(130, 9);
+            this.pictureBox3.Location = new System.Drawing.Point(119, 4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(71, 129);
             this.pictureBox3.TabIndex = 24;
@@ -249,7 +253,7 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(53, 9);
+            this.pictureBox4.Location = new System.Drawing.Point(42, 4);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(71, 129);
             this.pictureBox4.TabIndex = 23;
@@ -260,15 +264,15 @@
             this.mainJ5.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.mainJ5.Controls.Add(this.pictureBox5);
             this.mainJ5.Controls.Add(this.pictureBox6);
-            this.mainJ5.Location = new System.Drawing.Point(1684, 489);
+            this.mainJ5.Location = new System.Drawing.Point(1688, 507);
             this.mainJ5.Name = "mainJ5";
-            this.mainJ5.Size = new System.Drawing.Size(233, 150);
+            this.mainJ5.Size = new System.Drawing.Size(233, 144);
             this.mainJ5.TabIndex = 9;
             this.mainJ5.Visible = false;
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Location = new System.Drawing.Point(128, 9);
+            this.pictureBox5.Location = new System.Drawing.Point(120, 7);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(71, 129);
             this.pictureBox5.TabIndex = 26;
@@ -276,7 +280,7 @@
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Location = new System.Drawing.Point(51, 9);
+            this.pictureBox6.Location = new System.Drawing.Point(43, 7);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(71, 129);
             this.pictureBox6.TabIndex = 25;
@@ -295,11 +299,15 @@
             // 
             this.feedPanel.BackColor = System.Drawing.Color.Transparent;
             this.feedPanel.BackgroundImage = global::BJ_S.Properties.Resources.feedExtended;
+            this.feedPanel.Controls.Add(this.lblFeed5);
             this.feedPanel.Controls.Add(this.btnExpendFeed);
-            this.feedPanel.Controls.Add(this.lblTitreFeed);
+            this.feedPanel.Controls.Add(this.lblFeed4);
+            this.feedPanel.Controls.Add(this.lblFeed1);
+            this.feedPanel.Controls.Add(this.lblFeed3);
+            this.feedPanel.Controls.Add(this.lblFeed2);
             this.feedPanel.Location = new System.Drawing.Point(1412, 12);
             this.feedPanel.Name = "feedPanel";
-            this.feedPanel.Size = new System.Drawing.Size(721, 81);
+            this.feedPanel.Size = new System.Drawing.Size(721, 77);
             this.feedPanel.TabIndex = 11;
             // 
             // btnExpendFeed
@@ -315,16 +323,16 @@
             this.btnExpendFeed.UseVisualStyleBackColor = true;
             this.btnExpendFeed.Click += new System.EventHandler(this.btnExtendfeedClick);
             // 
-            // lblTitreFeed
+            // lblFeed1
             // 
-            this.lblTitreFeed.AutoSize = true;
-            this.lblTitreFeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitreFeed.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblTitreFeed.Location = new System.Drawing.Point(16, 22);
-            this.lblTitreFeed.Name = "lblTitreFeed";
-            this.lblTitreFeed.Size = new System.Drawing.Size(259, 37);
-            this.lblTitreFeed.TabIndex = 0;
-            this.lblTitreFeed.Text = "Journal d\'actions";
+            this.lblFeed1.AutoSize = true;
+            this.lblFeed1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFeed1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblFeed1.Location = new System.Drawing.Point(16, 22);
+            this.lblFeed1.Name = "lblFeed1";
+            this.lblFeed1.Size = new System.Drawing.Size(137, 37);
+            this.lblFeed1.TabIndex = 0;
+            this.lblFeed1.Text = "lblFeed1";
             // 
             // panel1
             // 
@@ -438,6 +446,58 @@
             this.btnStand.MouseEnter += new System.EventHandler(this.btnStand_hover);
             this.btnStand.MouseLeave += new System.EventHandler(this.btnStand_Out);
             // 
+            // lblFeed2
+            // 
+            this.lblFeed2.AutoSize = true;
+            this.lblFeed2.BackColor = System.Drawing.Color.Transparent;
+            this.lblFeed2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFeed2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblFeed2.Location = new System.Drawing.Point(16, 72);
+            this.lblFeed2.Name = "lblFeed2";
+            this.lblFeed2.Size = new System.Drawing.Size(139, 37);
+            this.lblFeed2.TabIndex = 2;
+            this.lblFeed2.Text = "";
+            this.lblFeed2.Visible = false;
+            // 
+            // lblFeed3
+            // 
+            this.lblFeed3.AutoSize = true;
+            this.lblFeed3.BackColor = System.Drawing.Color.Transparent;
+            this.lblFeed3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFeed3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblFeed3.Location = new System.Drawing.Point(14, 125);
+            this.lblFeed3.Name = "lblFeed3";
+            this.lblFeed3.Size = new System.Drawing.Size(139, 37);
+            this.lblFeed3.TabIndex = 17;
+            this.lblFeed3.Text = "";
+            this.lblFeed3.Visible = false;
+            // 
+            // lblFeed4
+            // 
+            this.lblFeed4.AutoSize = true;
+            this.lblFeed4.BackColor = System.Drawing.Color.Transparent;
+            this.lblFeed4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFeed4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblFeed4.Location = new System.Drawing.Point(14, 173);
+            this.lblFeed4.Name = "lblFeed4";
+            this.lblFeed4.Size = new System.Drawing.Size(136, 37);
+            this.lblFeed4.TabIndex = 18;
+            this.lblFeed4.Text = "";
+            this.lblFeed4.Visible = false;
+            // 
+            // lblFeed5
+            // 
+            this.lblFeed5.AutoSize = true;
+            this.lblFeed5.BackColor = System.Drawing.Color.Transparent;
+            this.lblFeed5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFeed5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblFeed5.Location = new System.Drawing.Point(14, 220);
+            this.lblFeed5.Name = "lblFeed5";
+            this.lblFeed5.Size = new System.Drawing.Size(139, 37);
+            this.lblFeed5.TabIndex = 19;
+            this.lblFeed5.Text = "";
+            this.lblFeed5.Visible = false;
+            // 
             // UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -466,7 +526,6 @@
             this.ForeColor = System.Drawing.Color.Transparent;
             this.Name = "UI";
             this.Text = "Partie";
-            this.Load += new System.EventHandler(this.UI_Load);
             this.mainJ1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
@@ -516,7 +575,7 @@
         private System.Windows.Forms.Label lblMontantPorteFeuille;
         private System.Windows.Forms.Panel mainCroupier;
         private System.Windows.Forms.Button btnExpendFeed;
-        private System.Windows.Forms.Label lblTitreFeed;
+        private System.Windows.Forms.Label lblFeed1;
         private System.Windows.Forms.PictureBox btnMiser;
         private System.Windows.Forms.PictureBox btnHit;
         private System.Windows.Forms.PictureBox btnStand;
@@ -533,5 +592,9 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Label lblFeed2;
+        private System.Windows.Forms.Label lblFeed3;
+        private System.Windows.Forms.Label lblFeed4;
+        private System.Windows.Forms.Label lblFeed5;
     }
 }
