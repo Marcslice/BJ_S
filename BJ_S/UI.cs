@@ -13,11 +13,13 @@ namespace BJ_S
     public partial class UI : Form
     {
         PictureBox selected;
-
-
+        bool extended = false;
         public UI()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
         private void UI_Load(object sender, EventArgs e)
@@ -57,16 +59,47 @@ namespace BJ_S
         private void jetonsClick(object sender, EventArgs e) 
         {
             PictureBox clicked = (PictureBox)sender;
+
             if (selected != null)
-            {
                 selected.BackgroundImage = Image.FromFile("../../images/" + selected.Name + "Out.png");
-            }
+
             if (clicked == selected)
                 selected = null;
             else
             {
                 clicked.BackgroundImage = Image.FromFile("../../images/" + clicked.Name + "On.png");
                 selected = clicked;
+            }
+        }
+
+        private void jetonsHover(object sender, EventArgs e)
+        {
+            PictureBox hovered = (PictureBox)sender;
+            hovered.BackgroundImage = Image.FromFile("../../images/" + hovered.Name + "Hover.png");
+        }
+
+        private void jetonsOut(object sender, EventArgs e)
+        {
+            PictureBox hovered = (PictureBox)sender;
+            if(hovered != selected)
+                hovered.BackgroundImage = Image.FromFile("../../images/" + hovered.Name + "Out.png");
+            else
+                hovered.BackgroundImage = Image.FromFile("../../images/" + hovered.Name + "On.png");
+        }
+
+        private void btnExtendfeedClick(object sender, EventArgs e) {
+            extended = !extended;
+            if (extended)
+            {
+                feedPanel.Height = 250;
+                this.btnExpendFeed.Location = new Point(this.btnExpendFeed.Location.X, this.btnExpendFeed.Location.Y + 200);
+                this.btnExpendFeed.BackgroundImage = Image.FromFile("../../images/buttonCloseFeed.png");
+            }
+            else
+            {
+                feedPanel.Height = 50;
+                this.btnExpendFeed.Location = new Point(this.btnExpendFeed.Location.X, this.btnExpendFeed.Location.Y - 200);
+                this.btnExpendFeed.BackgroundImage = Image.FromFile("../../images/buttonExpendFeed.png");
             }
         }
     }

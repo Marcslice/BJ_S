@@ -40,8 +40,14 @@
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.mainJ3 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.mainJ4 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.mainJ5 = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.imgSabot = new System.Windows.Forms.PictureBox();
             this.feedPanel = new System.Windows.Forms.Panel();
             this.btnExpendFeed = new System.Windows.Forms.Button();
@@ -61,6 +67,15 @@
             this.mainJ2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            this.mainJ3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.mainJ4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.mainJ5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgSabot)).BeginInit();
             this.feedPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -141,6 +156,7 @@
             this.mainJ1.Name = "mainJ1";
             this.mainJ1.Size = new System.Drawing.Size(233, 138);
             this.mainJ1.TabIndex = 5;
+            this.mainJ1.Visible = false;
             // 
             // pictureBox8
             // 
@@ -167,6 +183,7 @@
             this.mainJ2.Name = "mainJ2";
             this.mainJ2.Size = new System.Drawing.Size(233, 136);
             this.mainJ2.TabIndex = 6;
+            this.mainJ2.Visible = false;
             // 
             // pictureBox9
             // 
@@ -187,26 +204,83 @@
             // mainJ3
             // 
             this.mainJ3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.mainJ3.Location = new System.Drawing.Point(958, 843);
+            this.mainJ3.Controls.Add(this.pictureBox1);
+            this.mainJ3.Controls.Add(this.pictureBox2);
+            this.mainJ3.Location = new System.Drawing.Point(958, 823);
             this.mainJ3.Name = "mainJ3";
-            this.mainJ3.Size = new System.Drawing.Size(233, 115);
+            this.mainJ3.Size = new System.Drawing.Size(233, 135);
             this.mainJ3.TabIndex = 7;
+            this.mainJ3.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(119, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(71, 129);
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(42, 4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(71, 129);
+            this.pictureBox2.TabIndex = 21;
+            this.pictureBox2.TabStop = false;
             // 
             // mainJ4
             // 
             this.mainJ4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.mainJ4.Location = new System.Drawing.Point(1380, 681);
+            this.mainJ4.Controls.Add(this.pictureBox3);
+            this.mainJ4.Controls.Add(this.pictureBox4);
+            this.mainJ4.Location = new System.Drawing.Point(1380, 667);
             this.mainJ4.Name = "mainJ4";
-            this.mainJ4.Size = new System.Drawing.Size(233, 115);
+            this.mainJ4.Size = new System.Drawing.Size(233, 147);
             this.mainJ4.TabIndex = 8;
+            this.mainJ4.Visible = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Location = new System.Drawing.Point(130, 9);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(71, 129);
+            this.pictureBox3.TabIndex = 24;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Location = new System.Drawing.Point(53, 9);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(71, 129);
+            this.pictureBox4.TabIndex = 23;
+            this.pictureBox4.TabStop = false;
             // 
             // mainJ5
             // 
             this.mainJ5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.mainJ5.Location = new System.Drawing.Point(1684, 505);
+            this.mainJ5.Controls.Add(this.pictureBox5);
+            this.mainJ5.Controls.Add(this.pictureBox6);
+            this.mainJ5.Location = new System.Drawing.Point(1684, 489);
             this.mainJ5.Name = "mainJ5";
-            this.mainJ5.Size = new System.Drawing.Size(233, 115);
+            this.mainJ5.Size = new System.Drawing.Size(233, 150);
             this.mainJ5.TabIndex = 9;
+            this.mainJ5.Visible = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Location = new System.Drawing.Point(128, 9);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(71, 129);
+            this.pictureBox5.TabIndex = 26;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Location = new System.Drawing.Point(51, 9);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(71, 129);
+            this.pictureBox6.TabIndex = 25;
+            this.pictureBox6.TabStop = false;
             // 
             // imgSabot
             // 
@@ -232,12 +306,14 @@
             // 
             this.btnExpendFeed.BackgroundImage = global::BJ_S.Properties.Resources.buttonExpendFeed;
             this.btnExpendFeed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExpendFeed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExpendFeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExpendFeed.Location = new System.Drawing.Point(651, 14);
+            this.btnExpendFeed.Location = new System.Drawing.Point(652, 14);
             this.btnExpendFeed.Name = "btnExpendFeed";
             this.btnExpendFeed.Size = new System.Drawing.Size(56, 51);
             this.btnExpendFeed.TabIndex = 1;
             this.btnExpendFeed.UseVisualStyleBackColor = true;
+            this.btnExpendFeed.Click += new System.EventHandler(this.btnExtendfeedClick);
             // 
             // lblTitreFeed
             // 
@@ -274,6 +350,8 @@
             this.jeton10.TabIndex = 19;
             this.jeton10.TabStop = false;
             this.jeton10.Click += new System.EventHandler(this.jetonsClick);
+            this.jeton10.MouseEnter += new System.EventHandler(this.jetonsHover);
+            this.jeton10.MouseLeave += new System.EventHandler(this.jetonsOut);
             // 
             // jeton25
             // 
@@ -285,6 +363,8 @@
             this.jeton25.TabIndex = 18;
             this.jeton25.TabStop = false;
             this.jeton25.Click += new System.EventHandler(this.jetonsClick);
+            this.jeton25.MouseEnter += new System.EventHandler(this.jetonsHover);
+            this.jeton25.MouseLeave += new System.EventHandler(this.jetonsOut);
             // 
             // jeton50
             // 
@@ -296,17 +376,19 @@
             this.jeton50.TabIndex = 17;
             this.jeton50.TabStop = false;
             this.jeton50.Click += new System.EventHandler(this.jetonsClick);
+            this.jeton50.MouseEnter += new System.EventHandler(this.jetonsHover);
+            this.jeton50.MouseLeave += new System.EventHandler(this.jetonsOut);
             // 
             // lblMontantPorteFeuille
             // 
             this.lblMontantPorteFeuille.AutoSize = true;
             this.lblMontantPorteFeuille.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMontantPorteFeuille.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblMontantPorteFeuille.Location = new System.Drawing.Point(126, 82);
+            this.lblMontantPorteFeuille.Location = new System.Drawing.Point(149, 80);
             this.lblMontantPorteFeuille.Name = "lblMontantPorteFeuille";
-            this.lblMontantPorteFeuille.Size = new System.Drawing.Size(130, 46);
+            this.lblMontantPorteFeuille.Size = new System.Drawing.Size(86, 46);
             this.lblMontantPorteFeuille.TabIndex = 16;
-            this.lblMontantPorteFeuille.Text = "$$$$$";
+            this.lblMontantPorteFeuille.Text = "500";
             // 
             // mainCroupier
             // 
@@ -315,13 +397,14 @@
             this.mainCroupier.Name = "mainCroupier";
             this.mainCroupier.Size = new System.Drawing.Size(359, 202);
             this.mainCroupier.TabIndex = 10;
+            this.mainCroupier.Visible = false;
             // 
             // btnMiser
             // 
             this.btnMiser.BackColor = System.Drawing.Color.Transparent;
             this.btnMiser.BackgroundImage = global::BJ_S.Properties.Resources.buttonMiserOut;
             this.btnMiser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnMiser.Location = new System.Drawing.Point(329, 1056);
+            this.btnMiser.Location = new System.Drawing.Point(329, 1055);
             this.btnMiser.Name = "btnMiser";
             this.btnMiser.Size = new System.Drawing.Size(312, 145);
             this.btnMiser.TabIndex = 14;
@@ -362,12 +445,11 @@
             this.BackgroundImage = global::BJ_S.Properties.Resources.table;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(2145, 1206);
+            this.Controls.Add(this.btnMiser);
             this.Controls.Add(this.lblJ1);
             this.Controls.Add(this.btnStand);
             this.Controls.Add(this.btnHit);
-            this.Controls.Add(this.btnMiser);
             this.Controls.Add(this.mainCroupier);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.feedPanel);
             this.Controls.Add(this.imgSabot);
             this.Controls.Add(this.mainJ5);
@@ -379,6 +461,7 @@
             this.Controls.Add(this.lblJ4);
             this.Controls.Add(this.lblJ3);
             this.Controls.Add(this.lblJ2);
+            this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.Transparent;
             this.Name = "UI";
@@ -390,6 +473,15 @@
             this.mainJ2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            this.mainJ3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.mainJ4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.mainJ5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgSabot)).EndInit();
             this.feedPanel.ResumeLayout(false);
             this.feedPanel.PerformLayout();
@@ -435,5 +527,11 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox6;
     }
 }

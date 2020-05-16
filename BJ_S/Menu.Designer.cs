@@ -38,6 +38,7 @@ namespace BJ_S
             this.lblYourIP = new System.Windows.Forms.Label();
             this.lblIP = new System.Windows.Forms.Label();
             this.btnQuitter = new System.Windows.Forms.Button();
+            this.Devs = new System.Windows.Forms.Label();
             this.panelPrincipale.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -70,6 +71,7 @@ namespace BJ_S
             this.btnLocal.BackColor = System.Drawing.Color.SteelBlue;
             this.btnLocal.BackgroundImage = global::BJ_S.Properties.Resources.carteLocalOut;
             this.btnLocal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLocal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLocal.Location = new System.Drawing.Point(0, 3);
             this.btnLocal.Name = "btnLocal";
@@ -84,6 +86,7 @@ namespace BJ_S
             this.btnHeberger.BackColor = System.Drawing.Color.SteelBlue;
             this.btnHeberger.BackgroundImage = global::BJ_S.Properties.Resources.carteHebergeOut;
             this.btnHeberger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnHeberger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHeberger.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHeberger.Location = new System.Drawing.Point(306, 115);
             this.btnHeberger.Name = "btnHeberger";
@@ -99,6 +102,7 @@ namespace BJ_S
             this.btnRejoindre.BackColor = System.Drawing.Color.SteelBlue;
             this.btnRejoindre.BackgroundImage = global::BJ_S.Properties.Resources.carteRejoindreMouseOut;
             this.btnRejoindre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRejoindre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRejoindre.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRejoindre.Location = new System.Drawing.Point(617, 231);
             this.btnRejoindre.Name = "btnRejoindre";
@@ -145,6 +149,7 @@ namespace BJ_S
             this.btnQuitter.BackColor = System.Drawing.Color.Black;
             this.btnQuitter.BackgroundImage = global::BJ_S.Properties.Resources.porteFermer;
             this.btnQuitter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnQuitter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuitter.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuitter.Location = new System.Drawing.Point(908, 836);
             this.btnQuitter.Name = "btnQuitter";
@@ -155,6 +160,17 @@ namespace BJ_S
             this.btnQuitter.MouseEnter += new System.EventHandler(this.button_Quitter_Hover);
             this.btnQuitter.MouseLeave += new System.EventHandler(this.button_Quitter_Out);
             // 
+            // Devs
+            // 
+            this.Devs.AutoSize = true;
+            this.Devs.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Devs.ForeColor = System.Drawing.Color.White;
+            this.Devs.Location = new System.Drawing.Point(369, 880);
+            this.Devs.Name = "Devs";
+            this.Devs.Size = new System.Drawing.Size(358, 64);
+            this.Devs.TabIndex = 6;
+            this.Devs.Text = "Marc-André Larocque Blais\r\nJean-François Duchesne";
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -162,6 +178,7 @@ namespace BJ_S
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1080, 1000);
+            this.Controls.Add(this.Devs);
             this.Controls.Add(this.lblYourIP);
             this.Controls.Add(this.lblIP);
             this.Controls.Add(this.panelPrincipale);
@@ -172,6 +189,7 @@ namespace BJ_S
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -186,6 +204,7 @@ namespace BJ_S
         private System.Windows.Forms.Panel panelPrincipale;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label Devs;
     }
 }
 
