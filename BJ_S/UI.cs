@@ -109,7 +109,7 @@ namespace BJ_S
             }
         }
 
-        public void updateFeed(int type, string joueur, string carte, double montant) {
+        public void updateFeed(string update) {
 
             if (lblFeed4.Text != "")
                 lblFeed5.Text = lblFeed4.Text;
@@ -120,29 +120,9 @@ namespace BJ_S
             if (lblFeed1.Text != "")
                 lblFeed2.Text = lblFeed1.Text;
 
-            switch (type)
-            {
-                case 0:
-                    lblFeed1.Text = $"{joueur} a quitté la partie.";
-                    break;
-                case 1:
-                    lblFeed1.Text = $"{joueur} a quitté la partie.";
-                    break;
-                case 2:
-                    lblFeed1.Text = $"{joueur} a quitté la partie.";
-                    break;
-                case 3:
-                    lblFeed1.Text = $"{joueur} a quitté la partie.";
-                    break;
-                case 4:
-                    lblFeed1.Text = $"{joueur} a quitté la partie.";
-                    break;
-                case 5:
-                    lblFeed1.Text = $"{joueur} a quitté la partie.";
-                    break;
-                default:
-                    break;
-            }
+            lblFeed1.Text = update;
         }
+
+
     }
 }

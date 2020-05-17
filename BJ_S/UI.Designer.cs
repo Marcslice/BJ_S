@@ -50,8 +50,12 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.imgSabot = new System.Windows.Forms.PictureBox();
             this.feedPanel = new System.Windows.Forms.Panel();
+            this.lblFeed5 = new System.Windows.Forms.Label();
             this.btnExpendFeed = new System.Windows.Forms.Button();
+            this.lblFeed4 = new System.Windows.Forms.Label();
             this.lblFeed1 = new System.Windows.Forms.Label();
+            this.lblFeed3 = new System.Windows.Forms.Label();
+            this.lblFeed2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.jeton10 = new System.Windows.Forms.PictureBox();
             this.jeton25 = new System.Windows.Forms.PictureBox();
@@ -61,10 +65,6 @@
             this.btnMiser = new System.Windows.Forms.PictureBox();
             this.btnHit = new System.Windows.Forms.PictureBox();
             this.btnStand = new System.Windows.Forms.PictureBox();
-            this.lblFeed2 = new System.Windows.Forms.Label();
-            this.lblFeed3 = new System.Windows.Forms.Label();
-            this.lblFeed4 = new System.Windows.Forms.Label();
-            this.lblFeed5 = new System.Windows.Forms.Label();
             this.mainJ1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -310,6 +310,18 @@
             this.feedPanel.Size = new System.Drawing.Size(721, 77);
             this.feedPanel.TabIndex = 11;
             // 
+            // lblFeed5
+            // 
+            this.lblFeed5.AutoSize = true;
+            this.lblFeed5.BackColor = System.Drawing.Color.Transparent;
+            this.lblFeed5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFeed5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblFeed5.Location = new System.Drawing.Point(14, 220);
+            this.lblFeed5.Name = "lblFeed5";
+            this.lblFeed5.Size = new System.Drawing.Size(0, 37);
+            this.lblFeed5.TabIndex = 19;
+            this.lblFeed5.Visible = false;
+            // 
             // btnExpendFeed
             // 
             this.btnExpendFeed.BackgroundImage = global::BJ_S.Properties.Resources.buttonExpendFeed;
@@ -323,6 +335,18 @@
             this.btnExpendFeed.UseVisualStyleBackColor = true;
             this.btnExpendFeed.Click += new System.EventHandler(this.btnExtendfeedClick);
             // 
+            // lblFeed4
+            // 
+            this.lblFeed4.AutoSize = true;
+            this.lblFeed4.BackColor = System.Drawing.Color.Transparent;
+            this.lblFeed4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFeed4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblFeed4.Location = new System.Drawing.Point(14, 173);
+            this.lblFeed4.Name = "lblFeed4";
+            this.lblFeed4.Size = new System.Drawing.Size(0, 37);
+            this.lblFeed4.TabIndex = 18;
+            this.lblFeed4.Visible = false;
+            // 
             // lblFeed1
             // 
             this.lblFeed1.AutoSize = true;
@@ -330,9 +354,33 @@
             this.lblFeed1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblFeed1.Location = new System.Drawing.Point(16, 22);
             this.lblFeed1.Name = "lblFeed1";
-            this.lblFeed1.Size = new System.Drawing.Size(137, 37);
+            this.lblFeed1.Size = new System.Drawing.Size(216, 37);
             this.lblFeed1.TabIndex = 0;
-            this.lblFeed1.Text = "lblFeed1";
+            this.lblFeed1.Text = "Bonne partie !";
+            // 
+            // lblFeed3
+            // 
+            this.lblFeed3.AutoSize = true;
+            this.lblFeed3.BackColor = System.Drawing.Color.Transparent;
+            this.lblFeed3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFeed3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblFeed3.Location = new System.Drawing.Point(14, 125);
+            this.lblFeed3.Name = "lblFeed3";
+            this.lblFeed3.Size = new System.Drawing.Size(0, 37);
+            this.lblFeed3.TabIndex = 17;
+            this.lblFeed3.Visible = false;
+            // 
+            // lblFeed2
+            // 
+            this.lblFeed2.AutoSize = true;
+            this.lblFeed2.BackColor = System.Drawing.Color.Transparent;
+            this.lblFeed2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFeed2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblFeed2.Location = new System.Drawing.Point(16, 72);
+            this.lblFeed2.Name = "lblFeed2";
+            this.lblFeed2.Size = new System.Drawing.Size(0, 37);
+            this.lblFeed2.TabIndex = 2;
+            this.lblFeed2.Visible = false;
             // 
             // panel1
             // 
@@ -445,58 +493,6 @@
             this.btnStand.TabStop = false;
             this.btnStand.MouseEnter += new System.EventHandler(this.btnStand_hover);
             this.btnStand.MouseLeave += new System.EventHandler(this.btnStand_Out);
-            // 
-            // lblFeed2
-            // 
-            this.lblFeed2.AutoSize = true;
-            this.lblFeed2.BackColor = System.Drawing.Color.Transparent;
-            this.lblFeed2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFeed2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblFeed2.Location = new System.Drawing.Point(16, 72);
-            this.lblFeed2.Name = "lblFeed2";
-            this.lblFeed2.Size = new System.Drawing.Size(139, 37);
-            this.lblFeed2.TabIndex = 2;
-            this.lblFeed2.Text = "";
-            this.lblFeed2.Visible = false;
-            // 
-            // lblFeed3
-            // 
-            this.lblFeed3.AutoSize = true;
-            this.lblFeed3.BackColor = System.Drawing.Color.Transparent;
-            this.lblFeed3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFeed3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblFeed3.Location = new System.Drawing.Point(14, 125);
-            this.lblFeed3.Name = "lblFeed3";
-            this.lblFeed3.Size = new System.Drawing.Size(139, 37);
-            this.lblFeed3.TabIndex = 17;
-            this.lblFeed3.Text = "";
-            this.lblFeed3.Visible = false;
-            // 
-            // lblFeed4
-            // 
-            this.lblFeed4.AutoSize = true;
-            this.lblFeed4.BackColor = System.Drawing.Color.Transparent;
-            this.lblFeed4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFeed4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblFeed4.Location = new System.Drawing.Point(14, 173);
-            this.lblFeed4.Name = "lblFeed4";
-            this.lblFeed4.Size = new System.Drawing.Size(136, 37);
-            this.lblFeed4.TabIndex = 18;
-            this.lblFeed4.Text = "";
-            this.lblFeed4.Visible = false;
-            // 
-            // lblFeed5
-            // 
-            this.lblFeed5.AutoSize = true;
-            this.lblFeed5.BackColor = System.Drawing.Color.Transparent;
-            this.lblFeed5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFeed5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblFeed5.Location = new System.Drawing.Point(14, 220);
-            this.lblFeed5.Name = "lblFeed5";
-            this.lblFeed5.Size = new System.Drawing.Size(139, 37);
-            this.lblFeed5.TabIndex = 19;
-            this.lblFeed5.Text = "";
-            this.lblFeed5.Visible = false;
             // 
             // UI
             // 

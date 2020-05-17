@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
+
 namespace BJ_S
 {
     public partial class Menu : Form
@@ -17,59 +18,72 @@ namespace BJ_S
         //main thread
         Label titre;
         BlackuJacku m_BJController;
+        System.Windows.Forms.Timer t = new System.Windows.Forms.Timer();
 
         public Menu(BlackuJacku BJ)
         {
             m_BJController = BJ;
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.lblIP.Text = m_BJController.QuelEstMonIP();
         }
 
+        public Form FormBuilder(string nom, string titre, string message) {
+            Form basic = new Form();
+            basic.AutoSize = true;
+            basic.MaximizeBox = false;
+            basic.MinimizeBox = false;
+            basic.Size = new Size(360, 100);
+            basic.Name = nom;
+            basic.Text = titre ;
+            basic.StartPosition = FormStartPosition.Manual;
+            basic.Location = new Point(this.Location.X + this.Width / 2 - 200, this.Location.Y + this.Height / 2);
+            basic.FormClosing += new FormClosingEventHandler(this.RejoindreAdresse_Close);
+
+            Label lblMessage = new Label();
+            lblMessage.Text = message;
+            lblMessage.Location = new Point(0, 0);
+            lblMessage.TextAlign = ContentAlignment.MiddleCenter;
+
+            Button ok = new Button();
+            ok.Size = new Size(50,40);
+            ok.Location = new Point(basic.Width - 55, basic.Height - 45);
+            ok.Text = "OK";
+            ok.Click += new System.EventHandler(CloseCustomForm);
+
+            basic.Controls.Add(lblMessage);
+            basic.Controls.Add(ok);
+
+            return basic;
+        }
+
+        public void CloseCustomForm(object sender, EventArgs e) {
+            Button b = (Button)sender;
+            Form f = (Form)b.GetContainerControl();
+            f.Close();
+        }
+
+        public Form AlerteBuilder()
+        {
+            Form alert = FormBuilder("formTestAlert", "Alerte", "this is Alert test");
+            return alert;
+        }
+
+        public Form EntryBuilder()
+        {
+            Form entryForm = FormBuilder("formTestAlert", "Entry", "this is Entry test");
+            TextBox entry = new TextBox();
+            entry.Location = new Point(0, 50);
+            entry.Size = new Size(entryForm.Width - 10, 50);
+
+            entryForm.Controls.Add(entry);
+            return entryForm;
+        }
+
+
         public string DemanderNomJoueur() {
-            Form nom = new Form();
-
-            //PANEL
-            nom.AutoSize = true;
-            nom.MaximizeBox = false;
-            nom.MinimizeBox = false;
-            nom.Size = new Size(360, 100);
-            nom.Name = "Nom";
-            nom.Text = "Nom";
-            nom.StartPosition = FormStartPosition.Manual;
-            nom.Location = new Point(this.Location.X + this.Width / 2 - 200, this.Location.Y + this.Height / 2);
-            nom.FormClosing += new FormClosingEventHandler(this.RejoindreAdresse_Close);
-
-            //Controls
-            Label msg = new Label();
-            msg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            msg.Width = 350;
-            msg.Height = 30;
-            msg.Location = new Point(10, 10);
-            msg.Text = "Quel nom voulez-vous utiliser pour la partie ?";
-
-            TextBox qui = new TextBox();
-            qui.Size = new Size(200, 40);
-            qui.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            qui.Location = new Point(10, 50);
-
-            Button OK = new Button();
-            OK.Text = "Rejoindre";
-            OK.Size = new Size(100, 40);
-            OK.Location = new Point(messages.Width - 110, messages.Height - 60);
-            OK.Click += new EventHandler(this.AfficherRejoindre);
-
-            messages.Controls.Add(msg);
-            messages.Controls.Add(qui);
-            messages.Controls.Add(OK);
-
-            nom.BringToFront();
-            nom.Show();
-
-            return "skr";
-        
+            Form NJ = EntryBuilder();
+            NJ.Show();
+            return "";
         }
 
         private void RetourAuMenu_Click(object sender, EventArgs e) {
@@ -189,7 +203,7 @@ namespace BJ_S
         private void button_Local_Hover(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            
+
             btn.BackgroundImage = Image.FromFile("../../images/carteLocalOn.png");
         }
         private void button_Heberger_Hover(object sender, EventArgs e)
@@ -234,7 +248,7 @@ namespace BJ_S
             btn.BackgroundImage = Image.FromFile("../../images/porteFermer.png");
         }
 
-        private void AfficherRejoindre(object sender, EventArgs e) 
+        private void AfficherRejoindre(object sender, EventArgs e)
         {
 
             Button rj = (Button)sender;
@@ -242,7 +256,7 @@ namespace BJ_S
             rjf.Close();
 
             Panel panelAttente = new Panel();
-            
+
             titre = new Label();
             titre.Text = "Recherche de partie.";
             titre.Size = new Size(300, 50);
@@ -257,7 +271,7 @@ namespace BJ_S
 
             Label nbJoueurActuel = new Label();
             nbJoueurActuel.Text = "X";
-            nbJoueurActuel.Size = new Size(20,50);
+            nbJoueurActuel.Size = new Size(20, 50);
             nbJoueurActuel.Location = new Point(this.Width / 2 - 25, this.Height / 2 + 70);
             nbJoueurActuel.TextAlign = ContentAlignment.MiddleCenter;
 
@@ -282,15 +296,15 @@ namespace BJ_S
 
             panelAttente.Controls.Add(titre);
             panelAttente.Controls.Add(retour);
-           // panelAttente.Controls.Add(status);
-           // panelAttente.Controls.Add(nbJoueurActuel);
-           // panelAttente.Controls.Add(nbJoueurRequis);
+            // panelAttente.Controls.Add(status);
+            // panelAttente.Controls.Add(nbJoueurActuel);
+            // panelAttente.Controls.Add(nbJoueurRequis);
             panelAttente.ForeColor = Color.White;
             panelAttente.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             panelAttente.BringToFront();
             this.Controls.Add(panelAttente);
-          
+
             Thread t = new Thread(new ThreadStart(delegateMessage));
             t.Start();
 
@@ -303,10 +317,10 @@ namespace BJ_S
 
 
         //Loading animation
-        
+
         private void delegateMessage()
         {
-          
+
 
             int compteur = 1;
             while (compteur < 22) //while connection pas connecter
@@ -332,9 +346,9 @@ namespace BJ_S
 
         public delegate void updateWaitingMessage();
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
 
+        private void localClick(object sender, EventArgs e) 
+        {
         }
     }
 }

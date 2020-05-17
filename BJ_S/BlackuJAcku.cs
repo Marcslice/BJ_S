@@ -43,7 +43,8 @@ namespace BJ_S
         /// </param>
         /// 
         public void NouvellePartie(int type) {
-            m_Partie = new Partie(type, m_Menu.DemanderNomJoueur()); 
+            string nomJoueur = m_Menu.DemanderNomJoueur();
+            m_Partie = new Partie(type, nomJoueur); 
         }
 
         public void Quitter() {

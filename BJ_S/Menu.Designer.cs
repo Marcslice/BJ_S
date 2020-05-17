@@ -78,6 +78,7 @@ namespace BJ_S
             this.btnLocal.Size = new System.Drawing.Size(272, 500);
             this.btnLocal.TabIndex = 0;
             this.btnLocal.UseVisualStyleBackColor = false;
+            this.btnLocal.Click += new System.EventHandler(this.localClick);
             this.btnLocal.MouseEnter += new System.EventHandler(this.button_Local_Hover);
             this.btnLocal.MouseLeave += new System.EventHandler(this.button_Local_Out);
             // 
@@ -122,7 +123,6 @@ namespace BJ_S
             this.pictureBox2.Size = new System.Drawing.Size(824, 631);
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // lblYourIP
             // 
@@ -183,6 +183,9 @@ namespace BJ_S
             this.Controls.Add(this.lblIP);
             this.Controls.Add(this.panelPrincipale);
             this.Controls.Add(this.btnQuitter);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Menu";
             this.Text = "BlackJack";
             this.panelPrincipale.ResumeLayout(false);
