@@ -18,8 +18,7 @@ namespace BJ_S
         //main thread
         Label titre;
         BlackuJacku m_BJController;
-        System.Windows.Forms.Timer t = new System.Windows.Forms.Timer();
-        DateTime lastTime;
+        System.Windows.Forms.Timer t;
         bool op = false;
 
         public Menu(BlackuJacku BJ)
@@ -27,7 +26,6 @@ namespace BJ_S
             m_BJController = BJ;
             InitializeComponent();
             this.lblIP.Text = m_BJController.QuelEstMonIP();
-            lastTime = DateTime.Now;
         }
 
         public Form FormBuilder(string nom, string titre, string message) {
@@ -350,35 +348,42 @@ namespace BJ_S
         public delegate void updateWaitingMessage();
 
 
-        private void flip(object sender, EventArgs e) {
+        private void flip(object sender, EventArgs e, Button b) {         
 
-            TimeSpan GameTime = DateTime.Now - lastTime;
-            lastTime = lastTime + GameTime;
-
-            if (!op)
+            t.Stop();
+            if(!op)
             {
-                this.btnLocal.Width -= 20;
-                if (btnLocal.Width == 0)
+                b.Width -= 20;
+                b.Location = new Point(b.Location.X + 10, b.Location.Y);
+                this.Refresh();
+                if (b.Width == 0)
                     op = true;
+                
+                t.Enabled = true;
             }
             else
             {
-                this.btnLocal.Width += 20;
-                if (btnLocal.Width >= 181)
+                b.BackgroundImage = Image.FromFile("../../images/localFlipped.png");
+                b.Width += 20;
+                b.Location = new Point(b.Location.X - 10, b.Location.Y);
+                this.Refresh();
+                t.Enabled = true;
+                if (b.Width >= 181)
                 {
-                    t.Stop();
                     op = false;
-                }
+                    t.Stop();
+                    t.Dispose();
+                }               
             }
         }
 
-        private void localClick(object sender, EventArgs e) 
+        private void cardClick(object sender, EventArgs e) 
         {
-            
-            t.Interval = 10;
+            Button b = (Button)sender;
+            t = new System.Windows.Forms.Timer();
+            t.Interval = 1;
             t.Start();
-            t.Tick += new EventHandler(flip);
-
+            t.Tick += (sender2, e2) => flip(sender2, e2, b);
         }
     }
 }

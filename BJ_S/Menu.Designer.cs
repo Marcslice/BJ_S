@@ -80,7 +80,7 @@ namespace BJ_S
             this.btnLocal.Size = new System.Drawing.Size(272, 500);
             this.btnLocal.TabIndex = 0;
             this.btnLocal.UseVisualStyleBackColor = false;
-            this.btnLocal.Click += new System.EventHandler(this.localClick);
+            this.btnLocal.Click += new System.EventHandler(this.cardClick);
             this.btnLocal.MouseEnter += new System.EventHandler(this.button_Local_Hover);
             this.btnLocal.MouseLeave += new System.EventHandler(this.button_Local_Out);
             // 
@@ -96,7 +96,8 @@ namespace BJ_S
             this.btnHeberger.Size = new System.Drawing.Size(272, 500);
             this.btnHeberger.TabIndex = 1;
             this.btnHeberger.UseVisualStyleBackColor = false;
-            this.btnHeberger.Click += new System.EventHandler(this.Heberger_Click);
+            this.btnHeberger.Click += new System.EventHandler(this.cardClick);
+            //this.btnHeberger.Click += new System.EventHandler(this.Heberger_Click);
             this.btnHeberger.MouseEnter += new System.EventHandler(this.button_Heberger_Hover);
             this.btnHeberger.MouseLeave += new System.EventHandler(this.button_Heberger_Out);
             // 
@@ -112,7 +113,8 @@ namespace BJ_S
             this.btnRejoindre.Size = new System.Drawing.Size(272, 500);
             this.btnRejoindre.TabIndex = 2;
             this.btnRejoindre.UseVisualStyleBackColor = false;
-            this.btnRejoindre.Click += new System.EventHandler(this.Rejoindre_Click);
+            //this.btnRejoindre.Click += new System.EventHandler(this.Rejoindre_Click);
+            this.btnRejoindre.Click += new System.EventHandler(this.cardClick);
             this.btnRejoindre.MouseEnter += new System.EventHandler(this.button_Rejoindre_Hover);
             this.btnRejoindre.MouseLeave += new System.EventHandler(this.button_Rejoindre_Out);
             // 
