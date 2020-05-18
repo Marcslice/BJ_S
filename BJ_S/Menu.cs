@@ -19,6 +19,7 @@ namespace BJ_S
         Label titre;
         BlackuJacku m_BJController;
         System.Windows.Forms.Timer t = new System.Windows.Forms.Timer();
+        DateTime lastTime;
         bool op = false;
 
         public Menu(BlackuJacku BJ)
@@ -26,6 +27,7 @@ namespace BJ_S
             m_BJController = BJ;
             InitializeComponent();
             this.lblIP.Text = m_BJController.QuelEstMonIP();
+            lastTime = DateTime.Now;
         }
 
         public Form FormBuilder(string nom, string titre, string message) {
@@ -33,7 +35,7 @@ namespace BJ_S
             basic.AutoSize = true;
             basic.MaximizeBox = false;
             basic.MinimizeBox = false;
-            basic.Size = new Size(360, 100);
+            basic.Size = new Size(300, 100);
             basic.Name = nom;
             basic.Text = titre ;
             basic.StartPosition = FormStartPosition.Manual;
@@ -47,7 +49,7 @@ namespace BJ_S
 
             Button ok = new Button();
             ok.Size = new Size(50,40);
-            ok.Location = new Point(basic.Width - 55, basic.Height - 45);
+            ok.Location = new Point(220, basic.Height - 80);
             ok.Text = "OK";
             ok.Click += new System.EventHandler(CloseCustomForm);
 
@@ -73,8 +75,8 @@ namespace BJ_S
         {
             Form entryForm = FormBuilder("formTestAlert", "Entry", "this is Entry test");
             TextBox entry = new TextBox();
-            entry.Location = new Point(0, 50);
-            entry.Size = new Size(entryForm.Width - 10, 50);
+            entry.Location = new Point(10, 30);
+            entry.Size = new Size(200, 50);
 
             entryForm.Controls.Add(entry);
             return entryForm;
@@ -349,6 +351,9 @@ namespace BJ_S
 
 
         private void flip(object sender, EventArgs e) {
+
+            TimeSpan GameTime = DateTime.Now - lastTime;
+            lastTime = lastTime + GameTime;
 
             if (!op)
             {

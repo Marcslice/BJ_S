@@ -76,6 +76,8 @@ namespace BJ_S
 
         private void btnExpendHover(object sender, EventArgs e) {
             Button bt = (Button)sender;
+            bt.BackColor = Color.Black;
+
             bt.BackgroundImage = Image.FromFile("../../images/"+bt.Name+"On.png");
         }
 

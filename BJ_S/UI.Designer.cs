@@ -335,7 +335,7 @@
             this.buttonExpendFeed.Name = "buttonExpendFeed";
             this.buttonExpendFeed.Size = new System.Drawing.Size(66, 61);
             this.buttonExpendFeed.TabIndex = 1;
-            this.buttonExpendFeed.UseVisualStyleBackColor = true;
+            this.buttonExpendFeed.UseVisualStyleBackColor = false;
             this.buttonExpendFeed.Click += new System.EventHandler(this.btnExtendfeedClick);
             this.buttonExpendFeed.MouseEnter += new System.EventHandler(this.btnExpendHover);
             this.buttonExpendFeed.MouseLeave += new System.EventHandler(this.btnExpendOut);
