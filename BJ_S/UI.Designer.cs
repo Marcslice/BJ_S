@@ -291,7 +291,7 @@
             // imgSabot
             // 
             this.imgSabot.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.imgSabot.Location = new System.Drawing.Point(313, 169);
+            this.imgSabot.Location = new System.Drawing.Point(295, 166);
             this.imgSabot.Name = "imgSabot";
             this.imgSabot.Size = new System.Drawing.Size(195, 120);
             this.imgSabot.TabIndex = 10;

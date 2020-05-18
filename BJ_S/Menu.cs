@@ -19,6 +19,7 @@ namespace BJ_S
         Label titre;
         BlackuJacku m_BJController;
         System.Windows.Forms.Timer t = new System.Windows.Forms.Timer();
+        bool op = false;
 
         public Menu(BlackuJacku BJ)
         {
@@ -347,8 +348,32 @@ namespace BJ_S
         public delegate void updateWaitingMessage();
 
 
+        private void flip(object sender, EventArgs e) {
+
+            if (!op)
+            {
+                this.btnLocal.Width -= 20;
+                if (btnLocal.Width == 0)
+                    op = true;
+            }
+            else
+            {
+                this.btnLocal.Width += 20;
+                if (btnLocal.Width >= 181)
+                {
+                    t.Stop();
+                    op = false;
+                }
+            }
+        }
+
         private void localClick(object sender, EventArgs e) 
         {
+            
+            t.Interval = 10;
+            t.Start();
+            t.Tick += new EventHandler(flip);
+
         }
     }
 }

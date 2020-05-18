@@ -68,12 +68,14 @@ namespace BJ_S
             // 
             // btnLocal
             // 
+            this.btnLocal.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnLocal.BackColor = System.Drawing.Color.SteelBlue;
             this.btnLocal.BackgroundImage = global::BJ_S.Properties.Resources.carteLocalOut;
             this.btnLocal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLocal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLocal.Location = new System.Drawing.Point(0, 3);
+            this.btnLocal.MaximumSize = new System.Drawing.Size(272, 500);
             this.btnLocal.Name = "btnLocal";
             this.btnLocal.Size = new System.Drawing.Size(272, 500);
             this.btnLocal.TabIndex = 0;
