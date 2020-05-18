@@ -53,14 +53,14 @@ namespace BJ_S
             this.panelPrincipale.Controls.Add(this.pictureBox2);
             this.panelPrincipale.Location = new System.Drawing.Point(106, 70);
             this.panelPrincipale.Name = "panelPrincipale";
-            this.panelPrincipale.Size = new System.Drawing.Size(889, 730);
+            this.panelPrincipale.Size = new System.Drawing.Size(880, 730);
             this.panelPrincipale.TabIndex = 5;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::BJ_S.Properties.Resources.TitreJeu;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(452, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(440, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(437, 50);
             this.pictureBox1.TabIndex = 3;
@@ -74,10 +74,10 @@ namespace BJ_S
             this.btnLocal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLocal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLocal.Location = new System.Drawing.Point(0, 3);
-            this.btnLocal.MaximumSize = new System.Drawing.Size(272, 500);
+            this.btnLocal.Location = new System.Drawing.Point(0, 0);
+            this.btnLocal.MaximumSize = new System.Drawing.Size(260, 500);
             this.btnLocal.Name = "btnLocal";
-            this.btnLocal.Size = new System.Drawing.Size(272, 500);
+            this.btnLocal.Size = new System.Drawing.Size(260, 500);
             this.btnLocal.TabIndex = 0;
             this.btnLocal.UseVisualStyleBackColor = false;
             this.btnLocal.Click += new System.EventHandler(this.cardClick);
@@ -91,13 +91,12 @@ namespace BJ_S
             this.btnHeberger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnHeberger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHeberger.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHeberger.Location = new System.Drawing.Point(306, 115);
+            this.btnHeberger.Location = new System.Drawing.Point(310, 115);
             this.btnHeberger.Name = "btnHeberger";
-            this.btnHeberger.Size = new System.Drawing.Size(272, 500);
+            this.btnHeberger.Size = new System.Drawing.Size(260, 500);
             this.btnHeberger.TabIndex = 1;
             this.btnHeberger.UseVisualStyleBackColor = false;
             this.btnHeberger.Click += new System.EventHandler(this.cardClick);
-            //this.btnHeberger.Click += new System.EventHandler(this.Heberger_Click);
             this.btnHeberger.MouseEnter += new System.EventHandler(this.button_Heberger_Hover);
             this.btnHeberger.MouseLeave += new System.EventHandler(this.button_Heberger_Out);
             // 
@@ -108,13 +107,12 @@ namespace BJ_S
             this.btnRejoindre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRejoindre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRejoindre.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRejoindre.Location = new System.Drawing.Point(617, 231);
+            this.btnRejoindre.Location = new System.Drawing.Point(620, 231);
             this.btnRejoindre.Name = "btnRejoindre";
-            this.btnRejoindre.Size = new System.Drawing.Size(272, 500);
+            this.btnRejoindre.Size = new System.Drawing.Size(260, 500);
             this.btnRejoindre.TabIndex = 2;
             this.btnRejoindre.UseVisualStyleBackColor = false;
             this.btnRejoindre.Click += new System.EventHandler(this.Rejoindre_Click);
-            //this.btnRejoindre.Click += new System.EventHandler(this.cardClick);
             this.btnRejoindre.MouseEnter += new System.EventHandler(this.button_Rejoindre_Hover);
             this.btnRejoindre.MouseLeave += new System.EventHandler(this.button_Rejoindre_Out);
             // 

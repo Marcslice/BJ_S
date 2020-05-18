@@ -349,25 +349,30 @@ namespace BJ_S
         private void flip(object sender, EventArgs e, Button b) {         
 
             t.Stop();
-            if(!op)
+            if (!op)
             {
                 b.Width -= 20;
                 b.Location = new Point(b.Location.X + 10, b.Location.Y);
-                this.Refresh();
-                if (b.Width == 0)
+                if (b.Width <= 20)
+                {
+                    b.BackgroundImage = Image.FromFile("../../images/localFlipped.png");
                     op = true;
-                
+                }
+
                 t.Enabled = true;
             }
             else
             {
-                b.BackgroundImage = Image.FromFile("../../images/localFlipped.png");
-                b.Width += 20;
-                b.Location = new Point(b.Location.X - 10, b.Location.Y);
-                this.Refresh();
-                t.Enabled = true;
-                if (b.Width >= 181)
-                {
+                if (b.Width <= 170)
+                {                  
+                    b.Width += 20;
+                    if (b.Location.X < 10)
+                        b.Location = new Point(0, b.Location.Y);
+                    else
+                        b.Location = new Point(b.Location.X - 10, b.Location.Y);
+                    t.Enabled = true;
+                }
+                else{
                     op = false;
                     t.Stop();
                     t.Dispose();
