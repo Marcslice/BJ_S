@@ -160,5 +160,8 @@
   <ItemGroup>
     <None Include="images\jeton10Out.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="images\FondBourseStyle2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

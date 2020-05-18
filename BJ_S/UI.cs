@@ -74,6 +74,17 @@ namespace BJ_S
             }
         }
 
+        private void btnExpendHover(object sender, EventArgs e) {
+            Button bt = (Button)sender;
+            bt.BackgroundImage = Image.FromFile("../../images/"+bt.Name+"On.png");
+        }
+
+        private void btnExpendOut(object sender, EventArgs e)
+        {
+            Button bt = (Button)sender;
+            bt.BackgroundImage = Image.FromFile("../../images/" + bt.Name + ".png");
+        }
+
         private void jetonsHover(object sender, EventArgs e)
         {
             PictureBox hovered = (PictureBox)sender;
@@ -94,18 +105,21 @@ namespace BJ_S
             if (extended)
             {
                 feedPanel.Height = 200;
-                this.btnExpendFeed.Location = new Point(this.btnExpendFeed.Location.X, this.btnExpendFeed.Location.Y + 150);
+                this.buttonExpendFeed.Location = new Point(this.buttonExpendFeed.Location.X, this.buttonExpendFeed.Location.Y + 150);
                 foreach (Label l in feed)
                     l.Visible = true;
-                this.btnExpendFeed.BackgroundImage = Image.FromFile("../../images/buttonCloseFeed.png");
+                
+                this.buttonExpendFeed.BackgroundImage = Image.FromFile("../../images/buttonCloseFeed.png");
+                this.buttonExpendFeed.Name = "buttonCloseFeed";
             }
             else
             {
                 feedPanel.Height = 50;
-                this.btnExpendFeed.Location = new Point(this.btnExpendFeed.Location.X, this.btnExpendFeed.Location.Y - 150);
+                this.buttonExpendFeed.Location = new Point(this.buttonExpendFeed.Location.X, this.buttonExpendFeed.Location.Y - 150);
                 for (int x = 4; x > 0; x--)
                     feed[x].Visible = false;
-                this.btnExpendFeed.BackgroundImage = Image.FromFile("../../images/buttonExpendFeed.png");
+                this.buttonExpendFeed.BackgroundImage = Image.FromFile("../../images/buttonExpendFeed.png");
+                this.buttonExpendFeed.Name = "buttonExpendFeed";
             }
         }
 
@@ -122,7 +136,5 @@ namespace BJ_S
 
             lblFeed1.Text = update;
         }
-
-
     }
 }

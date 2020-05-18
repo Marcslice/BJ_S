@@ -127,20 +127,23 @@
   <data name="buttonExpendFeed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\buttonExpendFeed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="porteFermer" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\porteFermer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="FondMenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\FondMenu.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FondBourse" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\FondBourse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="porteFermer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\porteFermer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="jeton25Out" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\jeton25Out.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="jeton10Out" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\jeton10Out.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FondBourse" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\FondBourse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jeton50Out" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\jeton50Out.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="table" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\table.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,8 +166,8 @@
   <data name="carteLocalOut" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\carteLocalOut.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="jeton50Out" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\jeton50Out.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="carteRejoindreMouseOut" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\carteRejoindreMouseOut.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,7 +181,7 @@
   <data name="FondBoiteChoix" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\FondBoiteChoix.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="jeton10Out" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\jeton10Out.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="FondBourseStyle2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\FondBourseStyle2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

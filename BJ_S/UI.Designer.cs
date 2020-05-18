@@ -51,7 +51,7 @@
             this.imgSabot = new System.Windows.Forms.PictureBox();
             this.feedPanel = new System.Windows.Forms.Panel();
             this.lblFeed5 = new System.Windows.Forms.Label();
-            this.btnExpendFeed = new System.Windows.Forms.Button();
+            this.buttonExpendFeed = new System.Windows.Forms.Button();
             this.lblFeed4 = new System.Windows.Forms.Label();
             this.lblFeed1 = new System.Windows.Forms.Label();
             this.lblFeed3 = new System.Windows.Forms.Label();
@@ -65,6 +65,8 @@
             this.btnMiser = new System.Windows.Forms.PictureBox();
             this.btnHit = new System.Windows.Forms.PictureBox();
             this.btnStand = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.mainJ1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -300,12 +302,12 @@
             this.feedPanel.BackColor = System.Drawing.Color.Transparent;
             this.feedPanel.BackgroundImage = global::BJ_S.Properties.Resources.feedExtended;
             this.feedPanel.Controls.Add(this.lblFeed5);
-            this.feedPanel.Controls.Add(this.btnExpendFeed);
+            this.feedPanel.Controls.Add(this.buttonExpendFeed);
             this.feedPanel.Controls.Add(this.lblFeed4);
             this.feedPanel.Controls.Add(this.lblFeed1);
             this.feedPanel.Controls.Add(this.lblFeed3);
             this.feedPanel.Controls.Add(this.lblFeed2);
-            this.feedPanel.Location = new System.Drawing.Point(1206, 7);
+            this.feedPanel.Location = new System.Drawing.Point(1206, 5);
             this.feedPanel.Name = "feedPanel";
             this.feedPanel.Size = new System.Drawing.Size(721, 77);
             this.feedPanel.TabIndex = 11;
@@ -322,18 +324,21 @@
             this.lblFeed5.TabIndex = 19;
             this.lblFeed5.Visible = false;
             // 
-            // btnExpendFeed
+            // buttonExpendFeed
             // 
-            this.btnExpendFeed.BackgroundImage = global::BJ_S.Properties.Resources.buttonExpendFeed;
-            this.btnExpendFeed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnExpendFeed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExpendFeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExpendFeed.Location = new System.Drawing.Point(652, 14);
-            this.btnExpendFeed.Name = "btnExpendFeed";
-            this.btnExpendFeed.Size = new System.Drawing.Size(56, 51);
-            this.btnExpendFeed.TabIndex = 1;
-            this.btnExpendFeed.UseVisualStyleBackColor = true;
-            this.btnExpendFeed.Click += new System.EventHandler(this.btnExtendfeedClick);
+            this.buttonExpendFeed.BackgroundImage = global::BJ_S.Properties.Resources.buttonExpendFeed;
+            this.buttonExpendFeed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonExpendFeed.FlatAppearance.BorderSize = 0;
+            this.buttonExpendFeed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExpendFeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExpendFeed.Location = new System.Drawing.Point(642, 7);
+            this.buttonExpendFeed.Name = "buttonExpendFeed";
+            this.buttonExpendFeed.Size = new System.Drawing.Size(66, 61);
+            this.buttonExpendFeed.TabIndex = 1;
+            this.buttonExpendFeed.UseVisualStyleBackColor = true;
+            this.buttonExpendFeed.Click += new System.EventHandler(this.btnExtendfeedClick);
+            this.buttonExpendFeed.MouseEnter += new System.EventHandler(this.btnExpendHover);
+            this.buttonExpendFeed.MouseLeave += new System.EventHandler(this.btnExpendOut);
             // 
             // lblFeed4
             // 
@@ -385,24 +390,24 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImage = global::BJ_S.Properties.Resources.FondBourse1;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.BackgroundImage = global::BJ_S.Properties.Resources.FondBourseStyle2;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.jeton10);
             this.panel1.Controls.Add(this.jeton25);
             this.panel1.Controls.Add(this.jeton50);
             this.panel1.Controls.Add(this.lblMontantPorteFeuille);
-            this.panel1.Location = new System.Drawing.Point(6, 632);
+            this.panel1.Location = new System.Drawing.Point(-21, 841);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(301, 483);
+            this.panel1.Size = new System.Drawing.Size(400, 220);
             this.panel1.TabIndex = 12;
             // 
             // jeton10
             // 
             this.jeton10.BackgroundImage = global::BJ_S.Properties.Resources.jeton10Out;
             this.jeton10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.jeton10.Location = new System.Drawing.Point(108, 323);
+            this.jeton10.Location = new System.Drawing.Point(52, 110);
             this.jeton10.Name = "jeton10";
-            this.jeton10.Size = new System.Drawing.Size(80, 80);
+            this.jeton10.Size = new System.Drawing.Size(90, 90);
             this.jeton10.TabIndex = 19;
             this.jeton10.TabStop = false;
             this.jeton10.Click += new System.EventHandler(this.jetonsClick);
@@ -413,9 +418,9 @@
             // 
             this.jeton25.BackgroundImage = global::BJ_S.Properties.Resources.jeton25Out;
             this.jeton25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.jeton25.Location = new System.Drawing.Point(109, 237);
+            this.jeton25.Location = new System.Drawing.Point(159, 110);
             this.jeton25.Name = "jeton25";
-            this.jeton25.Size = new System.Drawing.Size(80, 80);
+            this.jeton25.Size = new System.Drawing.Size(90, 90);
             this.jeton25.TabIndex = 18;
             this.jeton25.TabStop = false;
             this.jeton25.Click += new System.EventHandler(this.jetonsClick);
@@ -426,9 +431,9 @@
             // 
             this.jeton50.BackgroundImage = global::BJ_S.Properties.Resources.jeton50Out;
             this.jeton50.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.jeton50.Location = new System.Drawing.Point(109, 149);
+            this.jeton50.Location = new System.Drawing.Point(265, 110);
             this.jeton50.Name = "jeton50";
-            this.jeton50.Size = new System.Drawing.Size(80, 80);
+            this.jeton50.Size = new System.Drawing.Size(90, 90);
             this.jeton50.TabIndex = 17;
             this.jeton50.TabStop = false;
             this.jeton50.Click += new System.EventHandler(this.jetonsClick);
@@ -440,7 +445,7 @@
             this.lblMontantPorteFeuille.AutoSize = true;
             this.lblMontantPorteFeuille.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMontantPorteFeuille.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblMontantPorteFeuille.Location = new System.Drawing.Point(108, 95);
+            this.lblMontantPorteFeuille.Location = new System.Drawing.Point(155, 36);
             this.lblMontantPorteFeuille.Name = "lblMontantPorteFeuille";
             this.lblMontantPorteFeuille.Size = new System.Drawing.Size(86, 46);
             this.lblMontantPorteFeuille.TabIndex = 16;
@@ -460,7 +465,7 @@
             this.btnMiser.BackColor = System.Drawing.Color.Transparent;
             this.btnMiser.BackgroundImage = global::BJ_S.Properties.Resources.buttonMiserOut;
             this.btnMiser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnMiser.Location = new System.Drawing.Point(313, 929);
+            this.btnMiser.Location = new System.Drawing.Point(356, 929);
             this.btnMiser.Name = "btnMiser";
             this.btnMiser.Size = new System.Drawing.Size(250, 120);
             this.btnMiser.TabIndex = 14;
@@ -494,6 +499,30 @@
             this.btnStand.MouseEnter += new System.EventHandler(this.btnStand_hover);
             this.btnStand.MouseLeave += new System.EventHandler(this.btnStand_Out);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 803);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(246, 46);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Votre main : ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(246, 807);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 40);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "16";
+            // 
             // UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -501,6 +530,8 @@
             this.BackgroundImage = global::BJ_S.Properties.Resources.table;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1938, 1061);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnMiser);
             this.Controls.Add(this.lblJ1);
             this.Controls.Add(this.btnStand);
@@ -570,7 +601,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblMontantPorteFeuille;
         private System.Windows.Forms.Panel mainCroupier;
-        private System.Windows.Forms.Button btnExpendFeed;
+        private System.Windows.Forms.Button buttonExpendFeed;
         private System.Windows.Forms.Label lblFeed1;
         private System.Windows.Forms.PictureBox btnMiser;
         private System.Windows.Forms.PictureBox btnHit;
@@ -592,5 +623,7 @@
         private System.Windows.Forms.Label lblFeed3;
         private System.Windows.Forms.Label lblFeed4;
         private System.Windows.Forms.Label lblFeed5;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
