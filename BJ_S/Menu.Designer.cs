@@ -113,8 +113,8 @@ namespace BJ_S
             this.btnRejoindre.Size = new System.Drawing.Size(272, 500);
             this.btnRejoindre.TabIndex = 2;
             this.btnRejoindre.UseVisualStyleBackColor = false;
-            //this.btnRejoindre.Click += new System.EventHandler(this.Rejoindre_Click);
-            this.btnRejoindre.Click += new System.EventHandler(this.cardClick);
+            this.btnRejoindre.Click += new System.EventHandler(this.Rejoindre_Click);
+            //this.btnRejoindre.Click += new System.EventHandler(this.cardClick);
             this.btnRejoindre.MouseEnter += new System.EventHandler(this.button_Rejoindre_Hover);
             this.btnRejoindre.MouseLeave += new System.EventHandler(this.button_Rejoindre_Out);
             // 

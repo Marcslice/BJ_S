@@ -239,7 +239,7 @@
             this.mainJ4.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.mainJ4.Controls.Add(this.pictureBox3);
             this.mainJ4.Controls.Add(this.pictureBox4);
-            this.mainJ4.Location = new System.Drawing.Point(1206, 625);
+            this.mainJ4.Location = new System.Drawing.Point(1206, 628);
             this.mainJ4.Name = "mainJ4";
             this.mainJ4.Size = new System.Drawing.Size(233, 136);
             this.mainJ4.TabIndex = 8;
@@ -405,7 +405,7 @@
             // 
             this.jeton10.BackgroundImage = global::BJ_S.Properties.Resources.jeton10Out;
             this.jeton10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.jeton10.Location = new System.Drawing.Point(52, 110);
+            this.jeton10.Location = new System.Drawing.Point(56, 110);
             this.jeton10.Name = "jeton10";
             this.jeton10.Size = new System.Drawing.Size(90, 90);
             this.jeton10.TabIndex = 19;
@@ -418,7 +418,7 @@
             // 
             this.jeton25.BackgroundImage = global::BJ_S.Properties.Resources.jeton25Out;
             this.jeton25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.jeton25.Location = new System.Drawing.Point(159, 110);
+            this.jeton25.Location = new System.Drawing.Point(156, 110);
             this.jeton25.Name = "jeton25";
             this.jeton25.Size = new System.Drawing.Size(90, 90);
             this.jeton25.TabIndex = 18;
@@ -431,7 +431,7 @@
             // 
             this.jeton50.BackgroundImage = global::BJ_S.Properties.Resources.jeton50Out;
             this.jeton50.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.jeton50.Location = new System.Drawing.Point(265, 110);
+            this.jeton50.Location = new System.Drawing.Point(256, 110);
             this.jeton50.Name = "jeton50";
             this.jeton50.Size = new System.Drawing.Size(90, 90);
             this.jeton50.TabIndex = 17;
@@ -445,7 +445,7 @@
             this.lblMontantPorteFeuille.AutoSize = true;
             this.lblMontantPorteFeuille.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMontantPorteFeuille.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblMontantPorteFeuille.Location = new System.Drawing.Point(155, 36);
+            this.lblMontantPorteFeuille.Location = new System.Drawing.Point(159, 36);
             this.lblMontantPorteFeuille.Name = "lblMontantPorteFeuille";
             this.lblMontantPorteFeuille.Size = new System.Drawing.Size(86, 46);
             this.lblMontantPorteFeuille.TabIndex = 16;

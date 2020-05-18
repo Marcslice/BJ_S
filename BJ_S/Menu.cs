@@ -312,8 +312,6 @@ namespace BJ_S
             m_BJController.NouvellePartie(2);
         }
 
-
-
         //subThread
 
 
@@ -373,6 +371,7 @@ namespace BJ_S
                     op = false;
                     t.Stop();
                     t.Dispose();
+                    t = null;
                 }               
             }
         }
@@ -380,10 +379,13 @@ namespace BJ_S
         private void cardClick(object sender, EventArgs e) 
         {
             Button b = (Button)sender;
-            t = new System.Windows.Forms.Timer();
-            t.Interval = 1;
-            t.Start();
-            t.Tick += (sender2, e2) => flip(sender2, e2, b);
+            if (t == null)
+            {
+                t = new System.Windows.Forms.Timer();
+                t.Interval = 1;
+                t.Start();
+                t.Tick += (sender2, e2) => flip(sender2, e2, b);
+            }
         }
     }
 }
