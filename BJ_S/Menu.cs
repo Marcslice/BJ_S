@@ -303,30 +303,28 @@ namespace BJ_S
             }
         }
 
-
         private void flip(object sender, EventArgs e, Button b) {         
 
             t.Stop();
 
             if (b.Tag.Equals("facingUp"))
-            {
                 flipEnvers(b);
-            }
-            else {
+            else
                 flipEndroit(b);
-            }
         }
 
         private void cardClick(object sender, EventArgs e) 
         {
             Button b = (Button)sender;
+            b.Enabled = false;
             if (t == null)
-            {
+            {              
                 t = new System.Windows.Forms.Timer();
                 t.Interval = 1;
                 t.Start();
                 t.Tick += (sender2, e2) => flip(sender2, e2, b);
             }
+            b.Enabled = true;
         }
 
         // UTILITIES
