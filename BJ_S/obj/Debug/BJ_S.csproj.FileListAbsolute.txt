@@ -7,3 +7,14 @@ C:\Users\marc_\Desktop\BJ'S\BJ_S\bin\Debug\BJ_S.pdb
 C:\Users\marc_\Desktop\BJ'S\BJ_S\obj\Debug\BJ_S.csprojAssemblyReference.cache
 C:\Users\marc_\Desktop\BJ'S\BJ_S\obj\Debug\BJ_S.exe
 C:\Users\marc_\Desktop\BJ'S\BJ_S\obj\Debug\BJ_S.pdb
+C:\Users\lxhit\Desktop\ecole\Travaux\Prog-3\BJ_S\BJ_S\bin\Debug\BJ_S.exe.config
+C:\Users\lxhit\Desktop\ecole\Travaux\Prog-3\BJ_S\BJ_S\bin\Debug\BJ_S.exe
+C:\Users\lxhit\Desktop\ecole\Travaux\Prog-3\BJ_S\BJ_S\bin\Debug\BJ_S.pdb
+C:\Users\lxhit\Desktop\ecole\Travaux\Prog-3\BJ_S\BJ_S\obj\Debug\BJ_S.csprojAssemblyReference.cache
+C:\Users\lxhit\Desktop\ecole\Travaux\Prog-3\BJ_S\BJ_S\obj\Debug\BJ_S.Menu.resources
+C:\Users\lxhit\Desktop\ecole\Travaux\Prog-3\BJ_S\BJ_S\obj\Debug\BJ_S.Properties.Resources.resources
+C:\Users\lxhit\Desktop\ecole\Travaux\Prog-3\BJ_S\BJ_S\obj\Debug\BJ_S.UI.resources
+C:\Users\lxhit\Desktop\ecole\Travaux\Prog-3\BJ_S\BJ_S\obj\Debug\BJ_S.csproj.GenerateResource.cache
+C:\Users\lxhit\Desktop\ecole\Travaux\Prog-3\BJ_S\BJ_S\obj\Debug\BJ_S.csproj.CoreCompileInputs.cache
+C:\Users\lxhit\Desktop\ecole\Travaux\Prog-3\BJ_S\BJ_S\obj\Debug\BJ_S.exe
+C:\Users\lxhit\Desktop\ecole\Travaux\Prog-3\BJ_S\BJ_S\obj\Debug\BJ_S.pdb
