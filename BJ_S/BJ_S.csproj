@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="AI.cs" />
     <Compile Include="Cartes.cs" />
+    <Compile Include="UIU.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -162,6 +163,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="images\FondBourseStyle2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\carteHebergerOut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\carteRejoindreOut.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

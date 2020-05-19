@@ -31,14 +31,20 @@ namespace BJ_S
         {
             this.panelPrincipale = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnLocal = new System.Windows.Forms.Button();
-            this.btnHeberger = new System.Windows.Forms.Button();
-            this.btnRejoindre = new System.Windows.Forms.Button();
+            this.carteLocal = new System.Windows.Forms.Button();
+            this.carteHeberger = new System.Windows.Forms.Button();
+            this.carteRejoindre = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblYourIP = new System.Windows.Forms.Label();
             this.lblIP = new System.Windows.Forms.Label();
-            this.btnQuitter = new System.Windows.Forms.Button();
             this.Devs = new System.Windows.Forms.Label();
+            this.btnQuitter = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.panelPrincipale.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -46,10 +52,16 @@ namespace BJ_S
             // 
             // panelPrincipale
             // 
+            this.panelPrincipale.Controls.Add(this.button5);
+            this.panelPrincipale.Controls.Add(this.button6);
+            this.panelPrincipale.Controls.Add(this.button3);
+            this.panelPrincipale.Controls.Add(this.button4);
+            this.panelPrincipale.Controls.Add(this.button2);
+            this.panelPrincipale.Controls.Add(this.button1);
             this.panelPrincipale.Controls.Add(this.pictureBox1);
-            this.panelPrincipale.Controls.Add(this.btnLocal);
-            this.panelPrincipale.Controls.Add(this.btnHeberger);
-            this.panelPrincipale.Controls.Add(this.btnRejoindre);
+            this.panelPrincipale.Controls.Add(this.carteLocal);
+            this.panelPrincipale.Controls.Add(this.carteHeberger);
+            this.panelPrincipale.Controls.Add(this.carteRejoindre);
             this.panelPrincipale.Controls.Add(this.pictureBox2);
             this.panelPrincipale.Location = new System.Drawing.Point(106, 70);
             this.panelPrincipale.Name = "panelPrincipale";
@@ -66,55 +78,58 @@ namespace BJ_S
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // btnLocal
+            // carteLocal
             // 
-            this.btnLocal.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnLocal.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnLocal.BackgroundImage = global::BJ_S.Properties.Resources.carteLocalOut;
-            this.btnLocal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLocal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLocal.Location = new System.Drawing.Point(0, 0);
-            this.btnLocal.MaximumSize = new System.Drawing.Size(260, 500);
-            this.btnLocal.Name = "btnLocal";
-            this.btnLocal.Size = new System.Drawing.Size(260, 500);
-            this.btnLocal.TabIndex = 0;
-            this.btnLocal.UseVisualStyleBackColor = false;
-            this.btnLocal.Click += new System.EventHandler(this.cardClick);
-            this.btnLocal.MouseEnter += new System.EventHandler(this.button_Local_Hover);
-            this.btnLocal.MouseLeave += new System.EventHandler(this.button_Local_Out);
+            this.carteLocal.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.carteLocal.BackColor = System.Drawing.Color.Transparent;
+            this.carteLocal.BackgroundImage = global::BJ_S.Properties.Resources.carteLocalOut;
+            this.carteLocal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.carteLocal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.carteLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.carteLocal.Location = new System.Drawing.Point(0, 0);
+            this.carteLocal.MaximumSize = new System.Drawing.Size(260, 500);
+            this.carteLocal.Name = "carteLocal";
+            this.carteLocal.Size = new System.Drawing.Size(260, 500);
+            this.carteLocal.TabIndex = 0;
+            this.carteLocal.Tag = "facingUp";
+            this.carteLocal.UseVisualStyleBackColor = false;
+            this.carteLocal.Click += new System.EventHandler(this.cardClick);
+            this.carteLocal.MouseEnter += new System.EventHandler(this.button_Card_Hover);
+            this.carteLocal.MouseLeave += new System.EventHandler(this.button_Card_Out);
             // 
-            // btnHeberger
+            // carteHeberger
             // 
-            this.btnHeberger.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnHeberger.BackgroundImage = global::BJ_S.Properties.Resources.carteHebergeOut;
-            this.btnHeberger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnHeberger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHeberger.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHeberger.Location = new System.Drawing.Point(310, 115);
-            this.btnHeberger.Name = "btnHeberger";
-            this.btnHeberger.Size = new System.Drawing.Size(260, 500);
-            this.btnHeberger.TabIndex = 1;
-            this.btnHeberger.UseVisualStyleBackColor = false;
-            this.btnHeberger.Click += new System.EventHandler(this.cardClick);
-            this.btnHeberger.MouseEnter += new System.EventHandler(this.button_Heberger_Hover);
-            this.btnHeberger.MouseLeave += new System.EventHandler(this.button_Heberger_Out);
+            this.carteHeberger.BackColor = System.Drawing.Color.Transparent;
+            this.carteHeberger.BackgroundImage = global::BJ_S.Properties.Resources.carteHebergerOut;
+            this.carteHeberger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.carteHeberger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.carteHeberger.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.carteHeberger.Location = new System.Drawing.Point(310, 115);
+            this.carteHeberger.Name = "carteHeberger";
+            this.carteHeberger.Size = new System.Drawing.Size(260, 500);
+            this.carteHeberger.TabIndex = 1;
+            this.carteHeberger.Tag = "facingUp";
+            this.carteHeberger.UseVisualStyleBackColor = false;
+            this.carteHeberger.Click += new System.EventHandler(this.cardClick);
+            this.carteHeberger.MouseEnter += new System.EventHandler(this.button_Card_Hover);
+            this.carteHeberger.MouseLeave += new System.EventHandler(this.button_Card_Out);
             // 
-            // btnRejoindre
+            // carteRejoindre
             // 
-            this.btnRejoindre.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnRejoindre.BackgroundImage = global::BJ_S.Properties.Resources.carteRejoindreMouseOut;
-            this.btnRejoindre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRejoindre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRejoindre.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRejoindre.Location = new System.Drawing.Point(620, 231);
-            this.btnRejoindre.Name = "btnRejoindre";
-            this.btnRejoindre.Size = new System.Drawing.Size(260, 500);
-            this.btnRejoindre.TabIndex = 2;
-            this.btnRejoindre.UseVisualStyleBackColor = false;
-            this.btnRejoindre.Click += new System.EventHandler(this.Rejoindre_Click);
-            this.btnRejoindre.MouseEnter += new System.EventHandler(this.button_Rejoindre_Hover);
-            this.btnRejoindre.MouseLeave += new System.EventHandler(this.button_Rejoindre_Out);
+            this.carteRejoindre.BackColor = System.Drawing.Color.Transparent;
+            this.carteRejoindre.BackgroundImage = global::BJ_S.Properties.Resources.carteRejoindreOut;
+            this.carteRejoindre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.carteRejoindre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.carteRejoindre.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.carteRejoindre.Location = new System.Drawing.Point(620, 231);
+            this.carteRejoindre.Name = "carteRejoindre";
+            this.carteRejoindre.Size = new System.Drawing.Size(260, 500);
+            this.carteRejoindre.TabIndex = 2;
+            this.carteRejoindre.Tag = "facingUp";
+            this.carteRejoindre.UseVisualStyleBackColor = false;
+            this.carteRejoindre.Click += new System.EventHandler(this.Rejoindre_Click);
+            this.carteRejoindre.MouseEnter += new System.EventHandler(this.button_Card_Hover);
+            this.carteRejoindre.MouseLeave += new System.EventHandler(this.button_Card_Out);
             // 
             // pictureBox2
             // 
@@ -145,6 +160,17 @@ namespace BJ_S
             this.lblIP.Size = new System.Drawing.Size(224, 32);
             this.lblIP.TabIndex = 0;
             // 
+            // Devs
+            // 
+            this.Devs.AutoSize = true;
+            this.Devs.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Devs.ForeColor = System.Drawing.Color.White;
+            this.Devs.Location = new System.Drawing.Point(369, 880);
+            this.Devs.Name = "Devs";
+            this.Devs.Size = new System.Drawing.Size(358, 64);
+            this.Devs.TabIndex = 6;
+            this.Devs.Text = "Marc-André Larocque Blais\r\nJean-François Duchesne";
+            // 
             // btnQuitter
             // 
             this.btnQuitter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -162,16 +188,65 @@ namespace BJ_S
             this.btnQuitter.MouseEnter += new System.EventHandler(this.button_Quitter_Hover);
             this.btnQuitter.MouseLeave += new System.EventHandler(this.button_Quitter_Out);
             // 
-            // Devs
+            // button1
             // 
-            this.Devs.AutoSize = true;
-            this.Devs.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Devs.ForeColor = System.Drawing.Color.White;
-            this.Devs.Location = new System.Drawing.Point(369, 880);
-            this.Devs.Name = "Devs";
-            this.Devs.Size = new System.Drawing.Size(358, 64);
-            this.Devs.TabIndex = 6;
-            this.Devs.Text = "Marc-André Larocque Blais\r\nJean-François Duchesne";
+            this.button1.Location = new System.Drawing.Point(30, 159);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(199, 86);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(30, 278);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(199, 86);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(341, 382);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(199, 86);
+            this.button3.TabIndex = 10;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(341, 263);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(199, 86);
+            this.button4.TabIndex = 9;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Visible = false;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(649, 501);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(199, 86);
+            this.button5.TabIndex = 12;
+            this.button5.Text = "button5";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Visible = false;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(649, 382);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(199, 86);
+            this.button6.TabIndex = 11;
+            this.button6.Text = "button6";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Visible = false;
             // 
             // Menu
             // 
@@ -200,9 +275,9 @@ namespace BJ_S
 
         #endregion
         private System.Windows.Forms.Form messages;
-        private System.Windows.Forms.Button btnLocal;
-        private System.Windows.Forms.Button btnHeberger;
-        private System.Windows.Forms.Button btnRejoindre;
+        private System.Windows.Forms.Button carteLocal;
+        private System.Windows.Forms.Button carteHeberger;
+        private System.Windows.Forms.Button carteRejoindre;
         private System.Windows.Forms.Button btnQuitter;
         private System.Windows.Forms.Label lblYourIP;
         private System.Windows.Forms.Label lblIP;
@@ -210,6 +285,12 @@ namespace BJ_S
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label Devs;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }
 

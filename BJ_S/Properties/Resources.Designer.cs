@@ -123,9 +123,9 @@ namespace BJ_S.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap carteHebergeOut {
+        internal static System.Drawing.Bitmap carteHebergerOut {
             get {
-                object obj = ResourceManager.GetObject("carteHebergeOut", resourceCulture);
+                object obj = ResourceManager.GetObject("carteHebergerOut", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +143,9 @@ namespace BJ_S.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap carteRejoindreMouseOut {
+        internal static System.Drawing.Bitmap carteRejoindreOut {
             get {
-                object obj = ResourceManager.GetObject("carteRejoindreMouseOut", resourceCulture);
+                object obj = ResourceManager.GetObject("carteRejoindreOut", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -19,7 +19,7 @@ namespace BJ_S
         Label titre;
         BlackuJacku m_BJController;
         System.Windows.Forms.Timer t;
-        bool op = false;
+        bool flipped = false;
 
         public Menu(BlackuJacku BJ)
         {
@@ -28,61 +28,8 @@ namespace BJ_S
             this.lblIP.Text = m_BJController.QuelEstMonIP();
         }
 
-        public Form FormBuilder(string nom, string titre, string message) {
-            Form basic = new Form();
-            basic.AutoSize = true;
-            basic.MaximizeBox = false;
-            basic.MinimizeBox = false;
-            basic.Size = new Size(300, 100);
-            basic.Name = nom;
-            basic.Text = titre ;
-            basic.StartPosition = FormStartPosition.Manual;
-            basic.Location = new Point(this.Location.X + this.Width / 2 - 200, this.Location.Y + this.Height / 2);
-            basic.FormClosing += new FormClosingEventHandler(this.RejoindreAdresse_Close);
-
-            Label lblMessage = new Label();
-            lblMessage.Text = message;
-            lblMessage.Location = new Point(0, 0);
-            lblMessage.TextAlign = ContentAlignment.MiddleCenter;
-
-            Button ok = new Button();
-            ok.Size = new Size(50,40);
-            ok.Location = new Point(220, basic.Height - 80);
-            ok.Text = "OK";
-            ok.Click += new System.EventHandler(CloseCustomForm);
-
-            basic.Controls.Add(lblMessage);
-            basic.Controls.Add(ok);
-
-            return basic;
-        }
-
-        public void CloseCustomForm(object sender, EventArgs e) {
-            Button b = (Button)sender;
-            Form f = (Form)b.GetContainerControl();
-            f.Close();
-        }
-
-        public Form AlerteBuilder()
-        {
-            Form alert = FormBuilder("formTestAlert", "Alerte", "this is Alert test");
-            return alert;
-        }
-
-        public Form EntryBuilder()
-        {
-            Form entryForm = FormBuilder("formTestAlert", "Entry", "this is Entry test");
-            TextBox entry = new TextBox();
-            entry.Location = new Point(10, 30);
-            entry.Size = new Size(200, 50);
-
-            entryForm.Controls.Add(entry);
-            return entryForm;
-        }
-
-
         public string DemanderNomJoueur() {
-            Form NJ = EntryBuilder();
+            Form NJ = EntryBuilder("PlayerName", "Nom de joueur", "Entrez le nom de joueur que vous voulez utiliser.");
             NJ.Show();
             return "";
         }
@@ -101,49 +48,13 @@ namespace BJ_S
 
         private void Rejoindre_Click(object sender, EventArgs e)
         {
-            this.messages = new Form();
+          //  Form rejoindreQui = EntryBuilder("ServerForm", "Adresse IP", "Entrez l'adresse IP de l'hôte que vous voulez rejoindre.");
 
-            if (!messages.Visible)
-            {
+          //  this.Enabled = false;
+          //  rejoindreQui.BringToFront();
+          //  rejoindreQui.Show();
 
-                //PANEL
-                messages.AutoSize = true;
-                messages.MaximizeBox = false;
-                messages.MinimizeBox = false;
-                messages.Size = new Size(360, 100);
-                messages.Name = "Adresse IP";
-                messages.Text = "Adresse IP";
-                messages.StartPosition = FormStartPosition.Manual;
-                messages.Location = new Point(this.Location.X + this.Width / 2 - 200, this.Location.Y + this.Height / 2);
-                messages.FormClosing += new FormClosingEventHandler(this.RejoindreAdresse_Close);
-
-                //Controls
-                Label msg = new Label();
-                msg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                msg.Width = 350;
-                msg.Height = 30;
-                msg.Location = new Point(10, 10);
-                msg.Text = "Entrez l'adresse de l'hôte que vous voulez rejoidre.";
-
-                TextBox qui = new TextBox();
-                qui.Size = new Size(200, 40);
-                qui.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                qui.Location = new Point(10, 50);
-
-                Button OK = new Button();
-                OK.Text = "Rejoindre";
-                OK.Size = new Size(100, 40);
-                OK.Location = new Point(messages.Width - 110, messages.Height - 60);
-                OK.Click += new EventHandler(this.AfficherRejoindre);
-
-                messages.Controls.Add(msg);
-                messages.Controls.Add(qui);
-                messages.Controls.Add(OK);
-            }
-
-            this.Enabled = false;
-            messages.BringToFront();
-            messages.Show();
+            m_BJController.NouvellePartie(3);
         }
 
         private void Heberger_Click(object sender, EventArgs e)
@@ -190,7 +101,6 @@ namespace BJ_S
 
             panelAttente.BringToFront();
             this.Controls.Add(panelAttente);
-            int compteur = 1;
 
             Thread t = new Thread(new ThreadStart(delegateMessage));
             t.Start();
@@ -201,23 +111,11 @@ namespace BJ_S
             m_BJController.Quitter();
         }
 
-        private void button_Local_Hover(object sender, EventArgs e)
+        private void button_Card_Hover(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-
-            btn.BackgroundImage = Image.FromFile("../../images/carteLocalOn.png");
-        }
-        private void button_Heberger_Hover(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-
-            btn.BackgroundImage = Image.FromFile("../../images/carteHebergerOn.png");
-        }
-        private void button_Rejoindre_Hover(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-
-            btn.BackgroundImage = Image.FromFile("../../images/carteRejoindreOn.png");
+            if(btn.Tag.Equals("facingUp"))
+                btn.BackgroundImage = Image.FromFile("../../images/" + btn.Name + "On.png");
         }
         private void button_Quitter_Hover(object sender, EventArgs e)
         {
@@ -226,22 +124,11 @@ namespace BJ_S
             btn.BackgroundImage = Image.FromFile("../../images/porteOuverte.png");
         }
 
-        private void button_Local_Out(object sender, EventArgs e)
+        private void button_Card_Out(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            btn.BackgroundImage = Image.FromFile("../../images/carteLocalOut.png");
-        }
-
-        private void button_Heberger_Out(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            btn.BackgroundImage = Image.FromFile("../../images/carteHebergeOut.png");
-        }
-        private void button_Rejoindre_Out(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            btn.BackgroundImage = Image.FromFile("../../images/carteRejoindreMouseOut.png");
-
+            if (btn.Tag.Equals("facingUp"))
+                btn.BackgroundImage = Image.FromFile("../../images/" + btn.Name + "Out.png");
         }
         private void button_Quitter_Out(object sender, EventArgs e)
         {
@@ -345,18 +232,16 @@ namespace BJ_S
 
         public delegate void updateWaitingMessage();
 
-
-        private void flip(object sender, EventArgs e, Button b) {         
-
-            t.Stop();
-            if (!op)
+        private void flipEnvers(Button b) {
+            if (!flipped)
             {
                 b.Width -= 20;
                 b.Location = new Point(b.Location.X + 10, b.Location.Y);
                 if (b.Width <= 20)
                 {
-                    b.BackgroundImage = Image.FromFile("../../images/localFlipped.png");
-                    op = true;
+                    b.BackgroundImage = Image.FromFile("../../images/carteFlipped.png");
+                    b.Tag = "facingDown";
+                    flipped = true;
                 }
 
                 t.Enabled = true;
@@ -364,7 +249,7 @@ namespace BJ_S
             else
             {
                 if (b.Width <= 170)
-                {                  
+                {
                     b.Width += 20;
                     if (b.Location.X < 10)
                         b.Location = new Point(0, b.Location.Y);
@@ -372,12 +257,63 @@ namespace BJ_S
                         b.Location = new Point(b.Location.X - 10, b.Location.Y);
                     t.Enabled = true;
                 }
-                else{
-                    op = false;
+                else
+                {
+                    flipped = false;
                     t.Stop();
                     t.Dispose();
                     t = null;
-                }               
+                }
+            }
+        }
+
+        private void flipEndroit(Button b)
+        {
+            if (!flipped)
+            {
+                b.Width -= 20;
+                b.Location = new Point(b.Location.X + 10, b.Location.Y);
+                if (b.Width <= 20)
+                {
+                    b.BackgroundImage = Image.FromFile("../../images/"+b.Name+"Out.png");
+                    b.Tag = "facingUp";
+                    flipped = true;
+                }
+
+                t.Enabled = true;
+            }
+            else
+            {
+                if (b.Width <= 170)
+                {
+                    b.Width += 20;
+                    if (b.Location.X < 10)
+                        b.Location = new Point(0, b.Location.Y);
+                    else
+                        b.Location = new Point(b.Location.X - 10, b.Location.Y);
+                    t.Enabled = true;
+                }
+                else
+                {
+                    flipped = false;
+                    t.Stop();
+                    t.Dispose();
+                    t = null;
+                }
+            }
+        }
+
+
+        private void flip(object sender, EventArgs e, Button b) {         
+
+            t.Stop();
+
+            if (b.Tag.Equals("facingUp"))
+            {
+                flipEnvers(b);
+            }
+            else {
+                flipEndroit(b);
             }
         }
 
@@ -391,6 +327,62 @@ namespace BJ_S
                 t.Start();
                 t.Tick += (sender2, e2) => flip(sender2, e2, b);
             }
+        }
+
+        // UTILITIES
+        public Form FormBuilder(string nom, string titre, string message)
+        {
+            Form basic = new Form();
+            basic.AutoSize = true;
+            basic.MaximizeBox = false;
+            basic.MinimizeBox = false;
+            basic.Size = new Size(300, 100);
+            basic.Name = nom;
+            basic.Text = titre;
+            basic.StartPosition = FormStartPosition.Manual;
+            basic.Location = new Point(this.Location.X + this.Width / 2 - 200, this.Location.Y + this.Height / 2);
+            basic.FormClosing += new FormClosingEventHandler(this.RejoindreAdresse_Close);
+
+            Label lblMessage = new Label();
+            lblMessage.Width = 260;
+            lblMessage.Text = message;
+            lblMessage.Location = new Point(0, 0);
+            lblMessage.TextAlign = ContentAlignment.MiddleCenter;
+
+            Button ok = new Button();
+            ok.Size = new Size(50, 30);
+            ok.Location = new Point(220, basic.Height - 75);
+            ok.Text = "OK";
+            ok.Click += new System.EventHandler(CloseCustomForm);
+
+            basic.Controls.Add(lblMessage);
+            basic.Controls.Add(ok);
+
+            return basic;
+        }
+
+        public void CloseCustomForm(object sender, EventArgs e)
+        {
+            Button b = (Button)sender;
+            Form f = (Form)b.GetContainerControl();
+            f.Close();
+        }
+
+        public Form AlerteBuilder(string nom, string titre, string message)
+        {
+            Form alert = FormBuilder(nom, titre, message);
+            return alert;
+        }
+
+        public Form EntryBuilder(string nom, string titre, string message)
+        {
+            Form entryForm = FormBuilder(nom, titre, message);
+            TextBox entry = new TextBox();
+            entry.Location = new Point(10, 30);
+            entry.Size = new Size(200, 50);
+
+            entryForm.Controls.Add(entry);
+            return entryForm;
         }
     }
 }
