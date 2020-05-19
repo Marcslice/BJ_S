@@ -18,7 +18,6 @@ namespace BJ_S
                 for (int j = 1; j <= 13; j++)
                 {
                     paquet.Add(new Cartes(sortes[i], j));
-                    Console.WriteLine(sortes[i] + j);
                 }
             }
         }

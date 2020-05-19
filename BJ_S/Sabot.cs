@@ -10,7 +10,7 @@ namespace BJ_S
     {
         Paquets[] sabot;
 
-        public Sabot()//that feels weird ma duder
+        public Sabot()
         {
             sabot = new Paquets[8];
             for(int i = 0; i < 8; i++)
