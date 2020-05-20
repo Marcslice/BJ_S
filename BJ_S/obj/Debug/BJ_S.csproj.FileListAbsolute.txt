@@ -7,4 +7,3 @@ C:\Users\marc_\Desktop\BJ'S\BJ_S\obj\Debug\BJ_S.UI.resources
 C:\Users\marc_\Desktop\BJ'S\BJ_S\obj\Debug\BJ_S.csproj.GenerateResource.cache
 C:\Users\marc_\Desktop\BJ'S\BJ_S\obj\Debug\BJ_S.exe
 C:\Users\marc_\Desktop\BJ'S\BJ_S\obj\Debug\BJ_S.pdb
-C:\Users\marc_\Desktop\BJ'S\BJ_S\obj\Debug\BJ_S.csprojAssemblyReference.cache

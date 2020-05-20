@@ -19,7 +19,8 @@ namespace BJ_S
         Label titre;
         BlackuJacku m_BJController;
         System.Windows.Forms.Timer t;
-        bool flipped = false;
+        bool flipped1 = false;
+        Button carteRetournee = null;
 
         public Menu(BlackuJacku BJ)
         {
@@ -206,12 +207,9 @@ namespace BJ_S
 
         private void delegateMessage()
         {
-
-
             int compteur = 1;
             while (compteur < 22) //while connection pas connecter
             {
-
                 Invoke(new updateWaitingMessage(UpdateMessage));
                 compteur++;
 
@@ -232,54 +230,43 @@ namespace BJ_S
 
         public delegate void updateWaitingMessage();
 
-        private void flipEnvers(Button b) {
-            if (!flipped)
-            {
-                b.Width -= 20;
-                b.Location = new Point(b.Location.X + 10, b.Location.Y);
-                if (b.Width <= 20)
-                {
-                    b.BackgroundImage = Image.FromFile("../../images/carteFlipped.png");
-                    b.Tag = "facingDown";
-                    flipped = true;
-                }
-
-                t.Enabled = true;
-            }
-            else
-            {
-                if (b.Width <= 170)
-                {
-                    b.Width += 20;
-                    if (b.Location.X < 10)
-                        b.Location = new Point(0, b.Location.Y);
-                    else
-                        b.Location = new Point(b.Location.X - 10, b.Location.Y);
-                    t.Enabled = true;
-                }
-                else
-                {
-                    flipped = false;
-                    t.Stop();
-                    t.Dispose();
-                    t = null;
-                }
-            }
-        }
-
-        private void flipEndroit(Button b)
+        private void flip(Button b, bool Envers)
         {
-            if (!flipped)
+            if (!flipped1)
             {
                 b.Width -= 20;
                 b.Location = new Point(b.Location.X + 10, b.Location.Y);
-                if (b.Width <= 20)
-                {
-                    b.BackgroundImage = Image.FromFile("../../images/"+b.Name+"Out.png");
-                    b.Tag = "facingUp";
-                    flipped = true;
+                if (carteRetournee != null && b != carteRetournee) {
+                    carteRetournee.Width -= 20;
+                    carteRetournee.Location = new Point(carteRetournee.Location.X + 10, carteRetournee.Location.Y);
                 }
 
+                if (b.Width <= 20)
+                {
+                    if (!Envers)
+                    {
+                        b.BackgroundImage = Image.FromFile("../../images/" + b.Name + "Out.png");
+                        b.Tag = "facingUp";
+                        AfficherCacherBoutonDesCartes(carteRetournee, false);
+                    }
+                    else
+                    {
+                        b.BackgroundImage = Image.FromFile("../../images/carteFlipped.png");
+                        b.Tag = "facingDown";
+                        AfficherCacherBoutonDesCartes(b, true);
+                    }
+
+                    if (carteRetournee != null && b != carteRetournee)
+                    {                      
+                        if (carteRetournee.Width <= 20)
+                        {
+                            carteRetournee.BackgroundImage = Image.FromFile("../../images/" + carteRetournee.Name + "Out.png");
+                            carteRetournee.Tag = "facingUp";
+                            AfficherCacherBoutonDesCartes(carteRetournee, false);
+                        }
+                    }
+                    flipped1 = true;                 
+                }           
                 t.Enabled = true;
             }
             else
@@ -291,11 +278,23 @@ namespace BJ_S
                         b.Location = new Point(0, b.Location.Y);
                     else
                         b.Location = new Point(b.Location.X - 10, b.Location.Y);
+
+                    if (carteRetournee != null && carteRetournee.Width <= 170 && b != carteRetournee)
+                    {
+                        carteRetournee.Width += 20;
+                        carteRetournee.Location = new Point(carteRetournee.Location.X - 10, carteRetournee.Location.Y);
+                    }
+
                     t.Enabled = true;
                 }
                 else
                 {
-                    flipped = false;
+                    if (b != carteRetournee)
+                        carteRetournee = b;
+                    else
+                        carteRetournee = null;
+
+                    flipped1 = false;
                     t.Stop();
                     t.Dispose();
                     t = null;
@@ -303,22 +302,28 @@ namespace BJ_S
             }
         }
 
-        private void flip(object sender, EventArgs e, Button b) {         
+        private void AfficherCacherBoutonDesCartes(Button b, bool afficher) {
+           List<Button> lb = b.Controls.OfType<Button>().ToList();
+            foreach (Button d in lb)
+                d.Visible = afficher;   
+        }
 
+        private void flip(object sender, EventArgs e, Button b)
+        {
             t.Stop();
 
             if (b.Tag.Equals("facingUp"))
-                flipEnvers(b);
+                flip(b, true);
             else
-                flipEndroit(b);
+                flip(b, false);
         }
 
-        private void cardClick(object sender, EventArgs e) 
+        private void cardClick(object sender, EventArgs e)
         {
             Button b = (Button)sender;
             b.Enabled = false;
             if (t == null)
-            {              
+            {
                 t = new System.Windows.Forms.Timer();
                 t.Interval = 1;
                 t.Start();
