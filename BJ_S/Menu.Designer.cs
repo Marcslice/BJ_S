@@ -30,6 +30,9 @@ namespace BJ_S
         private void InitializeComponent()
         {
             this.panelPrincipale = new System.Windows.Forms.Panel();
+            this.lblYourIP = new System.Windows.Forms.Label();
+            this.lblIP = new System.Windows.Forms.Label();
+            this.Devs = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.carteLocal = new System.Windows.Forms.Button();
             this.carteLocalHumain = new System.Windows.Forms.Button();
@@ -41,9 +44,6 @@ namespace BJ_S
             this.carteRejoindreHumain = new System.Windows.Forms.Button();
             this.carteRejoindreAI = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.lblYourIP = new System.Windows.Forms.Label();
-            this.lblIP = new System.Windows.Forms.Label();
-            this.Devs = new System.Windows.Forms.Label();
             this.btnQuitter = new System.Windows.Forms.Button();
             this.panelPrincipale.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -60,20 +60,48 @@ namespace BJ_S
             this.panelPrincipale.Controls.Add(this.carteHeberger);
             this.panelPrincipale.Controls.Add(this.carteRejoindre);
             this.panelPrincipale.Controls.Add(this.pictureBox2);
-            this.panelPrincipale.Location = new System.Drawing.Point(71, 45);
-            this.panelPrincipale.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelPrincipale.Location = new System.Drawing.Point(106, 69);
             this.panelPrincipale.Name = "panelPrincipale";
-            this.panelPrincipale.Size = new System.Drawing.Size(587, 474);
+            this.panelPrincipale.Size = new System.Drawing.Size(880, 729);
             this.panelPrincipale.TabIndex = 5;
+            // 
+            // lblYourIP
+            // 
+            this.lblYourIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblYourIP.ForeColor = System.Drawing.Color.White;
+            this.lblYourIP.Location = new System.Drawing.Point(100, 880);
+            this.lblYourIP.Name = "lblYourIP";
+            this.lblYourIP.Size = new System.Drawing.Size(224, 32);
+            this.lblYourIP.TabIndex = 0;
+            this.lblYourIP.Text = "Votre adresse IP";
+            // 
+            // lblIP
+            // 
+            this.lblIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIP.ForeColor = System.Drawing.Color.White;
+            this.lblIP.Location = new System.Drawing.Point(100, 929);
+            this.lblIP.Name = "lblIP";
+            this.lblIP.Size = new System.Drawing.Size(224, 32);
+            this.lblIP.TabIndex = 0;
+            // 
+            // Devs
+            // 
+            this.Devs.AutoSize = true;
+            this.Devs.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Devs.ForeColor = System.Drawing.Color.White;
+            this.Devs.Location = new System.Drawing.Point(369, 880);
+            this.Devs.Name = "Devs";
+            this.Devs.Size = new System.Drawing.Size(358, 64);
+            this.Devs.TabIndex = 6;
+            this.Devs.Text = "Marc-André Larocque Blais\r\nJean-François Duchesne";
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::BJ_S.Properties.Resources.TitreJeu;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(293, 2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(440, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(291, 32);
+            this.pictureBox1.Size = new System.Drawing.Size(436, 49);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
@@ -88,10 +116,9 @@ namespace BJ_S
             this.carteLocal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.carteLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.carteLocal.Location = new System.Drawing.Point(0, 0);
-            this.carteLocal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.carteLocal.MaximumSize = new System.Drawing.Size(173, 325);
+            this.carteLocal.MaximumSize = new System.Drawing.Size(260, 500);
             this.carteLocal.Name = "carteLocal";
-            this.carteLocal.Size = new System.Drawing.Size(173, 325);
+            this.carteLocal.Size = new System.Drawing.Size(260, 500);
             this.carteLocal.TabIndex = 0;
             this.carteLocal.Tag = "facingUp";
             this.carteLocal.UseVisualStyleBackColor = false;
@@ -101,24 +128,28 @@ namespace BJ_S
             // 
             // carteLocalHumain
             // 
-            this.carteLocalHumain.Location = new System.Drawing.Point(20, 103);
-            this.carteLocalHumain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.carteLocalHumain.BackColor = System.Drawing.Color.White;
+            this.carteLocalHumain.BackgroundImage = global::BJ_S.Properties.Resources.btnHumain;
+            this.carteLocalHumain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.carteLocalHumain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.carteLocalHumain.Location = new System.Drawing.Point(30, 158);
             this.carteLocalHumain.Name = "carteLocalHumain";
-            this.carteLocalHumain.Size = new System.Drawing.Size(133, 56);
+            this.carteLocalHumain.Size = new System.Drawing.Size(200, 86);
             this.carteLocalHumain.TabIndex = 7;
-            this.carteLocalHumain.Text = "Humain";
-            this.carteLocalHumain.UseVisualStyleBackColor = true;
+            this.carteLocalHumain.UseVisualStyleBackColor = false;
             this.carteLocalHumain.Visible = false;
             // 
             // carteLocalAI
             // 
-            this.carteLocalAI.Location = new System.Drawing.Point(20, 181);
-            this.carteLocalAI.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.carteLocalAI.BackColor = System.Drawing.Color.White;
+            this.carteLocalAI.BackgroundImage = global::BJ_S.Properties.Resources.btnIA;
+            this.carteLocalAI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.carteLocalAI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.carteLocalAI.Location = new System.Drawing.Point(30, 278);
             this.carteLocalAI.Name = "carteLocalAI";
-            this.carteLocalAI.Size = new System.Drawing.Size(133, 56);
+            this.carteLocalAI.Size = new System.Drawing.Size(200, 86);
             this.carteLocalAI.TabIndex = 8;
-            this.carteLocalAI.Text = "AI";
-            this.carteLocalAI.UseVisualStyleBackColor = true;
+            this.carteLocalAI.UseVisualStyleBackColor = false;
             this.carteLocalAI.Visible = false;
             // 
             // carteHeberger
@@ -130,10 +161,9 @@ namespace BJ_S
             this.carteHeberger.Controls.Add(this.carteHebergerAI);
             this.carteHeberger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.carteHeberger.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.carteHeberger.Location = new System.Drawing.Point(207, 75);
-            this.carteHeberger.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.carteHeberger.Location = new System.Drawing.Point(310, 115);
             this.carteHeberger.Name = "carteHeberger";
-            this.carteHeberger.Size = new System.Drawing.Size(173, 325);
+            this.carteHeberger.Size = new System.Drawing.Size(260, 500);
             this.carteHeberger.TabIndex = 1;
             this.carteHeberger.Tag = "facingUp";
             this.carteHeberger.UseVisualStyleBackColor = false;
@@ -143,26 +173,30 @@ namespace BJ_S
             // 
             // carteHebergerHumain
             // 
+            this.carteHebergerHumain.BackColor = System.Drawing.Color.White;
+            this.carteHebergerHumain.BackgroundImage = global::BJ_S.Properties.Resources.btnHumain;
+            this.carteHebergerHumain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.carteHebergerHumain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.carteHebergerHumain.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.carteHebergerHumain.Location = new System.Drawing.Point(20, 103);
-            this.carteHebergerHumain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.carteHebergerHumain.Location = new System.Drawing.Point(30, 158);
             this.carteHebergerHumain.Name = "carteHebergerHumain";
-            this.carteHebergerHumain.Size = new System.Drawing.Size(133, 56);
+            this.carteHebergerHumain.Size = new System.Drawing.Size(200, 86);
             this.carteHebergerHumain.TabIndex = 9;
-            this.carteHebergerHumain.Text = "Humain";
-            this.carteHebergerHumain.UseVisualStyleBackColor = true;
+            this.carteHebergerHumain.UseVisualStyleBackColor = false;
             this.carteHebergerHumain.Visible = false;
             // 
             // carteHebergerAI
             // 
+            this.carteHebergerAI.BackColor = System.Drawing.Color.White;
+            this.carteHebergerAI.BackgroundImage = global::BJ_S.Properties.Resources.btnIA;
+            this.carteHebergerAI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.carteHebergerAI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.carteHebergerAI.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.carteHebergerAI.Location = new System.Drawing.Point(20, 181);
-            this.carteHebergerAI.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.carteHebergerAI.Location = new System.Drawing.Point(30, 278);
             this.carteHebergerAI.Name = "carteHebergerAI";
-            this.carteHebergerAI.Size = new System.Drawing.Size(133, 56);
+            this.carteHebergerAI.Size = new System.Drawing.Size(200, 86);
             this.carteHebergerAI.TabIndex = 10;
-            this.carteHebergerAI.Text = "AI";
-            this.carteHebergerAI.UseVisualStyleBackColor = true;
+            this.carteHebergerAI.UseVisualStyleBackColor = false;
             this.carteHebergerAI.Visible = false;
             // 
             // carteRejoindre
@@ -174,10 +208,9 @@ namespace BJ_S
             this.carteRejoindre.Controls.Add(this.carteRejoindreAI);
             this.carteRejoindre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.carteRejoindre.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.carteRejoindre.Location = new System.Drawing.Point(413, 150);
-            this.carteRejoindre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.carteRejoindre.Location = new System.Drawing.Point(620, 231);
             this.carteRejoindre.Name = "carteRejoindre";
-            this.carteRejoindre.Size = new System.Drawing.Size(173, 325);
+            this.carteRejoindre.Size = new System.Drawing.Size(260, 500);
             this.carteRejoindre.TabIndex = 2;
             this.carteRejoindre.Tag = "facingUp";
             this.carteRejoindre.UseVisualStyleBackColor = false;
@@ -187,71 +220,41 @@ namespace BJ_S
             // 
             // carteRejoindreHumain
             // 
+            this.carteRejoindreHumain.BackColor = System.Drawing.Color.White;
+            this.carteRejoindreHumain.BackgroundImage = global::BJ_S.Properties.Resources.btnHumain;
+            this.carteRejoindreHumain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.carteRejoindreHumain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.carteRejoindreHumain.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.carteRejoindreHumain.Location = new System.Drawing.Point(20, 103);
-            this.carteRejoindreHumain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.carteRejoindreHumain.Location = new System.Drawing.Point(30, 158);
             this.carteRejoindreHumain.Name = "carteRejoindreHumain";
-            this.carteRejoindreHumain.Size = new System.Drawing.Size(133, 56);
+            this.carteRejoindreHumain.Size = new System.Drawing.Size(200, 86);
             this.carteRejoindreHumain.TabIndex = 11;
-            this.carteRejoindreHumain.Text = "Humain";
-            this.carteRejoindreHumain.UseVisualStyleBackColor = true;
+            this.carteRejoindreHumain.UseVisualStyleBackColor = false;
             this.carteRejoindreHumain.Visible = false;
             // 
             // carteRejoindreAI
             // 
+            this.carteRejoindreAI.BackColor = System.Drawing.Color.White;
+            this.carteRejoindreAI.BackgroundImage = global::BJ_S.Properties.Resources.btnIA;
+            this.carteRejoindreAI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.carteRejoindreAI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.carteRejoindreAI.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.carteRejoindreAI.Location = new System.Drawing.Point(20, 181);
-            this.carteRejoindreAI.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.carteRejoindreAI.Location = new System.Drawing.Point(30, 278);
             this.carteRejoindreAI.Name = "carteRejoindreAI";
-            this.carteRejoindreAI.Size = new System.Drawing.Size(133, 56);
+            this.carteRejoindreAI.Size = new System.Drawing.Size(200, 86);
             this.carteRejoindreAI.TabIndex = 12;
-            this.carteRejoindreAI.Text = "AI";
-            this.carteRejoindreAI.UseVisualStyleBackColor = true;
+            this.carteRejoindreAI.UseVisualStyleBackColor = false;
             this.carteRejoindreAI.Visible = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImage = global::BJ_S.Properties.Resources.spotlight;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(41, 64);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Location = new System.Drawing.Point(62, 98);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(549, 410);
+            this.pictureBox2.Size = new System.Drawing.Size(824, 631);
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
-            // 
-            // lblYourIP
-            // 
-            this.lblYourIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblYourIP.ForeColor = System.Drawing.Color.White;
-            this.lblYourIP.Location = new System.Drawing.Point(67, 572);
-            this.lblYourIP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblYourIP.Name = "lblYourIP";
-            this.lblYourIP.Size = new System.Drawing.Size(149, 21);
-            this.lblYourIP.TabIndex = 0;
-            this.lblYourIP.Text = "Votre adresse IP";
-            // 
-            // lblIP
-            // 
-            this.lblIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIP.ForeColor = System.Drawing.Color.White;
-            this.lblIP.Location = new System.Drawing.Point(67, 604);
-            this.lblIP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblIP.Name = "lblIP";
-            this.lblIP.Size = new System.Drawing.Size(149, 21);
-            this.lblIP.TabIndex = 0;
-            // 
-            // Devs
-            // 
-            this.Devs.AutoSize = true;
-            this.Devs.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Devs.ForeColor = System.Drawing.Color.White;
-            this.Devs.Location = new System.Drawing.Point(246, 572);
-            this.Devs.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Devs.Name = "Devs";
-            this.Devs.Size = new System.Drawing.Size(239, 48);
-            this.Devs.TabIndex = 6;
-            this.Devs.Text = "Marc-André Larocque Blais\r\nJean-François Duchesne";
             // 
             // btnQuitter
             // 
@@ -261,10 +264,9 @@ namespace BJ_S
             this.btnQuitter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnQuitter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuitter.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuitter.Location = new System.Drawing.Point(605, 543);
-            this.btnQuitter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnQuitter.Location = new System.Drawing.Point(908, 835);
             this.btnQuitter.Name = "btnQuitter";
-            this.btnQuitter.Size = new System.Drawing.Size(58, 73);
+            this.btnQuitter.Size = new System.Drawing.Size(87, 112);
             this.btnQuitter.TabIndex = 3;
             this.btnQuitter.UseVisualStyleBackColor = false;
             this.btnQuitter.Click += new System.EventHandler(this.Quit_Click);
@@ -273,18 +275,17 @@ namespace BJ_S
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(720, 650);
+            this.ClientSize = new System.Drawing.Size(1080, 1000);
             this.Controls.Add(this.Devs);
             this.Controls.Add(this.lblYourIP);
             this.Controls.Add(this.lblIP);
             this.Controls.Add(this.panelPrincipale);
             this.Controls.Add(this.btnQuitter);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Menu";

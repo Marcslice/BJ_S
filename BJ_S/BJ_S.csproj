@@ -170,5 +170,11 @@
   <ItemGroup>
     <None Include="images\carteRejoindreOut.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="images\btnHumain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\btnIA.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
