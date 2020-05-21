@@ -352,12 +352,12 @@ namespace BJ_S
             switch (sw.Name) {
                 case "btnPlusJoueurs":
                     nbActuel = Int32.Parse(tBoxNbJoueur.Text);
-                    if(nbActuel < 3)
+                    if(nbActuel < 4)
                         this.tBoxNbJoueur.Text = $"{++nbActuel}";
                     break;
                 case "btnPlusAI":
                     nbActuel = Int32.Parse(tBoxNbAI.Text);
-                    if (nbActuel < 2)
+                    if (nbActuel < 3)
                         this.tBoxNbAI.Text = $"{++nbActuel}";
                     break;
                 case "btnMoinsJoueurs":
