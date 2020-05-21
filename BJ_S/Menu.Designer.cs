@@ -30,10 +30,6 @@ namespace BJ_S
         private void InitializeComponent()
         {
             this.panelPrincipale = new System.Windows.Forms.Panel();
-            this.btnPlusAI = new System.Windows.Forms.Button();
-            this.btnMoinsAI = new System.Windows.Forms.Button();
-            this.btnPlusJoueurs = new System.Windows.Forms.Button();
-            this.btnMoinsJoueurs = new System.Windows.Forms.Button();
             this.carteLocal = new System.Windows.Forms.Button();
             this.carteLocalHumain = new System.Windows.Forms.Button();
             this.carteLocalAI = new System.Windows.Forms.Button();
@@ -43,6 +39,10 @@ namespace BJ_S
             this.lblNbAI = new System.Windows.Forms.Label();
             this.tBoxNbJoueur = new System.Windows.Forms.TextBox();
             this.tBoxNbAI = new System.Windows.Forms.TextBox();
+            this.btnPlusAI = new System.Windows.Forms.Button();
+            this.btnMoinsAI = new System.Windows.Forms.Button();
+            this.btnPlusJoueurs = new System.Windows.Forms.Button();
+            this.btnMoinsJoueurs = new System.Windows.Forms.Button();
             this.carteRejoindre = new System.Windows.Forms.Button();
             this.carteRejoindreHumain = new System.Windows.Forms.Button();
             this.carteRejoindreAI = new System.Windows.Forms.Button();
@@ -61,7 +61,6 @@ namespace BJ_S
             // 
             // panelPrincipale
             // 
-
             this.panelPrincipale.Controls.Add(this.carteLocal);
             this.panelPrincipale.Controls.Add(this.pictureBox1);
             this.panelPrincipale.Controls.Add(this.carteHeberger);
@@ -71,68 +70,6 @@ namespace BJ_S
             this.panelPrincipale.Name = "panelPrincipale";
             this.panelPrincipale.Size = new System.Drawing.Size(880, 729);
             this.panelPrincipale.TabIndex = 5;
-            // 
-            // btnPlusAI
-            // 
-            this.btnPlusAI.BackColor = System.Drawing.Color.White;
-            this.btnPlusAI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnPlusAI.Enabled = false;
-            this.btnPlusAI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlusAI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlusAI.Location = new System.Drawing.Point(170, 304);
-            this.btnPlusAI.Name = "btnPlusAI";
-            this.btnPlusAI.Size = new System.Drawing.Size(48, 42);
-            this.btnPlusAI.TabIndex = 14;
-            this.btnPlusAI.Text = "+";
-            this.btnPlusAI.UseVisualStyleBackColor = false;
-            this.btnPlusAI.Visible = false;
-            this.btnPlusAI.Click += new System.EventHandler(this.btnPlusAI_Click);
-            // 
-            // btnMoinsAI
-            // 
-            this.btnMoinsAI.BackColor = System.Drawing.Color.White;
-            this.btnMoinsAI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnMoinsAI.Enabled = false;
-            this.btnMoinsAI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMoinsAI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMoinsAI.Location = new System.Drawing.Point(35, 304);
-            this.btnMoinsAI.Name = "btnMoinsAI";
-            this.btnMoinsAI.Size = new System.Drawing.Size(48, 42);
-            this.btnMoinsAI.TabIndex = 13;
-            this.btnMoinsAI.Text = "-";
-            this.btnMoinsAI.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnMoinsAI.UseVisualStyleBackColor = false;
-            this.btnMoinsAI.Visible = false;
-            // 
-            // btnPlusJoueurs
-            // 
-            this.btnPlusJoueurs.BackColor = System.Drawing.Color.White;
-            this.btnPlusJoueurs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnPlusJoueurs.Enabled = false;
-            this.btnPlusJoueurs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlusJoueurs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlusJoueurs.Location = new System.Drawing.Point(170, 154);
-            this.btnPlusJoueurs.Name = "btnPlusJoueurs";
-            this.btnPlusJoueurs.Size = new System.Drawing.Size(48, 42);
-            this.btnPlusJoueurs.TabIndex = 11;
-            this.btnPlusJoueurs.Text = "+";
-            this.btnPlusJoueurs.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnPlusJoueurs.UseVisualStyleBackColor = false;
-            this.btnPlusJoueurs.Visible = false;
-            // 
-            // btnMoinsJoueurs
-            // 
-            this.btnMoinsJoueurs.BackColor = System.Drawing.Color.White;
-            this.btnMoinsJoueurs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnMoinsJoueurs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMoinsJoueurs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMoinsJoueurs.Location = new System.Drawing.Point(35, 154);
-            this.btnMoinsJoueurs.Name = "btnMoinsJoueurs";
-            this.btnMoinsJoueurs.Size = new System.Drawing.Size(48, 42);
-            this.btnMoinsJoueurs.TabIndex = 12;
-            this.btnMoinsJoueurs.Text = "-";
-            this.btnMoinsJoueurs.UseVisualStyleBackColor = false;
-            this.btnMoinsJoueurs.Visible = false;
             // 
             // carteLocal
             // 
@@ -267,6 +204,71 @@ namespace BJ_S
             this.tBoxNbAI.Text = "0";
             this.tBoxNbAI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tBoxNbAI.Visible = false;
+            // 
+            // btnPlusAI
+            // 
+            this.btnPlusAI.BackColor = System.Drawing.Color.White;
+            this.btnPlusAI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnPlusAI.Enabled = false;
+            this.btnPlusAI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlusAI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlusAI.Location = new System.Drawing.Point(170, 304);
+            this.btnPlusAI.Name = "btnPlusAI";
+            this.btnPlusAI.Size = new System.Drawing.Size(48, 42);
+            this.btnPlusAI.TabIndex = 14;
+            this.btnPlusAI.Text = "+";
+            this.btnPlusAI.UseVisualStyleBackColor = false;
+            this.btnPlusAI.Visible = false;
+            this.btnPlusAI.Click += new System.EventHandler(tBoxPlusMoins);
+            // 
+            // btnMoinsAI
+            // 
+            this.btnMoinsAI.BackColor = System.Drawing.Color.White;
+            this.btnMoinsAI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnMoinsAI.Enabled = false;
+            this.btnMoinsAI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMoinsAI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMoinsAI.Location = new System.Drawing.Point(35, 304);
+            this.btnMoinsAI.Name = "btnMoinsAI";
+            this.btnMoinsAI.Size = new System.Drawing.Size(48, 42);
+            this.btnMoinsAI.TabIndex = 13;
+            this.btnMoinsAI.Text = "-";
+            this.btnMoinsAI.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnMoinsAI.UseVisualStyleBackColor = false;
+            this.btnMoinsAI.Click += new System.EventHandler(tBoxPlusMoins);
+            this.btnMoinsAI.Visible = false;
+            // 
+            // btnPlusJoueurs
+            // 
+            this.btnPlusJoueurs.BackColor = System.Drawing.Color.White;
+            this.btnPlusJoueurs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnPlusJoueurs.Enabled = false;
+            this.btnPlusJoueurs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlusJoueurs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlusJoueurs.Location = new System.Drawing.Point(170, 154);
+            this.btnPlusJoueurs.Name = "btnPlusJoueurs";
+            this.btnPlusJoueurs.Size = new System.Drawing.Size(48, 42);
+            this.btnPlusJoueurs.TabIndex = 11;
+            this.btnPlusJoueurs.Text = "+";
+            this.btnPlusJoueurs.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnPlusJoueurs.UseVisualStyleBackColor = false;
+            this.btnPlusJoueurs.Click += new System.EventHandler(tBoxPlusMoins);
+            this.btnPlusJoueurs.Visible = false;
+            // 
+            // btnMoinsJoueurs
+            // 
+            this.btnMoinsJoueurs.BackColor = System.Drawing.Color.White;
+            this.btnMoinsJoueurs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnMoinsJoueurs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMoinsJoueurs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMoinsJoueurs.Location = new System.Drawing.Point(35, 154);
+            this.btnMoinsJoueurs.Name = "btnMoinsJoueurs";
+            this.btnMoinsJoueurs.Size = new System.Drawing.Size(48, 42);
+            this.btnMoinsJoueurs.TabIndex = 12;
+            this.btnMoinsJoueurs.Text = "-";
+            this.btnMoinsJoueurs.UseVisualStyleBackColor = false;
+            this.btnMoinsJoueurs.Click += new System.EventHandler(tBoxPlusMoins);
+            this.btnMoinsJoueurs.Visible = false;
             // 
             // carteRejoindre
             // 

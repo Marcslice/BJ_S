@@ -345,12 +345,32 @@ namespace BJ_S
             b.Enabled = true;
         }
 
-        private void tBoxPlus(object sender, EventArgs e) 
+        private void tBoxPlusMoins(object sender, EventArgs e) 
         {
-            Button bt = (Button)sender;
-
-            if (bt.Text.Equals("+")) ;
-                
+            Control sw = (Button)sender;
+            int nbActuel;
+            switch (sw.Name) {
+                case "btnPlusJoueurs":
+                    nbActuel = Int32.Parse(tBoxNbJoueur.Text);
+                    if(nbActuel < 3)
+                        this.tBoxNbJoueur.Text = $"{++nbActuel}";
+                    break;
+                case "btnPlusAI":
+                    nbActuel = Int32.Parse(tBoxNbAI.Text);
+                    if (nbActuel < 2)
+                        this.tBoxNbAI.Text = $"{++nbActuel}";
+                    break;
+                case "btnMoinsJoueurs":
+                    nbActuel = Int32.Parse(tBoxNbJoueur.Text);
+                    if (nbActuel > 1)
+                        this.tBoxNbJoueur.Text = $"{--nbActuel}";
+                    break;
+                case "btnMoinsAI":
+                    nbActuel = Int32.Parse(tBoxNbAI.Text);
+                    if (nbActuel > 0)
+                        this.tBoxNbAI.Text = $"{--nbActuel}";
+                    break;
+            }         
         }
 
         private void tBoxMoins(object sender, EventArgs e) 
