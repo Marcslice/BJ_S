@@ -35,6 +35,13 @@ namespace BJ_S
             return "";
         }
 
+        public string DemanderNombreJoueur()
+        {
+            Form NJ = EntryBuilder("nombreJoueurs", "Nombre de joueurs", "Combien de joueurs en ligne attendez-vous ?");
+            NJ.Show();
+            return "";
+        }
+
         private void RetourAuMenu_Click(object sender, EventArgs e) {
             Panel toRemove = (Panel)this.Controls[this.Controls.Count - 1];
             this.Controls.RemoveAt(this.Controls.Count - 1);
@@ -118,6 +125,7 @@ namespace BJ_S
             if(btn.Tag.Equals("facingUp"))
                 btn.BackgroundImage = Image.FromFile("../../images/" + btn.Name + "On.png");
         }
+
         private void button_Quitter_Hover(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
@@ -131,6 +139,7 @@ namespace BJ_S
             if (btn.Tag.Equals("facingUp"))
                 btn.BackgroundImage = Image.FromFile("../../images/" + btn.Name + "Out.png");
         }
+
         private void button_Quitter_Out(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
@@ -303,9 +312,13 @@ namespace BJ_S
         }
 
         private void AfficherCacherBoutonDesCartes(Button b, bool afficher) {
-           List<Button> lb = b.Controls.OfType<Button>().ToList();
-            foreach (Button d in lb)
-                d.Visible = afficher;   
+            List<Control> listControls = b.Controls.OfType<Control>().ToList();
+            foreach (Control d in listControls)
+            {
+                d.Visible = afficher;
+                if(d.GetType().Name.Equals("Button"))
+                    d.Enabled = afficher;
+            }
         }
 
         private void flip(object sender, EventArgs e, Button b)
@@ -330,6 +343,19 @@ namespace BJ_S
                 t.Tick += (sender2, e2) => flip(sender2, e2, b);
             }
             b.Enabled = true;
+        }
+
+        private void tBoxPlus(object sender, EventArgs e) 
+        {
+            Button bt = (Button)sender;
+
+            if (bt.Text.Equals("+")) ;
+                
+        }
+
+        private void tBoxMoins(object sender, EventArgs e) 
+        {
+                
         }
 
         // UTILITIES
@@ -386,6 +412,11 @@ namespace BJ_S
 
             entryForm.Controls.Add(entry);
             return entryForm;
+        }
+
+        private void btnPlusAI_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

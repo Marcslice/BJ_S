@@ -10,5 +10,10 @@ namespace BJ_S
 			m_UI = new UI();
 			m_UI.Show();
 		}
+
+		void PartieTerminer() {
+			m_UI.Close();
+			//FermerEtReleaseLesSockets
+		}
 	}
 }
