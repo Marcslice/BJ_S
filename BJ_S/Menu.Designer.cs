@@ -30,6 +30,7 @@ namespace BJ_S
         private void InitializeComponent()
         {
             this.panelPrincipale = new System.Windows.Forms.Panel();
+            this.btnLancerHebergement = new System.Windows.Forms.Button();
             this.carteLocal = new System.Windows.Forms.Button();
             this.carteLocalHumain = new System.Windows.Forms.Button();
             this.carteLocalAI = new System.Windows.Forms.Button();
@@ -70,6 +71,21 @@ namespace BJ_S
             this.panelPrincipale.Name = "panelPrincipale";
             this.panelPrincipale.Size = new System.Drawing.Size(880, 729);
             this.panelPrincipale.TabIndex = 5;
+            // 
+            // btnLancerHebergement
+            // 
+            this.btnLancerHebergement.BackColor = System.Drawing.Color.DimGray;
+            this.btnLancerHebergement.FlatAppearance.BorderSize = 0;
+            this.btnLancerHebergement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLancerHebergement.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLancerHebergement.ForeColor = System.Drawing.Color.Gold;
+            this.btnLancerHebergement.Location = new System.Drawing.Point(60, 400);
+            this.btnLancerHebergement.Name = "btnLancerHebergement";
+            this.btnLancerHebergement.Size = new System.Drawing.Size(138, 52);
+            this.btnLancerHebergement.TabIndex = 7;
+            this.btnLancerHebergement.Text = "Lancer";
+            this.btnLancerHebergement.UseVisualStyleBackColor = false;
+            this.btnLancerHebergement.Visible = false;
             // 
             // carteLocal
             // 
@@ -144,6 +160,7 @@ namespace BJ_S
             this.carteHeberger.Controls.Add(this.btnMoinsAI);
             this.carteHeberger.Controls.Add(this.btnPlusJoueurs);
             this.carteHeberger.Controls.Add(this.btnMoinsJoueurs);
+            this.carteHeberger.Controls.Add(this.btnLancerHebergement);
             this.carteHeberger.FlatAppearance.BorderSize = 0;
             this.carteHeberger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.carteHeberger.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -219,7 +236,7 @@ namespace BJ_S
             this.btnPlusAI.Text = "+";
             this.btnPlusAI.UseVisualStyleBackColor = false;
             this.btnPlusAI.Visible = false;
-            this.btnPlusAI.Click += new System.EventHandler(tBoxPlusMoins);
+            this.btnPlusAI.Click += new System.EventHandler(this.tBoxPlusMoins);
             // 
             // btnMoinsAI
             // 
@@ -235,8 +252,8 @@ namespace BJ_S
             this.btnMoinsAI.Text = "-";
             this.btnMoinsAI.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnMoinsAI.UseVisualStyleBackColor = false;
-            this.btnMoinsAI.Click += new System.EventHandler(tBoxPlusMoins);
             this.btnMoinsAI.Visible = false;
+            this.btnMoinsAI.Click += new System.EventHandler(this.tBoxPlusMoins);
             // 
             // btnPlusJoueurs
             // 
@@ -252,8 +269,8 @@ namespace BJ_S
             this.btnPlusJoueurs.Text = "+";
             this.btnPlusJoueurs.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnPlusJoueurs.UseVisualStyleBackColor = false;
-            this.btnPlusJoueurs.Click += new System.EventHandler(tBoxPlusMoins);
             this.btnPlusJoueurs.Visible = false;
+            this.btnPlusJoueurs.Click += new System.EventHandler(this.tBoxPlusMoins);
             // 
             // btnMoinsJoueurs
             // 
@@ -267,8 +284,8 @@ namespace BJ_S
             this.btnMoinsJoueurs.TabIndex = 12;
             this.btnMoinsJoueurs.Text = "-";
             this.btnMoinsJoueurs.UseVisualStyleBackColor = false;
-            this.btnMoinsJoueurs.Click += new System.EventHandler(tBoxPlusMoins);
             this.btnMoinsJoueurs.Visible = false;
+            this.btnMoinsJoueurs.Click += new System.EventHandler(this.tBoxPlusMoins);
             // 
             // carteRejoindre
             // 
@@ -429,6 +446,7 @@ namespace BJ_S
         private System.Windows.Forms.Button btnMoinsAI;
         private System.Windows.Forms.Button btnMoinsJoueurs;
         private System.Windows.Forms.Button btnPlusJoueurs;
+        private System.Windows.Forms.Button btnLancerHebergement;
     }
 }
 

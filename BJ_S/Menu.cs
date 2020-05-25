@@ -373,11 +373,6 @@ namespace BJ_S
             }         
         }
 
-        private void tBoxMoins(object sender, EventArgs e) 
-        {
-                
-        }
-
         // UTILITIES
         public Form FormBuilder(string nom, string titre, string message)
         {
@@ -434,9 +429,5 @@ namespace BJ_S
             return entryForm;
         }
 
-        private void btnPlusAI_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
