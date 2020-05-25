@@ -9,7 +9,7 @@ namespace BJ_S
     class Joueurs
     {
         string m_Nom;
-        double m_Encaisse;
+        int m_Encaisse;
         Connexions m_Connection;
         Mains m_Main;
 
@@ -20,7 +20,7 @@ namespace BJ_S
             else
                 m_Nom = p_Nom;
 
-            m_Encaisse = 500.00;
+            m_Encaisse = 500;
             m_Main = new Mains();
 
             if (enLigne)
@@ -36,6 +36,21 @@ namespace BJ_S
         public string Nom 
         {
             get { return m_Nom; }
+        }
+
+        public int Encaisse 
+        {
+            get { return Encaisse; }
+        }
+
+        public bool RetraitEncaisse(int p_Mise)
+        {
+            if ((m_Encaisse - p_Mise) >= 0)
+            {
+                m_Encaisse -= p_Mise;
+                return true;
+            }
+            return false;       
         }
     }
 }
