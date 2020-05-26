@@ -29,14 +29,16 @@ namespace BJ_S
             for(int i = 0; i < main.Count(); i++){
                 int valeur = main[i].Valeur;
 
-                if(valeur < 10)
+                if (valeur == 1)
+                {
+                    nbAs++;
+                    compte += 11;
+                }
+                else if (valeur < 10)
                     compte += valeur;
                 else
-                {
                     compte += 10;
-                    if (valeur == 14)
-                        nbAs++;
-                }
+
                 
                 //convertie les as en 1 si la valeur de la main depase 21
                 if(compte > 21)
@@ -44,7 +46,7 @@ namespace BJ_S
                     while(nbAs > 0 && compte > 21)
                     {
                         nbAs--;
-                        compte -= 9;
+                        compte -= 10;
                     }
                 }
             }
