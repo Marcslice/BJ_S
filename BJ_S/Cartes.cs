@@ -8,8 +8,8 @@ namespace BJ_S
 {
     public class Cartes
     {
-        public char sorte; //spade,heart,clove,diamond,
-        public int valeur; // 1 a 13
+        char sorte; //spade,heart,clove,diamond,
+        int valeur; // 1 a 13
         string cheminPNG;
 
         public Cartes(char Sorte, int Valeur)
@@ -17,6 +17,11 @@ namespace BJ_S
             sorte = Sorte;
             valeur = Valeur;
             cheminPNG = sorte + valeur + ".png";
+        }
+
+        public int Valeur
+        {
+            get { return valeur; }
         }
     }
 }

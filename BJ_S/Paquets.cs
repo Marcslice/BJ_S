@@ -15,7 +15,7 @@ namespace BJ_S
             string sortes = "shcd";
             for (int i = 0; i < 4; i++)
             {
-                for (int j = 1; j <= 13; j++)
+                for (int j = 2; j <= 14; j++)
                 {
                     paquet.Add(new Cartes(sortes[i], j));
                 }
