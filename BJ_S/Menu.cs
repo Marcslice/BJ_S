@@ -21,6 +21,7 @@ namespace BJ_S
         System.Windows.Forms.Timer t;
         bool flipped1 = false;
         Button carteRetournee = null;
+        const int NBMAXJOUEURS = 5;
 
         public Menu(BlackuJacku BJ)
         {
@@ -347,31 +348,40 @@ namespace BJ_S
 
         private void tBoxPlusMoins(object sender, EventArgs e) 
         {
+            int nbJoueurs, nbAIs;
             Control sw = (Button)sender;
-            int nbActuel;
+            
+            nbJoueurs = Int32.Parse(tBoxNbJoueur.Text);
+            nbAIs = Int32.Parse(tBoxNbAI.Text);
+
             switch (sw.Name) {
                 case "btnPlusJoueurs":
-                    nbActuel = Int32.Parse(tBoxNbJoueur.Text);
-                    if(nbActuel < 4)
-                        this.tBoxNbJoueur.Text = $"{++nbActuel}";
+                    if (nbJoueurs < 5)
+                    {
+                        this.tBoxNbJoueur.Text = $"{++nbJoueurs}";
+                        if ((nbJoueurs + nbAIs) > NBMAXJOUEURS)
+                            this.tBoxNbAI.Text = $"{--nbAIs}";
+                    }
                     break;
                 case "btnPlusAI":
-                    nbActuel = Int32.Parse(tBoxNbAI.Text);
-                    if (nbActuel < 3)
-                        this.tBoxNbAI.Text = $"{++nbActuel}";
+                    if (nbAIs < 3)
+                    {
+                        this.tBoxNbAI.Text = $"{++nbAIs}";
+                        if ((nbJoueurs + nbAIs) > NBMAXJOUEURS)
+                            this.tBoxNbJoueur.Text = $"{--nbJoueurs}";
+                    }
                     break;
                 case "btnMoinsJoueurs":
-                    nbActuel = Int32.Parse(tBoxNbJoueur.Text);
-                    if (nbActuel > 1)
-                        this.tBoxNbJoueur.Text = $"{--nbActuel}";
+                    if (nbJoueurs > 1)
+                        this.tBoxNbJoueur.Text = $"{--nbJoueurs}";
                     break;
                 case "btnMoinsAI":
-                    nbActuel = Int32.Parse(tBoxNbAI.Text);
-                    if (nbActuel > 0)
-                        this.tBoxNbAI.Text = $"{--nbActuel}";
+                    if (nbAIs > 0)
+                        this.tBoxNbAI.Text = $"{--nbAIs}";
                     break;
-            }         
+            }           
         }
+
 
         // UTILITIES
         public Form FormBuilder(string nom, string titre, string message)

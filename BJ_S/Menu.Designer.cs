@@ -30,7 +30,9 @@ namespace BJ_S
         private void InitializeComponent()
         {
             this.panelPrincipale = new System.Windows.Forms.Panel();
-            this.btnLancerHebergement = new System.Windows.Forms.Button();
+            this.tBoxIP = new System.Windows.Forms.TextBox();
+            this.lblRejoindreIP = new System.Windows.Forms.Label();
+            this.btnLancerRejoindre = new System.Windows.Forms.Button();
             this.carteLocal = new System.Windows.Forms.Button();
             this.carteLocalHumain = new System.Windows.Forms.Button();
             this.carteLocalAI = new System.Windows.Forms.Button();
@@ -44,9 +46,8 @@ namespace BJ_S
             this.btnMoinsAI = new System.Windows.Forms.Button();
             this.btnPlusJoueurs = new System.Windows.Forms.Button();
             this.btnMoinsJoueurs = new System.Windows.Forms.Button();
+            this.btnLancerHebergement = new System.Windows.Forms.Button();
             this.carteRejoindre = new System.Windows.Forms.Button();
-            this.carteRejoindreHumain = new System.Windows.Forms.Button();
-            this.carteRejoindreAI = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblYourIP = new System.Windows.Forms.Label();
             this.lblIP = new System.Windows.Forms.Label();
@@ -72,20 +73,43 @@ namespace BJ_S
             this.panelPrincipale.Size = new System.Drawing.Size(880, 729);
             this.panelPrincipale.TabIndex = 5;
             // 
-            // btnLancerHebergement
+            // tBoxIP
             // 
-            this.btnLancerHebergement.BackColor = System.Drawing.Color.DimGray;
-            this.btnLancerHebergement.FlatAppearance.BorderSize = 0;
-            this.btnLancerHebergement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLancerHebergement.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLancerHebergement.ForeColor = System.Drawing.Color.Gold;
-            this.btnLancerHebergement.Location = new System.Drawing.Point(60, 400);
-            this.btnLancerHebergement.Name = "btnLancerHebergement";
-            this.btnLancerHebergement.Size = new System.Drawing.Size(138, 52);
-            this.btnLancerHebergement.TabIndex = 7;
-            this.btnLancerHebergement.Text = "Lancer";
-            this.btnLancerHebergement.UseVisualStyleBackColor = false;
-            this.btnLancerHebergement.Visible = false;
+            this.tBoxIP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tBoxIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tBoxIP.Location = new System.Drawing.Point(45, 250);
+            this.tBoxIP.Name = "tBoxIP";
+            this.tBoxIP.Size = new System.Drawing.Size(171, 35);
+            this.tBoxIP.TabIndex = 10;
+            this.tBoxIP.Visible = false;
+            // 
+            // lblRejoindreIP
+            // 
+            this.lblRejoindreIP.AutoSize = true;
+            this.lblRejoindreIP.BackColor = System.Drawing.Color.White;
+            this.lblRejoindreIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRejoindreIP.Location = new System.Drawing.Point(65, 200);
+            this.lblRejoindreIP.Name = "lblRejoindreIP";
+            this.lblRejoindreIP.Size = new System.Drawing.Size(130, 29);
+            this.lblRejoindreIP.TabIndex = 9;
+            this.lblRejoindreIP.Text = "Adresse IP";
+            this.lblRejoindreIP.Visible = false;
+            // 
+            // btnLancerRejoindre
+            // 
+            this.btnLancerRejoindre.BackColor = System.Drawing.Color.DimGray;
+            this.btnLancerRejoindre.FlatAppearance.BorderSize = 0;
+            this.btnLancerRejoindre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLancerRejoindre.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLancerRejoindre.ForeColor = System.Drawing.Color.Gold;
+            this.btnLancerRejoindre.Location = new System.Drawing.Point(60, 400);
+            this.btnLancerRejoindre.Name = "btnLancerRejoindre";
+            this.btnLancerRejoindre.Size = new System.Drawing.Size(138, 52);
+            this.btnLancerRejoindre.TabIndex = 8;
+            this.btnLancerRejoindre.Text = "Lancer";
+            this.btnLancerRejoindre.UseVisualStyleBackColor = false;
+            this.btnLancerRejoindre.Visible = false;
+            this.btnLancerRejoindre.Click += new System.EventHandler(this.Rejoindre_Click);
             // 
             // carteLocal
             // 
@@ -206,7 +230,7 @@ namespace BJ_S
             this.tBoxNbJoueur.Name = "tBoxNbJoueur";
             this.tBoxNbJoueur.Size = new System.Drawing.Size(78, 44);
             this.tBoxNbJoueur.TabIndex = 7;
-            this.tBoxNbJoueur.Text = "4";
+            this.tBoxNbJoueur.Text = "5";
             this.tBoxNbJoueur.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tBoxNbJoueur.Visible = false;
             // 
@@ -287,13 +311,30 @@ namespace BJ_S
             this.btnMoinsJoueurs.Visible = false;
             this.btnMoinsJoueurs.Click += new System.EventHandler(this.tBoxPlusMoins);
             // 
+            // btnLancerHebergement
+            // 
+            this.btnLancerHebergement.BackColor = System.Drawing.Color.DimGray;
+            this.btnLancerHebergement.FlatAppearance.BorderSize = 0;
+            this.btnLancerHebergement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLancerHebergement.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLancerHebergement.ForeColor = System.Drawing.Color.Gold;
+            this.btnLancerHebergement.Location = new System.Drawing.Point(60, 400);
+            this.btnLancerHebergement.Name = "btnLancerHebergement";
+            this.btnLancerHebergement.Size = new System.Drawing.Size(138, 52);
+            this.btnLancerHebergement.TabIndex = 7;
+            this.btnLancerHebergement.Text = "Lancer";
+            this.btnLancerHebergement.UseVisualStyleBackColor = false;
+            this.btnLancerHebergement.Visible = false;
+            this.btnLancerHebergement.Click += new System.EventHandler(Heberger_Click);
+            // 
             // carteRejoindre
             // 
             this.carteRejoindre.BackColor = System.Drawing.Color.Transparent;
             this.carteRejoindre.BackgroundImage = global::BJ_S.Properties.Resources.carteRejoindreOut;
             this.carteRejoindre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.carteRejoindre.Controls.Add(this.carteRejoindreHumain);
-            this.carteRejoindre.Controls.Add(this.carteRejoindreAI);
+            this.carteRejoindre.Controls.Add(this.lblRejoindreIP);
+            this.carteRejoindre.Controls.Add(this.tBoxIP);
+            this.carteRejoindre.Controls.Add(this.btnLancerRejoindre);
             this.carteRejoindre.FlatAppearance.BorderSize = 0;
             this.carteRejoindre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.carteRejoindre.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -303,39 +344,9 @@ namespace BJ_S
             this.carteRejoindre.TabIndex = 2;
             this.carteRejoindre.Tag = "facingUp";
             this.carteRejoindre.UseVisualStyleBackColor = false;
-            this.carteRejoindre.Click += new System.EventHandler(this.Rejoindre_Click);
+            this.carteRejoindre.Click += new System.EventHandler(this.cardClick);
             this.carteRejoindre.MouseEnter += new System.EventHandler(this.button_Card_Hover);
             this.carteRejoindre.MouseLeave += new System.EventHandler(this.button_Card_Out);
-            // 
-            // carteRejoindreHumain
-            // 
-            this.carteRejoindreHumain.BackColor = System.Drawing.Color.White;
-            this.carteRejoindreHumain.BackgroundImage = global::BJ_S.Properties.Resources.btnHumain;
-            this.carteRejoindreHumain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.carteRejoindreHumain.FlatAppearance.BorderSize = 0;
-            this.carteRejoindreHumain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.carteRejoindreHumain.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.carteRejoindreHumain.Location = new System.Drawing.Point(30, 158);
-            this.carteRejoindreHumain.Name = "carteRejoindreHumain";
-            this.carteRejoindreHumain.Size = new System.Drawing.Size(200, 86);
-            this.carteRejoindreHumain.TabIndex = 11;
-            this.carteRejoindreHumain.UseVisualStyleBackColor = false;
-            this.carteRejoindreHumain.Visible = false;
-            // 
-            // carteRejoindreAI
-            // 
-            this.carteRejoindreAI.BackColor = System.Drawing.Color.White;
-            this.carteRejoindreAI.BackgroundImage = global::BJ_S.Properties.Resources.btnIA;
-            this.carteRejoindreAI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.carteRejoindreAI.FlatAppearance.BorderSize = 0;
-            this.carteRejoindreAI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.carteRejoindreAI.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.carteRejoindreAI.Location = new System.Drawing.Point(30, 278);
-            this.carteRejoindreAI.Name = "carteRejoindreAI";
-            this.carteRejoindreAI.Size = new System.Drawing.Size(200, 86);
-            this.carteRejoindreAI.TabIndex = 12;
-            this.carteRejoindreAI.UseVisualStyleBackColor = false;
-            this.carteRejoindreAI.Visible = false;
             // 
             // pictureBox2
             // 
@@ -417,6 +428,7 @@ namespace BJ_S
             this.carteHeberger.ResumeLayout(false);
             this.carteHeberger.PerformLayout();
             this.carteRejoindre.ResumeLayout(false);
+            this.carteRejoindre.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -434,8 +446,6 @@ namespace BJ_S
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label Devs;
-        private System.Windows.Forms.Button carteRejoindreAI;
-        private System.Windows.Forms.Button carteRejoindreHumain;
         private System.Windows.Forms.Button carteLocalAI;
         private System.Windows.Forms.Button carteLocalHumain;
         private System.Windows.Forms.Label lblNbAI;
@@ -447,6 +457,9 @@ namespace BJ_S
         private System.Windows.Forms.Button btnMoinsJoueurs;
         private System.Windows.Forms.Button btnPlusJoueurs;
         private System.Windows.Forms.Button btnLancerHebergement;
+        private System.Windows.Forms.TextBox tBoxIP;
+        private System.Windows.Forms.Label lblRejoindreIP;
+        private System.Windows.Forms.Button btnLancerRejoindre;
     }
 }
 
