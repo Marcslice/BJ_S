@@ -52,5 +52,11 @@ namespace BJ_S
             }
             return false;       
         }
+
+        public int DepotEncaisse(int p_Gain)
+        {
+            m_Encaisse += p_Gain;
+            return m_Encaisse;
+        }
     }
 }
