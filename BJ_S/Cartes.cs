@@ -6,7 +6,22 @@ using System.Threading.Tasks;
 
 namespace BJ_S
 {
-    class Cartes
+    public class Cartes
     {
+        char sorte; //spade,heart,clove,diamond,
+        int valeur; // 1 a 13
+        string cheminPNG;
+
+        public Cartes(char Sorte, int Valeur)
+        {
+            sorte = Sorte;
+            valeur = Valeur;
+            cheminPNG = sorte + valeur + ".png";
+        }
+
+        public int Valeur
+        {
+            get { return valeur; }
+        }
     }
 }
