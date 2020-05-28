@@ -24,7 +24,7 @@ namespace BJ_S
             m_Main = new Mains();
 
             if (enLigne)
-                m_Connection = new Connexions();
+                m_Connection = new Connexions(false,"");
         }
 
         int GenererAnonymat() 

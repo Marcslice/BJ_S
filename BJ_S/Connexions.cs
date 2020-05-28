@@ -16,6 +16,7 @@ namespace BJ_S
         NetworkStream ns;
         StreamWriter sw;
         StreamReader sr;
+
         public Connexions(bool hote, string adresseIP) {
             if (hote)
             {
