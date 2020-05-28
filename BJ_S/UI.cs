@@ -138,5 +138,20 @@ namespace BJ_S
 
             lblFeed1.Text = update;
         }
+
+        private void btnHit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnStand_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMiser_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

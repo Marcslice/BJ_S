@@ -164,7 +164,7 @@
             this.mainJ1.Controls.Add(this.pictureBox8);
             this.mainJ1.Controls.Add(this.pictureBox7);
             this.mainJ1.Location = new System.Drawing.Point(163, 296);
-            this.mainJ1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mainJ1.Margin = new System.Windows.Forms.Padding(2);
             this.mainJ1.Name = "mainJ1";
             this.mainJ1.Size = new System.Drawing.Size(155, 90);
             this.mainJ1.TabIndex = 5;
@@ -173,7 +173,7 @@
             // pictureBox8
             // 
             this.pictureBox8.Location = new System.Drawing.Point(78, 3);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(47, 84);
             this.pictureBox8.TabIndex = 18;
@@ -182,7 +182,7 @@
             // pictureBox7
             // 
             this.pictureBox7.Location = new System.Drawing.Point(26, 3);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(47, 84);
             this.pictureBox7.TabIndex = 17;
@@ -194,7 +194,7 @@
             this.mainJ2.Controls.Add(this.pictureBox9);
             this.mainJ2.Controls.Add(this.pictureBox10);
             this.mainJ2.Location = new System.Drawing.Point(349, 408);
-            this.mainJ2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mainJ2.Margin = new System.Windows.Forms.Padding(2);
             this.mainJ2.Name = "mainJ2";
             this.mainJ2.Size = new System.Drawing.Size(155, 88);
             this.mainJ2.TabIndex = 6;
@@ -203,7 +203,7 @@
             // pictureBox9
             // 
             this.pictureBox9.Location = new System.Drawing.Point(79, 3);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(47, 84);
             this.pictureBox9.TabIndex = 20;
@@ -212,7 +212,7 @@
             // pictureBox10
             // 
             this.pictureBox10.Location = new System.Drawing.Point(27, 3);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(47, 84);
             this.pictureBox10.TabIndex = 19;
@@ -224,7 +224,7 @@
             this.mainJ3.Controls.Add(this.pictureBox1);
             this.mainJ3.Controls.Add(this.pictureBox2);
             this.mainJ3.Location = new System.Drawing.Point(579, 453);
-            this.mainJ3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mainJ3.Margin = new System.Windows.Forms.Padding(2);
             this.mainJ3.Name = "mainJ3";
             this.mainJ3.Size = new System.Drawing.Size(155, 88);
             this.mainJ3.TabIndex = 7;
@@ -233,7 +233,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(79, 3);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(47, 84);
             this.pictureBox1.TabIndex = 22;
@@ -242,7 +242,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Location = new System.Drawing.Point(28, 3);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(47, 84);
             this.pictureBox2.TabIndex = 21;
@@ -254,7 +254,7 @@
             this.mainJ4.Controls.Add(this.pictureBox3);
             this.mainJ4.Controls.Add(this.pictureBox4);
             this.mainJ4.Location = new System.Drawing.Point(804, 408);
-            this.mainJ4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mainJ4.Margin = new System.Windows.Forms.Padding(2);
             this.mainJ4.Name = "mainJ4";
             this.mainJ4.Size = new System.Drawing.Size(155, 88);
             this.mainJ4.TabIndex = 8;
@@ -263,7 +263,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Location = new System.Drawing.Point(79, 3);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(47, 84);
             this.pictureBox3.TabIndex = 24;
@@ -272,7 +272,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Location = new System.Drawing.Point(28, 3);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(47, 84);
             this.pictureBox4.TabIndex = 23;
@@ -284,7 +284,7 @@
             this.mainJ5.Controls.Add(this.pictureBox5);
             this.mainJ5.Controls.Add(this.pictureBox6);
             this.mainJ5.Location = new System.Drawing.Point(991, 296);
-            this.mainJ5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mainJ5.Margin = new System.Windows.Forms.Padding(2);
             this.mainJ5.Name = "mainJ5";
             this.mainJ5.Size = new System.Drawing.Size(155, 94);
             this.mainJ5.TabIndex = 9;
@@ -293,7 +293,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Location = new System.Drawing.Point(80, 5);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(47, 84);
             this.pictureBox5.TabIndex = 26;
@@ -302,7 +302,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Location = new System.Drawing.Point(29, 5);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(47, 84);
             this.pictureBox6.TabIndex = 25;
@@ -312,7 +312,7 @@
             // 
             this.imgSabot.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.imgSabot.Location = new System.Drawing.Point(197, 108);
-            this.imgSabot.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.imgSabot.Margin = new System.Windows.Forms.Padding(2);
             this.imgSabot.Name = "imgSabot";
             this.imgSabot.Size = new System.Drawing.Size(130, 78);
             this.imgSabot.TabIndex = 10;
@@ -329,7 +329,7 @@
             this.feedPanel.Controls.Add(this.lblFeed3);
             this.feedPanel.Controls.Add(this.lblFeed2);
             this.feedPanel.Location = new System.Drawing.Point(804, 3);
-            this.feedPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.feedPanel.Margin = new System.Windows.Forms.Padding(2);
             this.feedPanel.Name = "feedPanel";
             this.feedPanel.Size = new System.Drawing.Size(481, 50);
             this.feedPanel.TabIndex = 11;
@@ -355,7 +355,7 @@
             this.buttonExpendFeed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExpendFeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExpendFeed.Location = new System.Drawing.Point(428, 5);
-            this.buttonExpendFeed.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonExpendFeed.Margin = new System.Windows.Forms.Padding(2);
             this.buttonExpendFeed.Name = "buttonExpendFeed";
             this.buttonExpendFeed.Size = new System.Drawing.Size(44, 40);
             this.buttonExpendFeed.TabIndex = 1;
@@ -425,7 +425,7 @@
             this.panel1.Controls.Add(this.jeton50);
             this.panel1.Controls.Add(this.lblMontantPorteFeuille);
             this.panel1.Location = new System.Drawing.Point(-5, 547);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(267, 143);
             this.panel1.TabIndex = 12;
@@ -435,7 +435,7 @@
             this.jeton10.BackgroundImage = global::BJ_S.Properties.Resources.jeton10Out;
             this.jeton10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.jeton10.Location = new System.Drawing.Point(37, 71);
-            this.jeton10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.jeton10.Margin = new System.Windows.Forms.Padding(2);
             this.jeton10.Name = "jeton10";
             this.jeton10.Size = new System.Drawing.Size(60, 58);
             this.jeton10.TabIndex = 19;
@@ -449,7 +449,7 @@
             this.jeton25.BackgroundImage = global::BJ_S.Properties.Resources.jeton25Out;
             this.jeton25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.jeton25.Location = new System.Drawing.Point(104, 71);
-            this.jeton25.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.jeton25.Margin = new System.Windows.Forms.Padding(2);
             this.jeton25.Name = "jeton25";
             this.jeton25.Size = new System.Drawing.Size(60, 58);
             this.jeton25.TabIndex = 18;
@@ -463,7 +463,7 @@
             this.jeton50.BackgroundImage = global::BJ_S.Properties.Resources.jeton50Out;
             this.jeton50.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.jeton50.Location = new System.Drawing.Point(171, 71);
-            this.jeton50.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.jeton50.Margin = new System.Windows.Forms.Padding(2);
             this.jeton50.Name = "jeton50";
             this.jeton50.Size = new System.Drawing.Size(60, 58);
             this.jeton50.TabIndex = 17;
@@ -488,7 +488,7 @@
             // 
             this.mainCroupier.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.mainCroupier.Location = new System.Drawing.Point(579, 248);
-            this.mainCroupier.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mainCroupier.Margin = new System.Windows.Forms.Padding(2);
             this.mainCroupier.Name = "mainCroupier";
             this.mainCroupier.Size = new System.Drawing.Size(159, 90);
             this.mainCroupier.TabIndex = 10;
@@ -500,11 +500,12 @@
             this.btnMiser.BackgroundImage = global::BJ_S.Properties.Resources.buttonMiserOut;
             this.btnMiser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMiser.Location = new System.Drawing.Point(244, 604);
-            this.btnMiser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMiser.Margin = new System.Windows.Forms.Padding(2);
             this.btnMiser.Name = "btnMiser";
             this.btnMiser.Size = new System.Drawing.Size(167, 78);
             this.btnMiser.TabIndex = 14;
             this.btnMiser.TabStop = false;
+            this.btnMiser.Click += new System.EventHandler(this.btnMiser_Click);
             this.btnMiser.MouseEnter += new System.EventHandler(this.btnMiser_hover);
             this.btnMiser.MouseLeave += new System.EventHandler(this.btnMiser_Out);
             // 
@@ -514,11 +515,12 @@
             this.btnHit.BackgroundImage = global::BJ_S.Properties.Resources.buttonHitOut;
             this.btnHit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnHit.Location = new System.Drawing.Point(1117, 522);
-            this.btnHit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHit.Margin = new System.Windows.Forms.Padding(2);
             this.btnHit.Name = "btnHit";
             this.btnHit.Size = new System.Drawing.Size(167, 78);
             this.btnHit.TabIndex = 15;
             this.btnHit.TabStop = false;
+            this.btnHit.Click += new System.EventHandler(this.btnHit_Click);
             this.btnHit.MouseEnter += new System.EventHandler(this.btnHit_hover);
             this.btnHit.MouseLeave += new System.EventHandler(this.btnHit_Out);
             // 
@@ -528,11 +530,12 @@
             this.btnStand.BackgroundImage = global::BJ_S.Properties.Resources.buttonStandOut;
             this.btnStand.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnStand.Location = new System.Drawing.Point(1117, 604);
-            this.btnStand.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStand.Margin = new System.Windows.Forms.Padding(2);
             this.btnStand.Name = "btnStand";
             this.btnStand.Size = new System.Drawing.Size(167, 78);
             this.btnStand.TabIndex = 16;
             this.btnStand.TabStop = false;
+            this.btnStand.Click += new System.EventHandler(this.btnStand_Click);
             this.btnStand.MouseEnter += new System.EventHandler(this.btnStand_hover);
             this.btnStand.MouseLeave += new System.EventHandler(this.btnStand_Out);
             // 
@@ -590,7 +593,7 @@
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.Transparent;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UI";
             this.Text = "Partie";
             this.mainJ1.ResumeLayout(false);

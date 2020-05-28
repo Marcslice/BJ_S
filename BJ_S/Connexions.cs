@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Sockets;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace BJ_S
 {
@@ -45,7 +46,14 @@ namespace BJ_S
             ECOUTE = 4, 
             PARLE = 8, 
             MAJ = 16, 
-            FIN = 32
+            FIN = 32,
+            ERREUR = 256
+        }
+
+        enum Actions : ushort 
+        { 
+            HIT = 0,
+            STAND = 1      
         }
 
         TcpListener receptionniste;
@@ -88,15 +96,23 @@ namespace BJ_S
         }
 
 
-        public void AttendreSonTour()
+        public string AttendreSonTour()
         {
             string message = "";
-            do
-                message = sr.ReadLine();
-            while (Convert.ToInt32(message.Split(';',1)) == (int)Evenement.ECOUTE);
+
+            Regex rx = new Regex(@"^\d+(;\d;\d(;\d|;\d{2})(;\d|;\d{2})?)?$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
+            message = sr.ReadLine();
+
+            MatchCollection match = rx.Matches(message);
+
+            if(match.Count == 0)
+                return $"{((int)Evenement.ERREUR).ToString()} : Une erreur de décodage s'est produite lors de l'écoute.";
+            return null;
+            
         }
 
-        public void Parler(int protocole)
+        public void Parler(string protocole)
         {
             sw.WriteLine(protocole);
             sw.Flush();
