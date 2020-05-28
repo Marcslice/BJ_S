@@ -136,58 +136,61 @@
   <data name="jeton25Out" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\jeton25Out.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="btnIA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\btnIA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="jeton10Out" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\jeton10Out.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FondBourse" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\FondBourse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="jeton50Out" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\jeton50Out.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="carteLocalOut" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\carteLocalOut.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="table" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\table.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="spotlight" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\spotlight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnHumain" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\btnHumain.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="buttonCloseFeed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\buttonCloseFeed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="feedExtended" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\feedExtended.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="buttonMiserOut" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\buttonMiserOut.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="carteRejoindreOut" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\carteRejoindreOut.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="buttonHitOut" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\buttonHitOut.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FondBourseStyle2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\FondBourseStyle2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="jeton50Out" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\jeton50Out.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="buttonStandOut" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\buttonStandOut.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="buttonMiserOut" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\buttonMiserOut.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="feedExtended" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\feedExtended.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="table" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\table.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="buttonHitOut" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\buttonHitOut.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnHumain" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\btnHumain.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="carteHebergerOut" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\carteHebergerOut.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="buttonStandOut" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\buttonStandOut.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="carteRejoindreOut" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\carteRejoindreOut.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FondBoiteChoix" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\FondBoiteChoix.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnIA" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\btnIA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="paquet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\cartes\paquet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
