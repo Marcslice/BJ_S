@@ -125,18 +125,55 @@ namespace BJ_S
             }
         }
 
-        public void updateFeed(string update) {
+        public void MettreAJourFileEvenement(string update) {
 
-            if (lblFeed4.Text != "")
-                lblFeed5.Text = lblFeed4.Text;
-            if(lblFeed3.Text != "")
-                lblFeed4.Text = lblFeed3.Text;
-            if (lblFeed2.Text != "")
-                lblFeed3.Text = lblFeed2.Text;
-            if (lblFeed1.Text != "")
-                lblFeed2.Text = lblFeed1.Text;
+            lblFeed5.Text = lblFeed4.Text;
+            lblFeed4.Text = lblFeed3.Text;
+            lblFeed3.Text = lblFeed2.Text;
+            lblFeed2.Text = lblFeed1.Text;
 
             lblFeed1.Text = update;
+        }
+
+        public void MettreAJourMainJoueur(string player) { 
+            /*Affecter cartes aux mains
+            *Afficher le compte de la main
+            *
+            */
+        }
+
+        public void MettreAJourNomSiege() {
+            /*Au chargement de partie le serveur envoie message pour les noms
+            * Change les labels de sieges
+            *
+            */
+        }
+
+        public void MontrerCarte() //Tourne la carte du côté visible
+        {
+
+
+        }
+
+        public void BloquerInterface() //Pour les joueurs qui passent un tour.
+        { 
+        
+        }
+
+        private void btnHit_Click(object sender, EventArgs e) // HIT!
+        {
+            //Reçoit une carte supplémentaire
+            //Appel MontrerCarte,MettreAJourMainJoueur,Feed...
+        }
+
+        private void btnStand_Click(object sender, EventArgs e) //STAND !
+        {
+            //Finit le tour sans discalification
+        }
+
+        private void btnMiser_Click(object sender, EventArgs e) // MISE !
+        {
+            //mise la sélection si joueur a assez en banque.
         }
     }
 }
