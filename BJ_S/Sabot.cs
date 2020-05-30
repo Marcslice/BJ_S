@@ -24,12 +24,19 @@ namespace BJ_S
         {
             var rand = new Random();
             int random;
+            bool paquetVide;
 
             //deplacer les paquet vide a la fin du tableau et gerer le % pour fit avec nbPaquet
             do
             {
+                paquetVide = false;
                 random = rand.Next() % nbPaquets;
-            } while (sabot[random].EsTuVide());
+                if (sabot[random].EsTuVide())
+                {
+                    sabot[random] = sabot[--nbPaquets];
+                    paquetVide = true;
+                }
+            } while (paquetVide);
 
             return sabot[random].CarteAleatoire();
         }

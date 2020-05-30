@@ -91,9 +91,9 @@ namespace BJ_S
         public void AttendreSonTour()
         {
             string message = "";
-            do
+            /*do
                 message = sr.ReadLine();
-            while (Convert.ToInt32(message.Split(';',1)) == (int)Evenement.ECOUTE);
+            while (Convert.ToInt32(message.Split(';',1)) == (int)Evenement.ECOUTE);*///message d'erreur
         }
 
         public void Parler(int protocole)
