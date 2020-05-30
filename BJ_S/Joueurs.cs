@@ -12,6 +12,7 @@ namespace BJ_S
         int m_Encaisse;
         Connexions m_Connection;
         Mains m_Main;
+        AI ai;
 
         public Joueurs(string p_Nom = "Anonyme", bool enLigne = false) 
         {
@@ -25,6 +26,15 @@ namespace BJ_S
 
             if (enLigne)
                 m_Connection = new Connexions(false,"");
+        }
+
+        public Joueurs()//ai
+        {
+            ai = new AI();
+            m_Nom = ai.Nom;
+
+            m_Encaisse = 500;
+            m_Main = new Mains();
         }
 
         int GenererAnonymat() 

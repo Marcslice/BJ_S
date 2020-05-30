@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace BJ_S
 {
-    class AI
+    public class AI
     {
+        public String Nom;
+        public AI()
+        {
+            RandNom();
+        }
+
+        string RandNom()
+        {
+            return null;
+        }
     }
 }
