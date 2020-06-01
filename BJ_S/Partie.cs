@@ -23,7 +23,7 @@ namespace BJ_S
 
 			if(nbAi > 0)
 			{
-				for(int i = nbJoueur; i < 5; i++)
+				for(int i = nbJoueur; i < nbJoueur + nbAi; i++)
 				{
 					tabJoueur[i] = new Joueurs();
 				}
@@ -47,10 +47,16 @@ namespace BJ_S
 
 		static System.Timers.Timer tempsAttente;
 
-		public void DebutTour()
+		public void AvantTour()
 		{
 			Console.WriteLine("Vous avez 30 secondes pour miser");//place holder
 			tempsAttente = new System.Timers.Timer(30000);
+			tempsAttente.Elapsed += DebutTour;
+
+		}
+
+		public void DebutTour(object source, ElapsedEventArgs e)
+		{
 
 		}
 
