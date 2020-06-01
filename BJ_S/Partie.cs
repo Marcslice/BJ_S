@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Timers;
 
 namespace BJ_S
 {
@@ -9,7 +10,6 @@ namespace BJ_S
 		Croupier croupier;
 		Sabot sabot;
 		bool enLigne;
-
 
 		public Partie(int nbJoueur, int nbAi, bool enLigne)
 		{
@@ -45,6 +45,17 @@ namespace BJ_S
 
 		}
 
+		static System.Timers.Timer tempsAttente;
+
+		public void DebutTour()
+		{
+			Console.WriteLine("Vous avez 30 secondes pour miser");//place holder
+			tempsAttente = new System.Timers.Timer(30000);
+
+		}
+
+		////////////////////////////////////////////////////////////////////////////////////////////////////////
+		
 		UI m_UI;
 		public Partie(int type, string nomJoueur)
 		{
