@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="AI.cs" />
     <Compile Include="Cartes.cs" />
+    <Compile Include="Mains.cs" />
     <Compile Include="NomDeJoueur.cs">
       <SubType>Form</SubType>
     </Compile>

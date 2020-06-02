@@ -51,7 +51,7 @@ namespace BJ_S
 
         private void Rejoindre_Click(object sender, EventArgs e)
         {
-
+            afficherLoadingScreen(sender);
         }
 
         private void Heberger_Click(object sender, EventArgs e)
@@ -138,11 +138,11 @@ namespace BJ_S
             btn.BackgroundImage = Image.FromFile("../../images/porteFermer.png");
         }
 
-        private void afficherLoadingScreen() {
+        private void afficherLoadingScreen(object sender) {
 
-            Button rj = (Button)sender;
-            Form rjf = (Form)rj.GetContainerControl();
-            rjf.Close();
+        //    Button rj = (Button)sender;
+        //   Form rjf = (Form)rj.GetContainerControl();
+        //   rjf.Close();
 
             Panel panelAttente = new Panel();
 
@@ -193,14 +193,15 @@ namespace BJ_S
 
             panelAttente.BringToFront();
             this.Controls.Add(panelAttente);
+
+            awaitsConnection = new Thread(new ThreadStart(delegateMessage));
+            awaitsConnection.Start();
         }
 
 
         private void AfficherRejoindre(object sender, EventArgs e)
         {
-
-            awaitsConnection = new Thread(new ThreadStart(delegateMessage));
-            awaitsConnection.Start();
+            afficherLoadingScreen(sender);
         }
 
         //subThread
