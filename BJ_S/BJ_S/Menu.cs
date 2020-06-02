@@ -22,6 +22,8 @@ namespace BJ_S
         bool flipped1 = false;
         Button carteRetournee = null;
         const int NBMAXJOUEURS = 5;
+        bool connecting = false;
+        Thread awaitsConnection;
 
         public Menu(BlackuJacku BJ)
         {
@@ -30,24 +32,16 @@ namespace BJ_S
             this.lblIP.Text = m_BJController.QuelEstMonIP();
         }
 
-        public string DemanderNomJoueur() {
-            Form NJ = EntryBuilder("PlayerName", "Nom de joueur", "Entrez le nom de joueur que vous voulez utiliser.");
-            NJ.Show();
-            return "";
-        }
-
-        public string DemanderNombreJoueur()
-        {
-            Form NJ = EntryBuilder("nombreJoueurs", "Nombre de joueurs", "Combien de joueurs en ligne attendez-vous ?");
-            NJ.Show();
-            return "";
-        }
 
         private void RetourAuMenu_Click(object sender, EventArgs e) {
             Panel toRemove = (Panel)this.Controls[this.Controls.Count - 1];
             this.Controls.RemoveAt(this.Controls.Count - 1);
             toRemove.Dispose();
             this.panelPrincipale.Visible = true;
+            connecting = false;
+
+            if (awaitsConnection != null & awaitsConnection.IsAlive)
+                awaitsConnection.Join();
         }
 
         private void RejoindreAdresse_Close(object sender, FormClosingEventArgs e)
@@ -57,13 +51,7 @@ namespace BJ_S
 
         private void Rejoindre_Click(object sender, EventArgs e)
         {
-          //  Form rejoindreQui = EntryBuilder("ServerForm", "Adresse IP", "Entrez l'adresse IP de l'hôte que vous voulez rejoindre.");
 
-          //  this.Enabled = false;
-          //  rejoindreQui.BringToFront();
-          //  rejoindreQui.Show();
-
-            m_BJController.NouvellePartie(3);
         }
 
         private void Heberger_Click(object sender, EventArgs e)
@@ -111,12 +99,16 @@ namespace BJ_S
             panelAttente.BringToFront();
             this.Controls.Add(panelAttente);
 
-            Thread t = new Thread(new ThreadStart(delegateMessage));
-            t.Start();
+            awaitsConnection = new Thread(new ThreadStart(delegateMessage));
+            awaitsConnection.Start();
         }
 
         private void Quit_Click(object sender, EventArgs e)
         {
+            connecting = false;
+            if (awaitsConnection != null & awaitsConnection.IsAlive)
+                awaitsConnection.Join();
+
             m_BJController.Quitter();
         }
 
@@ -130,7 +122,6 @@ namespace BJ_S
         private void button_Quitter_Hover(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-
             btn.BackgroundImage = Image.FromFile("../../images/porteOuverte.png");
         }
 
@@ -147,8 +138,7 @@ namespace BJ_S
             btn.BackgroundImage = Image.FromFile("../../images/porteFermer.png");
         }
 
-        private void AfficherRejoindre(object sender, EventArgs e)
-        {
+        private void afficherLoadingScreen() {
 
             Button rj = (Button)sender;
             Form rjf = (Form)rj.GetContainerControl();
@@ -203,28 +193,27 @@ namespace BJ_S
 
             panelAttente.BringToFront();
             this.Controls.Add(panelAttente);
+        }
 
-            Thread t = new Thread(new ThreadStart(delegateMessage));
-            t.Start();
 
-            m_BJController.NouvellePartie(2);
+        private void AfficherRejoindre(object sender, EventArgs e)
+        {
+
+            awaitsConnection = new Thread(new ThreadStart(delegateMessage));
+            awaitsConnection.Start();
         }
 
         //subThread
-
 
         //Loading animation
 
         private void delegateMessage()
         {
-            int compteur = 1;
-            while (compteur < 22) //while connection pas connecter
+            connecting = true;
+            while (connecting) //while connection pas connecter
             {
                 Invoke(new updateWaitingMessage(UpdateMessage));
-                compteur++;
-
                 Thread.Sleep(400);
-                compteur++;
             }
         }
 
@@ -439,5 +428,9 @@ namespace BJ_S
             return entryForm;
         }
 
+        private void carteLocalHumain_Click(object sender, EventArgs e)
+        {
+            m_BJController.NouvellePartie(1);
+        }
     }
 }

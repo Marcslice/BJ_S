@@ -48,6 +48,12 @@
   <ItemGroup>
     <Compile Include="AI.cs" />
     <Compile Include="Cartes.cs" />
+    <Compile Include="NomDeJoueur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NomDeJoueur.Designer.cs">
+      <DependentUpon>NomDeJoueur.cs</DependentUpon>
+    </Compile>
     <Compile Include="UIU.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -74,6 +80,9 @@
     </Compile>
     <Compile Include="BlackuJacku.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="NomDeJoueur.resx">
+      <DependentUpon>NomDeJoueur.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>

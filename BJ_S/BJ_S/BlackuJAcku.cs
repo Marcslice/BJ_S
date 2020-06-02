@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 using System.Net;
 using System.IO;
 
@@ -43,8 +44,12 @@ namespace BJ_S
         /// </param>
         /// 
         public void NouvellePartie(int type) {
-            string nomJoueur = m_Menu.DemanderNomJoueur();
-            m_Partie = new Partie(type, nomJoueur); 
+            NomDeJoueur f = new NomDeJoueur();
+
+            f.ShowDialog(m_Menu);
+
+            if(f.DialogResult == System.Windows.Forms.DialogResult.OK)
+                m_Partie = new Partie(type, f.get_Name()); 
         }
 
         public void Quitter() {
