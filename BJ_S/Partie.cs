@@ -8,11 +8,11 @@ namespace BJ_S
 	{
 		Joueurs[] tabJoueur;
 		List<Joueurs> listeActif;
-		int nbActif;
 		Joueurs moi;
 		Croupier croupier;
 		Sabot sabot;
 		bool enLigne;
+		bool tour;
 
 		public Partie(int nbJoueur, int nbAi, bool enLigne)
 		{
@@ -48,19 +48,21 @@ namespace BJ_S
 
 		}
 
-		public void JouerTour()
+		public void JouerManche()
 		{
 			Preparation();
 			DistribuerCartes();
 			TourJoueur();
 			VerifierGagnant();
 			ViderTable();
+			//boucle pour partie
 		}
 
 		public void Preparation()
 		{
-			System.Timers.Timer tempsAttente;
+			listeActif = new List<Joueurs>();
 
+			System.Timers.Timer tempsAttente;
 			Console.WriteLine("Vous avez 30 secondes pour miser");//place holder
 			//joueur.miseEnable
 			tempsAttente = new System.Timers.Timer(30000);
@@ -89,6 +91,7 @@ namespace BJ_S
 					listeActif[i].Main.RecevoirCarte(sabot.CarteDessus());
 					listeActif[i].Main.Compte();
 				}
+
 				if (!carteOuverte)
 				{
 					croupier.Main.RecevoirCarte(sabot.CarteDessus());
@@ -104,23 +107,23 @@ namespace BJ_S
 		{
 			for(int i = 0; i < listeActif.Count; i++)
 			{
-				bool tour = true;
+				tour = true;
 
 				do
 				{
 					//linking avec interface
 					//sleepthread pour la decision de l'ai
-					//hit
-					listeActif[i].Main.RecevoirCarte(sabot.CarteDessus());
-					listeActif[i].Main.Compte();
+					
+					//hit definir target
 
-					//stand
-					tour = false;
 				} while (tour == true && listeActif[i].ValeurMain < 21);
 			}
 
+			//busted?
+
 			croupier.Main.RevelerCarte();
 			croupier.Main.Compte();
+
 			while(croupier.ValeurMain < 17)
 			{
 				croupier.Main.RecevoirCarte(sabot.CarteDessus());
@@ -128,11 +131,24 @@ namespace BJ_S
 			}
 		}
 
+		 public void Hit()
+		{
+			moi.Main.RecevoirCarte(sabot.CarteDessus());
+			moi.Main.Compte();
+		}
+
+		public void Stand()
+		{
+			tour = false;
+		}
+
 		public void VerifierGagnant()
 		{
 			for(int i = 0; i < listeActif.Count; i++)
 			{
 				int mise = listeActif[i].Mise;
+
+				//busted a gerer
 				if (listeActif[i].ValeurMain > croupier.ValeurMain)
 					listeActif[i].DepotEncaisse(2 * mise);
 				else if (listeActif[i].ValeurMain == croupier.ValeurMain)
