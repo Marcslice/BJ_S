@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Timers;
 
 namespace BJ_S
@@ -6,6 +7,8 @@ namespace BJ_S
 	public class Partie
 	{
 		Joueurs[] tabJoueur;
+		List<Joueurs> listeActif;
+		int nbActif;
 		Joueurs moi;
 		Croupier croupier;
 		Sabot sabot;
@@ -45,23 +48,113 @@ namespace BJ_S
 
 		}
 
-		static System.Timers.Timer tempsAttente;
-
-		public void AvantTour()
+		public void JouerTour()
 		{
-			Console.WriteLine("Vous avez 30 secondes pour miser");//place holder
-			tempsAttente = new System.Timers.Timer(30000);
-			tempsAttente.Elapsed += DebutTour;
-
+			Preparation();
+			DistribuerCartes();
+			TourJoueur();
+			VerifierGagnant();
+			ViderTable();
 		}
 
-		public void DebutTour(object source, ElapsedEventArgs e)
+		public void Preparation()
 		{
+			System.Timers.Timer tempsAttente;
 
+			Console.WriteLine("Vous avez 30 secondes pour miser");//place holder
+			//joueur.miseEnable
+			tempsAttente = new System.Timers.Timer(30000);
+			tempsAttente.Elapsed += ConfirmerMise;
+			
+		}
+
+		public void ConfirmerMise(object source, ElapsedEventArgs e)
+		{
+			//joueur.miseDisable
+			for (int i = 0; i < tabJoueur.Length; i++)
+			{
+				if (tabJoueur[i].Mise > 0)
+					listeActif.Add(tabJoueur[i]);
+			}
+		}
+
+		public void DistribuerCartes()
+		{
+			bool carteOuverte = false;
+
+			for (int j = 0; j < 2; j++)
+			{
+				for (int i = 0; i < listeActif.Count; i++)
+				{
+					listeActif[i].Main.RecevoirCarte(sabot.CarteDessus());
+					listeActif[i].Main.Compte();
+				}
+				if (!carteOuverte)
+				{
+					croupier.Main.RecevoirCarte(sabot.CarteDessus());
+					croupier.Main.Compte();
+					carteOuverte = true;
+				}
+				else
+					croupier.Main.RecevoirCarte(sabot.CarteDessus(), true);
+			}
+		}
+
+		public void TourJoueur()
+		{
+			for(int i = 0; i < listeActif.Count; i++)
+			{
+				bool tour = true;
+
+				do
+				{
+					//linking avec interface
+					//sleepthread pour la decision de l'ai
+					//hit
+					listeActif[i].Main.RecevoirCarte(sabot.CarteDessus());
+					listeActif[i].Main.Compte();
+
+					//stand
+					tour = false;
+				} while (tour == true && listeActif[i].ValeurMain < 21);
+			}
+
+			croupier.Main.RevelerCarte();
+			croupier.Main.Compte();
+			while(croupier.ValeurMain < 17)
+			{
+				croupier.Main.RecevoirCarte(sabot.CarteDessus());
+				croupier.Main.Compte();
+			}
+		}
+
+		public void VerifierGagnant()
+		{
+			for(int i = 0; i < listeActif.Count; i++)
+			{
+				int mise = listeActif[i].Mise;
+				if (listeActif[i].ValeurMain > croupier.ValeurMain)
+					listeActif[i].DepotEncaisse(2 * mise);
+				else if (listeActif[i].ValeurMain == croupier.ValeurMain)
+					listeActif[i].DepotEncaisse(mise);
+			}
+		}
+
+		public void ViderTable()
+		{
+			for(int i = 0; i < listeActif.Count; i++)
+			{
+				listeActif[i].Main = new Mains();
+				listeActif[i].ValeurMain = 0;
+				listeActif[i].Mise = 0;
+			}
+
+			croupier.Main = new Mains();
+			croupier.ValeurMain = 0;
 		}
 
 		////////////////////////////////////////////////////////////////////////////////////////////////////////
-		
+
 		UI m_UI;
 		public Partie(int type, string nomJoueur)
 		{

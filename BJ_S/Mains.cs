@@ -21,6 +21,18 @@ namespace BJ_S
             main.Add(nouvelleCarte);
         }
 
+        //a modifier pour gerer la carte cacher du croupier
+        public void RecevoirCarte(Cartes nouvelleCarte,bool cache)
+        {
+            main.Add(nouvelleCarte);
+            //ajout qqch ici ou a lautre constructeur
+        }
+
+        public void RevelerCarte()
+        {
+            //fliper la carte
+        }
+
         public int Compte()
         {
             int compte = 0;

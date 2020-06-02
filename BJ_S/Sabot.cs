@@ -30,7 +30,7 @@ namespace BJ_S
             do
             {
                 if (nbPaquets == 0)
-                    new Sabot();//a pour but de trandformer le sabot present en nouveau sabot
+                    new Sabot();
 
                 paquetVide = false;
                 random = rand.Next() % nbPaquets;
