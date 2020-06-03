@@ -48,6 +48,12 @@
   <ItemGroup>
     <Compile Include="AI.cs" />
     <Compile Include="Cartes.cs" />
+    <Compile Include="Mise.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mise.Designer.cs">
+      <DependentUpon>Mise.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mains.cs" />
     <Compile Include="NomDeJoueur.cs">
       <SubType>Form</SubType>
@@ -81,6 +87,9 @@
     </Compile>
     <Compile Include="BlackuJacku.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Mise.resx">
+      <DependentUpon>Mise.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NomDeJoueur.resx">
       <DependentUpon>NomDeJoueur.cs</DependentUpon>
     </EmbeddedResource>

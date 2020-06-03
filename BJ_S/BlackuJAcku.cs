@@ -52,11 +52,18 @@ namespace BJ_S
                 m_Partie = new Partie(type, f.get_Name()); 
         }
 
+        /// <summary>
+        /// Quit l'application.
+        /// </summary>
         public void Quitter() {
             //make sure threads are closed;
             Application.Exit();
         }
 
+        /// <summary>
+        /// Demande ton ip externe à un serveur et l'affiche dans le menu principale.
+        /// </summary>
+        /// <returns>String : IP Formatté</returns>
         public string QuelEstMonIP() {
             String address = "";
             WebRequest request = WebRequest.Create("http://checkip.dyndns.org/");

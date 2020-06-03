@@ -15,13 +15,17 @@ namespace BJ_S
         Label[] feed = new Label[5];
         PictureBox selected;
         bool extended = false;
+        Partie m_Controleur;
 
-        public UI()
+        public UI(Partie p_Controleur)
         {
             InitializeComponent();
+
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
+
+            m_Controleur = p_Controleur;
             feed[0] = this.lblFeed1;
             feed[1] = this.lblFeed2;
             feed[2] = this.lblFeed3;
@@ -63,10 +67,13 @@ namespace BJ_S
             PictureBox clicked = (PictureBox)sender;
 
             if (selected != null)
+            {
                 selected.BackgroundImage = Image.FromFile("../../images/" + selected.Name + "Out.png");
-
+            }
             if (clicked == selected)
+            {
                 selected = null;
+            }
             else
             {
                 clicked.BackgroundImage = Image.FromFile("../../images/" + clicked.Name + "On.png");
@@ -135,6 +142,20 @@ namespace BJ_S
             lblFeed1.Text = update;
         }
 
+        public void BloquerMise() {
+            this.btnMiser.Enabled = false;
+            this.jeton10.Enabled = false;
+            this.jeton25.Enabled = false;
+            this.jeton50.Enabled = false;
+        }
+
+        public void DebloquerMise() {
+            this.btnMiser.Enabled = true;
+            this.jeton10.Enabled = true;
+            this.jeton25.Enabled = true;
+            this.jeton50.Enabled = true;
+        }
+
         public void MettreAJourMainJoueur(string player) { 
             /*Affecter cartes aux mains
             *Afficher le compte de la main
@@ -149,31 +170,55 @@ namespace BJ_S
             */
         }
 
-        public void MontrerCarte() //Tourne la carte du côté visible
+        public void MontrerCarte(string carte) //Tourne la carte du côté visible
         {
-
-
+            foreach (Control ctl in mainCroupier.Controls) 
+            {
+                if (ctl.Tag.Equals("dos")) 
+                {
+                    ctl.BackgroundImage = Image.FromFile($@"..\..\images\cartes\{carte}.png");
+                    ctl.Tag = "face";
+                }
+            }
         }
 
         public void BloquerInterface() //Pour les joueurs qui passent un tour.
-        { 
-        
+        {
+            BloquerMise();
+            this.btnHit.Enabled = false;
+            this.btnStand.Enabled = false;
+            this.buttonExpendFeed.Enabled = false;
+        }
+
+        public void DebloquerInterface()
+        {
+            DebloquerMise();
+            this.btnHit.Enabled = true;
+            this.btnStand.Enabled = true;
+            this.buttonExpendFeed.Enabled = true;
         }
 
         private void btnHit_Click(object sender, EventArgs e) // HIT!
         {
-            //Reçoit une carte supplémentaire
-            //Appel MontrerCarte,MettreAJourMainJoueur,Feed...
+            m_Controleur.Hit();
         }
 
         private void btnStand_Click(object sender, EventArgs e) //STAND !
         {
-            //Finit le tour sans discalification
+            m_Controleur.Stand();
         }
 
         private void btnMiser_Click(object sender, EventArgs e) // MISE !
         {
-            //mise la sélection si joueur a assez en banque.
+            if (selected != null)
+            {
+                if(selected == jeton10)
+                    m_Controleur.Miser(10);
+                else if (selected == jeton25)
+                    m_Controleur.Miser(25);
+                else if (selected == jeton50)
+                    m_Controleur.Miser(50);
+            }
         }
     }
 }

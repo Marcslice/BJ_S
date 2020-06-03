@@ -15,7 +15,7 @@ namespace BJ_S
 {
     public partial class Menu : Form
     {
-        //main thread
+
         Label titre;
         BlackuJacku m_BJController;
         System.Windows.Forms.Timer t;
@@ -51,56 +51,12 @@ namespace BJ_S
 
         private void Rejoindre_Click(object sender, EventArgs e)
         {
-            afficherLoadingScreen(sender);
+            AfficherLoadingScreen(sender);
         }
 
         private void Heberger_Click(object sender, EventArgs e)
         {
-
-            Panel panelAttente = new Panel();
-
-            titre = new Label();
-            titre.Text = "En attente de joueurs.";
-            titre.Size = new Size(300, 50);
-            titre.Location = new Point(this.Width / 2 - 150, this.Height / 2 - 25);
-            titre.TextAlign = ContentAlignment.MiddleCenter;
-
-            Label nbJoueurActuel = new Label();
-            nbJoueurActuel.Text = "X";
-            nbJoueurActuel.Size = new Size(20, 50);
-            nbJoueurActuel.Location = new Point(this.Width / 2 - 25, this.Height / 2 + 70);
-            nbJoueurActuel.TextAlign = ContentAlignment.MiddleCenter;
-
-            Label nbJoueurRequis = new Label();
-            nbJoueurRequis.Text = " / 4";
-            nbJoueurRequis.Size = new Size(60, 50);
-            nbJoueurRequis.Location = new Point(this.Width / 2 - 15, this.Height / 2 + 70);
-            nbJoueurRequis.TextAlign = ContentAlignment.MiddleCenter;
-
-            Button retour = new Button();
-            retour.Text = "Retour au menu";
-            retour.Size = new Size(200, 50);
-            retour.Location = new Point(50, 50);
-            retour.TextAlign = ContentAlignment.MiddleCenter;
-            retour.Click += new EventHandler(this.RetourAuMenu_Click);
-
-            panelAttente.Size = new Size(1000, 800);
-            panelAttente.Location = new Point(0, 0);
-
-            this.panelPrincipale.Visible = false;
-
-            panelAttente.Controls.Add(titre);
-            panelAttente.Controls.Add(retour);
-            // panelAttente.Controls.Add(nbJoueurActuel);
-            // panelAttente.Controls.Add(nbJoueurRequis);
-            panelAttente.ForeColor = Color.White;
-            panelAttente.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            panelAttente.BringToFront();
-            this.Controls.Add(panelAttente);
-
-            awaitsConnection = new Thread(new ThreadStart(delegateMessage));
-            awaitsConnection.Start();
+            AfficherLoadingScreen(sender);
         }
 
         private void Quit_Click(object sender, EventArgs e)
@@ -138,16 +94,18 @@ namespace BJ_S
             btn.BackgroundImage = Image.FromFile("../../images/porteFermer.png");
         }
 
-        private void afficherLoadingScreen(object sender) {
+        private void AfficherLoadingScreen(object sender) {
 
-        //    Button rj = (Button)sender;
-        //   Form rjf = (Form)rj.GetContainerControl();
-        //   rjf.Close();
-
+            Button clicked = (Button)sender;
             Panel panelAttente = new Panel();
 
             titre = new Label();
-            titre.Text = "Recherche de partie.";
+
+            if(clicked.Name.Equals("btnLancerRejoindre"))
+                titre.Text = "Recherche de partie.";
+            else
+                titre.Text = "En attente de joueurs.";
+
             titre.Size = new Size(300, 50);
             titre.Location = new Point(this.Width / 2 - 150, this.Height / 2 - 25);
             titre.TextAlign = ContentAlignment.MiddleCenter;
@@ -196,12 +154,6 @@ namespace BJ_S
 
             awaitsConnection = new Thread(new ThreadStart(delegateMessage));
             awaitsConnection.Start();
-        }
-
-
-        private void AfficherRejoindre(object sender, EventArgs e)
-        {
-            afficherLoadingScreen(sender);
         }
 
         //subThread

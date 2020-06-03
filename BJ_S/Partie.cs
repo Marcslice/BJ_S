@@ -64,19 +64,34 @@ namespace BJ_S
 
 			System.Timers.Timer tempsAttente;
 			Console.WriteLine("Vous avez 30 secondes pour miser");//place holder
-			//joueur.miseEnable
+
+			m_UI.DebloquerMise();
+
 			tempsAttente = new System.Timers.Timer(30000);
-			tempsAttente.Elapsed += ConfirmerMise;
-			
+			tempsAttente.Elapsed += ConfirmerMise;			
+		}
+
+		public void Miser(int p_Mise) 
+		{
+			Mise f;
+			if (moi.RetraitEncaisse(p_Mise))
+				m_UI.BloquerMise();
+			else
+			{
+				f = new Mise();
+				f.ShowDialog(m_UI);
+			}
 		}
 
 		public void ConfirmerMise(object source, ElapsedEventArgs e)
 		{
-			//joueur.miseDisable
+			
 			for (int i = 0; i < tabJoueur.Length; i++)
 			{
 				if (tabJoueur[i].Mise > 0)
 					listeActif.Add(tabJoueur[i]);
+
+				m_UI.BloquerMise();
 			}
 		}
 
@@ -174,7 +189,7 @@ namespace BJ_S
 		UI m_UI;
 		public Partie(int type, string nomJoueur)
 		{
-			m_UI = new UI();
+			m_UI = new UI(this);
 			m_UI.Show();
 		}
 
