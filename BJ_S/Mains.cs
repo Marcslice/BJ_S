@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BJ_S
 {
-    class Mains
+    public class Mains
     {
         List<Cartes> main;
 

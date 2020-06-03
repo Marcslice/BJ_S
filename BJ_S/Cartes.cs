@@ -16,7 +16,7 @@ namespace BJ_S
         {
             sorte = Sorte;
             valeur = Valeur;
-            cheminPNG = sorte + valeur + ".png";
+            cheminPNG =  $@"../../images/cartes/{valeur}{sorte}.png";
         }
 
         public int Valeur

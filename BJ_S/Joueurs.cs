@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BJ_S
 {
-    class Joueurs
+    public class Joueurs
     {
         string m_Nom;
         int m_Encaisse;
@@ -15,7 +15,8 @@ namespace BJ_S
         Mains main;
         int valeurMain;
         bool esTuAI;
-        AI ai;
+        bool busted;
+        public AI ai;
 
 
         public Joueurs(string p_Nom = "Anonyme", bool enLigne = false) 
@@ -77,11 +78,18 @@ namespace BJ_S
         public string Nom 
         {
             get { return m_Nom; }
+            set { m_Nom = value; }
         }
 
         public int Encaisse 
         {
             get { return Encaisse; }
+        }
+
+        public bool Busted
+        {
+            get {return busted; }
+            set {busted = value; }
         }
 
         public bool RetraitEncaisse(int p_Mise)//le retrait est effectuer par la partie mais le joueur peut miser dans le temps aloue

@@ -16,6 +16,11 @@ namespace BJ_S
             RandNom();
         }
 
+        public Joueurs Moi
+        {
+            set { moi = value; }
+        }
+
         string RandNom()
         {
             return null;
@@ -29,26 +34,36 @@ namespace BJ_S
 
             random = rand.Next() % 100;
             if (random < 90)
-                choixMise = 'n';
+                choixMise = 's';
             else if (random < 99)
-                choixMise = 'd';
+                choixMise = 'm';
             else
-                choixMise = 'a';
+                choixMise = 'b';
 
             switch (choixMise)
             {
-                case 'n': 
+                case 's': 
                     return 10;
 
-                case 'd':
-                    if(enCaisse >= 20)
-                        return 20;
+                case 'm':
+                    if(enCaisse >= 25)
+                        return 25;
                     return 10;
 
-                case 'a': 
-                    return enCaisse;
+                case 'b':
+                    if (enCaisse >= 50)
+                        return 50;
+                    return 10;
             }
             return 0;
+        }
+
+        public int HitorStand()
+        {//possibliliter de faire compter les cartes
+            if (moi.ValeurMain < 16)
+                return 1;
+            else
+                return 2;
         }
     }
 }

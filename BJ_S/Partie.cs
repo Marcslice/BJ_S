@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Timers;
 
 namespace BJ_S
@@ -13,14 +14,15 @@ namespace BJ_S
 		Sabot sabot;
 		bool enLigne;
 		bool tour;
+		UI m_UI;
 
-		public Partie(int nbJoueur, int nbAi, bool enLigne)
+		public Partie(int nbJoueur, int nbAi, bool enLigne, string nomJoueur)
 		{
 			
 			tabJoueur = new Joueurs[nbJoueur + nbAi];
 			for(int i = 0; i < nbJoueur; i++)
 			{
-				string m_nom = ""; //place holder
+				string m_nom = ""; //place holder pour nom des autres joueurs
 				tabJoueur[i] = new Joueurs(m_nom, true);
 			}
 
@@ -33,11 +35,16 @@ namespace BJ_S
 			}
 
 			moi = tabJoueur[0];
+			moi.Nom = nomJoueur;
 
 			this.enLigne = enLigne;
 
 			sabot = new Sabot();
 			croupier = new Croupier();
+
+			m_UI = new UI(this);
+			m_UI.Show();
+
 		}
 
 		//pour les parties enligne
@@ -46,6 +53,11 @@ namespace BJ_S
 			//moi=?
 			//tabJoueurs[] feed de l'host ou genere ca propre tab?
 
+		}
+
+		public Joueurs Moi
+		{
+			get { return moi; }
 		}
 
 		public void JouerManche()
@@ -126,15 +138,26 @@ namespace BJ_S
 
 				do
 				{
+					if (listeActif[i].Ai)
+					{
+						int milSec = 2000;
+						Thread.Sleep(milSec);
+
+						switch (listeActif[i].ai.HitorStand())
+						{
+							case 1: Hit(listeActif[i]);
+								break;
+							case 2: Stand();
+								break;
+						}
+					}
 					//linking avec interface
-					//sleepthread pour la decision de l'ai
-					
-					//hit definir target
+
 
 				} while (tour == true && listeActif[i].ValeurMain < 21);
+				if (listeActif[i].ValeurMain > 21)
+					listeActif[i].Busted = true;
 			}
-
-			//busted?
 
 			croupier.Main.RevelerCarte();
 			croupier.Main.Compte();
@@ -146,10 +169,10 @@ namespace BJ_S
 			}
 		}
 
-		 public void Hit()
+		 public void Hit(Joueurs joueur)
 		{
-			moi.Main.RecevoirCarte(sabot.CarteDessus());
-			moi.Main.Compte();
+			joueur.Main.RecevoirCarte(sabot.CarteDessus());
+			joueur.Main.Compte();
 		}
 
 		public void Stand()
@@ -163,11 +186,13 @@ namespace BJ_S
 			{
 				int mise = listeActif[i].Mise;
 
-				//busted a gerer
-				if (listeActif[i].ValeurMain > croupier.ValeurMain)
-					listeActif[i].DepotEncaisse(2 * mise);
-				else if (listeActif[i].ValeurMain == croupier.ValeurMain)
-					listeActif[i].DepotEncaisse(mise);
+				if (!listeActif[i].Busted)
+				{
+					if (listeActif[i].ValeurMain > croupier.ValeurMain)
+						listeActif[i].DepotEncaisse(2 * mise);
+					else if (listeActif[i].ValeurMain == croupier.ValeurMain)
+						listeActif[i].DepotEncaisse(mise);
+				}
 			}
 		}
 
@@ -182,15 +207,6 @@ namespace BJ_S
 
 			croupier.Main = new Mains();
 			croupier.ValeurMain = 0;
-		}
-
-		////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-		UI m_UI;
-		public Partie(int type, string nomJoueur)
-		{
-			m_UI = new UI(this);
-			m_UI.Show();
 		}
 
 		void PartieTerminer() {
