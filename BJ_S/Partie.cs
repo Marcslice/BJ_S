@@ -69,11 +69,13 @@ namespace BJ_S
 		{
 			Preparation();
 			DistribuerCartes();
-			TourJoueurH();
-			VerifierGagnant();
-			ViderTable();
+			//TourJoueurH();
+			//VerifierGagnant();
+			//ViderTable();
 			//boucle pour partie
 		}
+
+
 
 		public void Preparation()
 		{
@@ -91,11 +93,13 @@ namespace BJ_S
 			tempsAttente.Enabled = true;
 		}
 
+		public delegate void d_Miser(int p_Mise);
+
 		public void Miser(int p_Mise) 
 		{
 			Mise f;
 			if (moi.RetraitEncaisse(p_Mise))
-				m_UI.BloquerMise();
+				m_UI.Invoke(new UI.d_BloquerMise(m_UI.BloquerMise));
 			else
 			{
 				f = new Mise();
@@ -111,7 +115,7 @@ namespace BJ_S
 				if (tabJoueur[i].Mise > 0)
 					listeActif.Add(tabJoueur[i]);
 
-				m_UI.BloquerMise();
+				m_UI.Invoke(new UI.d_BloquerMise(m_UI.BloquerMise));
 			}
 		}
 

@@ -29,8 +29,15 @@ namespace BJ_S
             
             do
             {
-                if (nbPaquets == 0)
-                    new Sabot();
+                if (nbPaquets == 0) {
+                    sabot = new Paquets[8];
+                    nbPaquets = 8;
+                    for (int i = 0; i < 8; i++)
+                    {
+                        sabot[i] = new Paquets();
+                    }
+                }
+                    
 
                 paquetVide = false;
                 random = rand.Next() % nbPaquets;

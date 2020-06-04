@@ -144,6 +144,8 @@ namespace BJ_S
             lblFeed1.Text = update;
         }
 
+        public delegate void d_BloquerMise();
+
         public void BloquerMise() {
             this.btnMiser.Enabled = false;
             this.jeton10.Enabled = false;
@@ -218,12 +220,13 @@ namespace BJ_S
         {
             if (selected != null)
             {
-                if(selected == jeton10)
-                    m_Controleur.Miser(10);
+
+                if (selected == jeton10)
+                    Invoke(new Partie.d_Miser(m_Controleur.Miser),10);
                 else if (selected == jeton25)
-                    m_Controleur.Miser(25);
+                    Invoke(new Partie.d_Miser(m_Controleur.Miser),25);
                 else if (selected == jeton50)
-                    m_Controleur.Miser(50);
+                    Invoke(new Partie.d_Miser(m_Controleur.Miser),50);
             }
         }
     }
