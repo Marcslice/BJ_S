@@ -14,11 +14,13 @@ namespace BJ_S
 		Sabot sabot;
 		bool enLigne;
 		bool tour;
+		public bool formComplet = false;
 		UI m_UI;
 
 		public Partie(int nbJoueur, int nbAi, bool enLigne, string nomJoueur)
 		{
 			
+
 			tabJoueur = new Joueurs[nbJoueur + nbAi];
 			for(int i = 0; i < nbJoueur; i++)
 			{
@@ -45,8 +47,9 @@ namespace BJ_S
 			m_UI = new UI(this);
 			m_UI.Show();
 
-			m_UI.BloquerInterface();
+			m_UI.BloquerInterface(true);
 
+			JouerManche();
 		}
 
 		//pour les parties enligne
@@ -81,8 +84,11 @@ namespace BJ_S
 
 			m_UI.DebloquerMise();
 
-			tempsAttente = new System.Timers.Timer(30000);
-			tempsAttente.Elapsed += ConfirmerMise;			
+			tempsAttente = new System.Timers.Timer();
+			tempsAttente.Interval = 10000;
+			tempsAttente.Elapsed += ConfirmerMise;
+			tempsAttente.AutoReset = false;
+			tempsAttente.Enabled = true;
 		}
 
 		public void Miser(int p_Mise) 
@@ -154,7 +160,7 @@ namespace BJ_S
 						}
 					}
 					if (listeActif[i] == moi)
-						m_UI.DebloquerInterface();
+						m_UI.DebloquerInterface(false);
 
 					//cas multi
 					//for(int j = 1; j < listActif.count; j++)
@@ -162,7 +168,7 @@ namespace BJ_S
 
 				} while (tour == true && listeActif[i].ValeurMain < 21);
 				if (listeActif[i] == moi)
-					m_UI.BloquerInterface();
+					m_UI.BloquerInterface(false);
 
 				if (listeActif[i].ValeurMain > 21)
 					listeActif[i].Busted = true;

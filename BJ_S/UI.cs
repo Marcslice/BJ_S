@@ -31,6 +31,8 @@ namespace BJ_S
             feed[2] = this.lblFeed3;
             feed[3] = this.lblFeed4;
             feed[4] = this.lblFeed5;
+
+            m_Controleur.formComplet = true;
         }
 
         private void btnMiser_hover(object sender, EventArgs e) {
