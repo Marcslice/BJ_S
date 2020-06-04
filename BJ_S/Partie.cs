@@ -45,6 +45,8 @@ namespace BJ_S
 			m_UI = new UI(this);
 			m_UI.Show();
 
+			m_UI.BloquerInterface();
+
 		}
 
 		//pour les parties enligne
@@ -64,7 +66,7 @@ namespace BJ_S
 		{
 			Preparation();
 			DistribuerCartes();
-			TourJoueur();
+			TourJoueurH();
 			VerifierGagnant();
 			ViderTable();
 			//boucle pour partie
@@ -130,7 +132,7 @@ namespace BJ_S
 			}
 		}
 
-		public void TourJoueur()
+		public void TourJoueurH()
 		{
 			for(int i = 0; i < listeActif.Count; i++)
 			{
@@ -151,10 +153,17 @@ namespace BJ_S
 								break;
 						}
 					}
-					//linking avec interface
+					if (listeActif[i] == moi)
+						m_UI.DebloquerInterface();
 
+					//cas multi
+					//for(int j = 1; j < listActif.count; j++)
+					//if(listActif[i] != listActif[j])
 
 				} while (tour == true && listeActif[i].ValeurMain < 21);
+				if (listeActif[i] == moi)
+					m_UI.BloquerInterface();
+
 				if (listeActif[i].ValeurMain > 21)
 					listeActif[i].Busted = true;
 			}
@@ -167,6 +176,11 @@ namespace BJ_S
 				croupier.Main.RecevoirCarte(sabot.CarteDessus());
 				croupier.Main.Compte();
 			}
+		}
+
+		public void TourJoueurD()
+		{
+
 		}
 
 		 public void Hit(Joueurs joueur)
