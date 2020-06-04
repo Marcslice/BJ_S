@@ -49,7 +49,7 @@ namespace BJ_S
             f.ShowDialog(m_Menu);
 
             if(f.DialogResult == System.Windows.Forms.DialogResult.OK)
-                m_Partie = new Partie(type, f.get_Name()); 
+                m_Partie = new Partie(1,4,false,f.get_Name()); 
         }
 
         /// <summary>

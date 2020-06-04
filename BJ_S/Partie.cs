@@ -23,7 +23,7 @@ namespace BJ_S
 			for(int i = 0; i < nbJoueur; i++)
 			{
 				string m_nom = ""; //place holder pour nom des autres joueurs
-				tabJoueur[i] = new Joueurs(m_nom, true);
+				tabJoueur[i] = new Joueurs(m_nom, false);
 			}
 
 			if(nbAi > 0)

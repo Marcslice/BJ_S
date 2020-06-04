@@ -200,7 +200,7 @@ namespace BJ_S
 
         private void btnHit_Click(object sender, EventArgs e) // HIT!
         {
-            m_Controleur.Hit();
+            m_Controleur.Hit(m_Controleur.Moi);
         }
 
         private void btnStand_Click(object sender, EventArgs e) //STAND !
