@@ -182,17 +182,21 @@ namespace BJ_S
             }
         }
 
-        public void BloquerInterface() //Pour les joueurs qui passent un tour.
+        public void BloquerInterface(bool bloquerMise) //Pour les joueurs qui passent un tour.
         {
-            BloquerMise();
+            if(bloquerMise)
+                BloquerMise();
+
             this.btnHit.Enabled = false;
             this.btnStand.Enabled = false;
             this.buttonExpendFeed.Enabled = false;
         }
 
-        public void DebloquerInterface()
+        public void DebloquerInterface(bool debloquerMise)
         {
-            DebloquerMise();
+            if(debloquerMise)
+                DebloquerMise();
+
             this.btnHit.Enabled = true;
             this.btnStand.Enabled = true;
             this.buttonExpendFeed.Enabled = true;
