@@ -38,12 +38,12 @@ namespace BJ_S
         public Joueurs()//ai
         {
             esTuAI = true;
-            ai = new AI();
-            m_Nom = ai.Nom;
-
             m_Encaisse = 500;
             main = new Mains();
             valeurMain = 0;
+
+            ai = new AI(this);
+            m_Nom = ai.Nom;
         }
 
         public int Mise

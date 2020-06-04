@@ -185,6 +185,8 @@ namespace BJ_S
             }
         }
 
+        public delegate void d_BloquerInterface(bool bloquerMise);
+
         public void BloquerInterface(bool bloquerMise) //Pour les joueurs qui passent un tour.
         {
             if(bloquerMise)
@@ -194,6 +196,8 @@ namespace BJ_S
             this.btnStand.Enabled = false;
             this.buttonExpendFeed.Enabled = false;
         }
+
+        public delegate void d_DebloquerInterface(bool debloquerMise);
 
         public void DebloquerInterface(bool debloquerMise)
         {

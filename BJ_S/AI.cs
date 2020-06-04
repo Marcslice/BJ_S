@@ -11,19 +11,21 @@ namespace BJ_S
         Joueurs moi;
         public String Nom;
 
-        public AI()
+        public AI(Joueurs source)
         { 
             RandNom();
+            moi = source;
         }
 
         public Joueurs Moi
         {
+            get { return moi; }
             set { moi = value; }
         }
 
-        string RandNom()
+        void RandNom()
         {
-            return null;
+            Nom = "bob";
         }
 
         public int Miser(int enCaisse)
