@@ -14,8 +14,10 @@ namespace BJ_S
 		Sabot sabot;
 		bool enLigne;
 		bool tour;
-		public bool formComplet = false;
 		UI m_UI;
+		System.Timers.Timer tempsAttente, tMoins1;
+
+
 
 		public Partie(int nbJoueur, int nbAi, bool enLigne, string nomJoueur)
 		{
@@ -76,20 +78,27 @@ namespace BJ_S
 		}
 
 
-
 		public void Preparation()
 		{
 			listeActif = new List<Joueurs>();
 
-			System.Timers.Timer tempsAttente;
 			Console.WriteLine("Vous avez 30 secondes pour miser");//place holder
 
 			m_UI.DebloquerMise();
 
+			m_UI.Invoke(new UI.d_AfficherTimer(m_UI.AfficherTimer),true);
+
 			tempsAttente = new System.Timers.Timer();
-			tempsAttente.Interval = 10000;
+			tempsAttente.Interval = 30000;
 			tempsAttente.Elapsed += ConfirmerMise;
 			tempsAttente.AutoReset = false;
+
+			tMoins1 = new System.Timers.Timer();
+			tMoins1.Interval = 1000;
+			tMoins1.Elapsed += TimerTick;
+			tMoins1.AutoReset = true;
+
+			tMoins1.Enabled = true;
 			tempsAttente.Enabled = true;
 		}
 
@@ -107,15 +116,27 @@ namespace BJ_S
 			}
 		}
 
+
+		public void TimerTick(object source, ElapsedEventArgs e)
+		{
+			m_UI.Invoke(new UI.d_MettreAJourTimer(m_UI.MettreAJourTimer),1);
+		}
+
 		public void ConfirmerMise(object source, ElapsedEventArgs e)
 		{
-			
+			tempsAttente.Stop();
+			tMoins1.Stop();
+
+			tempsAttente.Dispose();
+			tMoins1.Dispose();
+
 			for (int i = 0; i < tabJoueur.Length; i++)
 			{
 				if (tabJoueur[i].Mise > 0)
 					listeActif.Add(tabJoueur[i]);
 
 				m_UI.Invoke(new UI.d_BloquerMise(m_UI.BloquerMise));
+				m_UI.Invoke(new UI.d_AfficherTimer(m_UI.AfficherTimer), false);
 			}
 		}
 

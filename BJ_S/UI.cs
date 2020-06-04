@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Timers;
 
 namespace BJ_S
 {
@@ -31,8 +32,6 @@ namespace BJ_S
             feed[2] = this.lblFeed3;
             feed[3] = this.lblFeed4;
             feed[4] = this.lblFeed5;
-
-            m_Controleur.formComplet = true;
         }
 
         private void btnMiser_hover(object sender, EventArgs e) {
@@ -204,6 +203,22 @@ namespace BJ_S
             this.btnHit.Enabled = true;
             this.btnStand.Enabled = true;
             this.buttonExpendFeed.Enabled = true;
+        }
+
+        public delegate void d_AfficherTimer(bool visible);
+        public void AfficherTimer(bool visible) {
+            this.lblTimer.Visible = visible;
+            this.lblTimer.BringToFront();
+        }
+
+        public delegate void d_MettreAJourTimer(int sec);
+        public void MettreAJourTimer(int sec) {
+
+            string texte = this.lblTimer.Text;
+
+            int tempRestant = Int32.Parse(texte.Split(new char[1] { ' ' },10, StringSplitOptions.RemoveEmptyEntries)[2]);
+
+            this.lblTimer.Text = $"Vous avez {tempRestant - 1} secondes pour miser.";
         }
 
         private void btnHit_Click(object sender, EventArgs e) // HIT!
