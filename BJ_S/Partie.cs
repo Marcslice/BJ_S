@@ -23,14 +23,14 @@ namespace BJ_S
 			for(int i = 0; i < nbJoueur; i++)
 			{
 				string m_nom = ""; //place holder pour nom des autres joueurs
-				tabJoueur[i] = new Joueurs(m_nom, false);
+				tabJoueur[i] = new Joueurs();
 			}
 
 			if(nbAi > 0)
 			{
 				for(int i = nbJoueur; i < nbJoueur + nbAi; i++)
 				{
-					tabJoueur[i] = new Joueurs();
+					tabJoueur[i] = new Joueurs(AI : true);
 				}
 			}
 
@@ -46,7 +46,8 @@ namespace BJ_S
 			m_UI.Show();
 
 			m_UI.Invoke(new UI.d_BloquerInterface(m_UI.BloquerInterface),true);
-			m_UI.Invoke(new UI.d_MettreAJourNomSiege(m_UI.MettreAJourNomSiege));
+			for(int i = 0; i < tabJoueur.Length; i++)
+				m_UI.Invoke(new UI.d_MettreAJourNomSiege(m_UI.MettreAJourNomSiege), i+1, tabJoueur[i].Nom);
 
 			JouerManche();
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace BJ_S
 {
@@ -19,11 +20,17 @@ namespace BJ_S
         public AI ai;
 
 
-        public Joueurs(string p_Nom = "Anonyme", bool enLigne = false) 
+        public Joueurs(string p_Nom = "Anonyme", bool AI = false, bool enLigne = false) 
         {
-            esTuAI = false;
-            if (p_Nom.Equals("Anonyme"))
+            esTuAI = AI;
+
+            if ((p_Nom.Equals("Anonyme") || p_Nom.Equals("")) && !AI)
                 m_Nom = $"{p_Nom}{GenererAnonymat()}";
+            else if (AI)
+            {
+                m_Nom = $"Bob{GenererAnonymat()}";
+                ai = new AI(this);
+            }
             else
                 m_Nom = p_Nom;
 
@@ -35,7 +42,7 @@ namespace BJ_S
                 m_Connection = new Connexions(false,"");
         }
 
-        public Joueurs()//ai
+       /* public Joueurs()//ai
         {
             esTuAI = true;
             m_Encaisse = 500;
@@ -45,7 +52,7 @@ namespace BJ_S
             ai = new AI(this);
             m_Nom = ai.Nom;
         }
-
+        */
         public int Mise
         {
             get { if (esTuAI) { return (mise = ai.Miser(m_Encaisse)); } else { return mise; } }
@@ -71,7 +78,9 @@ namespace BJ_S
 
         int GenererAnonymat() 
         {
-            Random rnd = new Random();
+            Thread.Sleep(200);
+            Random seed = new Random();
+            Random rnd = new Random(seed.Next(22,222));
             return rnd.Next(1, 1000);
         }
 

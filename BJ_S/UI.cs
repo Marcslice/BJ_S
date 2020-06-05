@@ -172,8 +172,13 @@ namespace BJ_S
         }
 
 
-        public delegate void d_MettreAJourNomSiege();
-        public void MettreAJourNomSiege() {
+        public delegate void d_MettreAJourNomSiege(int i, string nom);
+        public void MettreAJourNomSiege(int i, string nom) {
+            foreach (Control ctls in this.Controls) {
+                if (ctls.GetType().Name.Equals("Label"))
+                    if (ctls.Name.Equals($"lblJ{i}"))
+                        ctls.Text = nom;          
+            }
             this.lblJ1.Text = m_Controleur.Moi.Nom;
         }
 
