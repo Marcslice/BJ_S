@@ -546,11 +546,11 @@
             // 
             this.lblMainCalcule.AutoSize = true;
             this.lblMainCalcule.BackColor = System.Drawing.Color.Transparent;
-            this.lblMainCalcule.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMainCalcule.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMainCalcule.ForeColor = System.Drawing.Color.White;
-            this.lblMainCalcule.Location = new System.Drawing.Point(219, 789);
+            this.lblMainCalcule.Location = new System.Drawing.Point(178, 783);
             this.lblMainCalcule.Name = "lblMainCalcule";
-            this.lblMainCalcule.Size = new System.Drawing.Size(37, 40);
+            this.lblMainCalcule.Size = new System.Drawing.Size(47, 52);
             this.lblMainCalcule.TabIndex = 18;
             this.lblMainCalcule.Text = "?";
             // 

@@ -83,7 +83,7 @@ namespace BJ_S
 
         public int Encaisse 
         {
-            get { return Encaisse; }
+            get { return m_Encaisse; }
         }
 
         public bool Busted

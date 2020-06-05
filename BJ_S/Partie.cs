@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading;
 using System.Timers;
 
@@ -17,11 +16,8 @@ namespace BJ_S
 		UI m_UI;
 		System.Timers.Timer tempsAttente, tMoins1;
 
-
-
 		public Partie(int nbJoueur, int nbAi, bool enLigne, string nomJoueur)
 		{
-			
 
 			tabJoueur = new Joueurs[nbJoueur + nbAi];
 			for(int i = 0; i < nbJoueur; i++)
@@ -49,11 +45,11 @@ namespace BJ_S
 			m_UI = new UI(this);
 			m_UI.Show();
 
-			m_UI.BloquerInterface(true);
+			m_UI.Invoke(new UI.d_BloquerInterface(m_UI.BloquerInterface),true);
+			m_UI.Invoke(new UI.d_MettreAJourNomSiege(m_UI.MettreAJourNomSiege));
 
-			while (true) {
-				JouerManche();
-			}
+			JouerManche();
+
 		}
 
 		//pour les parties enligne
@@ -84,11 +80,9 @@ namespace BJ_S
 		{
 			listeActif = new List<Joueurs>();
 
-			Console.WriteLine("Vous avez 30 secondes pour miser");//place holder
+			m_UI.Invoke(new UI.d_DebloquerMise(m_UI.DebloquerMise));
 
-			m_UI.DebloquerMise();
-
-			m_UI.Invoke(new UI.d_AfficherTimer(m_UI.AfficherTimer),true);
+			m_UI.Invoke(new UI.d_AfficherTimer(m_UI.AfficherTimer),true);		
 
 			tempsAttente = new System.Timers.Timer();
 			tempsAttente.Interval = 10000;
@@ -112,6 +106,7 @@ namespace BJ_S
 			if (moi.RetraitEncaisse(p_Mise))
 			{
 				moi.Mise = p_Mise;
+				m_UI.Invoke(new UI.d_MettreAJourEncaisseJoueur(m_UI.MettreAJourEncaisseJoueur));
 				m_UI.Invoke(new UI.d_BloquerMise(m_UI.BloquerMise));
 			}
 			else
@@ -167,8 +162,8 @@ namespace BJ_S
 				else
 					croupier.Main.RecevoirCarte(sabot.CarteDessus(), true);
 			}
-
-			TourJoueurH();
+			m_UI.Invoke(new UI.d_MettreAJourMainJoueur(m_UI.MettreAJourMainJoueur));
+			//TourJoueurH();
 		}
 
 		public void TourJoueurH()
@@ -218,7 +213,7 @@ namespace BJ_S
 				croupier.ValeurMain = croupier.Main.Compte();
 			}
 
-			VerifierGagnant();
+			//VerifierGagnant();
 		}
 
 		public void TourJoueurD()

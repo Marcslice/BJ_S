@@ -152,6 +152,7 @@ namespace BJ_S
             this.jeton50.Enabled = false;
         }
 
+        public delegate void d_DebloquerMise();
         public void DebloquerMise() {
             this.btnMiser.Enabled = true;
             this.jeton10.Enabled = true;
@@ -159,18 +160,21 @@ namespace BJ_S
             this.jeton50.Enabled = true;
         }
 
-        public void MettreAJourMainJoueur(string player) { 
-            /*Affecter cartes aux mains
-            *Afficher le compte de la main
-            *
-            */
+        public delegate void d_MettreAJourEncaisseJoueur();
+        public void MettreAJourEncaisseJoueur()
+        {
+            this.lblMontantPorteFeuille.Text = m_Controleur.Moi.Encaisse.ToString();
         }
 
+        public delegate void d_MettreAJourMainJoueur();
+        public void MettreAJourMainJoueur() {
+            this.lblMainCalcule.Text = m_Controleur.Moi.ValeurMain.ToString();
+        }
+
+
+        public delegate void d_MettreAJourNomSiege();
         public void MettreAJourNomSiege() {
-            /*Au chargement de partie le serveur envoie message pour les noms
-            * Change les labels de sieges
-            *
-            */
+            this.lblJ1.Text = m_Controleur.Moi.Nom;
         }
 
         public void MontrerCarte(string carte) //Tourne la carte du côté visible
