@@ -105,7 +105,7 @@
             this.lblJ1.BackColor = System.Drawing.Color.Transparent;
             this.lblJ1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJ1.ForeColor = System.Drawing.Color.White;
-            this.lblJ1.Location = new System.Drawing.Point(147, 625);
+            this.lblJ1.Location = new System.Drawing.Point(150, 625);
             this.lblJ1.Name = "lblJ1";
             this.lblJ1.Size = new System.Drawing.Size(164, 46);
             this.lblJ1.TabIndex = 0;
@@ -117,7 +117,7 @@
             this.lblJ2.BackColor = System.Drawing.Color.Transparent;
             this.lblJ2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJ2.ForeColor = System.Drawing.Color.White;
-            this.lblJ2.Location = new System.Drawing.Point(466, 783);
+            this.lblJ2.Location = new System.Drawing.Point(465, 785);
             this.lblJ2.Name = "lblJ2";
             this.lblJ2.Size = new System.Drawing.Size(164, 46);
             this.lblJ2.TabIndex = 1;
@@ -129,7 +129,7 @@
             this.lblJ3.BackColor = System.Drawing.Color.Transparent;
             this.lblJ3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJ3.ForeColor = System.Drawing.Color.White;
-            this.lblJ3.Location = new System.Drawing.Point(855, 897);
+            this.lblJ3.Location = new System.Drawing.Point(885, 900);
             this.lblJ3.Name = "lblJ3";
             this.lblJ3.Size = new System.Drawing.Size(164, 46);
             this.lblJ3.TabIndex = 2;
@@ -141,7 +141,7 @@
             this.lblJ4.BackColor = System.Drawing.Color.Transparent;
             this.lblJ4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJ4.ForeColor = System.Drawing.Color.White;
-            this.lblJ4.Location = new System.Drawing.Point(1262, 763);
+            this.lblJ4.Location = new System.Drawing.Point(1260, 785);
             this.lblJ4.Name = "lblJ4";
             this.lblJ4.Size = new System.Drawing.Size(164, 46);
             this.lblJ4.TabIndex = 3;
@@ -153,7 +153,7 @@
             this.lblJ5.BackColor = System.Drawing.Color.Transparent;
             this.lblJ5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJ5.ForeColor = System.Drawing.Color.White;
-            this.lblJ5.Location = new System.Drawing.Point(1598, 592);
+            this.lblJ5.Location = new System.Drawing.Point(1600, 625);
             this.lblJ5.Name = "lblJ5";
             this.lblJ5.Size = new System.Drawing.Size(164, 46);
             this.lblJ5.TabIndex = 4;
