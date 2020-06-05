@@ -564,7 +564,7 @@
             this.lblTimer.Name = "lblTimer";
             this.lblTimer.Size = new System.Drawing.Size(915, 64);
             this.lblTimer.TabIndex = 19;
-            this.lblTimer.Text = "Vous avez 30 secondes pour miser.";
+            this.lblTimer.Text = "Vous avez 10 secondes pour miser.";
             this.lblTimer.Visible = false;
             // 
             // UI

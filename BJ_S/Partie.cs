@@ -117,7 +117,6 @@ namespace BJ_S
 			}
 		}
 
-
 		public void TimerTick(object source, ElapsedEventArgs e)
 		{
 			m_UI.Invoke(new UI.d_MettreAJourTimer(m_UI.MettreAJourTimer),1);
@@ -164,7 +163,7 @@ namespace BJ_S
 					croupier.Main.RecevoirCarte(sabot.CarteDessus(), true);
 			}
 			m_UI.Invoke(new UI.d_MettreAJourMainJoueur(m_UI.MettreAJourMainJoueur));
-			//TourJoueurH();
+			TourJoueurH();
 		}
 
 		public void TourJoueurH()
@@ -191,6 +190,7 @@ namespace BJ_S
 					if (listeActif[i] == moi)
 					{
 						m_UI.Invoke(new UI.d_DebloquerInterface(m_UI.DebloquerInterface), false); // m_UI.DebloquerInterface(false
+						m_UI.Invoke(new UI.d_MettreAJourMainJoueur(m_UI.MettreAJourMainJoueur));
 					}
 
 					//cas multi
