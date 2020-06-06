@@ -6,10 +6,10 @@ namespace BJ_S
 {
 	public class Partie
 	{
-		Joueurs[] tabJoueur;
+		public Joueurs[] tabJoueur;
 		List<Joueurs> listeActif;
 		Joueurs moi;
-		Croupier croupier;
+		public Croupier croupier;
 		Sabot sabot;
 		bool enLigne;
 		bool tour;
@@ -49,7 +49,10 @@ namespace BJ_S
 			for(int i = 0; i < tabJoueur.Length; i++)
 				m_UI.Invoke(new UI.d_MettreAJourNomSiege(m_UI.MettreAJourNomSiege), i+1, tabJoueur[i].Nom);
 
-			JouerManche();
+			//do
+			//{
+				JouerManche();
+			//} while (moi.Encaisse > 0);
 
 		}
 
@@ -153,16 +156,19 @@ namespace BJ_S
 					listeActif[i].ValeurMain = listeActif[i].Main.Compte();
 				}
 
+				m_UI.Invoke(new UI.d_MettreAJourMainJoueur(m_UI.MettreAJourMainJoueur));
+
 				if (!carteOuverte)
 				{
 					croupier.Main.RecevoirCarte(sabot.CarteDessus());
 					croupier.ValeurMain = croupier.Main.Compte();
 					carteOuverte = true;
+					m_UI.Invoke(new UI.d_MettreAJourMainCroupier(m_UI.MettreAJourMainCroupier));
 				}
 				else
 					croupier.Main.RecevoirCarte(sabot.CarteDessus(), true);
 			}
-			m_UI.Invoke(new UI.d_MettreAJourMainJoueur(m_UI.MettreAJourMainJoueur));
+			
 			TourJoueurH();
 		}
 
@@ -188,10 +194,7 @@ namespace BJ_S
 						}
 					}
 					if (listeActif[i] == moi)
-					{
 						m_UI.Invoke(new UI.d_DebloquerInterface(m_UI.DebloquerInterface), false); // m_UI.DebloquerInterface(false
-						m_UI.Invoke(new UI.d_MettreAJourMainJoueur(m_UI.MettreAJourMainJoueur));
-					}
 
 					//cas multi
 					//for(int j = 1; j < listActif.count; j++)
@@ -207,14 +210,20 @@ namespace BJ_S
 
 			croupier.Main.RevelerCarte();
 			croupier.ValeurMain = croupier.Main.Compte();
+			m_UI.Invoke(new UI.d_MettreAJourMainCroupier(m_UI.MettreAJourMainCroupier));
 
-			while(croupier.ValeurMain < 17)
+			Thread.Sleep(2000);
+
+			while (croupier.ValeurMain < 17)
 			{
 				croupier.Main.RecevoirCarte(sabot.CarteDessus());
 				croupier.ValeurMain = croupier.Main.Compte();
+
+				m_UI.Invoke(new UI.d_MettreAJourMainCroupier(m_UI.MettreAJourMainCroupier));
+				Thread.Sleep(2000);
 			}
 
-			//VerifierGagnant();
+			VerifierGagnant();
 		}
 
 		public void TourJoueurD()
@@ -226,6 +235,8 @@ namespace BJ_S
 		{
 			joueur.Main.RecevoirCarte(sabot.CarteDessus());
 			joueur.ValeurMain = joueur.Main.Compte();
+
+			m_UI.Invoke(new UI.d_MettreAJourMainJoueur(m_UI.MettreAJourMainJoueur));
 		}
 
 		public void Stand()
@@ -248,6 +259,8 @@ namespace BJ_S
 				}
 			}
 
+			m_UI.Invoke(new UI.d_MettreAJourEncaisseJoueur(m_UI.MettreAJourEncaisseJoueur));
+
 			ViderTable();
 		}
 
@@ -257,11 +270,18 @@ namespace BJ_S
 			{
 				listeActif[i].Main = new Mains();
 				listeActif[i].ValeurMain = 0;
+
+				m_UI.Invoke(new UI.d_MettreAJourMainJoueur(m_UI.MettreAJourMainJoueur));
+
 				listeActif[i].Mise = 0;
 			}
 
+			
+
 			croupier.Main = new Mains();
 			croupier.ValeurMain = 0;
+
+			JouerManche();
 		}
 
 		void PartieTerminer() {

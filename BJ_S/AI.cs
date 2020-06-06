@@ -62,7 +62,7 @@ namespace BJ_S
 
         public int HitorStand()
         {//possibliliter de faire compter les cartes
-            if (moi.ValeurMain < 16)
+            if (moi.ValeurMain < 17)
                 return 1;
             else
                 return 2;

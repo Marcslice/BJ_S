@@ -167,10 +167,26 @@ namespace BJ_S
         }
 
         public delegate void d_MettreAJourMainJoueur();
+
         public void MettreAJourMainJoueur() {
-            this.lblMainCalcule.Text = m_Controleur.Moi.ValeurMain.ToString();
+            if (m_Controleur.tabJoueur[0].Mise != 0)
+                this.lblMainCalcule.Text = m_Controleur.Moi.ValeurMain.ToString();
+            if (m_Controleur.tabJoueur[1].Mise != 0)
+                this.M2.Text = m_Controleur.tabJoueur[1].ValeurMain.ToString();
+            if (m_Controleur.tabJoueur[2].Mise != 0)
+                this.M3.Text = m_Controleur.tabJoueur[2].ValeurMain.ToString();
+            if (m_Controleur.tabJoueur[3].Mise != 0)
+                this.M4.Text = m_Controleur.tabJoueur[3].ValeurMain.ToString();
+            if (m_Controleur.tabJoueur[4].Mise != 0)
+                this.M5.Text = m_Controleur.tabJoueur[4].ValeurMain.ToString();
         }
 
+        public delegate void d_MettreAJourMainCroupier();
+
+        public void MettreAJourMainCroupier()
+        {
+            this.MCroupier.Text = m_Controleur.croupier.ValeurMain.ToString();
+        }
 
         public delegate void d_MettreAJourNomSiege(int i, string nom);
         public void MettreAJourNomSiege(int i, string nom) {

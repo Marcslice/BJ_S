@@ -70,6 +70,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblMainCalcule = new System.Windows.Forms.Label();
             this.lblTimer = new System.Windows.Forms.Label();
+            this.M5 = new System.Windows.Forms.Label();
+            this.M4 = new System.Windows.Forms.Label();
+            this.M3 = new System.Windows.Forms.Label();
+            this.M2 = new System.Windows.Forms.Label();
+            this.MCroupier = new System.Windows.Forms.Label();
             this.mainJ1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.c2j1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.c1j1)).BeginInit();
@@ -105,9 +110,10 @@
             this.lblJ1.BackColor = System.Drawing.Color.Transparent;
             this.lblJ1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJ1.ForeColor = System.Drawing.Color.White;
-            this.lblJ1.Location = new System.Drawing.Point(150, 625);
+            this.lblJ1.Location = new System.Drawing.Point(1051, 385);
+            this.lblJ1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblJ1.Name = "lblJ1";
-            this.lblJ1.Size = new System.Drawing.Size(164, 46);
+            this.lblJ1.Size = new System.Drawing.Size(112, 31);
             this.lblJ1.TabIndex = 0;
             this.lblJ1.Text = "Joueur1";
             // 
@@ -117,9 +123,10 @@
             this.lblJ2.BackColor = System.Drawing.Color.Transparent;
             this.lblJ2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJ2.ForeColor = System.Drawing.Color.White;
-            this.lblJ2.Location = new System.Drawing.Point(465, 785);
+            this.lblJ2.Location = new System.Drawing.Point(877, 491);
+            this.lblJ2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblJ2.Name = "lblJ2";
-            this.lblJ2.Size = new System.Drawing.Size(164, 46);
+            this.lblJ2.Size = new System.Drawing.Size(112, 31);
             this.lblJ2.TabIndex = 1;
             this.lblJ2.Text = "Joueur2";
             // 
@@ -129,9 +136,10 @@
             this.lblJ3.BackColor = System.Drawing.Color.Transparent;
             this.lblJ3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJ3.ForeColor = System.Drawing.Color.White;
-            this.lblJ3.Location = new System.Drawing.Point(885, 900);
+            this.lblJ3.Location = new System.Drawing.Point(631, 583);
+            this.lblJ3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblJ3.Name = "lblJ3";
-            this.lblJ3.Size = new System.Drawing.Size(164, 46);
+            this.lblJ3.Size = new System.Drawing.Size(112, 31);
             this.lblJ3.TabIndex = 2;
             this.lblJ3.Text = "Joueur3";
             // 
@@ -141,9 +149,10 @@
             this.lblJ4.BackColor = System.Drawing.Color.Transparent;
             this.lblJ4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJ4.ForeColor = System.Drawing.Color.White;
-            this.lblJ4.Location = new System.Drawing.Point(1260, 785);
+            this.lblJ4.Location = new System.Drawing.Point(392, 491);
+            this.lblJ4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblJ4.Name = "lblJ4";
-            this.lblJ4.Size = new System.Drawing.Size(164, 46);
+            this.lblJ4.Size = new System.Drawing.Size(112, 31);
             this.lblJ4.TabIndex = 3;
             this.lblJ4.Text = "Joueur4";
             // 
@@ -153,9 +162,10 @@
             this.lblJ5.BackColor = System.Drawing.Color.Transparent;
             this.lblJ5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJ5.ForeColor = System.Drawing.Color.White;
-            this.lblJ5.Location = new System.Drawing.Point(1600, 625);
+            this.lblJ5.Location = new System.Drawing.Point(171, 387);
+            this.lblJ5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblJ5.Name = "lblJ5";
-            this.lblJ5.Size = new System.Drawing.Size(164, 46);
+            this.lblJ5.Size = new System.Drawing.Size(112, 31);
             this.lblJ5.TabIndex = 4;
             this.lblJ5.Text = "Joueur5";
             // 
@@ -164,25 +174,28 @@
             this.mainJ1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.mainJ1.Controls.Add(this.c2j1);
             this.mainJ1.Controls.Add(this.c1j1);
-            this.mainJ1.Location = new System.Drawing.Point(148, 454);
+            this.mainJ1.Location = new System.Drawing.Point(99, 295);
+            this.mainJ1.Margin = new System.Windows.Forms.Padding(2);
             this.mainJ1.Name = "mainJ1";
-            this.mainJ1.Size = new System.Drawing.Size(392, 138);
+            this.mainJ1.Size = new System.Drawing.Size(261, 90);
             this.mainJ1.TabIndex = 5;
             this.mainJ1.Visible = false;
             // 
             // c2j1
             // 
-            this.c2j1.Location = new System.Drawing.Point(117, 5);
+            this.c2j1.Location = new System.Drawing.Point(78, 3);
+            this.c2j1.Margin = new System.Windows.Forms.Padding(2);
             this.c2j1.Name = "c2j1";
-            this.c2j1.Size = new System.Drawing.Size(70, 129);
+            this.c2j1.Size = new System.Drawing.Size(47, 84);
             this.c2j1.TabIndex = 18;
             this.c2j1.TabStop = false;
             // 
             // c1j1
             // 
-            this.c1j1.Location = new System.Drawing.Point(39, 5);
+            this.c1j1.Location = new System.Drawing.Point(26, 3);
+            this.c1j1.Margin = new System.Windows.Forms.Padding(2);
             this.c1j1.Name = "c1j1";
-            this.c1j1.Size = new System.Drawing.Size(70, 129);
+            this.c1j1.Size = new System.Drawing.Size(47, 84);
             this.c1j1.TabIndex = 17;
             this.c1j1.TabStop = false;
             // 
@@ -191,25 +204,28 @@
             this.mainJ2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.mainJ2.Controls.Add(this.c2j2);
             this.mainJ2.Controls.Add(this.c1j2);
-            this.mainJ2.Location = new System.Drawing.Point(478, 617);
+            this.mainJ2.Location = new System.Drawing.Point(319, 401);
+            this.mainJ2.Margin = new System.Windows.Forms.Padding(2);
             this.mainJ2.Name = "mainJ2";
-            this.mainJ2.Size = new System.Drawing.Size(392, 135);
+            this.mainJ2.Size = new System.Drawing.Size(261, 88);
             this.mainJ2.TabIndex = 6;
             this.mainJ2.Visible = false;
             // 
             // c2j2
             // 
-            this.c2j2.Location = new System.Drawing.Point(118, 5);
+            this.c2j2.Location = new System.Drawing.Point(79, 3);
+            this.c2j2.Margin = new System.Windows.Forms.Padding(2);
             this.c2j2.Name = "c2j2";
-            this.c2j2.Size = new System.Drawing.Size(70, 129);
+            this.c2j2.Size = new System.Drawing.Size(47, 84);
             this.c2j2.TabIndex = 20;
             this.c2j2.TabStop = false;
             // 
             // c1j2
             // 
-            this.c1j2.Location = new System.Drawing.Point(40, 5);
+            this.c1j2.Location = new System.Drawing.Point(27, 3);
+            this.c1j2.Margin = new System.Windows.Forms.Padding(2);
             this.c1j2.Name = "c1j2";
-            this.c1j2.Size = new System.Drawing.Size(70, 129);
+            this.c1j2.Size = new System.Drawing.Size(47, 84);
             this.c1j2.TabIndex = 19;
             this.c1j2.TabStop = false;
             // 
@@ -218,25 +234,28 @@
             this.mainJ3.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.mainJ3.Controls.Add(this.c2j3);
             this.mainJ3.Controls.Add(this.c1j3);
-            this.mainJ3.Location = new System.Drawing.Point(837, 758);
+            this.mainJ3.Location = new System.Drawing.Point(558, 493);
+            this.mainJ3.Margin = new System.Windows.Forms.Padding(2);
             this.mainJ3.Name = "mainJ3";
-            this.mainJ3.Size = new System.Drawing.Size(418, 135);
+            this.mainJ3.Size = new System.Drawing.Size(279, 88);
             this.mainJ3.TabIndex = 7;
             this.mainJ3.Visible = false;
             // 
             // c2j3
             // 
-            this.c2j3.Location = new System.Drawing.Point(118, 5);
+            this.c2j3.Location = new System.Drawing.Point(79, 3);
+            this.c2j3.Margin = new System.Windows.Forms.Padding(2);
             this.c2j3.Name = "c2j3";
-            this.c2j3.Size = new System.Drawing.Size(70, 129);
+            this.c2j3.Size = new System.Drawing.Size(47, 84);
             this.c2j3.TabIndex = 22;
             this.c2j3.TabStop = false;
             // 
             // c1j3
             // 
-            this.c1j3.Location = new System.Drawing.Point(42, 5);
+            this.c1j3.Location = new System.Drawing.Point(28, 3);
+            this.c1j3.Margin = new System.Windows.Forms.Padding(2);
             this.c1j3.Name = "c1j3";
-            this.c1j3.Size = new System.Drawing.Size(70, 129);
+            this.c1j3.Size = new System.Drawing.Size(47, 84);
             this.c1j3.TabIndex = 21;
             this.c1j3.TabStop = false;
             // 
@@ -245,25 +264,28 @@
             this.mainJ4.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.mainJ4.Controls.Add(this.c2j4);
             this.mainJ4.Controls.Add(this.c1j4);
-            this.mainJ4.Location = new System.Drawing.Point(1206, 617);
+            this.mainJ4.Location = new System.Drawing.Point(804, 401);
+            this.mainJ4.Margin = new System.Windows.Forms.Padding(2);
             this.mainJ4.Name = "mainJ4";
-            this.mainJ4.Size = new System.Drawing.Size(404, 135);
+            this.mainJ4.Size = new System.Drawing.Size(269, 88);
             this.mainJ4.TabIndex = 8;
             this.mainJ4.Visible = false;
             // 
             // c2j4
             // 
-            this.c2j4.Location = new System.Drawing.Point(118, 5);
+            this.c2j4.Location = new System.Drawing.Point(79, 3);
+            this.c2j4.Margin = new System.Windows.Forms.Padding(2);
             this.c2j4.Name = "c2j4";
-            this.c2j4.Size = new System.Drawing.Size(70, 129);
+            this.c2j4.Size = new System.Drawing.Size(47, 84);
             this.c2j4.TabIndex = 24;
             this.c2j4.TabStop = false;
             // 
             // c1j4
             // 
-            this.c1j4.Location = new System.Drawing.Point(42, 5);
+            this.c1j4.Location = new System.Drawing.Point(28, 3);
+            this.c1j4.Margin = new System.Windows.Forms.Padding(2);
             this.c1j4.Name = "c1j4";
-            this.c1j4.Size = new System.Drawing.Size(70, 129);
+            this.c1j4.Size = new System.Drawing.Size(47, 84);
             this.c1j4.TabIndex = 23;
             this.c1j4.TabStop = false;
             // 
@@ -272,25 +294,28 @@
             this.mainJ5.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.mainJ5.Controls.Add(this.c2j5);
             this.mainJ5.Controls.Add(this.c1j5);
-            this.mainJ5.Location = new System.Drawing.Point(1466, 445);
+            this.mainJ5.Location = new System.Drawing.Point(977, 289);
+            this.mainJ5.Margin = new System.Windows.Forms.Padding(2);
             this.mainJ5.Name = "mainJ5";
-            this.mainJ5.Size = new System.Drawing.Size(428, 145);
+            this.mainJ5.Size = new System.Drawing.Size(285, 94);
             this.mainJ5.TabIndex = 9;
             this.mainJ5.Visible = false;
             // 
             // c2j5
             // 
-            this.c2j5.Location = new System.Drawing.Point(120, 8);
+            this.c2j5.Location = new System.Drawing.Point(80, 5);
+            this.c2j5.Margin = new System.Windows.Forms.Padding(2);
             this.c2j5.Name = "c2j5";
-            this.c2j5.Size = new System.Drawing.Size(70, 129);
+            this.c2j5.Size = new System.Drawing.Size(47, 84);
             this.c2j5.TabIndex = 26;
             this.c2j5.TabStop = false;
             // 
             // c1j5
             // 
-            this.c1j5.Location = new System.Drawing.Point(44, 8);
+            this.c1j5.Location = new System.Drawing.Point(29, 5);
+            this.c1j5.Margin = new System.Windows.Forms.Padding(2);
             this.c1j5.Name = "c1j5";
-            this.c1j5.Size = new System.Drawing.Size(70, 129);
+            this.c1j5.Size = new System.Drawing.Size(47, 84);
             this.c1j5.TabIndex = 25;
             this.c1j5.TabStop = false;
             // 
@@ -299,9 +324,10 @@
             this.imgSabot.BackColor = System.Drawing.Color.Transparent;
             this.imgSabot.BackgroundImage = global::BJ_S.Properties.Resources.paquet;
             this.imgSabot.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.imgSabot.Location = new System.Drawing.Point(296, 166);
+            this.imgSabot.Location = new System.Drawing.Point(197, 108);
+            this.imgSabot.Margin = new System.Windows.Forms.Padding(2);
             this.imgSabot.Name = "imgSabot";
-            this.imgSabot.Size = new System.Drawing.Size(195, 120);
+            this.imgSabot.Size = new System.Drawing.Size(130, 78);
             this.imgSabot.TabIndex = 10;
             this.imgSabot.TabStop = false;
             // 
@@ -315,9 +341,10 @@
             this.feedPanel.Controls.Add(this.lblFeed1);
             this.feedPanel.Controls.Add(this.lblFeed3);
             this.feedPanel.Controls.Add(this.lblFeed2);
-            this.feedPanel.Location = new System.Drawing.Point(1206, 5);
+            this.feedPanel.Location = new System.Drawing.Point(804, 3);
+            this.feedPanel.Margin = new System.Windows.Forms.Padding(2);
             this.feedPanel.Name = "feedPanel";
-            this.feedPanel.Size = new System.Drawing.Size(722, 77);
+            this.feedPanel.Size = new System.Drawing.Size(481, 50);
             this.feedPanel.TabIndex = 11;
             // 
             // lblFeed5
@@ -326,9 +353,10 @@
             this.lblFeed5.BackColor = System.Drawing.Color.Transparent;
             this.lblFeed5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFeed5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblFeed5.Location = new System.Drawing.Point(14, 220);
+            this.lblFeed5.Location = new System.Drawing.Point(9, 143);
+            this.lblFeed5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFeed5.Name = "lblFeed5";
-            this.lblFeed5.Size = new System.Drawing.Size(0, 37);
+            this.lblFeed5.Size = new System.Drawing.Size(0, 26);
             this.lblFeed5.TabIndex = 19;
             this.lblFeed5.Visible = false;
             // 
@@ -339,9 +367,10 @@
             this.buttonExpendFeed.FlatAppearance.BorderSize = 0;
             this.buttonExpendFeed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExpendFeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExpendFeed.Location = new System.Drawing.Point(642, 8);
+            this.buttonExpendFeed.Location = new System.Drawing.Point(428, 5);
+            this.buttonExpendFeed.Margin = new System.Windows.Forms.Padding(2);
             this.buttonExpendFeed.Name = "buttonExpendFeed";
-            this.buttonExpendFeed.Size = new System.Drawing.Size(66, 62);
+            this.buttonExpendFeed.Size = new System.Drawing.Size(44, 40);
             this.buttonExpendFeed.TabIndex = 1;
             this.buttonExpendFeed.UseVisualStyleBackColor = false;
             this.buttonExpendFeed.Click += new System.EventHandler(this.btnExtendfeedClick);
@@ -354,9 +383,10 @@
             this.lblFeed4.BackColor = System.Drawing.Color.Transparent;
             this.lblFeed4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFeed4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblFeed4.Location = new System.Drawing.Point(14, 172);
+            this.lblFeed4.Location = new System.Drawing.Point(9, 112);
+            this.lblFeed4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFeed4.Name = "lblFeed4";
-            this.lblFeed4.Size = new System.Drawing.Size(0, 37);
+            this.lblFeed4.Size = new System.Drawing.Size(0, 26);
             this.lblFeed4.TabIndex = 18;
             this.lblFeed4.Visible = false;
             // 
@@ -365,9 +395,10 @@
             this.lblFeed1.AutoSize = true;
             this.lblFeed1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFeed1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblFeed1.Location = new System.Drawing.Point(16, 22);
+            this.lblFeed1.Location = new System.Drawing.Point(11, 14);
+            this.lblFeed1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFeed1.Name = "lblFeed1";
-            this.lblFeed1.Size = new System.Drawing.Size(216, 37);
+            this.lblFeed1.Size = new System.Drawing.Size(147, 26);
             this.lblFeed1.TabIndex = 0;
             this.lblFeed1.Text = "Bonne partie !";
             // 
@@ -377,9 +408,10 @@
             this.lblFeed3.BackColor = System.Drawing.Color.Transparent;
             this.lblFeed3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFeed3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblFeed3.Location = new System.Drawing.Point(14, 125);
+            this.lblFeed3.Location = new System.Drawing.Point(9, 81);
+            this.lblFeed3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFeed3.Name = "lblFeed3";
-            this.lblFeed3.Size = new System.Drawing.Size(0, 37);
+            this.lblFeed3.Size = new System.Drawing.Size(0, 26);
             this.lblFeed3.TabIndex = 17;
             this.lblFeed3.Visible = false;
             // 
@@ -389,9 +421,10 @@
             this.lblFeed2.BackColor = System.Drawing.Color.Transparent;
             this.lblFeed2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFeed2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblFeed2.Location = new System.Drawing.Point(16, 72);
+            this.lblFeed2.Location = new System.Drawing.Point(11, 47);
+            this.lblFeed2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFeed2.Name = "lblFeed2";
-            this.lblFeed2.Size = new System.Drawing.Size(0, 37);
+            this.lblFeed2.Size = new System.Drawing.Size(0, 26);
             this.lblFeed2.TabIndex = 2;
             this.lblFeed2.Visible = false;
             // 
@@ -404,18 +437,20 @@
             this.panel1.Controls.Add(this.jeton25);
             this.panel1.Controls.Add(this.jeton50);
             this.panel1.Controls.Add(this.lblMontantPorteFeuille);
-            this.panel1.Location = new System.Drawing.Point(-8, 842);
+            this.panel1.Location = new System.Drawing.Point(-5, 547);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(400, 220);
+            this.panel1.Size = new System.Drawing.Size(267, 143);
             this.panel1.TabIndex = 12;
             // 
             // jeton10
             // 
             this.jeton10.BackgroundImage = global::BJ_S.Properties.Resources.jeton10Out;
             this.jeton10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.jeton10.Location = new System.Drawing.Point(56, 109);
+            this.jeton10.Location = new System.Drawing.Point(37, 71);
+            this.jeton10.Margin = new System.Windows.Forms.Padding(2);
             this.jeton10.Name = "jeton10";
-            this.jeton10.Size = new System.Drawing.Size(90, 89);
+            this.jeton10.Size = new System.Drawing.Size(60, 58);
             this.jeton10.TabIndex = 19;
             this.jeton10.TabStop = false;
             this.jeton10.Click += new System.EventHandler(this.jetonsClick);
@@ -426,9 +461,10 @@
             // 
             this.jeton25.BackgroundImage = global::BJ_S.Properties.Resources.jeton25Out;
             this.jeton25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.jeton25.Location = new System.Drawing.Point(156, 109);
+            this.jeton25.Location = new System.Drawing.Point(104, 71);
+            this.jeton25.Margin = new System.Windows.Forms.Padding(2);
             this.jeton25.Name = "jeton25";
-            this.jeton25.Size = new System.Drawing.Size(90, 89);
+            this.jeton25.Size = new System.Drawing.Size(60, 58);
             this.jeton25.TabIndex = 18;
             this.jeton25.TabStop = false;
             this.jeton25.Click += new System.EventHandler(this.jetonsClick);
@@ -439,9 +475,10 @@
             // 
             this.jeton50.BackgroundImage = global::BJ_S.Properties.Resources.jeton50Out;
             this.jeton50.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.jeton50.Location = new System.Drawing.Point(256, 109);
+            this.jeton50.Location = new System.Drawing.Point(171, 71);
+            this.jeton50.Margin = new System.Windows.Forms.Padding(2);
             this.jeton50.Name = "jeton50";
-            this.jeton50.Size = new System.Drawing.Size(90, 89);
+            this.jeton50.Size = new System.Drawing.Size(60, 58);
             this.jeton50.TabIndex = 17;
             this.jeton50.TabStop = false;
             this.jeton50.Click += new System.EventHandler(this.jetonsClick);
@@ -453,9 +490,10 @@
             this.lblMontantPorteFeuille.AutoSize = true;
             this.lblMontantPorteFeuille.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMontantPorteFeuille.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblMontantPorteFeuille.Location = new System.Drawing.Point(159, 35);
+            this.lblMontantPorteFeuille.Location = new System.Drawing.Point(106, 23);
+            this.lblMontantPorteFeuille.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMontantPorteFeuille.Name = "lblMontantPorteFeuille";
-            this.lblMontantPorteFeuille.Size = new System.Drawing.Size(86, 46);
+            this.lblMontantPorteFeuille.Size = new System.Drawing.Size(59, 31);
             this.lblMontantPorteFeuille.TabIndex = 16;
             this.lblMontantPorteFeuille.Text = "500";
             // 
@@ -464,26 +502,29 @@
             this.mainCroupier.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.mainCroupier.Controls.Add(this.cc2);
             this.mainCroupier.Controls.Add(this.cc1);
-            this.mainCroupier.Location = new System.Drawing.Point(862, 378);
+            this.mainCroupier.Location = new System.Drawing.Point(575, 246);
+            this.mainCroupier.Margin = new System.Windows.Forms.Padding(2);
             this.mainCroupier.Name = "mainCroupier";
-            this.mainCroupier.Size = new System.Drawing.Size(238, 138);
+            this.mainCroupier.Size = new System.Drawing.Size(159, 90);
             this.mainCroupier.TabIndex = 10;
             this.mainCroupier.Visible = false;
             // 
             // cc2
             // 
-            this.cc2.Location = new System.Drawing.Point(118, 6);
+            this.cc2.Location = new System.Drawing.Point(79, 4);
+            this.cc2.Margin = new System.Windows.Forms.Padding(2);
             this.cc2.Name = "cc2";
-            this.cc2.Size = new System.Drawing.Size(70, 129);
+            this.cc2.Size = new System.Drawing.Size(47, 84);
             this.cc2.TabIndex = 28;
             this.cc2.TabStop = false;
             this.cc2.Tag = "dos";
             // 
             // cc1
             // 
-            this.cc1.Location = new System.Drawing.Point(42, 6);
+            this.cc1.Location = new System.Drawing.Point(28, 4);
+            this.cc1.Margin = new System.Windows.Forms.Padding(2);
             this.cc1.Name = "cc1";
-            this.cc1.Size = new System.Drawing.Size(70, 129);
+            this.cc1.Size = new System.Drawing.Size(47, 84);
             this.cc1.TabIndex = 27;
             this.cc1.TabStop = false;
             this.cc1.Tag = "face";
@@ -493,9 +534,10 @@
             this.btnMiser.BackColor = System.Drawing.Color.Transparent;
             this.btnMiser.BackgroundImage = global::BJ_S.Properties.Resources.buttonMiserOut;
             this.btnMiser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnMiser.Location = new System.Drawing.Point(366, 929);
+            this.btnMiser.Location = new System.Drawing.Point(244, 604);
+            this.btnMiser.Margin = new System.Windows.Forms.Padding(2);
             this.btnMiser.Name = "btnMiser";
-            this.btnMiser.Size = new System.Drawing.Size(250, 120);
+            this.btnMiser.Size = new System.Drawing.Size(167, 78);
             this.btnMiser.TabIndex = 14;
             this.btnMiser.TabStop = false;
             this.btnMiser.Click += new System.EventHandler(this.btnMiser_Click);
@@ -507,9 +549,10 @@
             this.btnHit.BackColor = System.Drawing.Color.Transparent;
             this.btnHit.BackgroundImage = global::BJ_S.Properties.Resources.buttonHitOut;
             this.btnHit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnHit.Location = new System.Drawing.Point(1676, 803);
+            this.btnHit.Location = new System.Drawing.Point(1117, 522);
+            this.btnHit.Margin = new System.Windows.Forms.Padding(2);
             this.btnHit.Name = "btnHit";
-            this.btnHit.Size = new System.Drawing.Size(250, 120);
+            this.btnHit.Size = new System.Drawing.Size(167, 78);
             this.btnHit.TabIndex = 15;
             this.btnHit.TabStop = false;
             this.btnHit.Click += new System.EventHandler(this.btnHit_Click);
@@ -521,9 +564,10 @@
             this.btnStand.BackColor = System.Drawing.Color.Transparent;
             this.btnStand.BackgroundImage = global::BJ_S.Properties.Resources.buttonStandOut;
             this.btnStand.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnStand.Location = new System.Drawing.Point(1676, 929);
+            this.btnStand.Location = new System.Drawing.Point(1117, 604);
+            this.btnStand.Margin = new System.Windows.Forms.Padding(2);
             this.btnStand.Name = "btnStand";
-            this.btnStand.Size = new System.Drawing.Size(250, 120);
+            this.btnStand.Size = new System.Drawing.Size(167, 78);
             this.btnStand.TabIndex = 16;
             this.btnStand.TabStop = false;
             this.btnStand.Click += new System.EventHandler(this.btnStand_Click);
@@ -536,9 +580,10 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(36, 783);
+            this.label1.Location = new System.Drawing.Point(24, 509);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 46);
+            this.label1.Size = new System.Drawing.Size(87, 31);
             this.label1.TabIndex = 17;
             this.label1.Text = "Main :";
             // 
@@ -548,9 +593,10 @@
             this.lblMainCalcule.BackColor = System.Drawing.Color.Transparent;
             this.lblMainCalcule.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMainCalcule.ForeColor = System.Drawing.Color.White;
-            this.lblMainCalcule.Location = new System.Drawing.Point(178, 783);
+            this.lblMainCalcule.Location = new System.Drawing.Point(119, 509);
+            this.lblMainCalcule.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMainCalcule.Name = "lblMainCalcule";
-            this.lblMainCalcule.Size = new System.Drawing.Size(47, 52);
+            this.lblMainCalcule.Size = new System.Drawing.Size(32, 36);
             this.lblMainCalcule.TabIndex = 18;
             this.lblMainCalcule.Text = "?";
             // 
@@ -560,20 +606,91 @@
             this.lblTimer.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimer.ForeColor = System.Drawing.Color.White;
-            this.lblTimer.Location = new System.Drawing.Point(511, 214);
+            this.lblTimer.Location = new System.Drawing.Point(341, 139);
+            this.lblTimer.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTimer.Name = "lblTimer";
-            this.lblTimer.Size = new System.Drawing.Size(915, 64);
+            this.lblTimer.Size = new System.Drawing.Size(622, 44);
             this.lblTimer.TabIndex = 19;
             this.lblTimer.Text = "Vous avez 10 secondes pour miser.";
             this.lblTimer.Visible = false;
             // 
+            // M5
+            // 
+            this.M5.AutoSize = true;
+            this.M5.BackColor = System.Drawing.Color.Transparent;
+            this.M5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.M5.Location = new System.Drawing.Point(213, 418);
+            this.M5.MaximumSize = new System.Drawing.Size(50, 30);
+            this.M5.MinimumSize = new System.Drawing.Size(25, 25);
+            this.M5.Name = "M5";
+            this.M5.Size = new System.Drawing.Size(29, 30);
+            this.M5.TabIndex = 20;
+            this.M5.Text = "?";
+            // 
+            // M4
+            // 
+            this.M4.AutoSize = true;
+            this.M4.BackColor = System.Drawing.Color.Transparent;
+            this.M4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.M4.Location = new System.Drawing.Point(435, 522);
+            this.M4.MaximumSize = new System.Drawing.Size(50, 30);
+            this.M4.MinimumSize = new System.Drawing.Size(25, 25);
+            this.M4.Name = "M4";
+            this.M4.Size = new System.Drawing.Size(29, 30);
+            this.M4.TabIndex = 21;
+            this.M4.Text = "?";
+            // 
+            // M3
+            // 
+            this.M3.AutoSize = true;
+            this.M3.BackColor = System.Drawing.Color.Transparent;
+            this.M3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.M3.Location = new System.Drawing.Point(674, 614);
+            this.M3.MaximumSize = new System.Drawing.Size(50, 30);
+            this.M3.MinimumSize = new System.Drawing.Size(25, 25);
+            this.M3.Name = "M3";
+            this.M3.Size = new System.Drawing.Size(29, 30);
+            this.M3.TabIndex = 22;
+            this.M3.Text = "?";
+            // 
+            // M2
+            // 
+            this.M2.AutoSize = true;
+            this.M2.BackColor = System.Drawing.Color.Transparent;
+            this.M2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.M2.Location = new System.Drawing.Point(921, 522);
+            this.M2.MaximumSize = new System.Drawing.Size(50, 30);
+            this.M2.MinimumSize = new System.Drawing.Size(25, 25);
+            this.M2.Name = "M2";
+            this.M2.Size = new System.Drawing.Size(29, 30);
+            this.M2.TabIndex = 23;
+            this.M2.Text = "?";
+            // 
+            // MCroupier
+            // 
+            this.MCroupier.AutoSize = true;
+            this.MCroupier.BackColor = System.Drawing.Color.Transparent;
+            this.MCroupier.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MCroupier.Location = new System.Drawing.Point(541, 246);
+            this.MCroupier.MaximumSize = new System.Drawing.Size(50, 30);
+            this.MCroupier.MinimumSize = new System.Drawing.Size(25, 25);
+            this.MCroupier.Name = "MCroupier";
+            this.MCroupier.Size = new System.Drawing.Size(29, 30);
+            this.MCroupier.TabIndex = 25;
+            this.MCroupier.Text = "?";
+            // 
             // UI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::BJ_S.Properties.Resources.table;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1938, 1062);
+            this.ClientSize = new System.Drawing.Size(1292, 690);
+            this.Controls.Add(this.MCroupier);
+            this.Controls.Add(this.M2);
+            this.Controls.Add(this.M3);
+            this.Controls.Add(this.M4);
+            this.Controls.Add(this.M5);
             this.Controls.Add(this.lblTimer);
             this.Controls.Add(this.lblMainCalcule);
             this.Controls.Add(this.label1);
@@ -596,6 +713,7 @@
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.Transparent;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UI";
             this.Text = "Partie";
             this.mainJ1.ResumeLayout(false);
@@ -676,5 +794,10 @@
         private System.Windows.Forms.PictureBox cc2;
         private System.Windows.Forms.PictureBox cc1;
         private System.Windows.Forms.Label lblTimer;
+        private System.Windows.Forms.Label M5;
+        private System.Windows.Forms.Label M4;
+        private System.Windows.Forms.Label M3;
+        private System.Windows.Forms.Label M2;
+        private System.Windows.Forms.Label MCroupier;
     }
 }

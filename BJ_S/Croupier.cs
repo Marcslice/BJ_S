@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BJ_S
 {
-    class Croupier
+    public class Croupier
     {
         Mains main;
         int valeurMain;
