@@ -20,17 +20,15 @@ namespace BJ_S
 		{
 
 			tabJoueur = new Joueurs[nbJoueur + nbAi];
-			for(int i = 0; i < nbJoueur; i++)
-			{
-				string m_nom = ""; //place holder pour nom des autres joueurs
-				tabJoueur[i] = new Joueurs();
-			}
 
-			if(nbAi > 0)
+			for (int i = 0; i < nbJoueur; i++)
+				tabJoueur[i] = new Joueurs();
+
+			if (nbAi > 0)
 			{
-				for(int i = nbJoueur; i < nbJoueur + nbAi; i++)
+				for (int i = nbJoueur; i < nbJoueur + nbAi; i++)
 				{
-					tabJoueur[i] = new Joueurs(AI : true);
+					tabJoueur[i] = new Joueurs(AI: true);
 				}
 			}
 
@@ -45,13 +43,13 @@ namespace BJ_S
 			m_UI = new UI(this);
 			m_UI.Show();
 
-			m_UI.Invoke(new UI.d_BloquerInterface(m_UI.BloquerInterface),true);
-			for(int i = 0; i < tabJoueur.Length; i++)
-				m_UI.Invoke(new UI.d_MettreAJourNomSiege(m_UI.MettreAJourNomSiege), i+1, tabJoueur[i].Nom);
+			m_UI.Invoke(new UI.d_BloquerInterface(m_UI.BloquerInterface), true);
+			for (int i = 0; i < tabJoueur.Length; i++)
+				m_UI.Invoke(new UI.d_MettreAJourNomSiege(m_UI.MettreAJourNomSiege), i + 1, tabJoueur[i].Nom);
 
 			//do
 			//{
-				JouerManche();
+			JouerManche();
 			//} while (moi.Encaisse > 0);
 
 		}
@@ -76,7 +74,7 @@ namespace BJ_S
 			//TourJoueurH();
 			//VerifierGagnant();
 			//ViderTable();
-			
+
 		}
 
 
@@ -84,9 +82,11 @@ namespace BJ_S
 		{
 			listeActif = new List<Joueurs>();
 
+			m_UI.Invoke(new UI.d_ResetTimer(m_UI.ResetTimer));
+
 			m_UI.Invoke(new UI.d_DebloquerMise(m_UI.DebloquerMise));
 
-			m_UI.Invoke(new UI.d_AfficherTimer(m_UI.AfficherTimer),true);		
+			m_UI.Invoke(new UI.d_AfficherTimer(m_UI.AfficherTimer), true);
 
 			tempsAttente = new System.Timers.Timer();
 			tempsAttente.Interval = 10000;
@@ -104,7 +104,7 @@ namespace BJ_S
 
 		public delegate void d_Miser(int p_Mise);
 
-		public void Miser(int p_Mise) 
+		public void Miser(int p_Mise)
 		{
 			Mise f;
 			if (moi.RetraitEncaisse(p_Mise))
@@ -122,7 +122,7 @@ namespace BJ_S
 
 		public void TimerTick(object source, ElapsedEventArgs e)
 		{
-			m_UI.Invoke(new UI.d_MettreAJourTimer(m_UI.MettreAJourTimer),1);
+			m_UI.Invoke(new UI.d_MettreAJourTimer(m_UI.MettreAJourTimer), 1);
 		}
 
 		public void ConfirmerMise(object source, ElapsedEventArgs e)
@@ -154,27 +154,33 @@ namespace BJ_S
 				{
 					listeActif[i].Main.RecevoirCarte(sabot.CarteDessus());
 					listeActif[i].ValeurMain = listeActif[i].Main.Compte();
-				}
 
-				m_UI.Invoke(new UI.d_MettreAJourMainJoueur(m_UI.MettreAJourMainJoueur));
+				}
 
 				if (!carteOuverte)
 				{
 					croupier.Main.RecevoirCarte(sabot.CarteDessus());
 					croupier.ValeurMain = croupier.Main.Compte();
 					carteOuverte = true;
-					m_UI.Invoke(new UI.d_MettreAJourMainCroupier(m_UI.MettreAJourMainCroupier));
+
 				}
 				else
+				{
 					croupier.Main.RecevoirCarte(sabot.CarteDessus(), true);
+				}
 			}
-			
+
+			for (int i = 0; i < tabJoueur.Length; i++)
+				m_UI.Invoke(new UI.d_MettreAJourMainJoueur(m_UI.MettreAJourMainJoueur), tabJoueur[i], i + 1);
+
+			m_UI.Invoke(new UI.d_MettreAJourMainCroupier(m_UI.MettreAJourMainCroupier), croupier, false);
+
 			TourJoueurH();
 		}
 
 		public void TourJoueurH()
 		{
-			for(int i = 0; i < listeActif.Count; i++)
+			for (int i = 0; i < listeActif.Count; i++)
 			{
 				tour = true;
 
@@ -187,9 +193,11 @@ namespace BJ_S
 
 						switch (listeActif[i].ai.HitorStand())
 						{
-							case 1: Hit(listeActif[i]);
+							case 1:
+								Hit(listeActif[i],i+1);
 								break;
-							case 2: Stand();
+							case 2:
+								Stand();
 								break;
 						}
 					}
@@ -210,7 +218,7 @@ namespace BJ_S
 
 			croupier.Main.RevelerCarte();
 			croupier.ValeurMain = croupier.Main.Compte();
-			m_UI.Invoke(new UI.d_MettreAJourMainCroupier(m_UI.MettreAJourMainCroupier));
+			m_UI.Invoke(new UI.d_MettreAJourMainCroupier(m_UI.MettreAJourMainCroupier), croupier, true);
 
 			Thread.Sleep(2000);
 
@@ -219,7 +227,7 @@ namespace BJ_S
 				croupier.Main.RecevoirCarte(sabot.CarteDessus());
 				croupier.ValeurMain = croupier.Main.Compte();
 
-				m_UI.Invoke(new UI.d_MettreAJourMainCroupier(m_UI.MettreAJourMainCroupier));
+				m_UI.Invoke(new UI.d_MettreAJourMainCroupier(m_UI.MettreAJourMainCroupier), croupier, true);
 				Thread.Sleep(2000);
 			}
 
@@ -231,12 +239,12 @@ namespace BJ_S
 
 		}
 
-		 public void Hit(Joueurs joueur)
+		public void Hit(Joueurs joueur, int siege)
 		{
 			joueur.Main.RecevoirCarte(sabot.CarteDessus());
 			joueur.ValeurMain = joueur.Main.Compte();
 
-			m_UI.Invoke(new UI.d_MettreAJourMainJoueur(m_UI.MettreAJourMainJoueur));
+			m_UI.Invoke(new UI.d_MettreAJourMainJoueur(m_UI.MettreAJourMainJoueur), joueur, siege);
 		}
 
 		public void Stand()
@@ -246,7 +254,7 @@ namespace BJ_S
 
 		public void VerifierGagnant()
 		{
-			for(int i = 0; i < listeActif.Count; i++)
+			for (int i = 0; i < listeActif.Count; i++)
 			{
 				int mise = listeActif[i].Mise;
 
@@ -261,22 +269,22 @@ namespace BJ_S
 
 			m_UI.Invoke(new UI.d_MettreAJourEncaisseJoueur(m_UI.MettreAJourEncaisseJoueur));
 
-			ViderTable();
+			//ViderTable();
 		}
 
 		public void ViderTable()
 		{
-			for(int i = 0; i < listeActif.Count; i++)
+			for (int i = 0; i < listeActif.Count; i++)
 			{
 				listeActif[i].Main = new Mains();
 				listeActif[i].ValeurMain = 0;
 
-				m_UI.Invoke(new UI.d_MettreAJourMainJoueur(m_UI.MettreAJourMainJoueur));
+				m_UI.Invoke(new UI.d_MettreAJourMainJoueur(m_UI.MettreAJourMainJoueur), tabJoueur[i], i + 1);
 
 				listeActif[i].Mise = 0;
 			}
 
-			
+
 
 			croupier.Main = new Mains();
 			croupier.ValeurMain = 0;
@@ -284,7 +292,8 @@ namespace BJ_S
 			JouerManche();
 		}
 
-		void PartieTerminer() {
+		void PartieTerminer()
+		{
 			m_UI.Close();
 			//FermerEtReleaseLesSockets
 		}

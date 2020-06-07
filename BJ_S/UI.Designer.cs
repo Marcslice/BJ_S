@@ -33,21 +33,21 @@
             this.lblJ3 = new System.Windows.Forms.Label();
             this.lblJ4 = new System.Windows.Forms.Label();
             this.lblJ5 = new System.Windows.Forms.Label();
-            this.mainJ1 = new System.Windows.Forms.Panel();
-            this.c2j1 = new System.Windows.Forms.PictureBox();
-            this.c1j1 = new System.Windows.Forms.PictureBox();
-            this.mainJ2 = new System.Windows.Forms.Panel();
-            this.c2j2 = new System.Windows.Forms.PictureBox();
-            this.c1j2 = new System.Windows.Forms.PictureBox();
-            this.mainJ3 = new System.Windows.Forms.Panel();
-            this.c2j3 = new System.Windows.Forms.PictureBox();
-            this.c1j3 = new System.Windows.Forms.PictureBox();
-            this.mainJ4 = new System.Windows.Forms.Panel();
-            this.c2j4 = new System.Windows.Forms.PictureBox();
-            this.c1j4 = new System.Windows.Forms.PictureBox();
             this.mainJ5 = new System.Windows.Forms.Panel();
             this.c2j5 = new System.Windows.Forms.PictureBox();
             this.c1j5 = new System.Windows.Forms.PictureBox();
+            this.mainJ4 = new System.Windows.Forms.Panel();
+            this.c2j4 = new System.Windows.Forms.PictureBox();
+            this.c1j4 = new System.Windows.Forms.PictureBox();
+            this.mainJ3 = new System.Windows.Forms.Panel();
+            this.c2j3 = new System.Windows.Forms.PictureBox();
+            this.c1j3 = new System.Windows.Forms.PictureBox();
+            this.mainJ2 = new System.Windows.Forms.Panel();
+            this.c2j2 = new System.Windows.Forms.PictureBox();
+            this.c1j2 = new System.Windows.Forms.PictureBox();
+            this.mainJ1 = new System.Windows.Forms.Panel();
+            this.c2j1 = new System.Windows.Forms.PictureBox();
+            this.c1j1 = new System.Windows.Forms.PictureBox();
             this.imgSabot = new System.Windows.Forms.PictureBox();
             this.feedPanel = new System.Windows.Forms.Panel();
             this.lblFeed5 = new System.Windows.Forms.Label();
@@ -75,21 +75,21 @@
             this.M3 = new System.Windows.Forms.Label();
             this.M2 = new System.Windows.Forms.Label();
             this.MCroupier = new System.Windows.Forms.Label();
-            this.mainJ1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.c2j1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.c1j1)).BeginInit();
-            this.mainJ2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.c2j2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.c1j2)).BeginInit();
-            this.mainJ3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.c2j3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.c1j3)).BeginInit();
-            this.mainJ4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.c2j4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.c1j4)).BeginInit();
             this.mainJ5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.c2j5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.c1j5)).BeginInit();
+            this.mainJ4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.c2j4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.c1j4)).BeginInit();
+            this.mainJ3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.c2j3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.c1j3)).BeginInit();
+            this.mainJ2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.c2j2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.c1j2)).BeginInit();
+            this.mainJ1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.c2j1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.c1j1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgSabot)).BeginInit();
             this.feedPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -110,7 +110,7 @@
             this.lblJ1.BackColor = System.Drawing.Color.Transparent;
             this.lblJ1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJ1.ForeColor = System.Drawing.Color.White;
-            this.lblJ1.Location = new System.Drawing.Point(1051, 385);
+            this.lblJ1.Location = new System.Drawing.Point(1051, 367);
             this.lblJ1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblJ1.Name = "lblJ1";
             this.lblJ1.Size = new System.Drawing.Size(112, 31);
@@ -123,7 +123,7 @@
             this.lblJ2.BackColor = System.Drawing.Color.Transparent;
             this.lblJ2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJ2.ForeColor = System.Drawing.Color.White;
-            this.lblJ2.Location = new System.Drawing.Point(877, 491);
+            this.lblJ2.Location = new System.Drawing.Point(895, 503);
             this.lblJ2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblJ2.Name = "lblJ2";
             this.lblJ2.Size = new System.Drawing.Size(112, 31);
@@ -136,7 +136,7 @@
             this.lblJ3.BackColor = System.Drawing.Color.Transparent;
             this.lblJ3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJ3.ForeColor = System.Drawing.Color.White;
-            this.lblJ3.Location = new System.Drawing.Point(631, 583);
+            this.lblJ3.Location = new System.Drawing.Point(591, 588);
             this.lblJ3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblJ3.Name = "lblJ3";
             this.lblJ3.Size = new System.Drawing.Size(112, 31);
@@ -149,7 +149,7 @@
             this.lblJ4.BackColor = System.Drawing.Color.Transparent;
             this.lblJ4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJ4.ForeColor = System.Drawing.Color.White;
-            this.lblJ4.Location = new System.Drawing.Point(392, 491);
+            this.lblJ4.Location = new System.Drawing.Point(287, 491);
             this.lblJ4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblJ4.Name = "lblJ4";
             this.lblJ4.Size = new System.Drawing.Size(112, 31);
@@ -162,152 +162,32 @@
             this.lblJ5.BackColor = System.Drawing.Color.Transparent;
             this.lblJ5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJ5.ForeColor = System.Drawing.Color.White;
-            this.lblJ5.Location = new System.Drawing.Point(171, 387);
+            this.lblJ5.Location = new System.Drawing.Point(101, 364);
             this.lblJ5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblJ5.Name = "lblJ5";
             this.lblJ5.Size = new System.Drawing.Size(112, 31);
             this.lblJ5.TabIndex = 4;
             this.lblJ5.Text = "Joueur5";
             // 
-            // mainJ1
-            // 
-            this.mainJ1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.mainJ1.Controls.Add(this.c2j1);
-            this.mainJ1.Controls.Add(this.c1j1);
-            this.mainJ1.Location = new System.Drawing.Point(99, 295);
-            this.mainJ1.Margin = new System.Windows.Forms.Padding(2);
-            this.mainJ1.Name = "mainJ1";
-            this.mainJ1.Size = new System.Drawing.Size(261, 90);
-            this.mainJ1.TabIndex = 5;
-            this.mainJ1.Visible = false;
-            // 
-            // c2j1
-            // 
-            this.c2j1.Location = new System.Drawing.Point(78, 3);
-            this.c2j1.Margin = new System.Windows.Forms.Padding(2);
-            this.c2j1.Name = "c2j1";
-            this.c2j1.Size = new System.Drawing.Size(47, 84);
-            this.c2j1.TabIndex = 18;
-            this.c2j1.TabStop = false;
-            // 
-            // c1j1
-            // 
-            this.c1j1.Location = new System.Drawing.Point(26, 3);
-            this.c1j1.Margin = new System.Windows.Forms.Padding(2);
-            this.c1j1.Name = "c1j1";
-            this.c1j1.Size = new System.Drawing.Size(47, 84);
-            this.c1j1.TabIndex = 17;
-            this.c1j1.TabStop = false;
-            // 
-            // mainJ2
-            // 
-            this.mainJ2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.mainJ2.Controls.Add(this.c2j2);
-            this.mainJ2.Controls.Add(this.c1j2);
-            this.mainJ2.Location = new System.Drawing.Point(319, 401);
-            this.mainJ2.Margin = new System.Windows.Forms.Padding(2);
-            this.mainJ2.Name = "mainJ2";
-            this.mainJ2.Size = new System.Drawing.Size(261, 88);
-            this.mainJ2.TabIndex = 6;
-            this.mainJ2.Visible = false;
-            // 
-            // c2j2
-            // 
-            this.c2j2.Location = new System.Drawing.Point(79, 3);
-            this.c2j2.Margin = new System.Windows.Forms.Padding(2);
-            this.c2j2.Name = "c2j2";
-            this.c2j2.Size = new System.Drawing.Size(47, 84);
-            this.c2j2.TabIndex = 20;
-            this.c2j2.TabStop = false;
-            // 
-            // c1j2
-            // 
-            this.c1j2.Location = new System.Drawing.Point(27, 3);
-            this.c1j2.Margin = new System.Windows.Forms.Padding(2);
-            this.c1j2.Name = "c1j2";
-            this.c1j2.Size = new System.Drawing.Size(47, 84);
-            this.c1j2.TabIndex = 19;
-            this.c1j2.TabStop = false;
-            // 
-            // mainJ3
-            // 
-            this.mainJ3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.mainJ3.Controls.Add(this.c2j3);
-            this.mainJ3.Controls.Add(this.c1j3);
-            this.mainJ3.Location = new System.Drawing.Point(558, 493);
-            this.mainJ3.Margin = new System.Windows.Forms.Padding(2);
-            this.mainJ3.Name = "mainJ3";
-            this.mainJ3.Size = new System.Drawing.Size(279, 88);
-            this.mainJ3.TabIndex = 7;
-            this.mainJ3.Visible = false;
-            // 
-            // c2j3
-            // 
-            this.c2j3.Location = new System.Drawing.Point(79, 3);
-            this.c2j3.Margin = new System.Windows.Forms.Padding(2);
-            this.c2j3.Name = "c2j3";
-            this.c2j3.Size = new System.Drawing.Size(47, 84);
-            this.c2j3.TabIndex = 22;
-            this.c2j3.TabStop = false;
-            // 
-            // c1j3
-            // 
-            this.c1j3.Location = new System.Drawing.Point(28, 3);
-            this.c1j3.Margin = new System.Windows.Forms.Padding(2);
-            this.c1j3.Name = "c1j3";
-            this.c1j3.Size = new System.Drawing.Size(47, 84);
-            this.c1j3.TabIndex = 21;
-            this.c1j3.TabStop = false;
-            // 
-            // mainJ4
-            // 
-            this.mainJ4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.mainJ4.Controls.Add(this.c2j4);
-            this.mainJ4.Controls.Add(this.c1j4);
-            this.mainJ4.Location = new System.Drawing.Point(804, 401);
-            this.mainJ4.Margin = new System.Windows.Forms.Padding(2);
-            this.mainJ4.Name = "mainJ4";
-            this.mainJ4.Size = new System.Drawing.Size(269, 88);
-            this.mainJ4.TabIndex = 8;
-            this.mainJ4.Visible = false;
-            // 
-            // c2j4
-            // 
-            this.c2j4.Location = new System.Drawing.Point(79, 3);
-            this.c2j4.Margin = new System.Windows.Forms.Padding(2);
-            this.c2j4.Name = "c2j4";
-            this.c2j4.Size = new System.Drawing.Size(47, 84);
-            this.c2j4.TabIndex = 24;
-            this.c2j4.TabStop = false;
-            // 
-            // c1j4
-            // 
-            this.c1j4.Location = new System.Drawing.Point(28, 3);
-            this.c1j4.Margin = new System.Windows.Forms.Padding(2);
-            this.c1j4.Name = "c1j4";
-            this.c1j4.Size = new System.Drawing.Size(47, 84);
-            this.c1j4.TabIndex = 23;
-            this.c1j4.TabStop = false;
-            // 
             // mainJ5
             // 
             this.mainJ5.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.mainJ5.Controls.Add(this.c2j5);
             this.mainJ5.Controls.Add(this.c1j5);
-            this.mainJ5.Location = new System.Drawing.Point(977, 289);
+            this.mainJ5.Location = new System.Drawing.Point(85, 272);
             this.mainJ5.Margin = new System.Windows.Forms.Padding(2);
             this.mainJ5.Name = "mainJ5";
-            this.mainJ5.Size = new System.Drawing.Size(285, 94);
-            this.mainJ5.TabIndex = 9;
+            this.mainJ5.Size = new System.Drawing.Size(223, 94);
+            this.mainJ5.TabIndex = 5;
             this.mainJ5.Visible = false;
             // 
             // c2j5
             // 
-            this.c2j5.Location = new System.Drawing.Point(80, 5);
+            this.c2j5.Location = new System.Drawing.Point(71, 5);
             this.c2j5.Margin = new System.Windows.Forms.Padding(2);
             this.c2j5.Name = "c2j5";
             this.c2j5.Size = new System.Drawing.Size(47, 84);
-            this.c2j5.TabIndex = 26;
+            this.c2j5.TabIndex = 18;
             this.c2j5.TabStop = false;
             // 
             // c1j5
@@ -316,8 +196,128 @@
             this.c1j5.Margin = new System.Windows.Forms.Padding(2);
             this.c1j5.Name = "c1j5";
             this.c1j5.Size = new System.Drawing.Size(47, 84);
-            this.c1j5.TabIndex = 25;
+            this.c1j5.TabIndex = 17;
             this.c1j5.TabStop = false;
+            // 
+            // mainJ4
+            // 
+            this.mainJ4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.mainJ4.Controls.Add(this.c2j4);
+            this.mainJ4.Controls.Add(this.c1j4);
+            this.mainJ4.Location = new System.Drawing.Point(270, 401);
+            this.mainJ4.Margin = new System.Windows.Forms.Padding(2);
+            this.mainJ4.Name = "mainJ4";
+            this.mainJ4.Size = new System.Drawing.Size(210, 94);
+            this.mainJ4.TabIndex = 6;
+            this.mainJ4.Visible = false;
+            // 
+            // c2j4
+            // 
+            this.c2j4.Location = new System.Drawing.Point(71, 5);
+            this.c2j4.Margin = new System.Windows.Forms.Padding(2);
+            this.c2j4.Name = "c2j4";
+            this.c2j4.Size = new System.Drawing.Size(47, 84);
+            this.c2j4.TabIndex = 20;
+            this.c2j4.TabStop = false;
+            // 
+            // c1j4
+            // 
+            this.c1j4.Location = new System.Drawing.Point(29, 5);
+            this.c1j4.Margin = new System.Windows.Forms.Padding(2);
+            this.c1j4.Name = "c1j4";
+            this.c1j4.Size = new System.Drawing.Size(47, 84);
+            this.c1j4.TabIndex = 19;
+            this.c1j4.TabStop = false;
+            // 
+            // mainJ3
+            // 
+            this.mainJ3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.mainJ3.Controls.Add(this.c2j3);
+            this.mainJ3.Controls.Add(this.c1j3);
+            this.mainJ3.Location = new System.Drawing.Point(573, 493);
+            this.mainJ3.Margin = new System.Windows.Forms.Padding(2);
+            this.mainJ3.Name = "mainJ3";
+            this.mainJ3.Size = new System.Drawing.Size(252, 94);
+            this.mainJ3.TabIndex = 7;
+            this.mainJ3.Visible = false;
+            // 
+            // c2j3
+            // 
+            this.c2j3.Location = new System.Drawing.Point(71, 5);
+            this.c2j3.Margin = new System.Windows.Forms.Padding(2);
+            this.c2j3.Name = "c2j3";
+            this.c2j3.Size = new System.Drawing.Size(47, 84);
+            this.c2j3.TabIndex = 22;
+            this.c2j3.TabStop = false;
+            // 
+            // c1j3
+            // 
+            this.c1j3.Location = new System.Drawing.Point(29, 5);
+            this.c1j3.Margin = new System.Windows.Forms.Padding(2);
+            this.c1j3.Name = "c1j3";
+            this.c1j3.Size = new System.Drawing.Size(47, 84);
+            this.c1j3.TabIndex = 21;
+            this.c1j3.TabStop = false;
+            // 
+            // mainJ2
+            // 
+            this.mainJ2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.mainJ2.Controls.Add(this.c2j2);
+            this.mainJ2.Controls.Add(this.c1j2);
+            this.mainJ2.Location = new System.Drawing.Point(876, 404);
+            this.mainJ2.Margin = new System.Windows.Forms.Padding(2);
+            this.mainJ2.Name = "mainJ2";
+            this.mainJ2.Size = new System.Drawing.Size(243, 94);
+            this.mainJ2.TabIndex = 8;
+            this.mainJ2.Visible = false;
+            // 
+            // c2j2
+            // 
+            this.c2j2.Location = new System.Drawing.Point(71, 5);
+            this.c2j2.Margin = new System.Windows.Forms.Padding(2);
+            this.c2j2.Name = "c2j2";
+            this.c2j2.Size = new System.Drawing.Size(47, 84);
+            this.c2j2.TabIndex = 24;
+            this.c2j2.TabStop = false;
+            // 
+            // c1j2
+            // 
+            this.c1j2.Location = new System.Drawing.Point(29, 5);
+            this.c1j2.Margin = new System.Windows.Forms.Padding(2);
+            this.c1j2.Name = "c1j2";
+            this.c1j2.Size = new System.Drawing.Size(47, 84);
+            this.c1j2.TabIndex = 23;
+            this.c1j2.TabStop = false;
+            // 
+            // mainJ1
+            // 
+            this.mainJ1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.mainJ1.Controls.Add(this.c2j1);
+            this.mainJ1.Controls.Add(this.c1j1);
+            this.mainJ1.Location = new System.Drawing.Point(1029, 272);
+            this.mainJ1.Margin = new System.Windows.Forms.Padding(2);
+            this.mainJ1.Name = "mainJ1";
+            this.mainJ1.Size = new System.Drawing.Size(247, 94);
+            this.mainJ1.TabIndex = 9;
+            this.mainJ1.Visible = false;
+            // 
+            // c2j1
+            // 
+            this.c2j1.Location = new System.Drawing.Point(71, 5);
+            this.c2j1.Margin = new System.Windows.Forms.Padding(2);
+            this.c2j1.Name = "c2j1";
+            this.c2j1.Size = new System.Drawing.Size(47, 84);
+            this.c2j1.TabIndex = 26;
+            this.c2j1.TabStop = false;
+            // 
+            // c1j1
+            // 
+            this.c1j1.Location = new System.Drawing.Point(29, 5);
+            this.c1j1.Margin = new System.Windows.Forms.Padding(2);
+            this.c1j1.Name = "c1j1";
+            this.c1j1.Size = new System.Drawing.Size(47, 84);
+            this.c1j1.TabIndex = 25;
+            this.c1j1.TabStop = false;
             // 
             // imgSabot
             // 
@@ -502,7 +502,7 @@
             this.mainCroupier.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.mainCroupier.Controls.Add(this.cc2);
             this.mainCroupier.Controls.Add(this.cc1);
-            this.mainCroupier.Location = new System.Drawing.Point(575, 246);
+            this.mainCroupier.Location = new System.Drawing.Point(570, 218);
             this.mainCroupier.Margin = new System.Windows.Forms.Padding(2);
             this.mainCroupier.Name = "mainCroupier";
             this.mainCroupier.Size = new System.Drawing.Size(159, 90);
@@ -619,7 +619,7 @@
             this.M5.AutoSize = true;
             this.M5.BackColor = System.Drawing.Color.Transparent;
             this.M5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.M5.Location = new System.Drawing.Point(213, 418);
+            this.M5.Location = new System.Drawing.Point(143, 395);
             this.M5.MaximumSize = new System.Drawing.Size(50, 30);
             this.M5.MinimumSize = new System.Drawing.Size(25, 25);
             this.M5.Name = "M5";
@@ -632,7 +632,7 @@
             this.M4.AutoSize = true;
             this.M4.BackColor = System.Drawing.Color.Transparent;
             this.M4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.M4.Location = new System.Drawing.Point(435, 522);
+            this.M4.Location = new System.Drawing.Point(330, 522);
             this.M4.MaximumSize = new System.Drawing.Size(50, 30);
             this.M4.MinimumSize = new System.Drawing.Size(25, 25);
             this.M4.Name = "M4";
@@ -645,7 +645,7 @@
             this.M3.AutoSize = true;
             this.M3.BackColor = System.Drawing.Color.Transparent;
             this.M3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.M3.Location = new System.Drawing.Point(674, 614);
+            this.M3.Location = new System.Drawing.Point(634, 619);
             this.M3.MaximumSize = new System.Drawing.Size(50, 30);
             this.M3.MinimumSize = new System.Drawing.Size(25, 25);
             this.M3.Name = "M3";
@@ -658,7 +658,7 @@
             this.M2.AutoSize = true;
             this.M2.BackColor = System.Drawing.Color.Transparent;
             this.M2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.M2.Location = new System.Drawing.Point(921, 522);
+            this.M2.Location = new System.Drawing.Point(939, 535);
             this.M2.MaximumSize = new System.Drawing.Size(50, 30);
             this.M2.MinimumSize = new System.Drawing.Size(25, 25);
             this.M2.Name = "M2";
@@ -671,7 +671,7 @@
             this.MCroupier.AutoSize = true;
             this.MCroupier.BackColor = System.Drawing.Color.Transparent;
             this.MCroupier.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MCroupier.Location = new System.Drawing.Point(541, 246);
+            this.MCroupier.Location = new System.Drawing.Point(634, 310);
             this.MCroupier.MaximumSize = new System.Drawing.Size(50, 30);
             this.MCroupier.MinimumSize = new System.Drawing.Size(25, 25);
             this.MCroupier.Name = "MCroupier";
@@ -686,8 +686,9 @@
             this.BackgroundImage = global::BJ_S.Properties.Resources.table;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1292, 690);
-            this.Controls.Add(this.MCroupier);
             this.Controls.Add(this.M2);
+            this.Controls.Add(this.lblJ2);
+            this.Controls.Add(this.MCroupier);
             this.Controls.Add(this.M3);
             this.Controls.Add(this.M4);
             this.Controls.Add(this.M5);
@@ -701,36 +702,35 @@
             this.Controls.Add(this.mainCroupier);
             this.Controls.Add(this.feedPanel);
             this.Controls.Add(this.imgSabot);
-            this.Controls.Add(this.mainJ5);
-            this.Controls.Add(this.mainJ4);
-            this.Controls.Add(this.mainJ3);
-            this.Controls.Add(this.mainJ2);
             this.Controls.Add(this.mainJ1);
+            this.Controls.Add(this.mainJ3);
+            this.Controls.Add(this.mainJ4);
+            this.Controls.Add(this.mainJ5);
             this.Controls.Add(this.lblJ5);
             this.Controls.Add(this.lblJ4);
             this.Controls.Add(this.lblJ3);
-            this.Controls.Add(this.lblJ2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.mainJ2);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.Transparent;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UI";
             this.Text = "Partie";
-            this.mainJ1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.c2j1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.c1j1)).EndInit();
-            this.mainJ2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.c2j2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.c1j2)).EndInit();
-            this.mainJ3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.c2j3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.c1j3)).EndInit();
-            this.mainJ4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.c2j4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.c1j4)).EndInit();
             this.mainJ5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.c2j5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.c1j5)).EndInit();
+            this.mainJ4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.c2j4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.c1j4)).EndInit();
+            this.mainJ3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.c2j3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.c1j3)).EndInit();
+            this.mainJ2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.c2j2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.c1j2)).EndInit();
+            this.mainJ1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.c2j1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.c1j1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgSabot)).EndInit();
             this.feedPanel.ResumeLayout(false);
             this.feedPanel.PerformLayout();
@@ -757,11 +757,11 @@
         private System.Windows.Forms.Label lblJ3;
         private System.Windows.Forms.Label lblJ4;
         private System.Windows.Forms.Label lblJ5;
-        private System.Windows.Forms.Panel mainJ1;
-        private System.Windows.Forms.Panel mainJ2;
-        private System.Windows.Forms.Panel mainJ3;
-        private System.Windows.Forms.Panel mainJ4;
         private System.Windows.Forms.Panel mainJ5;
+        private System.Windows.Forms.Panel mainJ4;
+        private System.Windows.Forms.Panel mainJ3;
+        private System.Windows.Forms.Panel mainJ2;
+        private System.Windows.Forms.Panel mainJ1;
         private System.Windows.Forms.PictureBox imgSabot;
         private System.Windows.Forms.Panel feedPanel;
         private System.Windows.Forms.Panel panel1;
@@ -775,16 +775,16 @@
         private System.Windows.Forms.PictureBox jeton50;
         private System.Windows.Forms.PictureBox jeton10;
         private System.Windows.Forms.PictureBox jeton25;
-        private System.Windows.Forms.PictureBox c2j1;
-        private System.Windows.Forms.PictureBox c1j1;
-        private System.Windows.Forms.PictureBox c2j2;
-        private System.Windows.Forms.PictureBox c1j2;
-        private System.Windows.Forms.PictureBox c2j3;
-        private System.Windows.Forms.PictureBox c1j3;
-        private System.Windows.Forms.PictureBox c2j4;
-        private System.Windows.Forms.PictureBox c1j4;
         private System.Windows.Forms.PictureBox c2j5;
         private System.Windows.Forms.PictureBox c1j5;
+        private System.Windows.Forms.PictureBox c2j4;
+        private System.Windows.Forms.PictureBox c1j4;
+        private System.Windows.Forms.PictureBox c2j3;
+        private System.Windows.Forms.PictureBox c1j3;
+        private System.Windows.Forms.PictureBox c2j2;
+        private System.Windows.Forms.PictureBox c1j2;
+        private System.Windows.Forms.PictureBox c2j1;
+        private System.Windows.Forms.PictureBox c1j1;
         private System.Windows.Forms.Label lblFeed2;
         private System.Windows.Forms.Label lblFeed3;
         private System.Windows.Forms.Label lblFeed4;

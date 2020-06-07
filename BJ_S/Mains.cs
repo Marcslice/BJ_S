@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BJ_S
 {
@@ -22,7 +19,7 @@ namespace BJ_S
         }
 
         //a modifier pour gerer la carte cacher du croupier
-        public void RecevoirCarte(Cartes nouvelleCarte,bool cache)
+        public void RecevoirCarte(Cartes nouvelleCarte, bool cache)
         {
             main.Add(nouvelleCarte);
             //ajout qqch ici ou a lautre constructeur
@@ -38,7 +35,8 @@ namespace BJ_S
             int compte = 0;
             int nbAs = 0;
 
-            for(int i = 0; i < main.Count(); i++){
+            for (int i = 0; i < main.Count(); i++)
+            {
                 int valeur = main[i].Valeur;
 
                 if (valeur == 1)
@@ -51,11 +49,11 @@ namespace BJ_S
                 else
                     compte += 10;
 
-                
+
                 //convertie les as en 1 si la valeur de la main depase 21
-                if(compte > 21)
+                if (compte > 21)
                 {
-                    while(nbAs > 0 && compte > 21)
+                    while (nbAs > 0 && compte > 21)
                     {
                         nbAs--;
                         compte -= 10;
@@ -63,6 +61,16 @@ namespace BJ_S
                 }
             }
             return compte;
+        }
+
+        public Cartes this[int i]
+        {
+            get { return main[i]; }
+        }
+
+        public int NombresDeCarte()
+        {
+            return main.Count;
         }
     }
 }

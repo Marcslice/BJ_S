@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BJ_S
 {
@@ -12,7 +8,7 @@ namespace BJ_S
         public String Nom;
 
         public AI(Joueurs source)
-        { 
+        {
             RandNom();
             moi = source;
         }
@@ -44,11 +40,11 @@ namespace BJ_S
 
             switch (choixMise)
             {
-                case 's': 
+                case 's':
                     return 10;
 
                 case 'm':
-                    if(enCaisse >= 25)
+                    if (enCaisse >= 25)
                         return 25;
                     return 10;
 

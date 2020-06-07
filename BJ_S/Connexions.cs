@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 using System.Net.Sockets;
-using System.IO;
 
 namespace BJ_S
 {
@@ -16,14 +11,15 @@ namespace BJ_S
         NetworkStream ns;
         StreamWriter sw;
         StreamReader sr;
-        public Connexions(bool hote, string adresseIP) {
+        public Connexions(bool hote, string adresseIP)
+        {
             if (hote)
             {
                 System.Net.IPAddress ip = System.Net.IPAddress.Parse("127.0.0.1");
-                receptionniste = new TcpListener(ip,777);
-                canals =  new Socket[4];
+                receptionniste = new TcpListener(ip, 777);
+                canals = new Socket[4];
             }
-            else 
+            else
             {
                 System.Net.IPAddress ipDistant = System.Net.IPAddress.Parse(adresseIP);
                 System.Net.IPEndPoint serveurDistant = new System.Net.IPEndPoint(ipDistant, 777);
@@ -32,8 +28,9 @@ namespace BJ_S
                     invite = new TcpClient(serveurDistant);
                     ns = invite.GetStream();
                 }
-                catch { 
-                
+                catch
+                {
+
                 }
             }
 
@@ -41,7 +38,8 @@ namespace BJ_S
             sr = new StreamReader(ns);
         }
 
-        public void AccueillirInvites() {
+        public void AccueillirInvites()
+        {
             receptionniste.Start();
             //while(nbJoueurConnecté < nombreAttendu)
             //canal = receptionniste.AcceptSocket();

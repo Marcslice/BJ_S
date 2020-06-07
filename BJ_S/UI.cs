@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Timers;
 
 namespace BJ_S
 {
@@ -17,6 +10,7 @@ namespace BJ_S
         PictureBox selected;
         bool extended = false;
         Partie m_Controleur;
+
 
         public UI(Partie p_Controleur)
         {
@@ -34,7 +28,8 @@ namespace BJ_S
             feed[4] = this.lblFeed5;
         }
 
-        private void btnMiser_hover(object sender, EventArgs e) {
+        private void btnMiser_hover(object sender, EventArgs e)
+        {
             this.btnMiser.BackgroundImage = Image.FromFile("../../images/buttonMiserOn.png");
         }
 
@@ -63,7 +58,7 @@ namespace BJ_S
             this.btnStand.BackgroundImage = Image.FromFile("../../images/buttonStandOut.png");
         }
 
-        private void jetonsClick(object sender, EventArgs e) 
+        private void jetonsClick(object sender, EventArgs e)
         {
             PictureBox clicked = (PictureBox)sender;
 
@@ -82,11 +77,12 @@ namespace BJ_S
             }
         }
 
-        private void btnExpendHover(object sender, EventArgs e) {
+        private void btnExpendHover(object sender, EventArgs e)
+        {
             Button bt = (Button)sender;
             bt.BackColor = Color.Black;
 
-            bt.BackgroundImage = Image.FromFile("../../images/"+bt.Name+"On.png");
+            bt.BackgroundImage = Image.FromFile("../../images/" + bt.Name + "On.png");
         }
 
         private void btnExpendOut(object sender, EventArgs e)
@@ -104,13 +100,14 @@ namespace BJ_S
         private void jetonsOut(object sender, EventArgs e)
         {
             PictureBox hovered = (PictureBox)sender;
-            if(hovered != selected)
+            if (hovered != selected)
                 hovered.BackgroundImage = Image.FromFile("../../images/" + hovered.Name + "Out.png");
             else
                 hovered.BackgroundImage = Image.FromFile("../../images/" + hovered.Name + "On.png");
         }
 
-        private void btnExtendfeedClick(object sender, EventArgs e) {
+        private void btnExtendfeedClick(object sender, EventArgs e)
+        {
             extended = !extended;
             if (extended)
             {
@@ -118,7 +115,7 @@ namespace BJ_S
                 this.buttonExpendFeed.Location = new Point(this.buttonExpendFeed.Location.X, this.buttonExpendFeed.Location.Y + 150);
                 foreach (Label l in feed)
                     l.Visible = true;
-                
+
                 this.buttonExpendFeed.BackgroundImage = Image.FromFile("../../images/buttonCloseFeed.png");
                 this.buttonExpendFeed.Name = "buttonCloseFeed";
             }
@@ -126,14 +123,15 @@ namespace BJ_S
             {
                 feedPanel.Height = 50;
                 this.buttonExpendFeed.Location = new Point(this.buttonExpendFeed.Location.X, this.buttonExpendFeed.Location.Y - 150);
-                for (int x = 4; x > 0; x--)
+                for (int x = 4; x > 0; x--)
                     feed[x].Visible = false;
                 this.buttonExpendFeed.BackgroundImage = Image.FromFile("../../images/buttonExpendFeed.png");
                 this.buttonExpendFeed.Name = "buttonExpendFeed";
             }
         }
 
-        public void MettreAJourFileEvenement(string update) {
+        public void MettreAJourFileEvenement(string update)
+        {
 
             lblFeed5.Text = lblFeed4.Text;
             lblFeed4.Text = lblFeed3.Text;
@@ -145,7 +143,8 @@ namespace BJ_S
 
         public delegate void d_BloquerMise();
 
-        public void BloquerMise() {
+        public void BloquerMise()
+        {
             this.btnMiser.Enabled = false;
             this.jeton10.Enabled = false;
             this.jeton25.Enabled = false;
@@ -153,7 +152,8 @@ namespace BJ_S
         }
 
         public delegate void d_DebloquerMise();
-        public void DebloquerMise() {
+        public void DebloquerMise()
+        {
             this.btnMiser.Enabled = true;
             this.jeton10.Enabled = true;
             this.jeton25.Enabled = true;
@@ -166,9 +166,14 @@ namespace BJ_S
             this.lblMontantPorteFeuille.Text = m_Controleur.Moi.Encaisse.ToString();
         }
 
-        public delegate void d_MettreAJourMainJoueur();
+        public delegate void d_MettreAJourMainJoueur(Joueurs j, int siege);
 
-        public void MettreAJourMainJoueur() {
+        public void MettreAJourMainJoueur(Joueurs j, int siege)
+        {
+            PictureBox carte;
+            string carteNom;
+            int index;
+
             if (m_Controleur.tabJoueur[0].Mise != 0)
                 this.lblMainCalcule.Text = m_Controleur.Moi.ValeurMain.ToString();
             if (m_Controleur.tabJoueur[1].Mise != 0)
@@ -179,30 +184,99 @@ namespace BJ_S
                 this.M4.Text = m_Controleur.tabJoueur[3].ValeurMain.ToString();
             if (m_Controleur.tabJoueur[4].Mise != 0)
                 this.M5.Text = m_Controleur.tabJoueur[4].ValeurMain.ToString();
+
+            foreach (Control ctls in this.Controls)
+            {
+
+                if (ctls.Name.Equals($"mainJ{siege}") && ctls.GetType().Name.Equals("Panel"))
+                {
+                    ctls.Visible = true;
+                    ctls.BackColor = Color.Transparent;
+
+
+                    if (ctls.Controls.Count < j.Main.NombresDeCarte())
+                    {
+                        PictureBox nouvelleCarte = new PictureBox();
+                        nouvelleCarte.Name = $"c{j.Main.NombresDeCarte()}j{siege}";
+                        nouvelleCarte.Width = 47;
+                        nouvelleCarte.Height = 84;
+                        nouvelleCarte.Location = new Point(29 + (42 * (j.Main.NombresDeCarte()-1)), 5);
+
+                        ctls.Controls.Add(nouvelleCarte);
+                    }
+
+                    foreach (Control card in ctls.Controls)
+                    {
+                        carte = (PictureBox)card;
+
+                        carteNom = carte.Name;
+
+                        index = Int32.Parse(carteNom.Substring(1, 1));
+
+                        carte.BackgroundImage = Image.FromFile($@"{j.Main[index - 1].Image()}");
+                        carte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+                        carte.Visible = true;
+                    }
+
+                    this.Refresh();
+                }
+            }
         }
 
-        public delegate void d_MettreAJourMainCroupier();
+        public delegate void d_MettreAJourMainCroupier(Croupier croup, bool tourCroupier);
 
-        public void MettreAJourMainCroupier()
+        public void MettreAJourMainCroupier(Croupier croup, bool tourCroupier)
         {
+
+            PictureBox carte;
+            string carteNom;
+            int index;
+
             this.MCroupier.Text = m_Controleur.croupier.ValeurMain.ToString();
+
+            foreach (Control card in mainCroupier.Controls)
+            {
+                mainCroupier.Visible = true;
+                mainCroupier.BackColor = Color.Transparent;
+
+                carte = (PictureBox)card;
+                carteNom = carte.Name;
+
+                index = Int32.Parse(carteNom.Substring(2, 1));
+
+                if (card.Name.Equals("cc1") || (tourCroupier && card.GetType().Name.Equals("PictureBox")))
+                {                  
+                    carte.BackgroundImage = Image.FromFile($@"{croup.Main[index - 1].Image()}");
+                }
+                else if (!tourCroupier && card.GetType().Name.Equals("PictureBox")) 
+                {
+                    carte.BackgroundImage = Image.FromFile($@"{croup.Main[index - 1].ImageDos()}");
+                }
+
+                carte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+                carte.Visible = true;
+
+                this.Refresh();
+            }
         }
 
         public delegate void d_MettreAJourNomSiege(int i, string nom);
-        public void MettreAJourNomSiege(int i, string nom) {
-            foreach (Control ctls in this.Controls) {
+        public void MettreAJourNomSiege(int i, string nom)
+        {
+            foreach (Control ctls in this.Controls)
+            {
                 if (ctls.GetType().Name.Equals("Label"))
                     if (ctls.Name.Equals($"lblJ{i}"))
-                        ctls.Text = nom;          
+                        ctls.Text = nom;
             }
             this.lblJ1.Text = m_Controleur.Moi.Nom;
         }
 
         public void MontrerCarte(string carte) //Tourne la carte du côté visible
         {
-            foreach (Control ctl in mainCroupier.Controls) 
+            foreach (Control ctl in mainCroupier.Controls)
             {
-                if (ctl.Tag.Equals("dos")) 
+                if (ctl.Tag.Equals("dos"))
                 {
                     ctl.BackgroundImage = Image.FromFile($@"..\..\images\cartes\{carte}.png");
                     ctl.Tag = "face";
@@ -214,7 +288,7 @@ namespace BJ_S
 
         public void BloquerInterface(bool bloquerMise) //Pour les joueurs qui passent un tour.
         {
-            if(bloquerMise)
+            if (bloquerMise)
                 BloquerMise();
 
             this.btnHit.Enabled = false;
@@ -226,7 +300,7 @@ namespace BJ_S
 
         public void DebloquerInterface(bool debloquerMise)
         {
-            if(debloquerMise)
+            if (debloquerMise)
                 DebloquerMise();
 
             this.btnHit.Enabled = true;
@@ -235,24 +309,33 @@ namespace BJ_S
         }
 
         public delegate void d_AfficherTimer(bool visible);
-        public void AfficherTimer(bool visible) {
+        public void AfficherTimer(bool visible)
+        {
             this.lblTimer.Visible = visible;
             this.lblTimer.BringToFront();
         }
 
         public delegate void d_MettreAJourTimer(int sec);
-        public void MettreAJourTimer(int sec) {
+        public void MettreAJourTimer(int sec)
+        {
 
             string texte = this.lblTimer.Text;
 
-            int tempRestant = Int32.Parse(texte.Split(new char[1] { ' ' },10, StringSplitOptions.RemoveEmptyEntries)[2]);
+            int tempRestant = Int32.Parse(texte.Split(new char[1] { ' ' }, 10, StringSplitOptions.RemoveEmptyEntries)[2]);
 
             this.lblTimer.Text = $"Vous avez {tempRestant - 1} secondes pour miser.";
         }
 
+        public delegate void d_ResetTimer();
+        public void ResetTimer()
+        {
+            this.lblTimer.Text = "Vous avez 10 secondes pour miser.";
+        }
+
+
         private void btnHit_Click(object sender, EventArgs e) // HIT!
         {
-            m_Controleur.Hit(m_Controleur.Moi);
+            m_Controleur.Hit(m_Controleur.Moi,1);
         }
 
         private void btnStand_Click(object sender, EventArgs e) //STAND !
@@ -266,11 +349,11 @@ namespace BJ_S
             {
 
                 if (selected == jeton10)
-                    Invoke(new Partie.d_Miser(m_Controleur.Miser),10);
+                    Invoke(new Partie.d_Miser(m_Controleur.Miser), 10);
                 else if (selected == jeton25)
-                    Invoke(new Partie.d_Miser(m_Controleur.Miser),25);
+                    Invoke(new Partie.d_Miser(m_Controleur.Miser), 25);
                 else if (selected == jeton50)
-                    Invoke(new Partie.d_Miser(m_Controleur.Miser),50);
+                    Invoke(new Partie.d_Miser(m_Controleur.Miser), 50);
             }
         }
     }

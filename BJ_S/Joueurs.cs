@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Threading;
 
 namespace BJ_S
@@ -20,7 +16,7 @@ namespace BJ_S
         public AI ai;
 
 
-        public Joueurs(string p_Nom = "Anonyme", bool AI = false, bool enLigne = false) 
+        public Joueurs(string p_Nom = "Anonyme", bool AI = false, bool enLigne = false)
         {
             esTuAI = AI;
 
@@ -39,20 +35,20 @@ namespace BJ_S
             valeurMain = 0;
 
             if (enLigne)
-                m_Connection = new Connexions(false,"");
+                m_Connection = new Connexions(false, "");
         }
 
-       /* public Joueurs()//ai
-        {
-            esTuAI = true;
-            m_Encaisse = 500;
-            main = new Mains();
-            valeurMain = 0;
+        /* public Joueurs()//ai
+         {
+             esTuAI = true;
+             m_Encaisse = 500;
+             main = new Mains();
+             valeurMain = 0;
 
-            ai = new AI(this);
-            m_Nom = ai.Nom;
-        }
-        */
+             ai = new AI(this);
+             m_Nom = ai.Nom;
+         }
+         */
         public int Mise
         {
             get { if (esTuAI) { return (mise = ai.Miser(m_Encaisse)); } else { return mise; } }
@@ -76,29 +72,29 @@ namespace BJ_S
             set { valeurMain = value; }
         }
 
-        int GenererAnonymat() 
+        int GenererAnonymat()
         {
             Thread.Sleep(200);
             Random seed = new Random();
-            Random rnd = new Random(seed.Next(22,222));
+            Random rnd = new Random(seed.Next(22, 222));
             return rnd.Next(1, 1000);
         }
 
-        public string Nom 
+        public string Nom
         {
             get { return m_Nom; }
             set { m_Nom = value; }
         }
 
-        public int Encaisse 
+        public int Encaisse
         {
             get { return m_Encaisse; }
         }
 
         public bool Busted
         {
-            get {return busted; }
-            set {busted = value; }
+            get { return busted; }
+            set { busted = value; }
         }
 
         public bool RetraitEncaisse(int p_Mise)//le retrait est effectuer par la partie mais le joueur peut miser dans le temps aloue
@@ -108,7 +104,7 @@ namespace BJ_S
                 m_Encaisse -= p_Mise;
                 return true;
             }
-            return false;       
+            return false;
         }
 
         public int DepotEncaisse(int p_Gain)

@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 
 
 namespace BJ_S
@@ -33,7 +28,8 @@ namespace BJ_S
         }
 
 
-        private void RetourAuMenu_Click(object sender, EventArgs e) {
+        private void RetourAuMenu_Click(object sender, EventArgs e)
+        {
             Panel toRemove = (Panel)this.Controls[this.Controls.Count - 1];
             this.Controls.RemoveAt(this.Controls.Count - 1);
             toRemove.Dispose();
@@ -71,7 +67,7 @@ namespace BJ_S
         private void button_Card_Hover(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            if(btn.Tag.Equals("facingUp"))
+            if (btn.Tag.Equals("facingUp"))
                 btn.BackgroundImage = Image.FromFile("../../images/" + btn.Name + "On.png");
         }
 
@@ -94,14 +90,15 @@ namespace BJ_S
             btn.BackgroundImage = Image.FromFile("../../images/porteFermer.png");
         }
 
-        private void AfficherLoadingScreen(object sender) {
+        private void AfficherLoadingScreen(object sender)
+        {
 
             Button clicked = (Button)sender;
             Panel panelAttente = new Panel();
 
             titre = new Label();
 
-            if(clicked.Name.Equals("btnLancerRejoindre"))
+            if (clicked.Name.Equals("btnLancerRejoindre"))
                 titre.Text = "Recherche de partie.";
             else
                 titre.Text = "En attente de joueurs.";
@@ -188,7 +185,8 @@ namespace BJ_S
             {
                 b.Width -= 20;
                 b.Location = new Point(b.Location.X + 10, b.Location.Y);
-                if (carteRetournee != null && b != carteRetournee) {
+                if (carteRetournee != null && b != carteRetournee)
+                {
                     carteRetournee.Width -= 20;
                     carteRetournee.Location = new Point(carteRetournee.Location.X + 10, carteRetournee.Location.Y);
                 }
@@ -209,7 +207,7 @@ namespace BJ_S
                     }
 
                     if (carteRetournee != null && b != carteRetournee)
-                    {                      
+                    {
                         if (carteRetournee.Width <= 20)
                         {
                             carteRetournee.BackgroundImage = Image.FromFile("../../images/" + carteRetournee.Name + "Out.png");
@@ -217,8 +215,8 @@ namespace BJ_S
                             AfficherCacherBoutonDesCartes(carteRetournee, false);
                         }
                     }
-                    flipped1 = true;                 
-                }           
+                    flipped1 = true;
+                }
                 t.Enabled = true;
             }
             else
@@ -254,12 +252,13 @@ namespace BJ_S
             }
         }
 
-        private void AfficherCacherBoutonDesCartes(Button b, bool afficher) {
+        private void AfficherCacherBoutonDesCartes(Button b, bool afficher)
+        {
             List<Control> listControls = b.Controls.OfType<Control>().ToList();
             foreach (Control d in listControls)
             {
                 d.Visible = afficher;
-                if(d.GetType().Name.Equals("Button"))
+                if (d.GetType().Name.Equals("Button"))
                     d.Enabled = afficher;
             }
         }
@@ -288,15 +287,16 @@ namespace BJ_S
             b.Enabled = true;
         }
 
-        private void tBoxPlusMoins(object sender, EventArgs e) 
+        private void tBoxPlusMoins(object sender, EventArgs e)
         {
             int nbJoueurs, nbAIs;
             Control sw = (Button)sender;
-            
+
             nbJoueurs = Int32.Parse(tBoxNbJoueur.Text);
             nbAIs = Int32.Parse(tBoxNbAI.Text);
 
-            switch (sw.Name) {
+            switch (sw.Name)
+            {
                 case "btnPlusJoueurs":
                     if (nbJoueurs < 5)
                     {
@@ -321,7 +321,7 @@ namespace BJ_S
                     if (nbAIs > 0)
                         this.tBoxNbAI.Text = $"{--nbAIs}";
                     break;
-            }           
+            }
         }
 
 

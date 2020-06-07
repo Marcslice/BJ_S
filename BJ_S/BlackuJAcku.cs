@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Microsoft.VisualBasic;
-using System.Net;
 using System.IO;
+using System.Net;
+using System.Windows.Forms;
 
 namespace BJ_S
 {
@@ -14,12 +10,13 @@ namespace BJ_S
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
-        
+
         Menu m_Menu;
         Partie m_Partie;
 
-        public BlackuJacku() {
-            m_Menu = new Menu(this);      
+        public BlackuJacku()
+        {
+            m_Menu = new Menu(this);
         }
 
         [STAThread]
@@ -30,7 +27,7 @@ namespace BJ_S
             BlackuJacku BJ = new BlackuJacku();
             Application.Run(BJ.m_Menu);
         }
-        
+
         /// <summary>
         /// 
         /// </summary>
@@ -43,19 +40,21 @@ namespace BJ_S
         /// 5 -> ONline Bot Host
         /// </param>
         /// 
-        public void NouvellePartie(int type) {
+        public void NouvellePartie(int type)
+        {
             NomDeJoueur f = new NomDeJoueur();
 
             f.ShowDialog(m_Menu);
 
-            if(f.DialogResult == System.Windows.Forms.DialogResult.OK)
-                m_Partie = new Partie(1,4,false,f.get_Name()); 
+            if (f.DialogResult == System.Windows.Forms.DialogResult.OK)
+                m_Partie = new Partie(1, 4, false, f.get_Name());
         }
 
         /// <summary>
         /// Quit l'application.
         /// </summary>
-        public void Quitter() {
+        public void Quitter()
+        {
             //make sure threads are closed;
             Application.Exit();
         }
@@ -64,7 +63,8 @@ namespace BJ_S
         /// Demande ton ip externe à un serveur et l'affiche dans le menu principale.
         /// </summary>
         /// <returns>String : IP Formatté</returns>
-        public string QuelEstMonIP() {
+        public string QuelEstMonIP()
+        {
             String address = "";
             WebRequest request = WebRequest.Create("http://checkip.dyndns.org/");
             using (WebResponse response = request.GetResponse())
