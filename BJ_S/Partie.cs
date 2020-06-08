@@ -159,12 +159,12 @@ namespace BJ_S
 				}
 				else
 				{
-					croupier.Main.RecevoirCarte(sabot.CarteDessus()); //removed ,true
+					croupier.Main.RecevoirCarte(sabot.CarteDessus());
 				}
 			}
 
 			for (int i = 0; i < listeActif.Count; i++)
-				m_UI.Invoke(new UI.d_MettreAJourMainJoueur(m_UI.MettreAJourMainJoueur), tabJoueur[5 - (listeActif.Count - i)], 5 - (listeActif.Count - i) + 1);
+				m_UI.Invoke(new UI.d_MettreAJourMainJoueur(m_UI.MettreAJourMainJoueur), tabJoueur[5 - (listeActif.Count - i)], listeActif.Count - (listeActif.Count - i) + 2);
 
 			m_UI.Invoke(new UI.d_MettreAJourMainCroupier(m_UI.MettreAJourMainCroupier), croupier, false);
 
@@ -302,7 +302,7 @@ namespace BJ_S
 				listeActif[i].Main = new Mains();
 				listeActif[i].ValeurMain = 0;
 
-				m_UI.Invoke(new UI.d_MettreAJourMainJoueur(m_UI.MettreAJourMainJoueur), tabJoueur[5 - (listeActif.Count - i)], 5 - (listeActif.Count - i) + 1);
+				m_UI.Invoke(new UI.d_MettreAJourMainJoueur(m_UI.MettreAJourMainJoueur), tabJoueur[5 - (listeActif.Count - i)], listeActif.Count - (listeActif.Count - i) + 2);
 
 				listeActif[i].Mise = 0;
 			}

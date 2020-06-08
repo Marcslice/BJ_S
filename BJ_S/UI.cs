@@ -196,7 +196,6 @@ namespace BJ_S
                 this.M5.Text = m_Controleur.tabJoueur[4].ValeurMain.ToString();
 
 
-
             if (j.ValeurMain > 0)
             {
                 foreach (Control ctls in this.Controls)
@@ -250,21 +249,25 @@ namespace BJ_S
                     ctls.BackColor = Color.Transparent;
                     ctls.Visible = false;
 
-                    foreach (Control card in ctls.Controls)
+                    while (ctls.Controls.Count > 2)
                     {
-                        carte = (PictureBox)card;
 
-                        if (!card.Name.Equals($"c1j{siege}") && !card.Name.Equals($"c2j{siege}"))
+                        foreach (Control card in ctls.Controls)
                         {
-                            ctls.Controls.Remove(carte);
-                        }
-                        else
-                        {
-                            carte.BackgroundImage = null;
+                            carte = (PictureBox)card;
+
+                            if (!card.Name.Equals($"c1j{siege}") && !card.Name.Equals($"c2j{siege}"))
+                            {
+                                ctls.Controls.Remove(carte);
+                            }
+                            else
+                            {
+                                carte.BackgroundImage = null;
+                            }
                         }
                     }
-                }
-            }
+                }                 
+            }     
         }
 
         public delegate void d_MettreAJourMainCroupier(Croupier croup, bool tourCroupier);
@@ -328,20 +331,25 @@ namespace BJ_S
 
             mainCroupier.Visible = false;
 
-            foreach (PictureBox pb in mainCroupier.Controls)
-            {
 
-                carte = (PictureBox)pb;
+            while (mainCroupier.Controls.Count > 2) {
 
-                if (!carte.Name.Equals($"cc1") && !carte.Name.Equals($"cc2"))
+                foreach (PictureBox pb in mainCroupier.Controls)
                 {
-                    mainCroupier.Controls.Remove(carte);
-                }
-                else
-                {
-                    carte.BackgroundImage = null;
+
+                    carte = (PictureBox)pb;
+
+                    if (!carte.Name.Equals($"cc1") && !carte.Name.Equals($"cc2"))
+                    {
+                        mainCroupier.Controls.Remove(carte);
+                    }
+                    else
+                    {
+                        carte.BackgroundImage = null;
+                    }
                 }
             }
+            mainCroupier.Refresh();
         }
 
         public delegate void d_MettreAJourNomSiege(int i, string nom);
