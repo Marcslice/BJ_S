@@ -218,7 +218,6 @@ namespace BJ_S
                         carte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 
                         carte.Refresh();
-                        Thread.Sleep(400);
                     }                   
                 }
             }
@@ -270,7 +269,6 @@ namespace BJ_S
                 carte.Visible = true;
 
                 carte.Refresh();
-                Thread.Sleep(400);
             }
         }
 
