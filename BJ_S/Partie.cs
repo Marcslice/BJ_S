@@ -153,6 +153,9 @@ namespace BJ_S
 				m_UI.Invoke(new UI.d_AfficherTimer(m_UI.AfficherTimer), false);
 			}
 
+			if(moi.Ai)
+				m_UI.Invoke(new UI.d_MettreAJourEncaisseJoueur(m_UI.MettreAJourEncaisseJoueur));
+
 			DistribuerCartes();
 		}
 
@@ -221,7 +224,7 @@ namespace BJ_S
 								break;
 						}
 					}
-					if (listeActif[i] == moi)
+					else if (listeActif[i] == moi)
 						m_UI.Invoke(new UI.d_DebloquerInterface(m_UI.DebloquerInterface), false); // m_UI.DebloquerInterface(false
 
 					//ajouter gestion multijoueur
