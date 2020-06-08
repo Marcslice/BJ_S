@@ -6,14 +6,15 @@ namespace BJ_S
 {
 	public class Partie
 	{
-		public Joueurs[] tabJoueur;
-		List<Joueurs> listeActif;
-		Joueurs moi;
-		public Croupier croupier;
-		Sabot sabot;
-		bool enLigne;
-		bool tour;
-		UI m_UI;
+		public Joueurs[] tabJoueur;//tableau des joueurs present
+		List<Joueurs> listeActif;//liste des joueurs participant a la manche de jeu
+		Joueurs moi;//Pointeur vers les donnees du joueur local
+		public Croupier croupier;//croupier de la partie
+		Sabot sabot;//sabot utiliser pour la partie
+		bool enLigne;//booleen servant a determiner si une partie est local ou non
+		bool tour;//booleen permettant de determiner si le tour est fini
+		UI m_UI;//form de la partie
+
 		System.Timers.Timer tempsAttente, tMoins1;
 
 		public Partie(int nbJoueur, int nbAi, bool enLigne, string nomJoueur)
@@ -50,7 +51,7 @@ namespace BJ_S
 			JouerManche();
 		}
 
-		//pour les parties enligne
+		//constructeur pour les parties enligne
 		public Partie(string ipHost)
 		{
 			//moi=?
@@ -63,11 +64,17 @@ namespace BJ_S
 			get { return moi; }
 		}
 
+		/// <summary>
+		/// Methode qui lance une manche de jeu
+		/// </summary>
 		public void JouerManche()
 		{
 			Preparation();
 		}
 
+		/// <summary>
+		/// Methode utiliser pour notifier le joueur qu'il doit miser ou qu'il ne jouera pas
+		/// </summary>
 		public void Preparation()
 		{
 			listeActif = new List<Joueurs>();
@@ -92,8 +99,16 @@ namespace BJ_S
 			tempsAttente.Enabled = true;
 		}
 
+		/// <summary>
+		/// Permet au form d'appeler la methode miser du controlleur
+		/// </summary>
+		/// <param name="p_Mise"></param>
 		public delegate void d_Miser(int p_Mise);
 
+		/// <summary>
+		/// Methode qui gere les mises du joueur et actualise son en caisse
+		/// </summary>
+		/// <param name="p_Mise">Represente la valeur miser par le joueur</param>
 		public void Miser(int p_Mise)
 		{
 			Mise f;
@@ -110,11 +125,17 @@ namespace BJ_S
 			}
 		}
 
+		/// <summary>
+		/// Gere l'affichage du minuteur
+		/// </summary>
 		public void TimerTick(object source, ElapsedEventArgs e)
 		{
 			m_UI.Invoke(new UI.d_MettreAJourTimer(m_UI.MettreAJourTimer), 1);
 		}
 
+		/// <summary>
+		/// Methode qui verifie quel joueur a effectuer une mise et creer une liste de joueur actif
+		/// </summary>
 		public void ConfirmerMise(object source, ElapsedEventArgs e)
 		{
 			tempsAttente.Stop();
@@ -135,6 +156,9 @@ namespace BJ_S
 			DistribuerCartes();
 		}
 
+		/// <summary>
+		/// Methode qui distribue les cartes aux joueurs de maniere conventionel et met a jour le compte de la main de chaque joueur.
+		/// </summary>
 		public void DistribuerCartes()
 		{
 			bool carteOuverte = false;
@@ -167,6 +191,9 @@ namespace BJ_S
 			TourJoueurH();
 		}
 
+		/// <summary>
+		/// Methode qui gere le tour des joueurs pour l'hote de la partie et qui effectue les actions du croupier
+		/// </summary>
 		public void TourJoueurH()
 		{
 
@@ -196,11 +223,11 @@ namespace BJ_S
 					if (listeActif[i] == moi)
 						m_UI.Invoke(new UI.d_DebloquerInterface(m_UI.DebloquerInterface), false); // m_UI.DebloquerInterface(false
 
-					//cas multi
-					//for(int j = 1; j < listActif.count; j++)
-					//if(listActif[i] != listActif[j])
+					//ajouter gestion multijoueur
+					//if()
 
 				} while (tour == true && listeActif[i].ValeurMain < 21);
+
 				if (listeActif[i] == moi)
 					m_UI.Invoke(new UI.d_BloquerInterface(m_UI.BloquerInterface), false);
 
@@ -208,6 +235,7 @@ namespace BJ_S
 					listeActif[i].Busted = true;
 			}
 
+			//tour du croupier
 			croupier.ValeurMain = croupier.Compte();
 			m_UI.Invoke(new UI.d_MettreAJourMainCroupier(m_UI.MettreAJourMainCroupier), croupier, true);
 
@@ -217,7 +245,7 @@ namespace BJ_S
 			bool tourCroupier = true;
 
 			while (tourCroupier)
-			{//a envoyer a marc
+			{
 				switch (croupier.HitOrStand())
 				{
 					case 1:
@@ -237,21 +265,24 @@ namespace BJ_S
 				Thread.Sleep(2000);
 			}
 
-			if (croupier.Compte() > 21)
-				log = $" Croupier Bust ! Total : {croupier.Compte()}";
+			if (croupier.ValeurMain > 21)
+				log = $" Croupier Bust ! Total : {croupier.ValeurMain}";
 			else
-				log = $" Croupier Stand! Total : {croupier.Compte()}";
+				log = $" Croupier Stand! Total : {croupier.ValeurMain}";
 
 			m_UI.Invoke(new UI.d_MettreAJourFileEvenement(m_UI.MettreAJourFileEvenement), log);
 
 			VerifierGagnant();
 		}
 
-		public void TourJoueurD()
-		{
+		//Tour des joueurs pour les joueurs distant
+		public void TourJoueurD() { }
 
-		}
-
+		/// <summary>
+		/// Methode qui distribue des cartes additionnelles aux personnes qui en font la demande
+		/// </summary>
+		/// <param name="joueur">Joueur qui demande a recevoir une carte</param>
+		/// <param name="siege">Position dans le tableau des joueurs (tabJoueur) de la personne qui appelle la methode</param>
 		public void Hit(Joueurs joueur, int siege)
 		{
 			string log = "";
@@ -270,6 +301,10 @@ namespace BJ_S
 			m_UI.Invoke(new UI.d_MettreAJourFileEvenement(m_UI.MettreAJourFileEvenement), log);
 		}
 
+		/// <summary>
+		/// Methode qui employer lorsqu'un joueur est satisfait de ces cartes et desire finir son tour
+		/// </summary>
+		/// <param name="joueur">Joueur qui appel la methode</param>
 		public void Stand(Joueurs joueur)
 		{
 			string log = "";
@@ -281,6 +316,9 @@ namespace BJ_S
 			m_UI.Invoke(new UI.d_MettreAJourFileEvenement(m_UI.MettreAJourFileEvenement), log);
 		}
 
+		/// <summary>
+		/// Methode qui sert a determiner qui son les gagnants de la manche et qui distribue les gains
+		/// </summary>
 		public void VerifierGagnant()
 		{
 			for (int i = 0; i < listeActif.Count; i++)
@@ -301,6 +339,9 @@ namespace BJ_S
 			ViderTable();
 		}
 
+		/// <summary>
+		/// Methode employe lors de la fin d'une manche a fin de reinitialiser les valeurs a leur valeur par default
+		/// </summary>
 		public void ViderTable()
 		{
 			for (int i = 0; i < listeActif.Count; i++)
@@ -322,6 +363,9 @@ namespace BJ_S
 			JouerManche();
 		}
 
+		/// <summary>
+		/// Methode qui sert a fermer l'application
+		/// </summary>
 		public void TerminerPartie()
 		{
 			tMoins1.Stop();

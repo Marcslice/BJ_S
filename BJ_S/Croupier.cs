@@ -2,8 +2,8 @@
 {
     public class Croupier
     {
-        Mains main;
-        int valeurMain;
+        Mains main;//utiliser par partie pour generer les carte dans le UI et pour le faire le compte avec le dll
+        int valeurMain;//utiliser pour eviter d'appeller la methode compte du dll inutilement pour l'affichage dans le UI et determiner qui gagne
 
         public Croupier()
         {
