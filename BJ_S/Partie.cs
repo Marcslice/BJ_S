@@ -159,7 +159,7 @@ namespace BJ_S
 				}
 				else
 				{
-					croupier.Main.RecevoirCarte(sabot.CarteDessus(), true);
+					croupier.Main.RecevoirCarte(sabot.CarteDessus()); //removed ,true
 				}
 			}
 
@@ -309,7 +309,9 @@ namespace BJ_S
 
 			croupier.Main = new Mains();
 			croupier.ValeurMain = 0;
+
 			m_UI.Invoke(new UI.d_MettreAJourMainCroupier(m_UI.MettreAJourMainCroupier), croupier, true);
+			m_UI.Invoke(new UI.d_ReinitialiserFileEvenement(m_UI.ReinitialiserFileEvenement));
 
 			JouerManche();
 		}

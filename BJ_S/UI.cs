@@ -142,6 +142,15 @@ namespace BJ_S
             lblFeed1.Text = update;
         }
 
+        public delegate void d_ReinitialiserFileEvenement();
+        public void ReinitialiserFileEvenement() {
+            lblFeed1.Text = "";
+            lblFeed2.Text = "";
+            lblFeed3.Text = "";
+            lblFeed4.Text = "";
+            lblFeed5.Text = "";
+        }
+
         public delegate void d_BloquerMise();
 
         public void BloquerMise()
