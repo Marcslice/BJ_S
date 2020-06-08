@@ -282,7 +282,7 @@ namespace BJ_S
             mainCroupier.BackColor = Color.Transparent;
             mainCroupier.Visible = true;
 
-            this.MCroupier.Text = m_Controleur.croupier.Compte().ToString();
+            this.MCroupier.Text = m_Controleur.croupier.ValeurMain.ToString();
 
             if (mainCroupier.Controls.Count < croup.Main.NombresDeCarte())
             {

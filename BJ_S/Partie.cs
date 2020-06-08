@@ -47,11 +47,7 @@ namespace BJ_S
 			for (int i = 0; i < tabJoueur.Length; i++)
 				m_UI.Invoke(new UI.d_MettreAJourNomSiege(m_UI.MettreAJourNomSiege), i + 1, tabJoueur[i].Nom);
 
-			//do
-			//{
 			JouerManche();
-			//} while (moi.Encaisse > 0);
-
 		}
 
 		//pour les parties enligne
@@ -154,7 +150,7 @@ namespace BJ_S
 				if (!carteOuverte)
 				{
 					croupier.Main.RecevoirCarte(sabot.CarteDessus());
-					croupier.ValeurMain = croupier.Main.Compte();
+					croupier.ValeurMain = croupier.Compte();
 					carteOuverte = true;
 				}
 				else

@@ -18,7 +18,8 @@ namespace BJ_S
         }
 
         /// <summary>
-        /// Simule la carte du dessus en sortant une carte aléatoire du sabot.
+        /// Simule la carte du dessus en sortant une carte aléatoire du sabot. Lorsqu'un paquet est vide le remplace par le dernier paquet 
+        /// valide et reduit le compte de paquet
         /// </summary>
         /// <returns>Cartes : Aléatoire</returns>
         public Cartes CarteDessus()
@@ -42,6 +43,7 @@ namespace BJ_S
                 paquetVide = false;
                 random = rand.Next() % nbPaquets;
 
+                //deplace le dernier paquet et ecrase le paquet vide
                 if (sabot[random].EsTuVide())
                 {
                     sabot[random] = sabot[--nbPaquets];
