@@ -70,11 +70,6 @@ namespace BJ_S
 		public void JouerManche()
 		{
 			Preparation();
-			//DistribuerCartes();
-			//TourJoueurH();
-			//VerifierGagnant();
-			//ViderTable();
-
 		}
 
 		public void Preparation()
@@ -140,6 +135,7 @@ namespace BJ_S
 				m_UI.Invoke(new UI.d_BloquerMise(m_UI.BloquerMise));
 				m_UI.Invoke(new UI.d_AfficherTimer(m_UI.AfficherTimer), false);
 			}
+
 			DistribuerCartes();
 		}
 
@@ -153,7 +149,6 @@ namespace BJ_S
 				{
 					listeActif[i].Main.RecevoirCarte(sabot.CarteDessus());
 					listeActif[i].ValeurMain = listeActif[i].Main.Compte();
-
 				}
 
 				if (!carteOuverte)
@@ -161,7 +156,6 @@ namespace BJ_S
 					croupier.Main.RecevoirCarte(sabot.CarteDessus());
 					croupier.ValeurMain = croupier.Main.Compte();
 					carteOuverte = true;
-
 				}
 				else
 				{
@@ -179,6 +173,9 @@ namespace BJ_S
 
 		public void TourJoueurH()
 		{
+
+			string log = "";
+
 			for (int i = 0; i < listeActif.Count; i++)
 			{
 				tour = true;
@@ -196,7 +193,7 @@ namespace BJ_S
 								Hit(listeActif[i],i+1);
 								break;
 							case 2:
-								Stand();
+								Stand(listeActif[i]);
 								break;
 						}
 					}
@@ -218,6 +215,7 @@ namespace BJ_S
 			croupier.ValeurMain = croupier.Main.Compte();
 			m_UI.Invoke(new UI.d_MettreAJourMainCroupier(m_UI.MettreAJourMainCroupier), croupier, true);
 
+			
 			Thread.Sleep(2000);
 
 			while (croupier.ValeurMain < 17)
@@ -226,8 +224,19 @@ namespace BJ_S
 				croupier.ValeurMain = croupier.Main.Compte();
 
 				m_UI.Invoke(new UI.d_MettreAJourMainCroupier(m_UI.MettreAJourMainCroupier), croupier, true);
+
+				log = $" Croupier Hit! et reçoit {croupier.Main[croupier.Main.NombresDeCarte()-1].Valeur} Total : {croupier.ValeurMain}";
+				m_UI.Invoke(new UI.d_MettreAJourFileEvenement(m_UI.MettreAJourFileEvenement), log);
+
 				Thread.Sleep(2000);
 			}
+
+			if(croupier.ValeurMain > 21)
+				log = $" Croupier Bust ! Total : {croupier.ValeurMain}";
+			else
+				log = $" Croupier Stand! Total : {croupier.ValeurMain}";
+
+			m_UI.Invoke(new UI.d_MettreAJourFileEvenement(m_UI.MettreAJourFileEvenement), log);
 
 			VerifierGagnant();
 		}
@@ -239,15 +248,31 @@ namespace BJ_S
 
 		public void Hit(Joueurs joueur, int siege)
 		{
+			string log = "";
+			
 			joueur.Main.RecevoirCarte(sabot.CarteDessus());
 			joueur.ValeurMain = joueur.Main.Compte();
 
 			m_UI.Invoke(new UI.d_MettreAJourMainJoueur(m_UI.MettreAJourMainJoueur), joueur, siege);
+
+			//FeedUpdate
+			if(joueur.ValeurMain > 21)
+				log = $"{joueur.Nom} Hit et Bust ! Total {joueur.ValeurMain}";
+			else
+				log = $"{joueur.Nom} Hit ! et reçoit {joueur.Main[joueur.Main.NombresDeCarte()-1].Valeur}. Total {joueur.ValeurMain}";
+
+			m_UI.Invoke(new UI.d_MettreAJourFileEvenement(m_UI.MettreAJourFileEvenement), log);
 		}
 
-		public void Stand()
+		public void Stand(Joueurs joueur)
 		{
+			string log = "";
+
 			tour = false;
+
+			//FeedUpdate
+			log = $"{joueur.Nom} Stand ! avec un main de {joueur.ValeurMain}";
+			m_UI.Invoke(new UI.d_MettreAJourFileEvenement(m_UI.MettreAJourFileEvenement), log);
 		}
 
 		public void VerifierGagnant()
@@ -290,10 +315,10 @@ namespace BJ_S
 
 		public void TerminerPartie()
 		{
-			tempsAttente.Stop();
-			tempsAttente.Dispose();
 			tMoins1.Stop();
 			tMoins1.Dispose();
+			tempsAttente.Stop();
+			tempsAttente.Dispose();
 		}
 	}
 }

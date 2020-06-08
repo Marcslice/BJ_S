@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Threading;
 using System.Diagnostics;
 using System.Windows.Forms;
 
@@ -130,6 +131,7 @@ namespace BJ_S
             }
         }
 
+        public delegate void d_MettreAJourFileEvenement(string update);
         public void MettreAJourFileEvenement(string update)
         {
 
@@ -190,7 +192,9 @@ namespace BJ_S
 
                 if (ctls.Name.Equals($"mainJ{siege}") && ctls.GetType().Name.Equals("Panel"))
                 {
-                   
+                    ctls.BackColor = Color.Transparent;
+                    ctls.Visible = true;
+
                     if (ctls.Controls.Count < j.Main.NombresDeCarte())
                     {
                         PictureBox nouvelleCarte = new PictureBox();
@@ -212,12 +216,10 @@ namespace BJ_S
 
                         carte.BackgroundImage = Image.FromFile($@"{j.Main[index - 1].Image()}");
                         carte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-                        carte.Visible = true;
-                    }
 
-                    ctls.BackColor = Color.Transparent;
-                    ctls.Visible = true;
-                    ctls.Refresh();
+                        carte.Refresh();
+                        Thread.Sleep(400);
+                    }                   
                 }
             }
         }
@@ -230,6 +232,9 @@ namespace BJ_S
             PictureBox carte;
             string carteNom;
             int index;
+
+            mainCroupier.BackColor = Color.Transparent;
+            mainCroupier.Visible = true;
 
             this.MCroupier.Text = m_Controleur.croupier.ValeurMain.ToString();
 
@@ -263,10 +268,9 @@ namespace BJ_S
 
                 carte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
                 carte.Visible = true;
-              
-                mainCroupier.BackColor = Color.Transparent;
-                mainCroupier.Visible = true;
-                mainCroupier.Refresh();
+
+                carte.Refresh();
+                Thread.Sleep(400);
             }
         }
 
@@ -303,7 +307,6 @@ namespace BJ_S
 
             this.btnHit.Enabled = false;
             this.btnStand.Enabled = false;
-            this.buttonExpendFeed.Enabled = false;
         }
 
         public delegate void d_DebloquerInterface(bool debloquerMise);
@@ -315,7 +318,6 @@ namespace BJ_S
 
             this.btnHit.Enabled = true;
             this.btnStand.Enabled = true;
-            this.buttonExpendFeed.Enabled = true;
         }
 
         public delegate void d_AfficherTimer(bool visible);
@@ -350,7 +352,7 @@ namespace BJ_S
 
         private void btnStand_Click(object sender, EventArgs e) //STAND !
         {
-            m_Controleur.Stand();
+            m_Controleur.Stand(m_Controleur.Moi);
         }
 
         private void btnMiser_Click(object sender, EventArgs e) // MISE !
@@ -369,14 +371,14 @@ namespace BJ_S
 
         private void UI_FormClosing(object sender, FormClosingEventArgs e)
         {
-            m_Controleur.TerminerPartie();
-            
             ProcessThreadCollection currentThreads = Process.GetCurrentProcess().Threads;
-
+           
+            m_Controleur.TerminerPartie();
+           
             foreach (ProcessThread thread in currentThreads)
             {
                 thread.Dispose();
-            }
+            }         
         }
     }
 }
