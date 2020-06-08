@@ -77,7 +77,6 @@ namespace BJ_S
 
 		}
 
-
 		public void Preparation()
 		{
 			listeActif = new List<Joueurs>();
@@ -268,7 +267,7 @@ namespace BJ_S
 
 			m_UI.Invoke(new UI.d_MettreAJourEncaisseJoueur(m_UI.MettreAJourEncaisseJoueur));
 
-			//ViderTable();
+			ViderTable();
 		}
 
 		public void ViderTable()
@@ -283,18 +282,18 @@ namespace BJ_S
 				listeActif[i].Mise = 0;
 			}
 
-
-
 			croupier.Main = new Mains();
 			croupier.ValeurMain = 0;
 
 			JouerManche();
 		}
 
-		void PartieTerminer()
+		public void TerminerPartie()
 		{
-			m_UI.Close();
-			//FermerEtReleaseLesSockets
+			tempsAttente.Stop();
+			tempsAttente.Dispose();
+			tMoins1.Stop();
+			tMoins1.Dispose();
 		}
 	}
 }

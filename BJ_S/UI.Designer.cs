@@ -175,7 +175,7 @@
             this.mainJ5.Controls.Add(this.c2j5);
             this.mainJ5.Controls.Add(this.c1j5);
             this.mainJ5.Location = new System.Drawing.Point(85, 272);
-            this.mainJ5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mainJ5.Margin = new System.Windows.Forms.Padding(2);
             this.mainJ5.Name = "mainJ5";
             this.mainJ5.Size = new System.Drawing.Size(223, 94);
             this.mainJ5.TabIndex = 5;
@@ -184,7 +184,7 @@
             // c2j5
             // 
             this.c2j5.Location = new System.Drawing.Point(71, 5);
-            this.c2j5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.c2j5.Margin = new System.Windows.Forms.Padding(2);
             this.c2j5.Name = "c2j5";
             this.c2j5.Size = new System.Drawing.Size(47, 84);
             this.c2j5.TabIndex = 18;
@@ -193,7 +193,7 @@
             // c1j5
             // 
             this.c1j5.Location = new System.Drawing.Point(29, 5);
-            this.c1j5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.c1j5.Margin = new System.Windows.Forms.Padding(2);
             this.c1j5.Name = "c1j5";
             this.c1j5.Size = new System.Drawing.Size(47, 84);
             this.c1j5.TabIndex = 17;
@@ -205,7 +205,7 @@
             this.mainJ4.Controls.Add(this.c2j4);
             this.mainJ4.Controls.Add(this.c1j4);
             this.mainJ4.Location = new System.Drawing.Point(270, 401);
-            this.mainJ4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mainJ4.Margin = new System.Windows.Forms.Padding(2);
             this.mainJ4.Name = "mainJ4";
             this.mainJ4.Size = new System.Drawing.Size(210, 94);
             this.mainJ4.TabIndex = 6;
@@ -214,7 +214,7 @@
             // c2j4
             // 
             this.c2j4.Location = new System.Drawing.Point(71, 5);
-            this.c2j4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.c2j4.Margin = new System.Windows.Forms.Padding(2);
             this.c2j4.Name = "c2j4";
             this.c2j4.Size = new System.Drawing.Size(47, 84);
             this.c2j4.TabIndex = 20;
@@ -223,7 +223,7 @@
             // c1j4
             // 
             this.c1j4.Location = new System.Drawing.Point(29, 5);
-            this.c1j4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.c1j4.Margin = new System.Windows.Forms.Padding(2);
             this.c1j4.Name = "c1j4";
             this.c1j4.Size = new System.Drawing.Size(47, 84);
             this.c1j4.TabIndex = 19;
@@ -235,7 +235,7 @@
             this.mainJ3.Controls.Add(this.c2j3);
             this.mainJ3.Controls.Add(this.c1j3);
             this.mainJ3.Location = new System.Drawing.Point(573, 493);
-            this.mainJ3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mainJ3.Margin = new System.Windows.Forms.Padding(2);
             this.mainJ3.Name = "mainJ3";
             this.mainJ3.Size = new System.Drawing.Size(252, 94);
             this.mainJ3.TabIndex = 7;
@@ -244,7 +244,7 @@
             // c2j3
             // 
             this.c2j3.Location = new System.Drawing.Point(71, 5);
-            this.c2j3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.c2j3.Margin = new System.Windows.Forms.Padding(2);
             this.c2j3.Name = "c2j3";
             this.c2j3.Size = new System.Drawing.Size(47, 84);
             this.c2j3.TabIndex = 22;
@@ -253,7 +253,7 @@
             // c1j3
             // 
             this.c1j3.Location = new System.Drawing.Point(29, 5);
-            this.c1j3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.c1j3.Margin = new System.Windows.Forms.Padding(2);
             this.c1j3.Name = "c1j3";
             this.c1j3.Size = new System.Drawing.Size(47, 84);
             this.c1j3.TabIndex = 21;
@@ -265,7 +265,7 @@
             this.mainJ2.Controls.Add(this.c2j2);
             this.mainJ2.Controls.Add(this.c1j2);
             this.mainJ2.Location = new System.Drawing.Point(876, 404);
-            this.mainJ2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mainJ2.Margin = new System.Windows.Forms.Padding(2);
             this.mainJ2.Name = "mainJ2";
             this.mainJ2.Size = new System.Drawing.Size(243, 94);
             this.mainJ2.TabIndex = 8;
@@ -274,7 +274,7 @@
             // c2j2
             // 
             this.c2j2.Location = new System.Drawing.Point(71, 5);
-            this.c2j2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.c2j2.Margin = new System.Windows.Forms.Padding(2);
             this.c2j2.Name = "c2j2";
             this.c2j2.Size = new System.Drawing.Size(47, 84);
             this.c2j2.TabIndex = 24;
@@ -283,7 +283,7 @@
             // c1j2
             // 
             this.c1j2.Location = new System.Drawing.Point(29, 5);
-            this.c1j2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.c1j2.Margin = new System.Windows.Forms.Padding(2);
             this.c1j2.Name = "c1j2";
             this.c1j2.Size = new System.Drawing.Size(47, 84);
             this.c1j2.TabIndex = 23;
@@ -295,7 +295,7 @@
             this.mainJ1.Controls.Add(this.c2j1);
             this.mainJ1.Controls.Add(this.c1j1);
             this.mainJ1.Location = new System.Drawing.Point(1029, 272);
-            this.mainJ1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mainJ1.Margin = new System.Windows.Forms.Padding(2);
             this.mainJ1.Name = "mainJ1";
             this.mainJ1.Size = new System.Drawing.Size(247, 94);
             this.mainJ1.TabIndex = 9;
@@ -304,7 +304,7 @@
             // c2j1
             // 
             this.c2j1.Location = new System.Drawing.Point(71, 5);
-            this.c2j1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.c2j1.Margin = new System.Windows.Forms.Padding(2);
             this.c2j1.Name = "c2j1";
             this.c2j1.Size = new System.Drawing.Size(47, 84);
             this.c2j1.TabIndex = 26;
@@ -313,7 +313,7 @@
             // c1j1
             // 
             this.c1j1.Location = new System.Drawing.Point(29, 5);
-            this.c1j1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.c1j1.Margin = new System.Windows.Forms.Padding(2);
             this.c1j1.Name = "c1j1";
             this.c1j1.Size = new System.Drawing.Size(47, 84);
             this.c1j1.TabIndex = 25;
@@ -325,7 +325,7 @@
             this.imgSabot.BackgroundImage = global::BJ_S.Properties.Resources.paquet;
             this.imgSabot.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.imgSabot.Location = new System.Drawing.Point(197, 108);
-            this.imgSabot.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.imgSabot.Margin = new System.Windows.Forms.Padding(2);
             this.imgSabot.Name = "imgSabot";
             this.imgSabot.Size = new System.Drawing.Size(130, 78);
             this.imgSabot.TabIndex = 10;
@@ -342,7 +342,7 @@
             this.feedPanel.Controls.Add(this.lblFeed3);
             this.feedPanel.Controls.Add(this.lblFeed2);
             this.feedPanel.Location = new System.Drawing.Point(804, 3);
-            this.feedPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.feedPanel.Margin = new System.Windows.Forms.Padding(2);
             this.feedPanel.Name = "feedPanel";
             this.feedPanel.Size = new System.Drawing.Size(481, 50);
             this.feedPanel.TabIndex = 11;
@@ -368,7 +368,7 @@
             this.buttonExpendFeed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExpendFeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExpendFeed.Location = new System.Drawing.Point(428, 5);
-            this.buttonExpendFeed.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonExpendFeed.Margin = new System.Windows.Forms.Padding(2);
             this.buttonExpendFeed.Name = "buttonExpendFeed";
             this.buttonExpendFeed.Size = new System.Drawing.Size(44, 40);
             this.buttonExpendFeed.TabIndex = 1;
@@ -438,7 +438,7 @@
             this.panel1.Controls.Add(this.jeton50);
             this.panel1.Controls.Add(this.lblMontantPorteFeuille);
             this.panel1.Location = new System.Drawing.Point(-5, 547);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(267, 143);
             this.panel1.TabIndex = 12;
@@ -448,7 +448,7 @@
             this.jeton10.BackgroundImage = global::BJ_S.Properties.Resources.jeton10Out;
             this.jeton10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.jeton10.Location = new System.Drawing.Point(37, 71);
-            this.jeton10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.jeton10.Margin = new System.Windows.Forms.Padding(2);
             this.jeton10.Name = "jeton10";
             this.jeton10.Size = new System.Drawing.Size(60, 58);
             this.jeton10.TabIndex = 19;
@@ -462,7 +462,7 @@
             this.jeton25.BackgroundImage = global::BJ_S.Properties.Resources.jeton25Out;
             this.jeton25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.jeton25.Location = new System.Drawing.Point(104, 71);
-            this.jeton25.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.jeton25.Margin = new System.Windows.Forms.Padding(2);
             this.jeton25.Name = "jeton25";
             this.jeton25.Size = new System.Drawing.Size(60, 58);
             this.jeton25.TabIndex = 18;
@@ -476,7 +476,7 @@
             this.jeton50.BackgroundImage = global::BJ_S.Properties.Resources.jeton50Out;
             this.jeton50.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.jeton50.Location = new System.Drawing.Point(171, 71);
-            this.jeton50.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.jeton50.Margin = new System.Windows.Forms.Padding(2);
             this.jeton50.Name = "jeton50";
             this.jeton50.Size = new System.Drawing.Size(60, 58);
             this.jeton50.TabIndex = 17;
@@ -503,7 +503,7 @@
             this.mainCroupier.Controls.Add(this.cc2);
             this.mainCroupier.Controls.Add(this.cc1);
             this.mainCroupier.Location = new System.Drawing.Point(570, 218);
-            this.mainCroupier.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mainCroupier.Margin = new System.Windows.Forms.Padding(2);
             this.mainCroupier.Name = "mainCroupier";
             this.mainCroupier.Size = new System.Drawing.Size(243, 96);
             this.mainCroupier.TabIndex = 10;
@@ -512,7 +512,7 @@
             // cc2
             // 
             this.cc2.Location = new System.Drawing.Point(71, 5);
-            this.cc2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cc2.Margin = new System.Windows.Forms.Padding(2);
             this.cc2.Name = "cc2";
             this.cc2.Size = new System.Drawing.Size(47, 84);
             this.cc2.TabIndex = 28;
@@ -522,7 +522,7 @@
             // cc1
             // 
             this.cc1.Location = new System.Drawing.Point(29, 5);
-            this.cc1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cc1.Margin = new System.Windows.Forms.Padding(2);
             this.cc1.Name = "cc1";
             this.cc1.Size = new System.Drawing.Size(47, 84);
             this.cc1.TabIndex = 27;
@@ -535,7 +535,7 @@
             this.btnMiser.BackgroundImage = global::BJ_S.Properties.Resources.buttonMiserOut;
             this.btnMiser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMiser.Location = new System.Drawing.Point(244, 604);
-            this.btnMiser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMiser.Margin = new System.Windows.Forms.Padding(2);
             this.btnMiser.Name = "btnMiser";
             this.btnMiser.Size = new System.Drawing.Size(167, 78);
             this.btnMiser.TabIndex = 14;
@@ -550,7 +550,7 @@
             this.btnHit.BackgroundImage = global::BJ_S.Properties.Resources.buttonHitOut;
             this.btnHit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnHit.Location = new System.Drawing.Point(1117, 522);
-            this.btnHit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHit.Margin = new System.Windows.Forms.Padding(2);
             this.btnHit.Name = "btnHit";
             this.btnHit.Size = new System.Drawing.Size(167, 78);
             this.btnHit.TabIndex = 15;
@@ -565,7 +565,7 @@
             this.btnStand.BackgroundImage = global::BJ_S.Properties.Resources.buttonStandOut;
             this.btnStand.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnStand.Location = new System.Drawing.Point(1117, 604);
-            this.btnStand.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStand.Margin = new System.Windows.Forms.Padding(2);
             this.btnStand.Name = "btnStand";
             this.btnStand.Size = new System.Drawing.Size(167, 78);
             this.btnStand.TabIndex = 16;
@@ -713,9 +713,10 @@
             this.Controls.Add(this.mainJ2);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.Transparent;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UI";
             this.Text = "Partie";
+            this.FormClosing += this.UI_FormClosing;
             this.mainJ5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.c2j5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.c1j5)).EndInit();

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace BJ_S
@@ -10,7 +11,6 @@ namespace BJ_S
         PictureBox selected;
         bool extended = false;
         Partie m_Controleur;
-
 
         public UI(Partie p_Controleur)
         {
@@ -364,6 +364,18 @@ namespace BJ_S
                     Invoke(new Partie.d_Miser(m_Controleur.Miser), 25);
                 else if (selected == jeton50)
                     Invoke(new Partie.d_Miser(m_Controleur.Miser), 50);
+            }
+        }
+
+        private void UI_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            m_Controleur.TerminerPartie();
+            
+            ProcessThreadCollection currentThreads = Process.GetCurrentProcess().Threads;
+
+            foreach (ProcessThread thread in currentThreads)
+            {
+                thread.Dispose();
             }
         }
     }
