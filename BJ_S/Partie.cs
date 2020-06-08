@@ -201,6 +201,7 @@ namespace BJ_S
 
 			for (int i = 0; i < listeActif.Count; i++)
 			{
+				listeActif[i].Busted = false;
 				tour = true;
 
 				do
