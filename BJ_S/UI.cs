@@ -282,7 +282,7 @@ namespace BJ_S
             mainCroupier.BackColor = Color.Transparent;
             mainCroupier.Visible = true;
 
-            this.MCroupier.Text = m_Controleur.croupier.ValeurMain.ToString();
+            this.MCroupier.Text = m_Controleur.croupier.Compte().ToString();
 
             if (mainCroupier.Controls.Count < croup.Main.NombresDeCarte())
             {
@@ -295,7 +295,7 @@ namespace BJ_S
                 mainCroupier.Controls.Add(nouvelleCarte);
             }
 
-            if (croup.ValeurMain > 0)
+            if (croup.Compte() > 0)
             {
 
                 foreach (Control card in mainCroupier.Controls)

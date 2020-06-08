@@ -164,7 +164,7 @@ namespace BJ_S
 			}
 
 			for (int i = 0; i < listeActif.Count; i++)
-				m_UI.Invoke(new UI.d_MettreAJourMainJoueur(m_UI.MettreAJourMainJoueur), tabJoueur[5 - (listeActif.Count - i)], listeActif.Count - (listeActif.Count - i) + 2);
+				m_UI.Invoke(new UI.d_MettreAJourMainJoueur(m_UI.MettreAJourMainJoueur), tabJoueur[5 - (listeActif.Count - i)], listeActif.Count - (listeActif.Count - i) + (6-listeActif.Count));
 
 			m_UI.Invoke(new UI.d_MettreAJourMainCroupier(m_UI.MettreAJourMainCroupier), croupier, false);
 
@@ -212,29 +212,39 @@ namespace BJ_S
 					listeActif[i].Busted = true;
 			}
 
-			croupier.ValeurMain = croupier.Main.Compte();
+			croupier.ValeurMain = croupier.Compte();
 			m_UI.Invoke(new UI.d_MettreAJourMainCroupier(m_UI.MettreAJourMainCroupier), croupier, true);
 
 
 			Thread.Sleep(2000);
 
-			while (croupier.ValeurMain < 17)
-			{
-				croupier.Main.RecevoirCarte(sabot.CarteDessus());
-				croupier.ValeurMain = croupier.Main.Compte();
+			bool tourCroupier = true;
+
+			while (tourCroupier)
+			{//a envoyer a marc
+				switch (croupier.HitOrStand())
+				{
+					case 1:
+						croupier.Main.RecevoirCarte(sabot.CarteDessus());
+						croupier.ValeurMain = croupier.Compte();
+						break;
+					case 2:
+						tourCroupier = false;
+						break;
+				}
 
 				m_UI.Invoke(new UI.d_MettreAJourMainCroupier(m_UI.MettreAJourMainCroupier), croupier, true);
 
-				log = $" Croupier Hit! et reçoit {croupier.Main[croupier.Main.NombresDeCarte() - 1].Valeur} Total : {croupier.ValeurMain}";
+				log = $" Croupier Hit! et reçoit {croupier.Main[croupier.Main.NombresDeCarte() - 1].Valeur} Total : {croupier.Compte()}";
 				m_UI.Invoke(new UI.d_MettreAJourFileEvenement(m_UI.MettreAJourFileEvenement), log);
 
 				Thread.Sleep(2000);
 			}
 
-			if (croupier.ValeurMain > 21)
-				log = $" Croupier Bust ! Total : {croupier.ValeurMain}";
+			if (croupier.Compte() > 21)
+				log = $" Croupier Bust ! Total : {croupier.Compte()}";
 			else
-				log = $" Croupier Stand! Total : {croupier.ValeurMain}";
+				log = $" Croupier Stand! Total : {croupier.Compte()}";
 
 			m_UI.Invoke(new UI.d_MettreAJourFileEvenement(m_UI.MettreAJourFileEvenement), log);
 
@@ -283,7 +293,7 @@ namespace BJ_S
 
 				if (!listeActif[i].Busted)
 				{
-					if (listeActif[i].ValeurMain > croupier.ValeurMain)
+					if (listeActif[i].ValeurMain > croupier.ValeurMain || croupier.ValeurMain > 21)
 						listeActif[i].DepotEncaisse(2 * mise);
 					else if (listeActif[i].ValeurMain == croupier.ValeurMain)
 						listeActif[i].DepotEncaisse(mise);
@@ -302,7 +312,7 @@ namespace BJ_S
 				listeActif[i].Main = new Mains();
 				listeActif[i].ValeurMain = 0;
 
-				m_UI.Invoke(new UI.d_MettreAJourMainJoueur(m_UI.MettreAJourMainJoueur), tabJoueur[5 - (listeActif.Count - i)], listeActif.Count - (listeActif.Count - i) + 2);
+				m_UI.Invoke(new UI.d_MettreAJourMainJoueur(m_UI.MettreAJourMainJoueur), tabJoueur[5 - (listeActif.Count - i)], listeActif.Count - (listeActif.Count - i) + (6 - listeActif.Count));
 
 				listeActif[i].Mise = 0;
 			}
