@@ -190,10 +190,7 @@ namespace BJ_S
 
                 if (ctls.Name.Equals($"mainJ{siege}") && ctls.GetType().Name.Equals("Panel"))
                 {
-                    ctls.Visible = true;
-                    ctls.BackColor = Color.Transparent;
-
-
+                   
                     if (ctls.Controls.Count < j.Main.NombresDeCarte())
                     {
                         PictureBox nouvelleCarte = new PictureBox();
@@ -218,7 +215,9 @@ namespace BJ_S
                         carte.Visible = true;
                     }
 
-                    this.Refresh();
+                    ctls.BackColor = Color.Transparent;
+                    ctls.Visible = true;
+                    ctls.Refresh();
                 }
             }
         }
@@ -234,29 +233,40 @@ namespace BJ_S
 
             this.MCroupier.Text = m_Controleur.croupier.ValeurMain.ToString();
 
+            if (mainCroupier.Controls.Count < croup.Main.NombresDeCarte())
+            {
+                PictureBox nouvelleCarte = new PictureBox();
+                nouvelleCarte.Name = $"cc{croup.Main.NombresDeCarte()}";
+                nouvelleCarte.Width = 47;
+                nouvelleCarte.Height = 84;
+                nouvelleCarte.Location = new Point(29 + (42 * (croup.Main.NombresDeCarte() - 1)), 5);
+
+                mainCroupier.Controls.Add(nouvelleCarte);
+            }
+
             foreach (Control card in mainCroupier.Controls)
             {
-                mainCroupier.Visible = true;
-                mainCroupier.BackColor = Color.Transparent;
 
                 carte = (PictureBox)card;
                 carteNom = carte.Name;
 
                 index = Int32.Parse(carteNom.Substring(2, 1));
 
-                if (card.Name.Equals("cc1") || (tourCroupier && card.GetType().Name.Equals("PictureBox")))
-                {                  
+                if (carte.Name.Equals("cc1") || tourCroupier)
+                {
                     carte.BackgroundImage = Image.FromFile($@"{croup.Main[index - 1].Image()}");
                 }
-                else if (!tourCroupier && card.GetType().Name.Equals("PictureBox")) 
+                else if (!tourCroupier && card.Name.Equals("cc2")) 
                 {
                     carte.BackgroundImage = Image.FromFile($@"{croup.Main[index - 1].ImageDos()}");
                 }
 
                 carte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
                 carte.Visible = true;
-
-                this.Refresh();
+              
+                mainCroupier.BackColor = Color.Transparent;
+                mainCroupier.Visible = true;
+                mainCroupier.Refresh();
             }
         }
 
