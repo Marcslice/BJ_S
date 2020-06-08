@@ -163,8 +163,8 @@ namespace BJ_S
 				}
 			}
 
-			for (int i = 0; i < tabJoueur.Length; i++)
-				m_UI.Invoke(new UI.d_MettreAJourMainJoueur(m_UI.MettreAJourMainJoueur), tabJoueur[i], i + 1);
+			for (int i = 0; i < listeActif.Count; i++)
+				m_UI.Invoke(new UI.d_MettreAJourMainJoueur(m_UI.MettreAJourMainJoueur),tabJoueur[5-(listeActif.Count - i)], 5 - (listeActif.Count - i) + 1);
 
 			m_UI.Invoke(new UI.d_MettreAJourMainCroupier(m_UI.MettreAJourMainCroupier), croupier, false);
 
@@ -190,10 +190,10 @@ namespace BJ_S
 						switch (listeActif[i].ai.HitorStand())
 						{
 							case 1:
-								Hit(listeActif[i],i+1);
+								Hit(tabJoueur[5 - (listeActif.Count - i)], 5 - (listeActif.Count - i) + 1);
 								break;
 							case 2:
-								Stand(listeActif[i]);
+								Stand(tabJoueur[5 - (listeActif.Count - i)]);
 								break;
 						}
 					}
