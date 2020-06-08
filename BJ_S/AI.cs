@@ -9,10 +9,13 @@ namespace BJ_S
 
         public AI(Joueurs source)
         {
-            RandNom();
+            //RandNom();
             moi = source;
         }
 
+        /// <summary>
+        /// Set/get permettant d'acceder au joueur que l'AI represante
+        /// </summary>
         public Joueurs Moi
         {
             get { return moi; }
@@ -21,9 +24,14 @@ namespace BJ_S
 
         void RandNom()
         {
-            Nom = "bob";
+            //methode qui retourne un nom aleatoire dans un fichier externe
         }
 
+        /// <summary>
+        /// Methode qui determine de facon aleatoire un montant a miser entre 10, 25 et 50
+        /// </summary>
+        /// <param name="enCaisse">Correspond a la banque du joueur AI</param>
+        /// <returns>Retourne un entier correspondant a un des trois jetons qu'un joueur peut miser</returns>
         public int Miser(int enCaisse)
         {
             var rand = new Random();
@@ -56,8 +64,12 @@ namespace BJ_S
             return 0;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>Retourne un entier selon la valeur de la main du joueur</returns>
         public int HitorStand()
-        {//possibliliter de faire compter les cartes
+        {//possibliliter de faire compter les cartes et de complexifier l'algo
             if (moi.ValeurMain < 17)
                 return 1;
             else

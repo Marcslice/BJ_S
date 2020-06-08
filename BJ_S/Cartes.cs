@@ -6,7 +6,7 @@
         int valeur; // 1 a 13
         string cheminPNG;
         static string cheminCarteDos = $@"../../images/cartes/0.png";
-        
+
         public Cartes(char Sorte, int Valeur)
         {
             sorte = Sorte;
@@ -35,7 +35,7 @@
         /// Retourne le chemin de la carte vue de dos.
         /// </summary>
         /// <returns>string : path</returns>
-        public string ImageDos() 
+        public string ImageDos()
         {
             return cheminCarteDos;
         }

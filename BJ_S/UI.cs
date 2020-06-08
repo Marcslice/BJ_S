@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Drawing;
-using System.Threading;
 using System.Diagnostics;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace BJ_S
@@ -187,38 +186,74 @@ namespace BJ_S
             if (m_Controleur.tabJoueur[4].Mise != 0)
                 this.M5.Text = m_Controleur.tabJoueur[4].ValeurMain.ToString();
 
+
+
+            if (j.ValeurMain > 0)
+            {
+                foreach (Control ctls in this.Controls)
+                {
+
+                    if (ctls.Name.Equals($"mainJ{siege}") && ctls.GetType().Name.Equals("Panel"))
+                    {
+                        ctls.BackColor = Color.Transparent;
+                        ctls.Visible = true;
+
+                        if (ctls.Controls.Count < j.Main.NombresDeCarte())
+                        {
+                            PictureBox nouvelleCarte = new PictureBox();
+                            nouvelleCarte.Name = $"c{j.Main.NombresDeCarte()}j{siege}";
+                            nouvelleCarte.Width = 47;
+                            nouvelleCarte.Height = 84;
+                            nouvelleCarte.Location = new Point(29 + (42 * (j.Main.NombresDeCarte() - 1)), 5);
+
+                            ctls.Controls.Add(nouvelleCarte);
+                        }
+
+                        foreach (Control card in ctls.Controls)
+                        {
+                            carte = (PictureBox)card;
+
+                            carteNom = carte.Name;
+
+                            index = Int32.Parse(carteNom.Substring(1, 1));
+
+                            carte.BackgroundImage = Image.FromFile($@"{j.Main[index - 1].Image()}");
+                            carte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+
+                            carte.Refresh();
+                        }
+                    }
+                }
+            }
+            else
+                ReinitialiserMainJoueur(j, siege);
+        }
+
+        void ReinitialiserMainJoueur(Joueurs j, int siege)
+        {
+            PictureBox carte;
+
             foreach (Control ctls in this.Controls)
             {
 
                 if (ctls.Name.Equals($"mainJ{siege}") && ctls.GetType().Name.Equals("Panel"))
                 {
                     ctls.BackColor = Color.Transparent;
-                    ctls.Visible = true;
-
-                    if (ctls.Controls.Count < j.Main.NombresDeCarte())
-                    {
-                        PictureBox nouvelleCarte = new PictureBox();
-                        nouvelleCarte.Name = $"c{j.Main.NombresDeCarte()}j{siege}";
-                        nouvelleCarte.Width = 47;
-                        nouvelleCarte.Height = 84;
-                        nouvelleCarte.Location = new Point(29 + (42 * (j.Main.NombresDeCarte()-1)), 5);
-
-                        ctls.Controls.Add(nouvelleCarte);
-                    }
+                    ctls.Visible = false;
 
                     foreach (Control card in ctls.Controls)
                     {
                         carte = (PictureBox)card;
 
-                        carteNom = carte.Name;
-
-                        index = Int32.Parse(carteNom.Substring(1, 1));
-
-                        carte.BackgroundImage = Image.FromFile($@"{j.Main[index - 1].Image()}");
-                        carte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-
-                        carte.Refresh();
-                    }                   
+                        if (!card.Name.Equals($"c1j{siege}") && !card.Name.Equals($"c2j{siege}"))
+                        {
+                            ctls.Controls.Remove(carte);
+                        }
+                        else
+                        {
+                            carte.BackgroundImage = null;
+                        }
+                    }
                 }
             }
         }
@@ -248,27 +283,55 @@ namespace BJ_S
                 mainCroupier.Controls.Add(nouvelleCarte);
             }
 
-            foreach (Control card in mainCroupier.Controls)
+            if (croup.ValeurMain > 0)
             {
 
-                carte = (PictureBox)card;
-                carteNom = carte.Name;
-
-                index = Int32.Parse(carteNom.Substring(2, 1));
-
-                if (carte.Name.Equals("cc1") || tourCroupier)
+                foreach (Control card in mainCroupier.Controls)
                 {
-                    carte.BackgroundImage = Image.FromFile($@"{croup.Main[index - 1].Image()}");
+
+                    carte = (PictureBox)card;
+                    carteNom = carte.Name;
+
+                    index = Int32.Parse(carteNom.Substring(2, 1));
+
+                    if (carte.Name.Equals("cc1") || tourCroupier)
+                    {
+                        carte.BackgroundImage = Image.FromFile($@"{croup.Main[index - 1].Image()}");
+                    }
+                    else if (!tourCroupier && card.Name.Equals("cc2"))
+                    {
+                        carte.BackgroundImage = Image.FromFile($@"{croup.Main[index - 1].ImageDos()}");
+                    }
+
+                    carte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+                    carte.Visible = true;
+
+                    carte.Refresh();
                 }
-                else if (!tourCroupier && card.Name.Equals("cc2")) 
+            }
+            else
+                ReinitialiserMainCroupier();
+        }
+
+        void ReinitialiserMainCroupier()
+        {
+            PictureBox carte;
+
+            mainCroupier.Visible = false;
+
+            foreach (PictureBox pb in mainCroupier.Controls)
+            {
+
+                carte = (PictureBox)pb;
+
+                if (!carte.Name.Equals($"cc1") && !carte.Name.Equals($"cc2"))
                 {
-                    carte.BackgroundImage = Image.FromFile($@"{croup.Main[index - 1].ImageDos()}");
+                    mainCroupier.Controls.Remove(carte);
                 }
-
-                carte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-                carte.Visible = true;
-
-                carte.Refresh();
+                else
+                {
+                    carte.BackgroundImage = null;
+                }
             }
         }
 
@@ -345,7 +408,7 @@ namespace BJ_S
 
         private void btnHit_Click(object sender, EventArgs e) // HIT!
         {
-            m_Controleur.Hit(m_Controleur.Moi,1);
+            m_Controleur.Hit(m_Controleur.Moi, 1);
         }
 
         private void btnStand_Click(object sender, EventArgs e) //STAND !
@@ -370,13 +433,13 @@ namespace BJ_S
         private void UI_FormClosing(object sender, FormClosingEventArgs e)
         {
             ProcessThreadCollection currentThreads = Process.GetCurrentProcess().Threads;
-           
+
             m_Controleur.TerminerPartie();
-           
+
             foreach (ProcessThread thread in currentThreads)
             {
                 thread.Dispose();
-            }         
+            }
         }
     }
 }

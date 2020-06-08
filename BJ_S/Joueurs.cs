@@ -8,9 +8,9 @@ namespace BJ_S
         int m_Encaisse, mise, valeurMain;
         bool esTuAI, busted;
         string m_Nom;
-        
+
         Connexions m_Connection;
-        Mains main;       
+        Mains main;
         public AI ai;
 
         public Joueurs(string p_Nom = "", bool AI = false, bool enLigne = false)

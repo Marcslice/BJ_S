@@ -23,7 +23,7 @@ namespace BJ_S
         Thread enAttenteDeConnexion;
 
         public Menu(BlackuJacku BJ)
-        {         
+        {
             InitializeComponent();
             m_BJController = BJ;
             this.lblIP.Text = m_BJController.QuelEstMonIP();

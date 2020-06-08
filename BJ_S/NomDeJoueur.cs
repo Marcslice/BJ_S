@@ -9,7 +9,7 @@ namespace BJ_S
     {
         public NomDeJoueur()
         {
-            InitializeComponent();           
+            InitializeComponent();
         }
 
         /// <summary>
