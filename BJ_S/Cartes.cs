@@ -6,6 +6,7 @@
         int valeur; // 1 a 13
         string cheminPNG;
         static string cheminCarteDos = $@"../../images/cartes/0.png";
+        
         public Cartes(char Sorte, int Valeur)
         {
             sorte = Sorte;

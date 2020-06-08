@@ -1,4 +1,6 @@
-﻿namespace BJ_S
+﻿using System.Drawing;
+
+namespace BJ_S
 {
     partial class NomDeJoueur
     {
@@ -71,7 +73,7 @@
             this.Text = "Nom de joueur";
             this.ResumeLayout(false);
             this.PerformLayout();
-
+            
         }
 
         #endregion

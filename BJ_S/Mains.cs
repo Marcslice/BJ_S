@@ -25,11 +25,6 @@ namespace BJ_S
             //ajout qqch ici ou a lautre constructeur
         }
 
-        public void RevelerCarte()
-        {
-            //fliper la carte
-        }
-
         public int Compte()
         {
             int compte = 0;

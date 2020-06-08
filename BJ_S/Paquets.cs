@@ -21,6 +21,11 @@ namespace BJ_S
             }
         }
 
+        /// <summary>
+        /// Retourne une carte aléatoire lors de la pige dans le sabot.
+        /// Un des paquets du sabot dans lequel la pige se fait est déterminé aléatoirement dans la classe Sabot.
+        /// </summary>
+        /// <returns>Cartes : Aléatoire</returns>
         public Cartes CarteAleatoire()
         {
             var rand = new Random();
@@ -30,6 +35,12 @@ namespace BJ_S
             return carteRandom;
         }
 
+        /// <summary>
+        /// Détermine si un paquet est vide. Permet de repiger lors de la distribution des cartes.
+        /// </summary>
+        /// <returns>Bool : False Paquet non vide.
+        ///                 True Paquet vide.
+        /// </returns>
         public bool EsTuVide()
         {
             if (paquet.Count() > 0)

@@ -6,7 +6,7 @@ namespace BJ_S
     {
         public NomDeJoueur()
         {
-            InitializeComponent();
+            InitializeComponent();           
         }
 
         public string get_Name()

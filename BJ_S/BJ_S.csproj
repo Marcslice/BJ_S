@@ -61,7 +61,6 @@
     <Compile Include="NomDeJoueur.Designer.cs">
       <DependentUpon>NomDeJoueur.cs</DependentUpon>
     </Compile>
-    <Compile Include="UIU.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

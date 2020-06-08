@@ -36,7 +36,7 @@ namespace BJ_S
             this.panelPrincipale.Visible = true;
             connecting = false;
 
-            if (awaitsConnection != null & awaitsConnection.IsAlive)
+            if (awaitsConnection != null && awaitsConnection.IsAlive)
                 awaitsConnection.Join();
         }
 
@@ -58,7 +58,7 @@ namespace BJ_S
         private void Quit_Click(object sender, EventArgs e)
         {
             connecting = false;
-            if (awaitsConnection != null & awaitsConnection.IsAlive)
+            if (awaitsConnection != null && awaitsConnection.IsAlive)
                 awaitsConnection.Join();
 
             m_BJController.Quitter();

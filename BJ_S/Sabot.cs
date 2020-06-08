@@ -17,6 +17,10 @@ namespace BJ_S
             }
         }
 
+        /// <summary>
+        /// Simule la carte du dessus en sortant une carte aléatoire du sabot.
+        /// </summary>
+        /// <returns>Cartes : Aléatoire</returns>
         public Cartes CarteDessus()
         {
             var rand = new Random();
@@ -34,7 +38,6 @@ namespace BJ_S
                         sabot[i] = new Paquets();
                     }
                 }
-
 
                 paquetVide = false;
                 random = rand.Next() % nbPaquets;

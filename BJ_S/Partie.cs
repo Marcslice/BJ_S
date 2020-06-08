@@ -216,7 +216,6 @@ namespace BJ_S
 					listeActif[i].Busted = true;
 			}
 
-			//croupier.Main.RevelerCarte();
 			croupier.ValeurMain = croupier.Main.Compte();
 			m_UI.Invoke(new UI.d_MettreAJourMainCroupier(m_UI.MettreAJourMainCroupier), croupier, true);
 

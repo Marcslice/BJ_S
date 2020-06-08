@@ -54,8 +54,7 @@ namespace BJ_S
         /// Quit l'application.
         /// </summary>
         public void Quitter()
-        {
-            //make sure threads are closed;
+        {          
             Application.Exit();
         }
 

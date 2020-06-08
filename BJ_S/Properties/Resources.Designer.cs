@@ -223,16 +223,6 @@ namespace BJ_S.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap FondMenu {
-            get {
-                object obj = ResourceManager.GetObject("FondMenu", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap jeton10Out {
             get {
                 object obj = ResourceManager.GetObject("jeton10Out", resourceCulture);
