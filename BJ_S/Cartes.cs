@@ -14,16 +14,27 @@
             cheminPNG = $@"../../images/cartes/{valeur}{sorte}.png";
         }
 
+        /// <summary>
+        /// Retourne la valeur de la carte
+        /// </summary>
         public int Valeur
         {
             get { return valeur; }
         }
 
+        /// <summary>
+        /// Retourne le chemin de la carte vue de face.
+        /// </summary>
+        /// <returns>string : path</returns>
         public string Image()
         {
             return cheminPNG;
         }
 
+        /// <summary>
+        /// Retourne le chemin de la carte vue de dos.
+        /// </summary>
+        /// <returns>string : path</returns>
         public string ImageDos() 
         {
             return cheminCarteDos;

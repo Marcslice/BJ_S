@@ -5,89 +5,33 @@ using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 
-
 namespace BJ_S
 {
+    /// <summary>
+    /// Menu Principal
+    /// </summary>
     public partial class Menu : Form
     {
 
         Label titre;
         BlackuJacku m_BJController;
         System.Windows.Forms.Timer t;
-        bool flipped1 = false;
+        bool estVirer = false;
         Button carteRetournee = null;
         const int NBMAXJOUEURS = 5;
-        bool connecting = false;
-        Thread awaitsConnection;
+        bool connexionEnCours = false;
+        Thread enAttenteDeConnexion;
 
         public Menu(BlackuJacku BJ)
-        {
-            m_BJController = BJ;
+        {         
             InitializeComponent();
+            m_BJController = BJ;
             this.lblIP.Text = m_BJController.QuelEstMonIP();
-        }
-
-
-        private void RetourAuMenu_Click(object sender, EventArgs e)
-        {
-            Panel toRemove = (Panel)this.Controls[this.Controls.Count - 1];
-            this.Controls.RemoveAt(this.Controls.Count - 1);
-            toRemove.Dispose();
-            this.panelPrincipale.Visible = true;
-            connecting = false;
-
-            if (awaitsConnection != null && awaitsConnection.IsAlive)
-                awaitsConnection.Join();
         }
 
         private void RejoindreAdresse_Close(object sender, FormClosingEventArgs e)
         {
             this.Enabled = true;
-        }
-
-        private void Rejoindre_Click(object sender, EventArgs e)
-        {
-            AfficherLoadingScreen(sender);
-        }
-
-        private void Heberger_Click(object sender, EventArgs e)
-        {
-            AfficherLoadingScreen(sender);
-        }
-
-        private void Quit_Click(object sender, EventArgs e)
-        {
-            connecting = false;
-            if (awaitsConnection != null && awaitsConnection.IsAlive)
-                awaitsConnection.Join();
-
-            m_BJController.Quitter();
-        }
-
-        private void button_Card_Hover(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            if (btn.Tag.Equals("facingUp"))
-                btn.BackgroundImage = Image.FromFile("../../images/" + btn.Name + "On.png");
-        }
-
-        private void button_Quitter_Hover(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            btn.BackgroundImage = Image.FromFile("../../images/porteOuverte.png");
-        }
-
-        private void button_Card_Out(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            if (btn.Tag.Equals("facingUp"))
-                btn.BackgroundImage = Image.FromFile("../../images/" + btn.Name + "Out.png");
-        }
-
-        private void button_Quitter_Out(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            btn.BackgroundImage = Image.FromFile("../../images/porteFermer.png");
         }
 
         private void AfficherLoadingScreen(object sender)
@@ -149,25 +93,22 @@ namespace BJ_S
             panelAttente.BringToFront();
             this.Controls.Add(panelAttente);
 
-            awaitsConnection = new Thread(new ThreadStart(delegateMessage));
-            awaitsConnection.Start();
+            enAttenteDeConnexion = new Thread(new ThreadStart(EcranDeChargement));
+            enAttenteDeConnexion.Start();
         }
 
-        //subThread
-
-        //Loading animation
-
-        private void delegateMessage()
+        private void EcranDeChargement()
         {
-            connecting = true;
-            while (connecting) //while connection pas connecter
+            connexionEnCours = true;
+            while (connexionEnCours)
             {
-                Invoke(new updateWaitingMessage(UpdateMessage));
+                Invoke(new d_MettreAJourEcranChargement(MettreAJourEcranChargement));
                 Thread.Sleep(400);
             }
         }
 
-        private void UpdateMessage()
+        public delegate void d_MettreAJourEcranChargement();
+        private void MettreAJourEcranChargement()
         {
             if (titre.Text.Equals("Recherche de partie..."))
                 titre.Text = "Recherche de partie.";
@@ -177,11 +118,18 @@ namespace BJ_S
                 titre.Text += ".";
         }
 
-        public delegate void updateWaitingMessage();
-
-        private void flip(Button b, bool Envers)
+        private void VirerCartes(object sender, EventArgs e, Button b)
         {
-            if (!flipped1)
+            t.Stop();
+
+            if (b.Tag.Equals("facingUp"))
+                VirerCartes(b, true);
+            else
+                VirerCartes(b, false);
+        }
+        private void VirerCartes(Button b, bool Envers)
+        {
+            if (!estVirer)
             {
                 b.Width -= 20;
                 b.Location = new Point(b.Location.X + 10, b.Location.Y);
@@ -215,7 +163,7 @@ namespace BJ_S
                             AfficherCacherBoutonDesCartes(carteRetournee, false);
                         }
                     }
-                    flipped1 = true;
+                    estVirer = true;
                 }
                 t.Enabled = true;
             }
@@ -244,7 +192,7 @@ namespace BJ_S
                     else
                         carteRetournee = null;
 
-                    flipped1 = false;
+                    estVirer = false;
                     t.Stop();
                     t.Dispose();
                     t = null;
@@ -263,17 +211,7 @@ namespace BJ_S
             }
         }
 
-        private void flip(object sender, EventArgs e, Button b)
-        {
-            t.Stop();
-
-            if (b.Tag.Equals("facingUp"))
-                flip(b, true);
-            else
-                flip(b, false);
-        }
-
-        private void cardClick(object sender, EventArgs e)
+        private void Carte_Click(object sender, EventArgs e)
         {
             Button b = (Button)sender;
             b.Enabled = false;
@@ -282,12 +220,12 @@ namespace BJ_S
                 t = new System.Windows.Forms.Timer();
                 t.Interval = 1;
                 t.Start();
-                t.Tick += (sender2, e2) => flip(sender2, e2, b);
+                t.Tick += (sender2, e2) => VirerCartes(sender2, e2, b);
             }
             b.Enabled = true;
         }
 
-        private void tBoxPlusMoins(object sender, EventArgs e)
+        private void TextBox_PlusMoins(object sender, EventArgs e)
         {
             int nbJoueurs, nbAIs;
             Control sw = (Button)sender;
@@ -324,66 +262,77 @@ namespace BJ_S
             }
         }
 
+        // *********************   Mouse events   *****************************
 
-        // UTILITIES
-        public Form FormBuilder(string nom, string titre, string message)
-        {
-            Form basic = new Form();
-            basic.AutoSize = true;
-            basic.MaximizeBox = false;
-            basic.MinimizeBox = false;
-            basic.Size = new Size(300, 100);
-            basic.Name = nom;
-            basic.Text = titre;
-            basic.StartPosition = FormStartPosition.Manual;
-            basic.Location = new Point(this.Location.X + this.Width / 2 - 200, this.Location.Y + this.Height / 2);
-            basic.FormClosing += new FormClosingEventHandler(this.RejoindreAdresse_Close);
-
-            Label lblMessage = new Label();
-            lblMessage.Width = 260;
-            lblMessage.Text = message;
-            lblMessage.Location = new Point(0, 0);
-            lblMessage.TextAlign = ContentAlignment.MiddleCenter;
-
-            Button ok = new Button();
-            ok.Size = new Size(50, 30);
-            ok.Location = new Point(220, basic.Height - 75);
-            ok.Text = "OK";
-            ok.Click += new System.EventHandler(CloseCustomForm);
-
-            basic.Controls.Add(lblMessage);
-            basic.Controls.Add(ok);
-
-            return basic;
-        }
-
-        public void CloseCustomForm(object sender, EventArgs e)
-        {
-            Button b = (Button)sender;
-            Form f = (Form)b.GetContainerControl();
-            f.Close();
-        }
-
-        public Form AlerteBuilder(string nom, string titre, string message)
-        {
-            Form alert = FormBuilder(nom, titre, message);
-            return alert;
-        }
-
-        public Form EntryBuilder(string nom, string titre, string message)
-        {
-            Form entryForm = FormBuilder(nom, titre, message);
-            TextBox entry = new TextBox();
-            entry.Location = new Point(10, 30);
-            entry.Size = new Size(200, 50);
-
-            entryForm.Controls.Add(entry);
-            return entryForm;
-        }
-
-        private void carteLocalHumain_Click(object sender, EventArgs e)
+        private void CarteLocalHumain_Click(object sender, EventArgs e)
         {
             m_BJController.NouvellePartie(1);
+        }
+
+        private void Rejoindre_Click(object sender, EventArgs e)
+        {
+            AfficherLoadingScreen(sender);
+        }
+
+        private void Heberger_Click(object sender, EventArgs e)
+        {
+            AfficherLoadingScreen(sender);
+        }
+
+        /// <summary>
+        /// Quitte l'application.
+        /// Attend que les fils ont rejoint.
+        /// </summary>
+
+        private void Quit_Click(object sender, EventArgs e)
+        {
+            connexionEnCours = false;
+            if (enAttenteDeConnexion != null && enAttenteDeConnexion.IsAlive)
+                enAttenteDeConnexion.Join();
+
+            m_BJController.Quitter();
+        }
+
+        private void button_Quitter_Hover(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackgroundImage = Image.FromFile("../../images/porteOuverte.png");
+        }
+
+        private void button_Card_Hover(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            if (btn.Tag.Equals("facingUp"))
+                btn.BackgroundImage = Image.FromFile("../../images/" + btn.Name + "On.png");
+        }
+
+        private void button_Card_Out(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            if (btn.Tag.Equals("facingUp"))
+                btn.BackgroundImage = Image.FromFile("../../images/" + btn.Name + "Out.png");
+        }
+
+        private void button_Quitter_Out(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackgroundImage = Image.FromFile("../../images/porteFermer.png");
+        }
+
+        /// <summary>
+        /// Retourne au menu principal
+        /// Attent que l'animation de connexion se termine.
+        /// </summary>
+        private void RetourAuMenu_Click(object sender, EventArgs e)
+        {
+            Panel toRemove = (Panel)this.Controls[this.Controls.Count - 1];
+            this.Controls.RemoveAt(this.Controls.Count - 1);
+            toRemove.Dispose();
+            this.panelPrincipale.Visible = true;
+            connexionEnCours = false;
+
+            if (enAttenteDeConnexion != null && enAttenteDeConnexion.IsAlive)
+                enAttenteDeConnexion.Join();
         }
     }
 }

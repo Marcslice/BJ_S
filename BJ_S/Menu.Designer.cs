@@ -93,7 +93,7 @@ namespace BJ_S
             this.carteLocal.TabIndex = 0;
             this.carteLocal.Tag = "facingUp";
             this.carteLocal.UseVisualStyleBackColor = false;
-            this.carteLocal.Click += new System.EventHandler(this.cardClick);
+            this.carteLocal.Click += new System.EventHandler(this.Carte_Click);
             this.carteLocal.MouseEnter += new System.EventHandler(this.button_Card_Hover);
             this.carteLocal.MouseLeave += new System.EventHandler(this.button_Card_Out);
             // 
@@ -111,7 +111,7 @@ namespace BJ_S
             this.carteLocalHumain.TabIndex = 7;
             this.carteLocalHumain.UseVisualStyleBackColor = false;
             this.carteLocalHumain.Visible = false;
-            this.carteLocalHumain.Click += new System.EventHandler(this.carteLocalHumain_Click);
+            this.carteLocalHumain.Click += new System.EventHandler(this.CarteLocalHumain_Click);
             // 
             // carteLocalAI
             // 
@@ -163,7 +163,7 @@ namespace BJ_S
             this.carteHeberger.TabIndex = 1;
             this.carteHeberger.Tag = "facingUp";
             this.carteHeberger.UseVisualStyleBackColor = false;
-            this.carteHeberger.Click += new System.EventHandler(this.cardClick);
+            this.carteHeberger.Click += new System.EventHandler(this.Carte_Click);
             this.carteHeberger.MouseEnter += new System.EventHandler(this.button_Card_Hover);
             this.carteHeberger.MouseLeave += new System.EventHandler(this.button_Card_Out);
             // 
@@ -234,7 +234,7 @@ namespace BJ_S
             this.btnPlusAI.Text = "+";
             this.btnPlusAI.UseVisualStyleBackColor = false;
             this.btnPlusAI.Visible = false;
-            this.btnPlusAI.Click += new System.EventHandler(this.tBoxPlusMoins);
+            this.btnPlusAI.Click += new System.EventHandler(this.TextBox_PlusMoins);
             // 
             // btnMoinsAI
             // 
@@ -252,7 +252,7 @@ namespace BJ_S
             this.btnMoinsAI.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnMoinsAI.UseVisualStyleBackColor = false;
             this.btnMoinsAI.Visible = false;
-            this.btnMoinsAI.Click += new System.EventHandler(this.tBoxPlusMoins);
+            this.btnMoinsAI.Click += new System.EventHandler(this.TextBox_PlusMoins);
             // 
             // btnPlusJoueurs
             // 
@@ -270,7 +270,7 @@ namespace BJ_S
             this.btnPlusJoueurs.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnPlusJoueurs.UseVisualStyleBackColor = false;
             this.btnPlusJoueurs.Visible = false;
-            this.btnPlusJoueurs.Click += new System.EventHandler(this.tBoxPlusMoins);
+            this.btnPlusJoueurs.Click += new System.EventHandler(this.TextBox_PlusMoins);
             // 
             // btnMoinsJoueurs
             // 
@@ -286,7 +286,7 @@ namespace BJ_S
             this.btnMoinsJoueurs.Text = "-";
             this.btnMoinsJoueurs.UseVisualStyleBackColor = false;
             this.btnMoinsJoueurs.Visible = false;
-            this.btnMoinsJoueurs.Click += new System.EventHandler(this.tBoxPlusMoins);
+            this.btnMoinsJoueurs.Click += new System.EventHandler(this.TextBox_PlusMoins);
             // 
             // btnLancerHebergement
             // 
@@ -323,7 +323,7 @@ namespace BJ_S
             this.carteRejoindre.TabIndex = 2;
             this.carteRejoindre.Tag = "facingUp";
             this.carteRejoindre.UseVisualStyleBackColor = false;
-            this.carteRejoindre.Click += new System.EventHandler(this.cardClick);
+            this.carteRejoindre.Click += new System.EventHandler(this.Carte_Click);
             this.carteRejoindre.MouseEnter += new System.EventHandler(this.button_Card_Hover);
             this.carteRejoindre.MouseLeave += new System.EventHandler(this.button_Card_Out);
             // 
