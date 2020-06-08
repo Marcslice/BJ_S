@@ -5,6 +5,10 @@ using System.Windows.Forms;
 
 namespace BJ_S
 {
+
+    /// <summary>
+    /// Affiche et gère les actions de l'utilisateur pour le déroulement de la partie.
+    /// </summary>
     public partial class UI : Form
     {
         Label[] feed = new Label[5];
@@ -106,6 +110,10 @@ namespace BJ_S
                 hovered.BackgroundImage = Image.FromFile("../../images/" + hovered.Name + "On.png");
         }
 
+        /// <summary>
+        /// Développe la liste des événements passée.
+        /// Cache la liste si déjà développée.
+        /// </summary>
         private void btnExtendfeedClick(object sender, EventArgs e)
         {
             extended = !extended;
@@ -130,6 +138,10 @@ namespace BJ_S
             }
         }
 
+        /// <summary>
+        /// Met à jour le file d'événement pendant la partie, selon les joueurs et leurs actions.
+        /// </summary>
+        /// <param name="update">string : événement à afficher.</param>
         public delegate void d_MettreAJourFileEvenement(string update);
         public void MettreAJourFileEvenement(string update)
         {
@@ -142,6 +154,9 @@ namespace BJ_S
             lblFeed1.Text = update;
         }
 
+        /// <summary>
+        /// En fin de partie, Réinitialise le file d'évènements.
+        /// </summary>
         public delegate void d_ReinitialiserFileEvenement();
         public void ReinitialiserFileEvenement() {
             lblFeed1.Text = "";
@@ -151,8 +166,10 @@ namespace BJ_S
             lblFeed5.Text = "";
         }
 
+        /// <summary>
+        /// Bloque la section de l'interface pour la mise.
+        /// </summary>
         public delegate void d_BloquerMise();
-
         public void BloquerMise()
         {
             this.btnMiser.Enabled = false;
@@ -161,6 +178,9 @@ namespace BJ_S
             this.jeton50.Enabled = false;
         }
 
+        /// <summary>
+        /// Débloque la section de l'interface pour la mise.
+        /// </summary>
         public delegate void d_DebloquerMise();
         public void DebloquerMise()
         {
@@ -170,14 +190,22 @@ namespace BJ_S
             this.jeton50.Enabled = true;
         }
 
+        /// <summary>
+        /// Met à jour le montant en encaisse du joueur à l'écran.
+        /// </summary>
         public delegate void d_MettreAJourEncaisseJoueur();
         public void MettreAJourEncaisseJoueur()
         {
             this.lblMontantPorteFeuille.Text = m_Controleur.Moi.Encaisse.ToString();
         }
 
+        /// <summary>
+        /// Affiche les cartes des joueurs actifs sur la table.
+        /// Créer des PictureBox au besoin.
+        /// </summary>
+        /// <param name="j">Joueur.</param>
+        /// <param name="siege">Index de joueur.</param>
         public delegate void d_MettreAJourMainJoueur(Joueurs j, int siege);
-
         public void MettreAJourMainJoueur(Joueurs j, int siege)
         {
             PictureBox carte;
@@ -237,6 +265,11 @@ namespace BJ_S
                 ReinitialiserMainJoueur(j, siege);
         }
 
+        /// <summary>
+        /// Détruit les picturebox de trop des joueurs en fin de manche.
+        /// </summary>
+        /// <param name="j">Joueur</param>
+        /// <param name="siege">Index du joueur.</param>
         void ReinitialiserMainJoueur(Joueurs j, int siege)
         {
             PictureBox carte;
@@ -270,8 +303,13 @@ namespace BJ_S
             }     
         }
 
+        /// <summary>
+        /// Affiche les cartes du croupier sur la table. 
+        /// Créer des pictureBox au besoin.
+        /// </summary>
+        /// <param name="croup"></param>
+        /// <param name="tourCroupier"></param>
         public delegate void d_MettreAJourMainCroupier(Croupier croup, bool tourCroupier);
-
         public void MettreAJourMainCroupier(Croupier croup, bool tourCroupier)
         {
 
@@ -325,6 +363,9 @@ namespace BJ_S
                 ReinitialiserMainCroupier();
         }
 
+        /// <summary>
+        /// En fin de manche, détruit les PictureBoxs de trop.
+        /// </summary>
         void ReinitialiserMainCroupier()
         {
             PictureBox carte;
@@ -352,6 +393,11 @@ namespace BJ_S
             mainCroupier.Refresh();
         }
 
+        /// <summary>
+        /// Attribut les noms de joueurs aux sièges.
+        /// </summary>
+        /// <param name="i">Index de siège.</param>
+        /// <param name="nom">string : nom</param>
         public delegate void d_MettreAJourNomSiege(int i, string nom);
         public void MettreAJourNomSiege(int i, string nom)
         {
@@ -364,20 +410,14 @@ namespace BJ_S
             this.lblJ1.Text = m_Controleur.Moi.Nom;
         }
 
-        public void MontrerCarte(string carte) //Tourne la carte du côté visible
-        {
-            foreach (Control ctl in mainCroupier.Controls)
-            {
-                if (ctl.Tag.Equals("dos"))
-                {
-                    ctl.BackgroundImage = Image.FromFile($@"..\..\images\cartes\{carte}.png");
-                    ctl.Tag = "face";
-                }
-            }
-        }
-
+        /// <summary>
+        /// Bloque les boutons de l'interface ainsi que la section mise.
+        /// </summary>
+        /// <param name="bloquerMise">
+        ///     True = Bloquer section mise.
+        ///     False = Ignorer section mise.
+        /// </param>
         public delegate void d_BloquerInterface(bool bloquerMise);
-
         public void BloquerInterface(bool bloquerMise) //Pour les joueurs qui passent un tour.
         {
             if (bloquerMise)
@@ -387,8 +427,14 @@ namespace BJ_S
             this.btnStand.Enabled = false;
         }
 
+        /// <summary>
+        /// Débloque les boutons de l'interface ainsi que la section mise.
+        /// </summary>
+        /// <param name="debloquerMise">
+        ///     True = Débloquer section mise.
+        ///     False = Ignorer section mise.
+        /// </param>
         public delegate void d_DebloquerInterface(bool debloquerMise);
-
         public void DebloquerInterface(bool debloquerMise)
         {
             if (debloquerMise)
@@ -398,6 +444,14 @@ namespace BJ_S
             this.btnStand.Enabled = true;
         }
 
+
+        /// <summary>
+        /// Affiche ou cache le message de mise avec le timer.
+        /// </summary>
+        /// <param name="visible">
+        ///     True : Afficher
+        ///     False = Cacher;   
+        /// </param>
         public delegate void d_AfficherTimer(bool visible);
         public void AfficherTimer(bool visible)
         {
@@ -405,6 +459,11 @@ namespace BJ_S
             this.lblTimer.BringToFront();
         }
 
+
+        /// <summary>
+        /// Met à jour le temps dans le message de mise.
+        /// </summary>
+        /// <param name="sec"></param>
         public delegate void d_MettreAJourTimer(int sec);
         public void MettreAJourTimer(int sec)
         {
@@ -416,6 +475,9 @@ namespace BJ_S
             this.lblTimer.Text = $"Vous avez {tempRestant - 1} secondes pour miser.";
         }
 
+        /// <summary>
+        /// En début de manche, remet le bon temps dans le label.
+        /// </summary>
         public delegate void d_ResetTimer();
         public void ResetTimer()
         {
@@ -447,6 +509,9 @@ namespace BJ_S
             }
         }
 
+        /// <summary>
+        /// Tente de fermer les sous fils avant la fermeture.
+        /// </summary>
         private void UI_FormClosing(object sender, FormClosingEventArgs e)
         {
             ProcessThreadCollection currentThreads = Process.GetCurrentProcess().Threads;

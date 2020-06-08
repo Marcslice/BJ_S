@@ -29,11 +29,11 @@ namespace BJ_S
             this.lblIP.Text = m_BJController.QuelEstMonIP();
         }
 
-        private void RejoindreAdresse_Close(object sender, FormClosingEventArgs e)
-        {
-            this.Enabled = true;
-        }
 
+        /// <summary>
+        /// Créer un panneau pour afficher l'écran de chargement pour la recherche de partie et l'attente d'hébergement.
+        /// </summary>
+        /// <param name="sender"></param>
         private void AfficherLoadingScreen(object sender)
         {
 
@@ -51,24 +51,6 @@ namespace BJ_S
             titre.Location = new Point(this.Width / 2 - 150, this.Height / 2 - 25);
             titre.TextAlign = ContentAlignment.MiddleCenter;
 
-            Label status = new Label();
-            status.Size = new Size(500, 50);
-            status.Text = "Partie trouvée, en attente de joueur.";
-            status.Location = new Point(this.Width / 2 - 250, this.Height / 2 + 30);
-            status.TextAlign = ContentAlignment.MiddleCenter;
-
-            Label nbJoueurActuel = new Label();
-            nbJoueurActuel.Text = "X";
-            nbJoueurActuel.Size = new Size(20, 50);
-            nbJoueurActuel.Location = new Point(this.Width / 2 - 25, this.Height / 2 + 70);
-            nbJoueurActuel.TextAlign = ContentAlignment.MiddleCenter;
-
-            Label nbJoueurRequis = new Label();
-            nbJoueurRequis.Text = " / 4";
-            nbJoueurRequis.Size = new Size(60, 50);
-            nbJoueurRequis.Location = new Point(this.Width / 2 - 15, this.Height / 2 + 70);
-            nbJoueurRequis.TextAlign = ContentAlignment.MiddleCenter;
-
             Button retour = new Button();
             retour.Text = "Retour au menu";
             retour.Size = new Size(200, 50);
@@ -84,9 +66,6 @@ namespace BJ_S
 
             panelAttente.Controls.Add(titre);
             panelAttente.Controls.Add(retour);
-            // panelAttente.Controls.Add(status);
-            // panelAttente.Controls.Add(nbJoueurActuel);
-            // panelAttente.Controls.Add(nbJoueurRequis);
             panelAttente.ForeColor = Color.White;
             panelAttente.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
@@ -97,6 +76,9 @@ namespace BJ_S
             enAttenteDeConnexion.Start();
         }
 
+        /// <summary>
+        /// Appeler par le nouveau thread afin d'animer l'écran de chargement.
+        /// </summary>
         private void EcranDeChargement()
         {
             connexionEnCours = true;
@@ -107,6 +89,9 @@ namespace BJ_S
             }
         }
 
+        /// <summary>
+        /// Permet d'animer l'écran de chargement tout en pouvant cliquer sur quitter ou retour au menu principal.
+        /// </summary>
         public delegate void d_MettreAJourEcranChargement();
         private void MettreAJourEcranChargement()
         {
@@ -118,6 +103,12 @@ namespace BJ_S
                 titre.Text += ".";
         }
 
+        /// <summary>
+        /// Determine le déroulement de l'animation des cartes du menu principal.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <param name="b">Bouton cliqué.</param>
         private void VirerCartes(object sender, EventArgs e, Button b)
         {
             t.Stop();
@@ -127,6 +118,13 @@ namespace BJ_S
             else
                 VirerCartes(b, false);
         }
+
+
+        /// <summary>
+        /// Gère l'animation des cartes du menu principale.
+        /// </summary>
+        /// <param name="b">Bouton cliqué.</param>
+        /// <param name="Envers">boolean déterminant le côté.</param>
         private void VirerCartes(Button b, bool Envers)
         {
             if (!estVirer)
@@ -200,6 +198,15 @@ namespace BJ_S
             }
         }
 
+        /// <summary>
+        /// Lors du pivot d'une carte dans le menu.
+        /// Affiche ou cache les contrôles dépendamment du côté de la carte.
+        /// </summary>
+        /// <param name="b"></param>
+        /// <param name="afficher">
+        ///     True : les contrôles seront affichés.
+        ///     False : les contrôles seront cachés.
+        /// </param>
         private void AfficherCacherBoutonDesCartes(Button b, bool afficher)
         {
             List<Control> listControls = b.Controls.OfType<Control>().ToList();
@@ -211,6 +218,11 @@ namespace BJ_S
             }
         }
 
+        /// <summary>
+        /// Lors d'un click sur une carte du menu, démarre l'animation.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Carte_Click(object sender, EventArgs e)
         {
             Button b = (Button)sender;
@@ -225,6 +237,12 @@ namespace BJ_S
             b.Enabled = true;
         }
 
+        /// <summary>
+        /// Ajoute ou soustrait le nombre de joueurs ou d'AIs sur la carte hébergement.
+        /// </summary>
+        /// <param name="sender">
+        ///     Determine quel bouton a été cliqué.
+        /// </param>
         private void TextBox_PlusMoins(object sender, EventArgs e)
         {
             int nbJoueurs, nbAIs;
