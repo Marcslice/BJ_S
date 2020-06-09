@@ -13,6 +13,7 @@ namespace BJ_S
 		Sabot sabot;//sabot utiliser pour la partie
 		bool enLigne;//booleen servant a determiner si une partie est local ou non
 		bool tour;//booleen permettant de determiner si le tour est fini
+		bool fermeture;
 		UI m_UI;//form de la partie
 
 		System.Timers.Timer tempsAttente, tMoins1;
@@ -48,6 +49,8 @@ namespace BJ_S
 			for (int i = 0; i < tabJoueur.Length; i++)
 				m_UI.Invoke(new UI.d_MettreAJourNomSiege(m_UI.MettreAJourNomSiege), i + 1, tabJoueur[i].Nom);
 
+			fermeture = false;
+
 			JouerManche();
 		}
 
@@ -69,7 +72,8 @@ namespace BJ_S
 		/// </summary>
 		public void JouerManche()
 		{
-			Preparation();
+			if (m_UI.Visible)
+				Preparation();
 		}
 
 		/// <summary>
@@ -130,7 +134,8 @@ namespace BJ_S
 		/// </summary>
 		public void TimerTick(object source, ElapsedEventArgs e)
 		{
-			m_UI.Invoke(new UI.d_MettreAJourTimer(m_UI.MettreAJourTimer), 1);
+			if (m_UI.Visible)
+				m_UI.Invoke(new UI.d_MettreAJourTimer(m_UI.MettreAJourTimer), 1);
 		}
 
 		/// <summary>
@@ -153,10 +158,11 @@ namespace BJ_S
 				m_UI.Invoke(new UI.d_AfficherTimer(m_UI.AfficherTimer), false);
 			}
 
-			if(moi.Ai)
+			if (moi.Ai)
 				m_UI.Invoke(new UI.d_MettreAJourEncaisseJoueur(m_UI.MettreAJourEncaisseJoueur));
 
-			DistribuerCartes();
+			if (m_UI.Visible)
+				DistribuerCartes();
 		}
 
 		/// <summary>
@@ -187,11 +193,12 @@ namespace BJ_S
 			}
 
 			for (int i = 0; i < listeActif.Count; i++)
-				m_UI.Invoke(new UI.d_MettreAJourMainJoueur(m_UI.MettreAJourMainJoueur), tabJoueur[5 - (listeActif.Count - i)], listeActif.Count - (listeActif.Count - i) + (6-listeActif.Count));
+				m_UI.Invoke(new UI.d_MettreAJourMainJoueur(m_UI.MettreAJourMainJoueur), tabJoueur[5 - (listeActif.Count - i)], listeActif.Count - (listeActif.Count - i) + (6 - listeActif.Count));
 
 			m_UI.Invoke(new UI.d_MettreAJourMainCroupier(m_UI.MettreAJourMainCroupier), croupier, false);
 
-			TourJoueurH();
+			if (m_UI.Visible)
+				TourJoueurH();
 		}
 
 		/// <summary>
@@ -276,7 +283,8 @@ namespace BJ_S
 
 			m_UI.Invoke(new UI.d_MettreAJourFileEvenement(m_UI.MettreAJourFileEvenement), log);
 
-			VerifierGagnant();
+			if (m_UI.Visible)
+				VerifierGagnant();
 		}
 
 		//Tour des joueurs pour les joueurs distant
@@ -340,7 +348,8 @@ namespace BJ_S
 
 			m_UI.Invoke(new UI.d_MettreAJourEncaisseJoueur(m_UI.MettreAJourEncaisseJoueur));
 
-			ViderTable();
+			if (m_UI.Visible)
+				ViderTable();
 		}
 
 		/// <summary>
@@ -364,7 +373,8 @@ namespace BJ_S
 			m_UI.Invoke(new UI.d_MettreAJourMainCroupier(m_UI.MettreAJourMainCroupier), croupier, true);
 			m_UI.Invoke(new UI.d_ReinitialiserFileEvenement(m_UI.ReinitialiserFileEvenement));
 
-			JouerManche();
+			if(m_UI.Visible)
+				JouerManche();
 		}
 
 		/// <summary>

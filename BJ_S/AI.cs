@@ -49,7 +49,7 @@ namespace BJ_S
             switch (choixMise)
             {
                 case 's':
-                    if(enCaisse >= 10)
+                    if (enCaisse >= 10)
                         return 10;
                     break;
 

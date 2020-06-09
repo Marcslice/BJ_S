@@ -352,5 +352,10 @@ namespace BJ_S
             if (enAttenteDeConnexion != null && enAttenteDeConnexion.IsAlive)
                 enAttenteDeConnexion.Join();
         }
+
+        private void carteLocalAI_Click(object sender, EventArgs e)
+        {
+            m_BJController.NouvellePartie(2);
+        }
     }
 }

@@ -158,7 +158,8 @@ namespace BJ_S
         /// En fin de partie, Réinitialise le file d'évènements.
         /// </summary>
         public delegate void d_ReinitialiserFileEvenement();
-        public void ReinitialiserFileEvenement() {
+        public void ReinitialiserFileEvenement()
+        {
             lblFeed1.Text = "";
             lblFeed2.Text = "";
             lblFeed3.Text = "";
@@ -299,8 +300,8 @@ namespace BJ_S
                             }
                         }
                     }
-                }                 
-            }     
+                }
+            }
         }
 
         /// <summary>
@@ -373,7 +374,8 @@ namespace BJ_S
             mainCroupier.Visible = false;
 
 
-            while (mainCroupier.Controls.Count > 2) {
+            while (mainCroupier.Controls.Count > 2)
+            {
 
                 foreach (PictureBox pb in mainCroupier.Controls)
                 {
@@ -515,13 +517,15 @@ namespace BJ_S
         private void UI_FormClosing(object sender, FormClosingEventArgs e)
         {
             ProcessThreadCollection currentThreads = Process.GetCurrentProcess().Threads;
-
             m_Controleur.TerminerPartie();
 
             foreach (ProcessThread thread in currentThreads)
             {
                 thread.Dispose();
             }
+
+            
         }
+
     }
 }

@@ -47,7 +47,12 @@ namespace BJ_S
             f.ShowDialog(m_Menu);
 
             if (f.DialogResult == System.Windows.Forms.DialogResult.OK)
-                m_Partie = new Partie(1, 4, false, f.get_Name());
+            {
+                if (type == 1)
+                    m_Partie = new Partie(1, 4, false, f.get_Name());
+                else
+                    m_Partie = new Partie(0, 5, false, f.get_Name());
+            }
         }
 
         /// <summary>

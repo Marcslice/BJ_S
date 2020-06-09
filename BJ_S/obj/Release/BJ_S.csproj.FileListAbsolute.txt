@@ -1,0 +1,12 @@
+C:\Users\marc_\Desktop\BJ_S\BJ_S\bin\Release\BJ_S.exe.config
+C:\Users\marc_\Desktop\BJ_S\BJ_S\bin\Release\BJ_S.exe
+C:\Users\marc_\Desktop\BJ_S\BJ_S\bin\Release\BJ_S.pdb
+C:\Users\marc_\Desktop\BJ_S\BJ_S\obj\Release\BJ_S.Mise.resources
+C:\Users\marc_\Desktop\BJ_S\BJ_S\obj\Release\BJ_S.NomDeJoueur.resources
+C:\Users\marc_\Desktop\BJ_S\BJ_S\obj\Release\BJ_S.Menu.resources
+C:\Users\marc_\Desktop\BJ_S\BJ_S\obj\Release\BJ_S.Properties.Resources.resources
+C:\Users\marc_\Desktop\BJ_S\BJ_S\obj\Release\BJ_S.UI.resources
+C:\Users\marc_\Desktop\BJ_S\BJ_S\obj\Release\BJ_S.csproj.GenerateResource.cache
+C:\Users\marc_\Desktop\BJ_S\BJ_S\obj\Release\BJ_S.exe
+C:\Users\marc_\Desktop\BJ_S\BJ_S\obj\Release\BJ_S.pdb
+C:\Users\marc_\Desktop\BJ_S\BJ_S\obj\Release\BJ_S.csprojAssemblyReference.cache

@@ -68,10 +68,9 @@ namespace BJ_S
             this.panelPrincipale.Controls.Add(this.carteHeberger);
             this.panelPrincipale.Controls.Add(this.carteRejoindre);
             this.panelPrincipale.Controls.Add(this.pictureBox2);
-            this.panelPrincipale.Location = new System.Drawing.Point(71, 45);
-            this.panelPrincipale.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelPrincipale.Location = new System.Drawing.Point(106, 69);
             this.panelPrincipale.Name = "panelPrincipale";
-            this.panelPrincipale.Size = new System.Drawing.Size(587, 474);
+            this.panelPrincipale.Size = new System.Drawing.Size(880, 729);
             this.panelPrincipale.TabIndex = 5;
             // 
             // carteLocal
@@ -86,10 +85,9 @@ namespace BJ_S
             this.carteLocal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.carteLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.carteLocal.Location = new System.Drawing.Point(0, 0);
-            this.carteLocal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.carteLocal.MaximumSize = new System.Drawing.Size(173, 325);
+            this.carteLocal.MaximumSize = new System.Drawing.Size(260, 500);
             this.carteLocal.Name = "carteLocal";
-            this.carteLocal.Size = new System.Drawing.Size(173, 325);
+            this.carteLocal.Size = new System.Drawing.Size(260, 500);
             this.carteLocal.TabIndex = 0;
             this.carteLocal.Tag = "facingUp";
             this.carteLocal.UseVisualStyleBackColor = false;
@@ -104,10 +102,9 @@ namespace BJ_S
             this.carteLocalHumain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.carteLocalHumain.FlatAppearance.BorderSize = 0;
             this.carteLocalHumain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.carteLocalHumain.Location = new System.Drawing.Point(20, 103);
-            this.carteLocalHumain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.carteLocalHumain.Location = new System.Drawing.Point(30, 158);
             this.carteLocalHumain.Name = "carteLocalHumain";
-            this.carteLocalHumain.Size = new System.Drawing.Size(133, 56);
+            this.carteLocalHumain.Size = new System.Drawing.Size(200, 86);
             this.carteLocalHumain.TabIndex = 7;
             this.carteLocalHumain.UseVisualStyleBackColor = false;
             this.carteLocalHumain.Visible = false;
@@ -120,22 +117,21 @@ namespace BJ_S
             this.carteLocalAI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.carteLocalAI.FlatAppearance.BorderSize = 0;
             this.carteLocalAI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.carteLocalAI.Location = new System.Drawing.Point(20, 181);
-            this.carteLocalAI.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.carteLocalAI.Location = new System.Drawing.Point(30, 278);
             this.carteLocalAI.Name = "carteLocalAI";
-            this.carteLocalAI.Size = new System.Drawing.Size(133, 56);
+            this.carteLocalAI.Size = new System.Drawing.Size(200, 86);
             this.carteLocalAI.TabIndex = 8;
             this.carteLocalAI.UseVisualStyleBackColor = false;
             this.carteLocalAI.Visible = false;
+            this.carteLocalAI.Click += new System.EventHandler(this.carteLocalAI_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::BJ_S.Properties.Resources.TitreJeu;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(293, 2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(440, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(291, 32);
+            this.pictureBox1.Size = new System.Drawing.Size(436, 49);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
@@ -156,10 +152,9 @@ namespace BJ_S
             this.carteHeberger.FlatAppearance.BorderSize = 0;
             this.carteHeberger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.carteHeberger.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.carteHeberger.Location = new System.Drawing.Point(207, 75);
-            this.carteHeberger.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.carteHeberger.Location = new System.Drawing.Point(310, 115);
             this.carteHeberger.Name = "carteHeberger";
-            this.carteHeberger.Size = new System.Drawing.Size(173, 325);
+            this.carteHeberger.Size = new System.Drawing.Size(260, 500);
             this.carteHeberger.TabIndex = 1;
             this.carteHeberger.Tag = "facingUp";
             this.carteHeberger.UseVisualStyleBackColor = false;
@@ -172,10 +167,9 @@ namespace BJ_S
             this.lblNbJoueur.AutoSize = true;
             this.lblNbJoueur.BackColor = System.Drawing.Color.White;
             this.lblNbJoueur.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNbJoueur.Location = new System.Drawing.Point(13, 75);
-            this.lblNbJoueur.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNbJoueur.Location = new System.Drawing.Point(20, 115);
             this.lblNbJoueur.Name = "lblNbJoueur";
-            this.lblNbJoueur.Size = new System.Drawing.Size(148, 20);
+            this.lblNbJoueur.Size = new System.Drawing.Size(227, 29);
             this.lblNbJoueur.TabIndex = 8;
             this.lblNbJoueur.Text = "Nombre de Joueurs";
             this.lblNbJoueur.Visible = false;
@@ -185,10 +179,9 @@ namespace BJ_S
             this.lblNbAI.AutoSize = true;
             this.lblNbAI.BackColor = System.Drawing.Color.White;
             this.lblNbAI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNbAI.Location = new System.Drawing.Point(37, 175);
-            this.lblNbAI.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNbAI.Location = new System.Drawing.Point(56, 269);
             this.lblNbAI.Name = "lblNbAI";
-            this.lblNbAI.Size = new System.Drawing.Size(97, 20);
+            this.lblNbAI.Size = new System.Drawing.Size(146, 29);
             this.lblNbAI.TabIndex = 10;
             this.lblNbAI.Text = "Nombre d\'AI";
             this.lblNbAI.Visible = false;
@@ -197,10 +190,9 @@ namespace BJ_S
             // 
             this.tBoxNbJoueur.Enabled = false;
             this.tBoxNbJoueur.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBoxNbJoueur.Location = new System.Drawing.Point(59, 99);
-            this.tBoxNbJoueur.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tBoxNbJoueur.Location = new System.Drawing.Point(88, 152);
             this.tBoxNbJoueur.Name = "tBoxNbJoueur";
-            this.tBoxNbJoueur.Size = new System.Drawing.Size(53, 32);
+            this.tBoxNbJoueur.Size = new System.Drawing.Size(78, 44);
             this.tBoxNbJoueur.TabIndex = 7;
             this.tBoxNbJoueur.Text = "5";
             this.tBoxNbJoueur.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -210,10 +202,9 @@ namespace BJ_S
             // 
             this.tBoxNbAI.Enabled = false;
             this.tBoxNbAI.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBoxNbAI.Location = new System.Drawing.Point(59, 197);
-            this.tBoxNbAI.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tBoxNbAI.Location = new System.Drawing.Point(88, 303);
             this.tBoxNbAI.Name = "tBoxNbAI";
-            this.tBoxNbAI.Size = new System.Drawing.Size(53, 32);
+            this.tBoxNbAI.Size = new System.Drawing.Size(78, 44);
             this.tBoxNbAI.TabIndex = 9;
             this.tBoxNbAI.Text = "0";
             this.tBoxNbAI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -226,10 +217,9 @@ namespace BJ_S
             this.btnPlusAI.Enabled = false;
             this.btnPlusAI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPlusAI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlusAI.Location = new System.Drawing.Point(113, 198);
-            this.btnPlusAI.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPlusAI.Location = new System.Drawing.Point(170, 305);
             this.btnPlusAI.Name = "btnPlusAI";
-            this.btnPlusAI.Size = new System.Drawing.Size(32, 27);
+            this.btnPlusAI.Size = new System.Drawing.Size(48, 42);
             this.btnPlusAI.TabIndex = 14;
             this.btnPlusAI.Text = "+";
             this.btnPlusAI.UseVisualStyleBackColor = false;
@@ -243,10 +233,9 @@ namespace BJ_S
             this.btnMoinsAI.Enabled = false;
             this.btnMoinsAI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMoinsAI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMoinsAI.Location = new System.Drawing.Point(23, 198);
-            this.btnMoinsAI.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMoinsAI.Location = new System.Drawing.Point(34, 305);
             this.btnMoinsAI.Name = "btnMoinsAI";
-            this.btnMoinsAI.Size = new System.Drawing.Size(32, 27);
+            this.btnMoinsAI.Size = new System.Drawing.Size(48, 42);
             this.btnMoinsAI.TabIndex = 13;
             this.btnMoinsAI.Text = "-";
             this.btnMoinsAI.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -261,10 +250,9 @@ namespace BJ_S
             this.btnPlusJoueurs.Enabled = false;
             this.btnPlusJoueurs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPlusJoueurs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlusJoueurs.Location = new System.Drawing.Point(113, 100);
-            this.btnPlusJoueurs.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPlusJoueurs.Location = new System.Drawing.Point(170, 154);
             this.btnPlusJoueurs.Name = "btnPlusJoueurs";
-            this.btnPlusJoueurs.Size = new System.Drawing.Size(32, 27);
+            this.btnPlusJoueurs.Size = new System.Drawing.Size(48, 42);
             this.btnPlusJoueurs.TabIndex = 11;
             this.btnPlusJoueurs.Text = "+";
             this.btnPlusJoueurs.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -278,10 +266,9 @@ namespace BJ_S
             this.btnMoinsJoueurs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnMoinsJoueurs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMoinsJoueurs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMoinsJoueurs.Location = new System.Drawing.Point(23, 100);
-            this.btnMoinsJoueurs.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMoinsJoueurs.Location = new System.Drawing.Point(34, 154);
             this.btnMoinsJoueurs.Name = "btnMoinsJoueurs";
-            this.btnMoinsJoueurs.Size = new System.Drawing.Size(32, 27);
+            this.btnMoinsJoueurs.Size = new System.Drawing.Size(48, 42);
             this.btnMoinsJoueurs.TabIndex = 12;
             this.btnMoinsJoueurs.Text = "-";
             this.btnMoinsJoueurs.UseVisualStyleBackColor = false;
@@ -295,10 +282,9 @@ namespace BJ_S
             this.btnLancerHebergement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLancerHebergement.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLancerHebergement.ForeColor = System.Drawing.Color.Gold;
-            this.btnLancerHebergement.Location = new System.Drawing.Point(40, 260);
-            this.btnLancerHebergement.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLancerHebergement.Location = new System.Drawing.Point(60, 400);
             this.btnLancerHebergement.Name = "btnLancerHebergement";
-            this.btnLancerHebergement.Size = new System.Drawing.Size(92, 34);
+            this.btnLancerHebergement.Size = new System.Drawing.Size(138, 52);
             this.btnLancerHebergement.TabIndex = 7;
             this.btnLancerHebergement.Text = "Lancer";
             this.btnLancerHebergement.UseVisualStyleBackColor = false;
@@ -316,10 +302,9 @@ namespace BJ_S
             this.carteRejoindre.FlatAppearance.BorderSize = 0;
             this.carteRejoindre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.carteRejoindre.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.carteRejoindre.Location = new System.Drawing.Point(413, 150);
-            this.carteRejoindre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.carteRejoindre.Location = new System.Drawing.Point(620, 231);
             this.carteRejoindre.Name = "carteRejoindre";
-            this.carteRejoindre.Size = new System.Drawing.Size(173, 325);
+            this.carteRejoindre.Size = new System.Drawing.Size(260, 500);
             this.carteRejoindre.TabIndex = 2;
             this.carteRejoindre.Tag = "facingUp";
             this.carteRejoindre.UseVisualStyleBackColor = false;
@@ -332,10 +317,9 @@ namespace BJ_S
             this.lblRejoindreIP.AutoSize = true;
             this.lblRejoindreIP.BackColor = System.Drawing.Color.White;
             this.lblRejoindreIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRejoindreIP.Location = new System.Drawing.Point(43, 130);
-            this.lblRejoindreIP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRejoindreIP.Location = new System.Drawing.Point(64, 200);
             this.lblRejoindreIP.Name = "lblRejoindreIP";
-            this.lblRejoindreIP.Size = new System.Drawing.Size(87, 20);
+            this.lblRejoindreIP.Size = new System.Drawing.Size(130, 29);
             this.lblRejoindreIP.TabIndex = 9;
             this.lblRejoindreIP.Text = "Adresse IP";
             this.lblRejoindreIP.Visible = false;
@@ -344,10 +328,9 @@ namespace BJ_S
             // 
             this.tBoxIP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tBoxIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBoxIP.Location = new System.Drawing.Point(30, 162);
-            this.tBoxIP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tBoxIP.Location = new System.Drawing.Point(45, 249);
             this.tBoxIP.Name = "tBoxIP";
-            this.tBoxIP.Size = new System.Drawing.Size(115, 26);
+            this.tBoxIP.Size = new System.Drawing.Size(172, 35);
             this.tBoxIP.TabIndex = 10;
             this.tBoxIP.Visible = false;
             // 
@@ -358,10 +341,9 @@ namespace BJ_S
             this.btnLancerRejoindre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLancerRejoindre.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLancerRejoindre.ForeColor = System.Drawing.Color.Gold;
-            this.btnLancerRejoindre.Location = new System.Drawing.Point(40, 260);
-            this.btnLancerRejoindre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLancerRejoindre.Location = new System.Drawing.Point(60, 400);
             this.btnLancerRejoindre.Name = "btnLancerRejoindre";
-            this.btnLancerRejoindre.Size = new System.Drawing.Size(92, 34);
+            this.btnLancerRejoindre.Size = new System.Drawing.Size(138, 52);
             this.btnLancerRejoindre.TabIndex = 8;
             this.btnLancerRejoindre.Text = "Lancer";
             this.btnLancerRejoindre.UseVisualStyleBackColor = false;
@@ -372,10 +354,9 @@ namespace BJ_S
             // 
             this.pictureBox2.BackgroundImage = global::BJ_S.Properties.Resources.spotlight;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(41, 64);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Location = new System.Drawing.Point(62, 98);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(549, 410);
+            this.pictureBox2.Size = new System.Drawing.Size(824, 631);
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             // 
@@ -383,10 +364,9 @@ namespace BJ_S
             // 
             this.lblYourIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblYourIP.ForeColor = System.Drawing.Color.White;
-            this.lblYourIP.Location = new System.Drawing.Point(67, 572);
-            this.lblYourIP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblYourIP.Location = new System.Drawing.Point(100, 880);
             this.lblYourIP.Name = "lblYourIP";
-            this.lblYourIP.Size = new System.Drawing.Size(149, 21);
+            this.lblYourIP.Size = new System.Drawing.Size(224, 32);
             this.lblYourIP.TabIndex = 0;
             this.lblYourIP.Text = "Votre adresse IP";
             // 
@@ -394,10 +374,9 @@ namespace BJ_S
             // 
             this.lblIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIP.ForeColor = System.Drawing.Color.White;
-            this.lblIP.Location = new System.Drawing.Point(67, 604);
-            this.lblIP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblIP.Location = new System.Drawing.Point(100, 929);
             this.lblIP.Name = "lblIP";
-            this.lblIP.Size = new System.Drawing.Size(149, 21);
+            this.lblIP.Size = new System.Drawing.Size(224, 32);
             this.lblIP.TabIndex = 0;
             // 
             // Devs
@@ -405,10 +384,9 @@ namespace BJ_S
             this.Devs.AutoSize = true;
             this.Devs.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Devs.ForeColor = System.Drawing.Color.White;
-            this.Devs.Location = new System.Drawing.Point(246, 572);
-            this.Devs.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Devs.Location = new System.Drawing.Point(369, 880);
             this.Devs.Name = "Devs";
-            this.Devs.Size = new System.Drawing.Size(239, 48);
+            this.Devs.Size = new System.Drawing.Size(358, 64);
             this.Devs.TabIndex = 6;
             this.Devs.Text = "Marc-André Larocque Blais\r\nJean-François Duchesne";
             // 
@@ -420,10 +398,9 @@ namespace BJ_S
             this.btnQuitter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnQuitter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuitter.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuitter.Location = new System.Drawing.Point(605, 543);
-            this.btnQuitter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnQuitter.Location = new System.Drawing.Point(908, 835);
             this.btnQuitter.Name = "btnQuitter";
-            this.btnQuitter.Size = new System.Drawing.Size(58, 73);
+            this.btnQuitter.Size = new System.Drawing.Size(87, 112);
             this.btnQuitter.TabIndex = 3;
             this.btnQuitter.UseVisualStyleBackColor = false;
             this.btnQuitter.Click += new System.EventHandler(this.Quit_Click);
@@ -432,18 +409,17 @@ namespace BJ_S
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(720, 650);
+            this.ClientSize = new System.Drawing.Size(1080, 1000);
             this.Controls.Add(this.Devs);
             this.Controls.Add(this.lblYourIP);
             this.Controls.Add(this.lblIP);
             this.Controls.Add(this.panelPrincipale);
             this.Controls.Add(this.btnQuitter);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Menu";
