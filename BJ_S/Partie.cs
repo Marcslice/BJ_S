@@ -85,7 +85,8 @@ namespace BJ_S
 
 			m_UI.Invoke(new UI.d_ResetTimer(m_UI.ResetTimer));
 
-			m_UI.Invoke(new UI.d_DebloquerMise(m_UI.DebloquerMise));
+			if(!moi.Ai)
+				m_UI.Invoke(new UI.d_DebloquerMise(m_UI.DebloquerMise));
 
 			m_UI.Invoke(new UI.d_AfficherTimer(m_UI.AfficherTimer), true);
 
@@ -115,17 +116,20 @@ namespace BJ_S
 		/// <param name="p_Mise">Represente la valeur miser par le joueur</param>
 		public void Miser(int p_Mise)
 		{
-			Mise f;
-			if (moi.RetraitEncaisse(p_Mise))
+			if (!moi.Ai)
 			{
-				moi.Mise = p_Mise;
-				m_UI.Invoke(new UI.d_MettreAJourEncaisseJoueur(m_UI.MettreAJourEncaisseJoueur));
-				m_UI.Invoke(new UI.d_BloquerMise(m_UI.BloquerMise));
-			}
-			else
-			{
-				f = new Mise();
-				f.ShowDialog(m_UI);
+				Mise f;
+				if (moi.RetraitEncaisse(p_Mise))
+				{
+					moi.Mise = p_Mise;
+					m_UI.Invoke(new UI.d_MettreAJourEncaisseJoueur(m_UI.MettreAJourEncaisseJoueur));
+					m_UI.Invoke(new UI.d_BloquerMise(m_UI.BloquerMise));
+				}
+				else
+				{
+					f = new Mise();
+					f.ShowDialog(m_UI);
+				}
 			}
 		}
 

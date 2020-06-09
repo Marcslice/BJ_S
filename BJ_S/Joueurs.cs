@@ -37,7 +37,7 @@ namespace BJ_S
 
         public int Mise
         {
-            get { if (esTuAI) { return (mise = ai.Miser(m_Encaisse)); } else { return mise; } }
+            get { if (esTuAI && mise == 0) { RetraitEncaisse(mise = ai.Miser(m_Encaisse)) ; return mise; } else { return mise; } }
             set { mise = value; }
         }
 
