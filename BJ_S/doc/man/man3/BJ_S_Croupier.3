@@ -1,0 +1,104 @@
+.TH "BJ_S.Croupier" 3 "Mon Jun 8 2020" "Version Alpha" "Black Jack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BJ_S.Croupier
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCroupier\fP ()"
+.br
+.ti -1c
+.RI "int \fBCompte\fP ()"
+.br
+.RI "Methode qui permet de calculer la somme des cartes presentes dans la main du croupier et qui converti les as en 1 si la somme depasse 21 "
+.ti -1c
+.RI "int \fBHitOrStand\fP ()"
+.br
+.RI "Methode qui determine si le croupier dois piger une autre carte au rester "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBMains\fP \fBMain\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "int \fBValeurMain\fP\fC [get, set]\fP"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBMains\fP \fBmain\fP"
+.br
+.ti -1c
+.RI "int \fBvaleurMain\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 3 of file Croupier\&.cs\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "BJ_S\&.Croupier\&.Croupier ()\fC [inline]\fP"
+
+.PP
+Definition at line 8 of file Croupier\&.cs\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int BJ_S\&.Croupier\&.Compte ()\fC [inline]\fP"
+
+.PP
+Methode qui permet de calculer la somme des cartes presentes dans la main du croupier et qui converti les as en 1 si la somme depasse 21 
+.PP
+\fBReturns\fP
+.RS 4
+Retourne un entier qui represente la somme des cartes
+.RE
+.PP
+
+.PP
+Definition at line 33 of file Croupier\&.cs\&.
+.SS "int BJ_S\&.Croupier\&.HitOrStand ()\fC [inline]\fP"
+
+.PP
+Methode qui determine si le croupier dois piger une autre carte au rester 
+.PP
+\fBReturns\fP
+.RS 4
+Retourne un entier selon sa decision 1 pour piger et 2 pour rester
+.RE
+.PP
+
+.PP
+Definition at line 72 of file Croupier\&.cs\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBMains\fP BJ_S\&.Croupier\&.main\fC [private]\fP"
+
+.PP
+Definition at line 5 of file Croupier\&.cs\&.
+.SS "int BJ_S\&.Croupier\&.valeurMain\fC [private]\fP"
+
+.PP
+Definition at line 6 of file Croupier\&.cs\&.
+.SH "Property Documentation"
+.PP 
+.SS "\fBMains\fP BJ_S\&.Croupier\&.Main\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 15 of file Croupier\&.cs\&.
+.SS "int BJ_S\&.Croupier\&.ValeurMain\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 21 of file Croupier\&.cs\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Black Jack from the source code\&.

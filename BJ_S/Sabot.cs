@@ -2,6 +2,10 @@
 
 namespace BJ_S
 {
+
+    /// <summary>
+    /// La banque de carte utilisé lors de la distribution des cartes.
+    /// </summary>
     class Sabot
     {
         Paquets[] sabot;

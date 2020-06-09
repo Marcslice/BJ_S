@@ -1,0 +1,122 @@
+.TH "BJ_S.Mains" 3 "Mon Jun 8 2020" "Version Alpha" "Black Jack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BJ_S.Mains
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMains\fP ()"
+.br
+.ti -1c
+.RI "void \fBRecevoirCarte\fP (\fBCartes\fP nouvelleCarte)"
+.br
+.RI "Methode qui distribue des carte dans une main "
+.ti -1c
+.RI "int \fBCompte\fP ()"
+.br
+.RI "Methode qui calcule la valeur d'une main en prenant compte de la presence d'as\&. "
+.ti -1c
+.RI "int \fBNombresDeCarte\fP ()"
+.br
+.RI "Permet d'obtenir le nombre de carte presente dans la main "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBCartes\fP \fBthis[int i]\fP\fC [get]\fP"
+.br
+.RI "indexeur permettant d'acceder a chacune des cartes "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "List< \fBCartes\fP > \fBmain\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 6 of file Mains\&.cs\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "BJ_S\&.Mains\&.Mains ()\fC [inline]\fP"
+
+.PP
+Definition at line 10 of file Mains\&.cs\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int BJ_S\&.Mains\&.Compte ()\fC [inline]\fP"
+
+.PP
+Methode qui calcule la valeur d'une main en prenant compte de la presence d'as\&. Advenant que la valeur depasse 21 elle effectue une convertion des as de 11 a 1
+.PP
+\fBReturns\fP
+.RS 4
+Retourne un int correspondant a la somme des cartes
+.RE
+.PP
+
+.PP
+Definition at line 29 of file Mains\&.cs\&.
+.SS "int BJ_S\&.Mains\&.NombresDeCarte ()\fC [inline]\fP"
+
+.PP
+Permet d'obtenir le nombre de carte presente dans la main 
+.PP
+\fBReturns\fP
+.RS 4
+Retoune un entier equivalent au nombre de carte
+.RE
+.PP
+
+.PP
+Definition at line 76 of file Mains\&.cs\&.
+.SS "void BJ_S\&.Mains\&.RecevoirCarte (\fBCartes\fP nouvelleCarte)\fC [inline]\fP"
+
+.PP
+Methode qui distribue des carte dans une main 
+.PP
+\fBParameters\fP
+.RS 4
+\fInouvelleCarte\fP Correspond a une carte
+.RE
+.PP
+
+.PP
+Definition at line 19 of file Mains\&.cs\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "List<\fBCartes\fP> BJ_S\&.Mains\&.main\fC [private]\fP"
+
+.PP
+Definition at line 8 of file Mains\&.cs\&.
+.SH "Property Documentation"
+.PP 
+.SS "\fBCartes\fP BJ_S\&.Mains\&.this[int i]\fC [get]\fP"
+
+.PP
+indexeur permettant d'acceder a chacune des cartes 
+.PP
+\fBParameters\fP
+.RS 4
+\fIi\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Retourne une carte precise de la main
+.RE
+.PP
+
+.PP
+Definition at line 68 of file Mains\&.cs\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Black Jack from the source code\&.

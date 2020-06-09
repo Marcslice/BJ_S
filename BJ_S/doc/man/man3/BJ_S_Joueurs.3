@@ -1,0 +1,233 @@
+.TH "BJ_S.Joueurs" 3 "Mon Jun 8 2020" "Version Alpha" "Black Jack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BJ_S.Joueurs
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBJoueurs\fP (string p_Nom='', bool \fBAI\fP=false, bool enLigne=false)"
+.br
+.ti -1c
+.RI "bool \fBRetraitEncaisse\fP (int p_Mise)"
+.br
+.RI "Retire la mise du joueur de son encaisse lorsque le temps pour miser se termine\&. "
+.ti -1c
+.RI "int \fBDepotEncaisse\fP (int p_Gain)"
+.br
+.RI "Dépose le gain du joueur s'il gagne une manche\&. "
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBAI\fP \fBai\fP"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBMise\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "bool \fBAi\fP\fC [get]\fP"
+.br
+.ti -1c
+.RI "\fBMains\fP \fBMain\fP\fC [get, set]\fP"
+.br
+.RI "Retourne la main du joueur\&. "
+.ti -1c
+.RI "int \fBValeurMain\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBNom\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "int \fBEncaisse\fP\fC [get]\fP"
+.br
+.RI "Retourne le montant en banque du joueur\&. "
+.ti -1c
+.RI "bool \fBBusted\fP\fC [get, set]\fP"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBGenererAnonymat\fP ()"
+.br
+.RI "Génère un nombre random pour assigner aux bots ou aux joueurs sans nom\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBm_Encaisse\fP"
+.br
+.ti -1c
+.RI "int \fBmise\fP"
+.br
+.ti -1c
+.RI "int \fBvaleurMain\fP"
+.br
+.ti -1c
+.RI "bool \fBesTuAI\fP"
+.br
+.ti -1c
+.RI "bool \fBbusted\fP"
+.br
+.ti -1c
+.RI "string \fBm_Nom\fP"
+.br
+.ti -1c
+.RI "\fBConnexions\fP \fBm_Connection\fP"
+.br
+.ti -1c
+.RI "\fBMains\fP \fBmain\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 6 of file Joueurs\&.cs\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "BJ_S\&.Joueurs\&.Joueurs (string p_Nom = \fC''\fP, bool AI = \fCfalse\fP, bool enLigne = \fCfalse\fP)\fC [inline]\fP"
+
+.PP
+Definition at line 16 of file Joueurs\&.cs\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int BJ_S\&.Joueurs\&.DepotEncaisse (int p_Gain)\fC [inline]\fP"
+
+.PP
+Dépose le gain du joueur s'il gagne une manche\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIp_Gain\fP Montant gagné
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Int Encaisse
+.RE
+.PP
+
+.PP
+Definition at line 125 of file Joueurs\&.cs\&.
+.SS "int BJ_S\&.Joueurs\&.GenererAnonymat ()\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Génère un nombre random pour assigner aux bots ou aux joueurs sans nom\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Int : Nombre Random
+.RE
+.PP
+
+.PP
+Definition at line 71 of file Joueurs\&.cs\&.
+.SS "bool BJ_S\&.Joueurs\&.RetraitEncaisse (int p_Mise)\fC [inline]\fP"
+
+.PP
+Retire la mise du joueur de son encaisse lorsque le temps pour miser se termine\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIp_Mise\fP Montant Misé
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True : Montant encaisse suffisant\&. False : Montant encaisse insuffisant\&. 
+.RE
+.PP
+
+.PP
+Definition at line 110 of file Joueurs\&.cs\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBAI\fP BJ_S\&.Joueurs\&.ai"
+
+.PP
+Definition at line 14 of file Joueurs\&.cs\&.
+.SS "bool BJ_S\&.Joueurs\&.busted\fC [private]\fP"
+
+.PP
+Definition at line 9 of file Joueurs\&.cs\&.
+.SS "bool BJ_S\&.Joueurs\&.esTuAI\fC [private]\fP"
+
+.PP
+Definition at line 9 of file Joueurs\&.cs\&.
+.SS "\fBConnexions\fP BJ_S\&.Joueurs\&.m_Connection\fC [private]\fP"
+
+.PP
+Definition at line 12 of file Joueurs\&.cs\&.
+.SS "int BJ_S\&.Joueurs\&.m_Encaisse\fC [private]\fP"
+
+.PP
+Definition at line 8 of file Joueurs\&.cs\&.
+.SS "string BJ_S\&.Joueurs\&.m_Nom\fC [private]\fP"
+
+.PP
+Definition at line 10 of file Joueurs\&.cs\&.
+.SS "\fBMains\fP BJ_S\&.Joueurs\&.main\fC [private]\fP"
+
+.PP
+Definition at line 13 of file Joueurs\&.cs\&.
+.SS "int BJ_S\&.Joueurs\&.mise\fC [private]\fP"
+
+.PP
+Definition at line 8 of file Joueurs\&.cs\&.
+.SS "int BJ_S\&.Joueurs\&.valeurMain\fC [private]\fP"
+
+.PP
+Definition at line 8 of file Joueurs\&.cs\&.
+.SH "Property Documentation"
+.PP 
+.SS "bool BJ_S\&.Joueurs\&.Ai\fC [get]\fP"
+
+.PP
+Definition at line 45 of file Joueurs\&.cs\&.
+.SS "bool BJ_S\&.Joueurs\&.Busted\fC [get]\fP, \fC [set]\fP"
+
+.PP
+
+.PP
+Definition at line 98 of file Joueurs\&.cs\&.
+.SS "int BJ_S\&.Joueurs\&.Encaisse\fC [get]\fP"
+
+.PP
+Retourne le montant en banque du joueur\&. 
+.PP
+Definition at line 90 of file Joueurs\&.cs\&.
+.SS "\fBMains\fP BJ_S\&.Joueurs\&.Main\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Retourne la main du joueur\&. List<Cartes>
+.PP
+Definition at line 53 of file Joueurs\&.cs\&.
+.SS "int BJ_S\&.Joueurs\&.Mise\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 39 of file Joueurs\&.cs\&.
+.SS "string BJ_S\&.Joueurs\&.Nom\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 81 of file Joueurs\&.cs\&.
+.SS "int BJ_S\&.Joueurs\&.ValeurMain\fC [get]\fP, \fC [set]\fP"
+
+.PP
+
+.PP
+Definition at line 62 of file Joueurs\&.cs\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Black Jack from the source code\&.

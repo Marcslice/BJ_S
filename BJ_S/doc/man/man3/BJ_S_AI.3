@@ -1,0 +1,119 @@
+.TH "BJ_S.AI" 3 "Mon Jun 8 2020" "Version Alpha" "Black Jack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BJ_S.AI
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAI\fP (\fBJoueurs\fP source)"
+.br
+.ti -1c
+.RI "int \fBMiser\fP (int enCaisse)"
+.br
+.RI "Methode qui determine de facon aleatoire un montant a miser entre 10, 25 et 50 "
+.ti -1c
+.RI "int \fBHitorStand\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "String \fBNom\fP"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBJoueurs\fP \fBMoi\fP\fC [get, set]\fP"
+.br
+.RI "Set/get permettant d'acceder au joueur que l'\fBAI\fP represante "
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBRandNom\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBJoueurs\fP \fBmoi\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 5 of file AI\&.cs\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "BJ_S\&.AI\&.AI (\fBJoueurs\fP source)\fC [inline]\fP"
+
+.PP
+Definition at line 10 of file AI\&.cs\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int BJ_S\&.AI\&.HitorStand ()\fC [inline]\fP"
+
+.PP
+
+.PP
+\fBReturns\fP
+.RS 4
+Retourne un entier selon la valeur de la main du joueur
+.RE
+.PP
+
+.PP
+Definition at line 77 of file AI\&.cs\&.
+.SS "int BJ_S\&.AI\&.Miser (int enCaisse)\fC [inline]\fP"
+
+.PP
+Methode qui determine de facon aleatoire un montant a miser entre 10, 25 et 50 
+.PP
+\fBParameters\fP
+.RS 4
+\fIenCaisse\fP Correspond a la banque du joueur \fBAI\fP
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Retourne un entier correspondant a un des trois jetons qu'un joueur peut miser
+.RE
+.PP
+
+.PP
+Definition at line 35 of file AI\&.cs\&.
+.SS "void BJ_S\&.AI\&.RandNom ()\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 25 of file AI\&.cs\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBJoueurs\fP BJ_S\&.AI\&.moi\fC [private]\fP"
+
+.PP
+Definition at line 7 of file AI\&.cs\&.
+.SS "String BJ_S\&.AI\&.Nom"
+
+.PP
+Definition at line 8 of file AI\&.cs\&.
+.SH "Property Documentation"
+.PP 
+.SS "\fBJoueurs\fP BJ_S\&.AI\&.Moi\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Set/get permettant d'acceder au joueur que l'\fBAI\fP represante 
+.PP
+Definition at line 20 of file AI\&.cs\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Black Jack from the source code\&.

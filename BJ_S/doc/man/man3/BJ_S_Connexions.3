@@ -1,0 +1,154 @@
+.TH "BJ_S.Connexions" 3 "Mon Jun 8 2020" "Version Alpha" "Black Jack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BJ_S.Connexions \- Classe gérant la connectivité entre plusieurs joueurs\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBConnexions\fP (bool hote, string adresseIP)"
+.br
+.ti -1c
+.RI "void \fBAccueillirInvites\fP ()"
+.br
+.RI "L'hôte attend jusqu'à temps que le nombre de connexions équivaut un nombre de joueurs désiré\&. "
+.ti -1c
+.RI "string \fBAttendreSonTour\fP ()"
+.br
+.RI "État d'écoute pour les joueurs qui attendent\&. "
+.ti -1c
+.RI "void \fBParler\fP (string protocole)"
+.br
+.RI "Lorsque le joueur effectue une action elle est transmise au serveur\&. "
+.ti -1c
+.RI "bool \fBEstReceptionniste\fP ()"
+.br
+.RI "Détermine si le joueur utilisant cette connexion est l'hôte ou non\&. "
+.ti -1c
+.RI "void \fBClose\fP ()"
+.br
+.RI "Permet de libérer les ressources utilisées par la connexion\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "TcpListener \fBreceptionniste\fP"
+.br
+.ti -1c
+.RI "TcpClient \fBinvite\fP"
+.br
+.ti -1c
+.RI "Socket[] \fBcanals\fP"
+.br
+.ti -1c
+.RI "NetworkStream \fBns\fP"
+.br
+.ti -1c
+.RI "StreamWriter \fBsw\fP"
+.br
+.ti -1c
+.RI "StreamReader \fBsr\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Classe gérant la connectivité entre plusieurs joueurs\&. 
+
+Les joueurs en mode écoute reçoivent de l'information provenent du server\&. Le joueur en mode parlé envoie l'information au serveur\&.
+.PP
+Definition at line 11 of file Connexions\&.cs\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "BJ_S\&.Connexions\&.Connexions (bool hote, string adresseIP)\fC [inline]\fP"
+
+.PP
+Definition at line 21 of file Connexions\&.cs\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void BJ_S\&.Connexions\&.AccueillirInvites ()\fC [inline]\fP"
+
+.PP
+L'hôte attend jusqu'à temps que le nombre de connexions équivaut un nombre de joueurs désiré\&. 
+.PP
+Definition at line 52 of file Connexions\&.cs\&.
+.SS "string BJ_S\&.Connexions\&.AttendreSonTour ()\fC [inline]\fP"
+
+.PP
+État d'écoute pour les joueurs qui attendent\&. 
+.PP
+\fBReturns\fP
+.RS 4
+string : protocole dictant le déroulement de partie
+.RE
+.PP
+
+.PP
+Definition at line 64 of file Connexions\&.cs\&.
+.SS "void BJ_S\&.Connexions\&.Close ()\fC [inline]\fP"
+
+.PP
+Permet de libérer les ressources utilisées par la connexion\&. 
+.PP
+Definition at line 96 of file Connexions\&.cs\&.
+.SS "bool BJ_S\&.Connexions\&.EstReceptionniste ()\fC [inline]\fP"
+
+.PP
+Détermine si le joueur utilisant cette connexion est l'hôte ou non\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Vrai si le joueur a un tcplistener actif\&. Faux si le tcpListener du joueur = nullà 
+.RE
+.PP
+
+.PP
+Definition at line 85 of file Connexions\&.cs\&.
+.SS "void BJ_S\&.Connexions\&.Parler (string protocole)\fC [inline]\fP"
+
+.PP
+Lorsque le joueur effectue une action elle est transmise au serveur\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIprotocole\fP string : protocole formater pour que le serveur puisse distribuer le message\&.
+.RE
+.PP
+
+.PP
+Definition at line 73 of file Connexions\&.cs\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "Socket [] BJ_S\&.Connexions\&.canals\fC [private]\fP"
+
+.PP
+Definition at line 15 of file Connexions\&.cs\&.
+.SS "TcpClient BJ_S\&.Connexions\&.invite\fC [private]\fP"
+
+.PP
+Definition at line 14 of file Connexions\&.cs\&.
+.SS "NetworkStream BJ_S\&.Connexions\&.ns\fC [private]\fP"
+
+.PP
+Definition at line 16 of file Connexions\&.cs\&.
+.SS "TcpListener BJ_S\&.Connexions\&.receptionniste\fC [private]\fP"
+
+.PP
+Definition at line 13 of file Connexions\&.cs\&.
+.SS "StreamReader BJ_S\&.Connexions\&.sr\fC [private]\fP"
+
+.PP
+Definition at line 18 of file Connexions\&.cs\&.
+.SS "StreamWriter BJ_S\&.Connexions\&.sw\fC [private]\fP"
+
+.PP
+Definition at line 17 of file Connexions\&.cs\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Black Jack from the source code\&.

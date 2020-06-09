@@ -1,0 +1,851 @@
+.TH "BJ_S.UI" 3 "Mon Jun 8 2020" "Version Alpha" "Black Jack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BJ_S.UI \- Affiche et gère les actions de l'utilisateur pour le déroulement de la partie\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits Form\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBUI\fP (\fBPartie\fP p_Controleur)"
+.br
+.ti -1c
+.RI "delegate void \fBd_MettreAJourFileEvenement\fP (string update)"
+.br
+.RI "Met à jour le file d'événement pendant la partie, selon les joueurs et leurs actions\&. "
+.ti -1c
+.RI "void \fBMettreAJourFileEvenement\fP (string update)"
+.br
+.ti -1c
+.RI "delegate void \fBd_ReinitialiserFileEvenement\fP ()"
+.br
+.RI "En fin de partie, Réinitialise le file d'évènements\&. "
+.ti -1c
+.RI "void \fBReinitialiserFileEvenement\fP ()"
+.br
+.ti -1c
+.RI "delegate void \fBd_BloquerMise\fP ()"
+.br
+.RI "Bloque la section de l'interface pour la mise\&. "
+.ti -1c
+.RI "void \fBBloquerMise\fP ()"
+.br
+.ti -1c
+.RI "delegate void \fBd_DebloquerMise\fP ()"
+.br
+.RI "Débloque la section de l'interface pour la mise\&. "
+.ti -1c
+.RI "void \fBDebloquerMise\fP ()"
+.br
+.ti -1c
+.RI "delegate void \fBd_MettreAJourEncaisseJoueur\fP ()"
+.br
+.RI "Met à jour le montant en encaisse du joueur à l'écran\&. "
+.ti -1c
+.RI "void \fBMettreAJourEncaisseJoueur\fP ()"
+.br
+.ti -1c
+.RI "delegate void \fBd_MettreAJourMainJoueur\fP (\fBJoueurs\fP j, int siege)"
+.br
+.RI "Affiche les cartes des joueurs actifs sur la table\&. "
+.ti -1c
+.RI "void \fBMettreAJourMainJoueur\fP (\fBJoueurs\fP j, int siege)"
+.br
+.ti -1c
+.RI "delegate void \fBd_MettreAJourMainCroupier\fP (\fBCroupier\fP croup, bool tourCroupier)"
+.br
+.RI "Affiche les cartes du croupier sur la table\&. "
+.ti -1c
+.RI "void \fBMettreAJourMainCroupier\fP (\fBCroupier\fP croup, bool tourCroupier)"
+.br
+.ti -1c
+.RI "delegate void \fBd_MettreAJourNomSiege\fP (int i, string nom)"
+.br
+.RI "Attribut les noms de joueurs aux sièges\&. "
+.ti -1c
+.RI "void \fBMettreAJourNomSiege\fP (int i, string nom)"
+.br
+.ti -1c
+.RI "delegate void \fBd_BloquerInterface\fP (bool bloquerMise)"
+.br
+.RI "Bloque les boutons de l'interface ainsi que la section mise\&. "
+.ti -1c
+.RI "void \fBBloquerInterface\fP (bool bloquerMise)"
+.br
+.ti -1c
+.RI "delegate void \fBd_DebloquerInterface\fP (bool debloquerMise)"
+.br
+.RI "Débloque les boutons de l'interface ainsi que la section mise\&. "
+.ti -1c
+.RI "void \fBDebloquerInterface\fP (bool debloquerMise)"
+.br
+.ti -1c
+.RI "delegate void \fBd_AfficherTimer\fP (bool visible)"
+.br
+.RI "Affiche ou cache le message de mise avec le timer\&. "
+.ti -1c
+.RI "void \fBAfficherTimer\fP (bool visible)"
+.br
+.ti -1c
+.RI "delegate void \fBd_MettreAJourTimer\fP (int sec)"
+.br
+.RI "Met à jour le temps dans le message de mise\&. "
+.ti -1c
+.RI "void \fBMettreAJourTimer\fP (int sec)"
+.br
+.ti -1c
+.RI "delegate void \fBd_ResetTimer\fP ()"
+.br
+.RI "En début de manche, remet le bon temps dans le label\&. "
+.ti -1c
+.RI "void \fBResetTimer\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "override void \fBDispose\fP (bool disposing)"
+.br
+.RI "Clean up any resources being used\&. "
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBbtnMiser_hover\fP (object sender, EventArgs e)"
+.br
+.ti -1c
+.RI "void \fBbtnMiser_Out\fP (object sender, EventArgs e)"
+.br
+.ti -1c
+.RI "void \fBbtnHit_hover\fP (object sender, EventArgs e)"
+.br
+.ti -1c
+.RI "void \fBbtnHit_Out\fP (object sender, EventArgs e)"
+.br
+.ti -1c
+.RI "void \fBbtnStand_hover\fP (object sender, EventArgs e)"
+.br
+.ti -1c
+.RI "void \fBbtnStand_Out\fP (object sender, EventArgs e)"
+.br
+.ti -1c
+.RI "void \fBjetonsClick\fP (object sender, EventArgs e)"
+.br
+.ti -1c
+.RI "void \fBbtnExpendHover\fP (object sender, EventArgs e)"
+.br
+.ti -1c
+.RI "void \fBbtnExpendOut\fP (object sender, EventArgs e)"
+.br
+.ti -1c
+.RI "void \fBjetonsHover\fP (object sender, EventArgs e)"
+.br
+.ti -1c
+.RI "void \fBjetonsOut\fP (object sender, EventArgs e)"
+.br
+.ti -1c
+.RI "void \fBbtnExtendfeedClick\fP (object sender, EventArgs e)"
+.br
+.RI "Développe la liste des événements passée\&. "
+.ti -1c
+.RI "void \fBReinitialiserMainJoueur\fP (\fBJoueurs\fP j, int siege)"
+.br
+.RI "Détruit les picturebox de trop des joueurs en fin de manche\&. "
+.ti -1c
+.RI "void \fBReinitialiserMainCroupier\fP ()"
+.br
+.RI "En fin de manche, détruit les PictureBoxs de trop\&. "
+.ti -1c
+.RI "void \fBbtnHit_Click\fP (object sender, EventArgs e)"
+.br
+.ti -1c
+.RI "void \fBbtnStand_Click\fP (object sender, EventArgs e)"
+.br
+.ti -1c
+.RI "void \fBbtnMiser_Click\fP (object sender, EventArgs e)"
+.br
+.ti -1c
+.RI "void \fBUI_FormClosing\fP (object sender, FormClosingEventArgs e)"
+.br
+.RI "Tente de fermer les sous fils avant la fermeture\&. "
+.ti -1c
+.RI "void \fBInitializeComponent\fP ()"
+.br
+.RI "Required method for Designer support - do not modify the contents of this method with the code editor\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "Label[] \fBfeed\fP = new Label[5]"
+.br
+.ti -1c
+.RI "PictureBox \fBselected\fP"
+.br
+.ti -1c
+.RI "bool \fBextended\fP = false"
+.br
+.ti -1c
+.RI "\fBPartie\fP \fBm_Controleur\fP"
+.br
+.ti -1c
+.RI "System\&.ComponentModel\&.IContainer \fBcomponents\fP = null"
+.br
+.RI "Required designer variable\&. "
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Label \fBlblJ1\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Label \fBlblJ2\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Label \fBlblJ3\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Label \fBlblJ4\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Label \fBlblJ5\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Panel \fBmainJ5\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Panel \fBmainJ4\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Panel \fBmainJ3\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Panel \fBmainJ2\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Panel \fBmainJ1\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.PictureBox \fBimgSabot\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Panel \fBfeedPanel\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Panel \fBpanel1\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Label \fBlblMontantPorteFeuille\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Panel \fBmainCroupier\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Button \fBbuttonExpendFeed\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Label \fBlblFeed1\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.PictureBox \fBbtnMiser\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.PictureBox \fBbtnHit\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.PictureBox \fBbtnStand\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.PictureBox \fBjeton50\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.PictureBox \fBjeton10\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.PictureBox \fBjeton25\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.PictureBox \fBc2j5\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.PictureBox \fBc1j5\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.PictureBox \fBc2j4\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.PictureBox \fBc1j4\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.PictureBox \fBc2j3\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.PictureBox \fBc1j3\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.PictureBox \fBc2j2\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.PictureBox \fBc1j2\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.PictureBox \fBc2j1\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.PictureBox \fBc1j1\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Label \fBlblFeed2\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Label \fBlblFeed3\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Label \fBlblFeed4\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Label \fBlblFeed5\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Label \fBlabel1\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Label \fBlblMainCalcule\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.PictureBox \fBcc2\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.PictureBox \fBcc1\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Label \fBlblTimer\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Label \fBM5\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Label \fBM4\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Label \fBM3\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Label \fBM2\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Label \fBMCroupier\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Affiche et gère les actions de l'utilisateur pour le déroulement de la partie\&. 
+
+
+.PP
+Definition at line 12 of file UI\&.cs\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "BJ_S\&.UI\&.UI (\fBPartie\fP p_Controleur)\fC [inline]\fP"
+
+.PP
+Definition at line 19 of file UI\&.cs\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void BJ_S\&.UI\&.AfficherTimer (bool visible)\fC [inline]\fP"
+
+.PP
+Definition at line 458 of file UI\&.cs\&.
+.SS "void BJ_S\&.UI\&.BloquerInterface (bool bloquerMise)\fC [inline]\fP"
+
+.PP
+Definition at line 423 of file UI\&.cs\&.
+.SS "void BJ_S\&.UI\&.BloquerMise ()\fC [inline]\fP"
+
+.PP
+Definition at line 174 of file UI\&.cs\&.
+.SS "void BJ_S\&.UI\&.btnExpendHover (object sender, EventArgs e)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 84 of file UI\&.cs\&.
+.SS "void BJ_S\&.UI\&.btnExpendOut (object sender, EventArgs e)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 92 of file UI\&.cs\&.
+.SS "void BJ_S\&.UI\&.btnExtendfeedClick (object sender, EventArgs e)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Développe la liste des événements passée\&. Cache la liste si déjà développée\&.
+.PP
+Definition at line 117 of file UI\&.cs\&.
+.SS "void BJ_S\&.UI\&.btnHit_Click (object sender, EventArgs e)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 490 of file UI\&.cs\&.
+.SS "void BJ_S\&.UI\&.btnHit_hover (object sender, EventArgs e)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 45 of file UI\&.cs\&.
+.SS "void BJ_S\&.UI\&.btnHit_Out (object sender, EventArgs e)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 50 of file UI\&.cs\&.
+.SS "void BJ_S\&.UI\&.btnMiser_Click (object sender, EventArgs e)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 500 of file UI\&.cs\&.
+.SS "void BJ_S\&.UI\&.btnMiser_hover (object sender, EventArgs e)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 35 of file UI\&.cs\&.
+.SS "void BJ_S\&.UI\&.btnMiser_Out (object sender, EventArgs e)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 40 of file UI\&.cs\&.
+.SS "void BJ_S\&.UI\&.btnStand_Click (object sender, EventArgs e)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 495 of file UI\&.cs\&.
+.SS "void BJ_S\&.UI\&.btnStand_hover (object sender, EventArgs e)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 55 of file UI\&.cs\&.
+.SS "void BJ_S\&.UI\&.btnStand_Out (object sender, EventArgs e)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 60 of file UI\&.cs\&.
+.SS "delegate void BJ_S\&.UI\&.d_AfficherTimer (bool visible)"
+
+.PP
+Affiche ou cache le message de mise avec le timer\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvisible\fP True : Afficher False = Cacher; 
+.br
+ 
+.RE
+.PP
+
+.SS "delegate void BJ_S\&.UI\&.d_BloquerInterface (bool bloquerMise)"
+
+.PP
+Bloque les boutons de l'interface ainsi que la section mise\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIbloquerMise\fP True = Bloquer section mise\&. False = Ignorer section mise\&. 
+.RE
+.PP
+
+.SS "delegate void BJ_S\&.UI\&.d_BloquerMise ()"
+
+.PP
+Bloque la section de l'interface pour la mise\&. 
+.SS "delegate void BJ_S\&.UI\&.d_DebloquerInterface (bool debloquerMise)"
+
+.PP
+Débloque les boutons de l'interface ainsi que la section mise\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdebloquerMise\fP True = Débloquer section mise\&. False = Ignorer section mise\&. 
+.RE
+.PP
+
+.SS "delegate void BJ_S\&.UI\&.d_DebloquerMise ()"
+
+.PP
+Débloque la section de l'interface pour la mise\&. 
+.SS "delegate void BJ_S\&.UI\&.d_MettreAJourEncaisseJoueur ()"
+
+.PP
+Met à jour le montant en encaisse du joueur à l'écran\&. 
+.SS "delegate void BJ_S\&.UI\&.d_MettreAJourFileEvenement (string update)"
+
+.PP
+Met à jour le file d'événement pendant la partie, selon les joueurs et leurs actions\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIupdate\fP string : événement à afficher\&.
+.RE
+.PP
+
+.SS "delegate void BJ_S\&.UI\&.d_MettreAJourMainCroupier (\fBCroupier\fP croup, bool tourCroupier)"
+
+.PP
+Affiche les cartes du croupier sur la table\&. Créer des pictureBox au besoin\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIcroup\fP 
+.br
+\fItourCroupier\fP 
+.RE
+.PP
+
+.SS "delegate void BJ_S\&.UI\&.d_MettreAJourMainJoueur (\fBJoueurs\fP j, int siege)"
+
+.PP
+Affiche les cartes des joueurs actifs sur la table\&. Créer des PictureBox au besoin\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIj\fP Joueur\&.
+.br
+\fIsiege\fP Index de joueur\&.
+.RE
+.PP
+
+.SS "delegate void BJ_S\&.UI\&.d_MettreAJourNomSiege (int i, string nom)"
+
+.PP
+Attribut les noms de joueurs aux sièges\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIi\fP Index de siège\&.
+.br
+\fInom\fP string : nom
+.RE
+.PP
+
+.SS "delegate void BJ_S\&.UI\&.d_MettreAJourTimer (int sec)"
+
+.PP
+Met à jour le temps dans le message de mise\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsec\fP 
+.RE
+.PP
+
+.SS "delegate void BJ_S\&.UI\&.d_ReinitialiserFileEvenement ()"
+
+.PP
+En fin de partie, Réinitialise le file d'évènements\&. 
+.SS "delegate void BJ_S\&.UI\&.d_ResetTimer ()"
+
+.PP
+En début de manche, remet le bon temps dans le label\&. 
+.SS "void BJ_S\&.UI\&.DebloquerInterface (bool debloquerMise)\fC [inline]\fP"
+
+.PP
+Definition at line 440 of file UI\&.cs\&.
+.SS "void BJ_S\&.UI\&.DebloquerMise ()\fC [inline]\fP"
+
+.PP
+Definition at line 186 of file UI\&.cs\&.
+.SS "override void BJ_S\&.UI\&.Dispose (bool disposing)\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+Clean up any resources being used\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdisposing\fP true if managed resources should be disposed; otherwise, false\&.
+.RE
+.PP
+
+.PP
+Definition at line 14 of file UI\&.Designer\&.cs\&.
+.SS "void BJ_S\&.UI\&.InitializeComponent ()\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Required method for Designer support - do not modify the contents of this method with the code editor\&. 
+.PP
+Definition at line 29 of file UI\&.Designer\&.cs\&.
+.SS "void BJ_S\&.UI\&.jetonsClick (object sender, EventArgs e)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 65 of file UI\&.cs\&.
+.SS "void BJ_S\&.UI\&.jetonsHover (object sender, EventArgs e)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 98 of file UI\&.cs\&.
+.SS "void BJ_S\&.UI\&.jetonsOut (object sender, EventArgs e)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 104 of file UI\&.cs\&.
+.SS "void BJ_S\&.UI\&.MettreAJourEncaisseJoueur ()\fC [inline]\fP"
+
+.PP
+Definition at line 198 of file UI\&.cs\&.
+.SS "void BJ_S\&.UI\&.MettreAJourFileEvenement (string update)\fC [inline]\fP"
+
+.PP
+Definition at line 146 of file UI\&.cs\&.
+.SS "void BJ_S\&.UI\&.MettreAJourMainCroupier (\fBCroupier\fP croup, bool tourCroupier)\fC [inline]\fP"
+
+.PP
+Definition at line 314 of file UI\&.cs\&.
+.SS "void BJ_S\&.UI\&.MettreAJourMainJoueur (\fBJoueurs\fP j, int siege)\fC [inline]\fP"
+
+.PP
+Definition at line 210 of file UI\&.cs\&.
+.SS "void BJ_S\&.UI\&.MettreAJourNomSiege (int i, string nom)\fC [inline]\fP"
+
+.PP
+Definition at line 404 of file UI\&.cs\&.
+.SS "void BJ_S\&.UI\&.MettreAJourTimer (int sec)\fC [inline]\fP"
+
+.PP
+Definition at line 470 of file UI\&.cs\&.
+.SS "void BJ_S\&.UI\&.ReinitialiserFileEvenement ()\fC [inline]\fP"
+
+.PP
+Definition at line 161 of file UI\&.cs\&.
+.SS "void BJ_S\&.UI\&.ReinitialiserMainCroupier ()\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+En fin de manche, détruit les PictureBoxs de trop\&. 
+.PP
+Definition at line 370 of file UI\&.cs\&.
+.SS "void BJ_S\&.UI\&.ReinitialiserMainJoueur (\fBJoueurs\fP j, int siege)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Détruit les picturebox de trop des joueurs en fin de manche\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIj\fP Joueur
+.br
+\fIsiege\fP Index du joueur\&.
+.RE
+.PP
+
+.PP
+Definition at line 274 of file UI\&.cs\&.
+.SS "void BJ_S\&.UI\&.ResetTimer ()\fC [inline]\fP"
+
+.PP
+Definition at line 484 of file UI\&.cs\&.
+.SS "void BJ_S\&.UI\&.UI_FormClosing (object sender, FormClosingEventArgs e)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Tente de fermer les sous fils avant la fermeture\&. 
+.PP
+Definition at line 517 of file UI\&.cs\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "System\&.Windows\&.Forms\&.PictureBox BJ_S\&.UI\&.btnHit\fC [private]\fP"
+
+.PP
+Definition at line 736 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.PictureBox BJ_S\&.UI\&.btnMiser\fC [private]\fP"
+
+.PP
+Definition at line 735 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.PictureBox BJ_S\&.UI\&.btnStand\fC [private]\fP"
+
+.PP
+Definition at line 737 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Button BJ_S\&.UI\&.buttonExpendFeed\fC [private]\fP"
+
+.PP
+Definition at line 733 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.PictureBox BJ_S\&.UI\&.c1j1\fC [private]\fP"
+
+.PP
+Definition at line 750 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.PictureBox BJ_S\&.UI\&.c1j2\fC [private]\fP"
+
+.PP
+Definition at line 748 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.PictureBox BJ_S\&.UI\&.c1j3\fC [private]\fP"
+
+.PP
+Definition at line 746 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.PictureBox BJ_S\&.UI\&.c1j4\fC [private]\fP"
+
+.PP
+Definition at line 744 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.PictureBox BJ_S\&.UI\&.c1j5\fC [private]\fP"
+
+.PP
+Definition at line 742 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.PictureBox BJ_S\&.UI\&.c2j1\fC [private]\fP"
+
+.PP
+Definition at line 749 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.PictureBox BJ_S\&.UI\&.c2j2\fC [private]\fP"
+
+.PP
+Definition at line 747 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.PictureBox BJ_S\&.UI\&.c2j3\fC [private]\fP"
+
+.PP
+Definition at line 745 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.PictureBox BJ_S\&.UI\&.c2j4\fC [private]\fP"
+
+.PP
+Definition at line 743 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.PictureBox BJ_S\&.UI\&.c2j5\fC [private]\fP"
+
+.PP
+Definition at line 741 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.PictureBox BJ_S\&.UI\&.cc1\fC [private]\fP"
+
+.PP
+Definition at line 758 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.PictureBox BJ_S\&.UI\&.cc2\fC [private]\fP"
+
+.PP
+Definition at line 757 of file UI\&.Designer\&.cs\&.
+.SS "System\&.ComponentModel\&.IContainer BJ_S\&.UI\&.components = null\fC [private]\fP"
+
+.PP
+Required designer variable\&. 
+.PP
+Definition at line 8 of file UI\&.Designer\&.cs\&.
+.SS "bool BJ_S\&.UI\&.extended = false\fC [private]\fP"
+
+.PP
+Definition at line 16 of file UI\&.cs\&.
+.SS "Label [] BJ_S\&.UI\&.feed = new Label[5]\fC [private]\fP"
+
+.PP
+Definition at line 14 of file UI\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Panel BJ_S\&.UI\&.feedPanel\fC [private]\fP"
+
+.PP
+Definition at line 729 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.PictureBox BJ_S\&.UI\&.imgSabot\fC [private]\fP"
+
+.PP
+Definition at line 728 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.PictureBox BJ_S\&.UI\&.jeton10\fC [private]\fP"
+
+.PP
+Definition at line 739 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.PictureBox BJ_S\&.UI\&.jeton25\fC [private]\fP"
+
+.PP
+Definition at line 740 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.PictureBox BJ_S\&.UI\&.jeton50\fC [private]\fP"
+
+.PP
+Definition at line 738 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Label BJ_S\&.UI\&.label1\fC [private]\fP"
+
+.PP
+Definition at line 755 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Label BJ_S\&.UI\&.lblFeed1\fC [private]\fP"
+
+.PP
+Definition at line 734 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Label BJ_S\&.UI\&.lblFeed2\fC [private]\fP"
+
+.PP
+Definition at line 751 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Label BJ_S\&.UI\&.lblFeed3\fC [private]\fP"
+
+.PP
+Definition at line 752 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Label BJ_S\&.UI\&.lblFeed4\fC [private]\fP"
+
+.PP
+Definition at line 753 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Label BJ_S\&.UI\&.lblFeed5\fC [private]\fP"
+
+.PP
+Definition at line 754 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Label BJ_S\&.UI\&.lblJ1\fC [private]\fP"
+
+.PP
+Definition at line 718 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Label BJ_S\&.UI\&.lblJ2\fC [private]\fP"
+
+.PP
+Definition at line 719 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Label BJ_S\&.UI\&.lblJ3\fC [private]\fP"
+
+.PP
+Definition at line 720 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Label BJ_S\&.UI\&.lblJ4\fC [private]\fP"
+
+.PP
+Definition at line 721 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Label BJ_S\&.UI\&.lblJ5\fC [private]\fP"
+
+.PP
+Definition at line 722 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Label BJ_S\&.UI\&.lblMainCalcule\fC [private]\fP"
+
+.PP
+Definition at line 756 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Label BJ_S\&.UI\&.lblMontantPorteFeuille\fC [private]\fP"
+
+.PP
+Definition at line 731 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Label BJ_S\&.UI\&.lblTimer\fC [private]\fP"
+
+.PP
+Definition at line 759 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Label BJ_S\&.UI\&.M2\fC [private]\fP"
+
+.PP
+Definition at line 763 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Label BJ_S\&.UI\&.M3\fC [private]\fP"
+
+.PP
+Definition at line 762 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Label BJ_S\&.UI\&.M4\fC [private]\fP"
+
+.PP
+Definition at line 761 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Label BJ_S\&.UI\&.M5\fC [private]\fP"
+
+.PP
+Definition at line 760 of file UI\&.Designer\&.cs\&.
+.SS "\fBPartie\fP BJ_S\&.UI\&.m_Controleur\fC [private]\fP"
+
+.PP
+Definition at line 17 of file UI\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Panel BJ_S\&.UI\&.mainCroupier\fC [private]\fP"
+
+.PP
+Definition at line 732 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Panel BJ_S\&.UI\&.mainJ1\fC [private]\fP"
+
+.PP
+Definition at line 727 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Panel BJ_S\&.UI\&.mainJ2\fC [private]\fP"
+
+.PP
+Definition at line 726 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Panel BJ_S\&.UI\&.mainJ3\fC [private]\fP"
+
+.PP
+Definition at line 725 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Panel BJ_S\&.UI\&.mainJ4\fC [private]\fP"
+
+.PP
+Definition at line 724 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Panel BJ_S\&.UI\&.mainJ5\fC [private]\fP"
+
+.PP
+Definition at line 723 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Label BJ_S\&.UI\&.MCroupier\fC [private]\fP"
+
+.PP
+Definition at line 764 of file UI\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Panel BJ_S\&.UI\&.panel1\fC [private]\fP"
+
+.PP
+Definition at line 730 of file UI\&.Designer\&.cs\&.
+.SS "PictureBox BJ_S\&.UI\&.selected\fC [private]\fP"
+
+.PP
+Definition at line 15 of file UI\&.cs\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Black Jack from the source code\&.

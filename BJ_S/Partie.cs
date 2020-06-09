@@ -4,6 +4,9 @@ using System.Timers;
 
 namespace BJ_S
 {
+	/// <summary>
+	/// Gère le déroulement des manches.
+	/// </summary>
 	public class Partie
 	{
 		public Joueurs[] tabJoueur;//tableau des joueurs present

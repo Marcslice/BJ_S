@@ -1,0 +1,77 @@
+.TH "BJ_S.Paquets" 3 "Mon Jun 8 2020" "Version Alpha" "Black Jack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BJ_S.Paquets
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPaquets\fP ()"
+.br
+.ti -1c
+.RI "\fBCartes\fP \fBCarteAleatoire\fP ()"
+.br
+.RI "Retourne une carte aléatoire lors de la pige dans le sabot\&. "
+.ti -1c
+.RI "bool \fBEsTuVide\fP ()"
+.br
+.RI "Détermine si un paquet est vide\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "List< \fBCartes\fP > \fBpaquet\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 7 of file Paquets\&.cs\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "BJ_S\&.Paquets\&.Paquets ()\fC [inline]\fP"
+
+.PP
+Definition at line 11 of file Paquets\&.cs\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBCartes\fP BJ_S\&.Paquets\&.CarteAleatoire ()\fC [inline]\fP"
+
+.PP
+Retourne une carte aléatoire lors de la pige dans le sabot\&. Un des paquets du sabot dans lequel la pige se fait est déterminé aléatoirement dans la classe \fBSabot\fP\&.
+.PP
+\fBReturns\fP
+.RS 4
+\fBCartes\fP : Aléatoire
+.RE
+.PP
+
+.PP
+Definition at line 29 of file Paquets\&.cs\&.
+.SS "bool BJ_S\&.Paquets\&.EsTuVide ()\fC [inline]\fP"
+
+.PP
+Détermine si un paquet est vide\&. Permet de repiger lors de la distribution des cartes\&.
+.PP
+\fBReturns\fP
+.RS 4
+Bool : False Paquet non vide\&. True Paquet vide\&. 
+.RE
+.PP
+
+.PP
+Definition at line 44 of file Paquets\&.cs\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "List<\fBCartes\fP> BJ_S\&.Paquets\&.paquet\fC [private]\fP"
+
+.PP
+Definition at line 9 of file Paquets\&.cs\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Black Jack from the source code\&.

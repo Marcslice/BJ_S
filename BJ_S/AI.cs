@@ -2,6 +2,11 @@
 
 namespace BJ_S
 {
+
+
+    /// <summary>
+    /// Intelligence Artificiel represantant un joueur.
+    /// </summary>
     public class AI
     {
         Joueurs moi;
@@ -11,20 +16,6 @@ namespace BJ_S
         {
             //RandNom();
             moi = source;
-        }
-
-        /// <summary>
-        /// Set/get permettant d'acceder au joueur que l'AI represante
-        /// </summary>
-        public Joueurs Moi
-        {
-            get { return moi; }
-            set { moi = value; }
-        }
-
-        void RandNom()
-        {
-            //methode qui retourne un nom aleatoire dans un fichier externe
         }
 
         /// <summary>

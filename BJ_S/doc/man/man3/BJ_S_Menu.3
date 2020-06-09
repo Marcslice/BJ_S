@@ -1,0 +1,529 @@
+.TH "BJ_S.Menu" 3 "Mon Jun 8 2020" "Version Alpha" "Black Jack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BJ_S.Menu \- \fBMenu\fP Principal  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits Form\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMenu\fP (\fBBlackuJacku\fP BJ)"
+.br
+.ti -1c
+.RI "delegate void \fBd_MettreAJourEcranChargement\fP ()"
+.br
+.RI "Permet d'animer l'écran de chargement tout en pouvant cliquer sur quitter ou retour au menu principal\&. "
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "override void \fBDispose\fP (bool disposing)"
+.br
+.RI "Clean up any resources being used\&. "
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBAfficherLoadingScreen\fP (object sender)"
+.br
+.RI "Créer un panneau pour afficher l'écran de chargement pour la recherche de partie et l'attente d'hébergement\&. "
+.ti -1c
+.RI "void \fBEcranDeChargement\fP ()"
+.br
+.RI "Appeler par le nouveau thread afin d'animer l'écran de chargement\&. "
+.ti -1c
+.RI "void \fBMettreAJourEcranChargement\fP ()"
+.br
+.ti -1c
+.RI "void \fBVirerCartes\fP (object sender, EventArgs e, Button b)"
+.br
+.RI "Determine le déroulement de l'animation des cartes du menu principal\&. "
+.ti -1c
+.RI "void \fBVirerCartes\fP (Button b, bool Envers)"
+.br
+.RI "Gère l'animation des cartes du menu principale\&. "
+.ti -1c
+.RI "void \fBAfficherCacherBoutonDesCartes\fP (Button b, bool afficher)"
+.br
+.RI "Lors du pivot d'une carte dans le menu\&. "
+.ti -1c
+.RI "void \fBCarte_Click\fP (object sender, EventArgs e)"
+.br
+.RI "Lors d'un click sur une carte du menu, démarre l'animation\&. "
+.ti -1c
+.RI "void \fBTextBox_PlusMoins\fP (object sender, EventArgs e)"
+.br
+.RI "Ajoute ou soustrait le nombre de joueurs ou d'AIs sur la carte hébergement\&. "
+.ti -1c
+.RI "void \fBCarteLocalHumain_Click\fP (object sender, EventArgs e)"
+.br
+.ti -1c
+.RI "void \fBRejoindre_Click\fP (object sender, EventArgs e)"
+.br
+.ti -1c
+.RI "void \fBHeberger_Click\fP (object sender, EventArgs e)"
+.br
+.ti -1c
+.RI "void \fBQuit_Click\fP (object sender, EventArgs e)"
+.br
+.RI "Quitte l'application\&. "
+.ti -1c
+.RI "void \fBbutton_Quitter_Hover\fP (object sender, EventArgs e)"
+.br
+.ti -1c
+.RI "void \fBbutton_Card_Hover\fP (object sender, EventArgs e)"
+.br
+.ti -1c
+.RI "void \fBbutton_Card_Out\fP (object sender, EventArgs e)"
+.br
+.ti -1c
+.RI "void \fBbutton_Quitter_Out\fP (object sender, EventArgs e)"
+.br
+.ti -1c
+.RI "void \fBRetourAuMenu_Click\fP (object sender, EventArgs e)"
+.br
+.RI "Retourne au menu principal Attent que l'animation de connexion se termine\&. "
+.ti -1c
+.RI "void \fBcarteLocalAI_Click\fP (object sender, EventArgs e)"
+.br
+.ti -1c
+.RI "void \fBInitializeComponent\fP ()"
+.br
+.RI "Required method for Designer support - do not modify the contents of this method with the code editor\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "Label \fBtitre\fP"
+.br
+.ti -1c
+.RI "\fBBlackuJacku\fP \fBm_BJController\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Timer \fBt\fP"
+.br
+.ti -1c
+.RI "bool \fBestVirer\fP = false"
+.br
+.ti -1c
+.RI "Button \fBcarteRetournee\fP = null"
+.br
+.ti -1c
+.RI "bool \fBconnexionEnCours\fP = false"
+.br
+.ti -1c
+.RI "Thread \fBenAttenteDeConnexion\fP"
+.br
+.ti -1c
+.RI "System\&.ComponentModel\&.IContainer \fBcomponents\fP = null"
+.br
+.RI "Required designer variable\&. "
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Button \fBcarteLocal\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Button \fBcarteHeberger\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Button \fBcarteRejoindre\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Button \fBbtnQuitter\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Label \fBlblYourIP\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Label \fBlblIP\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Panel \fBpanelPrincipale\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.PictureBox \fBpictureBox1\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.PictureBox \fBpictureBox2\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Label \fBDevs\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Button \fBcarteLocalAI\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Button \fBcarteLocalHumain\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Label \fBlblNbAI\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.TextBox \fBtBoxNbAI\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Label \fBlblNbJoueur\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.TextBox \fBtBoxNbJoueur\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Button \fBbtnPlusAI\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Button \fBbtnMoinsAI\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Button \fBbtnMoinsJoueurs\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Button \fBbtnPlusJoueurs\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Button \fBbtnLancerHebergement\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.TextBox \fBtBoxIP\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Label \fBlblRejoindreIP\fP"
+.br
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Button \fBbtnLancerRejoindre\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "const int \fBNBMAXJOUEURS\fP = 5"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBMenu\fP Principal 
+
+
+.PP
+Definition at line 13 of file Menu\&.cs\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "BJ_S\&.Menu\&.Menu (\fBBlackuJacku\fP BJ)\fC [inline]\fP"
+
+.PP
+Definition at line 25 of file Menu\&.cs\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void BJ_S\&.Menu\&.AfficherCacherBoutonDesCartes (Button b, bool afficher)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Lors du pivot d'une carte dans le menu\&. Affiche ou cache les contrôles dépendamment du côté de la carte\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIb\fP 
+.br
+\fIafficher\fP True : les contrôles seront affichés\&. False : les contrôles seront cachés\&. 
+.RE
+.PP
+
+.PP
+Definition at line 210 of file Menu\&.cs\&.
+.SS "void BJ_S\&.Menu\&.AfficherLoadingScreen (object sender)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Créer un panneau pour afficher l'écran de chargement pour la recherche de partie et l'attente d'hébergement\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsender\fP 
+.RE
+.PP
+
+.PP
+Definition at line 37 of file Menu\&.cs\&.
+.SS "void BJ_S\&.Menu\&.button_Card_Hover (object sender, EventArgs e)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 320 of file Menu\&.cs\&.
+.SS "void BJ_S\&.Menu\&.button_Card_Out (object sender, EventArgs e)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 327 of file Menu\&.cs\&.
+.SS "void BJ_S\&.Menu\&.button_Quitter_Hover (object sender, EventArgs e)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 314 of file Menu\&.cs\&.
+.SS "void BJ_S\&.Menu\&.button_Quitter_Out (object sender, EventArgs e)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 334 of file Menu\&.cs\&.
+.SS "void BJ_S\&.Menu\&.Carte_Click (object sender, EventArgs e)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Lors d'un click sur une carte du menu, démarre l'animation\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsender\fP 
+.br
+\fIe\fP 
+.RE
+.PP
+
+.PP
+Definition at line 226 of file Menu\&.cs\&.
+.SS "void BJ_S\&.Menu\&.carteLocalAI_Click (object sender, EventArgs e)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 356 of file Menu\&.cs\&.
+.SS "void BJ_S\&.Menu\&.CarteLocalHumain_Click (object sender, EventArgs e)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 285 of file Menu\&.cs\&.
+.SS "delegate void BJ_S\&.Menu\&.d_MettreAJourEcranChargement ()"
+
+.PP
+Permet d'animer l'écran de chargement tout en pouvant cliquer sur quitter ou retour au menu principal\&. 
+.SS "override void BJ_S\&.Menu\&.Dispose (bool disposing)\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+Clean up any resources being used\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdisposing\fP true if managed resources should be disposed; otherwise, false\&.
+.RE
+.PP
+
+.PP
+Definition at line 15 of file Menu\&.Designer\&.cs\&.
+.SS "void BJ_S\&.Menu\&.EcranDeChargement ()\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Appeler par le nouveau thread afin d'animer l'écran de chargement\&. 
+.PP
+Definition at line 82 of file Menu\&.cs\&.
+.SS "void BJ_S\&.Menu\&.Heberger_Click (object sender, EventArgs e)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 295 of file Menu\&.cs\&.
+.SS "void BJ_S\&.Menu\&.InitializeComponent ()\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Required method for Designer support - do not modify the contents of this method with the code editor\&. 
+.PP
+Definition at line 30 of file Menu\&.Designer\&.cs\&.
+.SS "void BJ_S\&.Menu\&.MettreAJourEcranChargement ()\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 96 of file Menu\&.cs\&.
+.SS "void BJ_S\&.Menu\&.Quit_Click (object sender, EventArgs e)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Quitte l'application\&. Attend que les fils ont rejoint\&.
+.PP
+Definition at line 305 of file Menu\&.cs\&.
+.SS "void BJ_S\&.Menu\&.Rejoindre_Click (object sender, EventArgs e)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 290 of file Menu\&.cs\&.
+.SS "void BJ_S\&.Menu\&.RetourAuMenu_Click (object sender, EventArgs e)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Retourne au menu principal Attent que l'animation de connexion se termine\&. 
+.PP
+Definition at line 344 of file Menu\&.cs\&.
+.SS "void BJ_S\&.Menu\&.TextBox_PlusMoins (object sender, EventArgs e)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Ajoute ou soustrait le nombre de joueurs ou d'AIs sur la carte hébergement\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsender\fP Determine quel bouton a été cliqué\&. 
+.RE
+.PP
+
+.PP
+Definition at line 246 of file Menu\&.cs\&.
+.SS "void BJ_S\&.Menu\&.VirerCartes (Button b, bool Envers)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Gère l'animation des cartes du menu principale\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIb\fP Bouton cliqué\&.
+.br
+\fIEnvers\fP boolean déterminant le côté\&.
+.RE
+.PP
+
+.PP
+Definition at line 128 of file Menu\&.cs\&.
+.SS "void BJ_S\&.Menu\&.VirerCartes (object sender, EventArgs e, Button b)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Determine le déroulement de l'animation des cartes du menu principal\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsender\fP 
+.br
+\fIe\fP 
+.br
+\fIb\fP Bouton cliqué\&.
+.RE
+.PP
+
+.PP
+Definition at line 112 of file Menu\&.cs\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "System\&.Windows\&.Forms\&.Button BJ_S\&.Menu\&.btnLancerHebergement\fC [private]\fP"
+
+.PP
+Definition at line 461 of file Menu\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Button BJ_S\&.Menu\&.btnLancerRejoindre\fC [private]\fP"
+
+.PP
+Definition at line 464 of file Menu\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Button BJ_S\&.Menu\&.btnMoinsAI\fC [private]\fP"
+
+.PP
+Definition at line 458 of file Menu\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Button BJ_S\&.Menu\&.btnMoinsJoueurs\fC [private]\fP"
+
+.PP
+Definition at line 459 of file Menu\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Button BJ_S\&.Menu\&.btnPlusAI\fC [private]\fP"
+
+.PP
+Definition at line 457 of file Menu\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Button BJ_S\&.Menu\&.btnPlusJoueurs\fC [private]\fP"
+
+.PP
+Definition at line 460 of file Menu\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Button BJ_S\&.Menu\&.btnQuitter\fC [private]\fP"
+
+.PP
+Definition at line 444 of file Menu\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Button BJ_S\&.Menu\&.carteHeberger\fC [private]\fP"
+
+.PP
+Definition at line 442 of file Menu\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Button BJ_S\&.Menu\&.carteLocal\fC [private]\fP"
+
+.PP
+Definition at line 441 of file Menu\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Button BJ_S\&.Menu\&.carteLocalAI\fC [private]\fP"
+
+.PP
+Definition at line 451 of file Menu\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Button BJ_S\&.Menu\&.carteLocalHumain\fC [private]\fP"
+
+.PP
+Definition at line 452 of file Menu\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Button BJ_S\&.Menu\&.carteRejoindre\fC [private]\fP"
+
+.PP
+Definition at line 443 of file Menu\&.Designer\&.cs\&.
+.SS "Button BJ_S\&.Menu\&.carteRetournee = null\fC [private]\fP"
+
+.PP
+Definition at line 20 of file Menu\&.cs\&.
+.SS "System\&.ComponentModel\&.IContainer BJ_S\&.Menu\&.components = null\fC [private]\fP"
+
+.PP
+Required designer variable\&. 
+.PP
+Definition at line 9 of file Menu\&.Designer\&.cs\&.
+.SS "bool BJ_S\&.Menu\&.connexionEnCours = false\fC [private]\fP"
+
+.PP
+Definition at line 22 of file Menu\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Label BJ_S\&.Menu\&.Devs\fC [private]\fP"
+
+.PP
+Definition at line 450 of file Menu\&.Designer\&.cs\&.
+.SS "Thread BJ_S\&.Menu\&.enAttenteDeConnexion\fC [private]\fP"
+
+.PP
+Definition at line 23 of file Menu\&.cs\&.
+.SS "bool BJ_S\&.Menu\&.estVirer = false\fC [private]\fP"
+
+.PP
+Definition at line 19 of file Menu\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Label BJ_S\&.Menu\&.lblIP\fC [private]\fP"
+
+.PP
+Definition at line 446 of file Menu\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Label BJ_S\&.Menu\&.lblNbAI\fC [private]\fP"
+
+.PP
+Definition at line 453 of file Menu\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Label BJ_S\&.Menu\&.lblNbJoueur\fC [private]\fP"
+
+.PP
+Definition at line 455 of file Menu\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Label BJ_S\&.Menu\&.lblRejoindreIP\fC [private]\fP"
+
+.PP
+Definition at line 463 of file Menu\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Label BJ_S\&.Menu\&.lblYourIP\fC [private]\fP"
+
+.PP
+Definition at line 445 of file Menu\&.Designer\&.cs\&.
+.SS "\fBBlackuJacku\fP BJ_S\&.Menu\&.m_BJController\fC [private]\fP"
+
+.PP
+Definition at line 17 of file Menu\&.cs\&.
+.SS "const int BJ_S\&.Menu\&.NBMAXJOUEURS = 5\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 21 of file Menu\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Panel BJ_S\&.Menu\&.panelPrincipale\fC [private]\fP"
+
+.PP
+Definition at line 447 of file Menu\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.PictureBox BJ_S\&.Menu\&.pictureBox1\fC [private]\fP"
+
+.PP
+Definition at line 448 of file Menu\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.PictureBox BJ_S\&.Menu\&.pictureBox2\fC [private]\fP"
+
+.PP
+Definition at line 449 of file Menu\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.Timer BJ_S\&.Menu\&.t\fC [private]\fP"
+
+.PP
+Definition at line 18 of file Menu\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.TextBox BJ_S\&.Menu\&.tBoxIP\fC [private]\fP"
+
+.PP
+Definition at line 462 of file Menu\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.TextBox BJ_S\&.Menu\&.tBoxNbAI\fC [private]\fP"
+
+.PP
+Definition at line 454 of file Menu\&.Designer\&.cs\&.
+.SS "System\&.Windows\&.Forms\&.TextBox BJ_S\&.Menu\&.tBoxNbJoueur\fC [private]\fP"
+
+.PP
+Definition at line 456 of file Menu\&.Designer\&.cs\&.
+.SS "Label BJ_S\&.Menu\&.titre\fC [private]\fP"
+
+.PP
+Definition at line 16 of file Menu\&.cs\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Black Jack from the source code\&.

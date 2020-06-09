@@ -1,0 +1,118 @@
+.TH "BJ_S.Cartes" 3 "Mon Jun 8 2020" "Version Alpha" "Black Jack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BJ_S.Cartes
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCartes\fP (char Sorte, int \fBValeur\fP)"
+.br
+.ti -1c
+.RI "string \fBImage\fP ()"
+.br
+.RI "Retourne le chemin de la carte vue de face\&. "
+.ti -1c
+.RI "string \fBImageDos\fP ()"
+.br
+.RI "Retourne le chemin de la carte vue de dos\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBValeur\fP \&.\&./\&.\&./images/cartes/{\fBvaleur\fP}{\fBsorte\fP}\&.png'\fC [get]\fP"
+.br
+.RI "Retourne la valeur de la carte "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "char \fBsorte\fP"
+.br
+.ti -1c
+.RI "int \fBvaleur\fP"
+.br
+.ti -1c
+.RI "string \fBcheminPNG\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static string \fBcheminCarteDos\fP = $@'\&.\&./\&.\&./images/cartes/0\&.png'"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 3 of file Cartes\&.cs\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "BJ_S\&.Cartes\&.Cartes (char Sorte, int Valeur)\fC [inline]\fP"
+
+.PP
+Definition at line 10 of file Cartes\&.cs\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "string BJ_S\&.Cartes\&.Image ()\fC [inline]\fP"
+
+.PP
+Retourne le chemin de la carte vue de face\&. 
+.PP
+\fBReturns\fP
+.RS 4
+string : path
+.RE
+.PP
+
+.PP
+Definition at line 29 of file Cartes\&.cs\&.
+.SS "string BJ_S\&.Cartes\&.ImageDos ()\fC [inline]\fP"
+
+.PP
+Retourne le chemin de la carte vue de dos\&. 
+.PP
+\fBReturns\fP
+.RS 4
+string : path
+.RE
+.PP
+
+.PP
+Definition at line 38 of file Cartes\&.cs\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "string BJ_S\&.Cartes\&.cheminCarteDos = $@'\&.\&./\&.\&./images/cartes/0\&.png'\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 8 of file Cartes\&.cs\&.
+.SS "string BJ_S\&.Cartes\&.cheminPNG\fC [private]\fP"
+
+.PP
+Definition at line 7 of file Cartes\&.cs\&.
+.SS "char BJ_S\&.Cartes\&.sorte\fC [private]\fP"
+
+.PP
+Definition at line 5 of file Cartes\&.cs\&.
+.SS "int BJ_S\&.Cartes\&.valeur\fC [private]\fP"
+
+.PP
+Definition at line 6 of file Cartes\&.cs\&.
+.SH "Property Documentation"
+.PP 
+.SS "int BJ_S\&.Cartes\&.Valeur \&.\&./\&.\&./images/cartes/{\fBvaleur\fP}{\fBsorte\fP}\&.png'\fC [get]\fP"
+
+.PP
+Retourne la valeur de la carte 
+.PP
+Definition at line 21 of file Cartes\&.cs\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Black Jack from the source code\&.

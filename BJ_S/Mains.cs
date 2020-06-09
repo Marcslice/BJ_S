@@ -3,6 +3,10 @@ using System.Linq;
 
 namespace BJ_S
 {
+
+    /// <summary>
+    /// Représante une main d'un joueur.
+    /// </summary>
     public class Mains
     {
         List<Cartes> main;

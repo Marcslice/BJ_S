@@ -4,6 +4,9 @@ using System.Linq;
 
 namespace BJ_S
 {
+    /// <summary>
+    /// représente un paquet de carte.
+    /// </summary>
     class Paquets
     {
         List<Cartes> paquet;

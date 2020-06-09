@@ -3,6 +3,10 @@ using System.Threading;
 
 namespace BJ_S
 {
+
+    /// <summary>
+    /// Creation d'un joueur.
+    /// </summary>
     public class Joueurs
     {
         int m_Encaisse, mise, valeurMain;

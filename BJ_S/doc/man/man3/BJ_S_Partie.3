@@ -1,0 +1,302 @@
+.TH "BJ_S.Partie" 3 "Mon Jun 8 2020" "Version Alpha" "Black Jack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BJ_S.Partie
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPartie\fP (int nbJoueur, int nbAi, bool \fBenLigne\fP, string nomJoueur)"
+.br
+.ti -1c
+.RI "\fBPartie\fP (string ipHost)"
+.br
+.ti -1c
+.RI "void \fBJouerManche\fP ()"
+.br
+.RI "Methode qui lance une manche de jeu "
+.ti -1c
+.RI "void \fBPreparation\fP ()"
+.br
+.RI "Methode utiliser pour notifier le joueur qu'il doit miser ou qu'il ne jouera pas "
+.ti -1c
+.RI "delegate void \fBd_Miser\fP (int p_Mise)"
+.br
+.RI "Permet au form d'appeler la methode miser du controlleur "
+.ti -1c
+.RI "void \fBMiser\fP (int p_Mise)"
+.br
+.RI "Methode qui gere les mises du joueur et actualise son en caisse "
+.ti -1c
+.RI "void \fBTimerTick\fP (object source, ElapsedEventArgs e)"
+.br
+.RI "Gere l'affichage du minuteur "
+.ti -1c
+.RI "void \fBConfirmerMise\fP (object source, ElapsedEventArgs e)"
+.br
+.RI "Methode qui verifie quel joueur a effectuer une mise et creer une liste de joueur actif "
+.ti -1c
+.RI "void \fBDistribuerCartes\fP ()"
+.br
+.RI "Methode qui distribue les cartes aux joueurs de maniere conventionel et met a jour le compte de la main de chaque joueur\&. "
+.ti -1c
+.RI "void \fBTourJoueurH\fP ()"
+.br
+.RI "Methode qui gere le tour des joueurs pour l'hote de la partie et qui effectue les actions du croupier "
+.ti -1c
+.RI "void \fBTourJoueurD\fP ()"
+.br
+.ti -1c
+.RI "void \fBHit\fP (\fBJoueurs\fP joueur, int siege)"
+.br
+.RI "Methode qui distribue des cartes additionnelles aux personnes qui en font la demande "
+.ti -1c
+.RI "void \fBStand\fP (\fBJoueurs\fP joueur)"
+.br
+.RI "Methode qui employer lorsqu'un joueur est satisfait de ces cartes et desire finir son tour "
+.ti -1c
+.RI "void \fBVerifierGagnant\fP ()"
+.br
+.RI "Methode qui sert a determiner qui son les gagnants de la manche et qui distribue les gains "
+.ti -1c
+.RI "void \fBViderTable\fP ()"
+.br
+.RI "Methode employe lors de la fin d'une manche a fin de reinitialiser les valeurs a leur valeur par default "
+.ti -1c
+.RI "void \fBTerminerPartie\fP ()"
+.br
+.RI "Methode qui sert a fermer l'application "
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBJoueurs\fP[] \fBtabJoueur\fP"
+.br
+.ti -1c
+.RI "\fBCroupier\fP \fBcroupier\fP"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBJoueurs\fP \fBMoi\fP\fC [get]\fP"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "List< \fBJoueurs\fP > \fBlisteActif\fP"
+.br
+.ti -1c
+.RI "\fBJoueurs\fP \fBmoi\fP"
+.br
+.ti -1c
+.RI "\fBSabot\fP \fBsabot\fP"
+.br
+.ti -1c
+.RI "bool \fBenLigne\fP"
+.br
+.ti -1c
+.RI "bool \fBtour\fP"
+.br
+.ti -1c
+.RI "bool \fBfermeture\fP"
+.br
+.ti -1c
+.RI "\fBUI\fP \fBm_UI\fP"
+.br
+.ti -1c
+.RI "System\&.Timers\&.Timer \fBtempsAttente\fP"
+.br
+.ti -1c
+.RI "System\&.Timers\&.Timer \fBtMoins1\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 7 of file Partie\&.cs\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "BJ_S\&.Partie\&.Partie (int nbJoueur, int nbAi, bool enLigne, string nomJoueur)\fC [inline]\fP"
+
+.PP
+Definition at line 21 of file Partie\&.cs\&.
+.SS "BJ_S\&.Partie\&.Partie (string ipHost)\fC [inline]\fP"
+
+.PP
+Definition at line 58 of file Partie\&.cs\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void BJ_S\&.Partie\&.ConfirmerMise (object source, ElapsedEventArgs e)\fC [inline]\fP"
+
+.PP
+Methode qui verifie quel joueur a effectuer une mise et creer une liste de joueur actif 
+.PP
+Definition at line 148 of file Partie\&.cs\&.
+.SS "delegate void BJ_S\&.Partie\&.d_Miser (int p_Mise)"
+
+.PP
+Permet au form d'appeler la methode miser du controlleur 
+.PP
+\fBParameters\fP
+.RS 4
+\fIp_Mise\fP 
+.RE
+.PP
+
+.SS "void BJ_S\&.Partie\&.DistribuerCartes ()\fC [inline]\fP"
+
+.PP
+Methode qui distribue les cartes aux joueurs de maniere conventionel et met a jour le compte de la main de chaque joueur\&. 
+.PP
+Definition at line 175 of file Partie\&.cs\&.
+.SS "void BJ_S\&.Partie\&.Hit (\fBJoueurs\fP joueur, int siege)\fC [inline]\fP"
+
+.PP
+Methode qui distribue des cartes additionnelles aux personnes qui en font la demande 
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoueur\fP Joueur qui demande a recevoir une carte
+.br
+\fIsiege\fP Position dans le tableau des joueurs (tabJoueur) de la personne qui appelle la methode
+.RE
+.PP
+
+.PP
+Definition at line 302 of file Partie\&.cs\&.
+.SS "void BJ_S\&.Partie\&.JouerManche ()\fC [inline]\fP"
+
+.PP
+Methode qui lance une manche de jeu 
+.PP
+Definition at line 73 of file Partie\&.cs\&.
+.SS "void BJ_S\&.Partie\&.Miser (int p_Mise)\fC [inline]\fP"
+
+.PP
+Methode qui gere les mises du joueur et actualise son en caisse 
+.PP
+\fBParameters\fP
+.RS 4
+\fIp_Mise\fP Represente la valeur miser par le joueur
+.RE
+.PP
+
+.PP
+Definition at line 117 of file Partie\&.cs\&.
+.SS "void BJ_S\&.Partie\&.Preparation ()\fC [inline]\fP"
+
+.PP
+Methode utiliser pour notifier le joueur qu'il doit miser ou qu'il ne jouera pas 
+.PP
+Definition at line 82 of file Partie\&.cs\&.
+.SS "void BJ_S\&.Partie\&.Stand (\fBJoueurs\fP joueur)\fC [inline]\fP"
+
+.PP
+Methode qui employer lorsqu'un joueur est satisfait de ces cartes et desire finir son tour 
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoueur\fP Joueur qui appel la methode
+.RE
+.PP
+
+.PP
+Definition at line 324 of file Partie\&.cs\&.
+.SS "void BJ_S\&.Partie\&.TerminerPartie ()\fC [inline]\fP"
+
+.PP
+Methode qui sert a fermer l'application 
+.PP
+Definition at line 387 of file Partie\&.cs\&.
+.SS "void BJ_S\&.Partie\&.TimerTick (object source, ElapsedEventArgs e)\fC [inline]\fP"
+
+.PP
+Gere l'affichage du minuteur 
+.PP
+Definition at line 139 of file Partie\&.cs\&.
+.SS "void BJ_S\&.Partie\&.TourJoueurD ()\fC [inline]\fP"
+
+.PP
+Definition at line 295 of file Partie\&.cs\&.
+.SS "void BJ_S\&.Partie\&.TourJoueurH ()\fC [inline]\fP"
+
+.PP
+Methode qui gere le tour des joueurs pour l'hote de la partie et qui effectue les actions du croupier 
+.PP
+Definition at line 211 of file Partie\&.cs\&.
+.SS "void BJ_S\&.Partie\&.VerifierGagnant ()\fC [inline]\fP"
+
+.PP
+Methode qui sert a determiner qui son les gagnants de la manche et qui distribue les gains 
+.PP
+Definition at line 338 of file Partie\&.cs\&.
+.SS "void BJ_S\&.Partie\&.ViderTable ()\fC [inline]\fP"
+
+.PP
+Methode employe lors de la fin d'une manche a fin de reinitialiser les valeurs a leur valeur par default 
+.PP
+Definition at line 362 of file Partie\&.cs\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBCroupier\fP BJ_S\&.Partie\&.croupier"
+
+.PP
+Definition at line 12 of file Partie\&.cs\&.
+.SS "bool BJ_S\&.Partie\&.enLigne\fC [private]\fP"
+
+.PP
+Definition at line 14 of file Partie\&.cs\&.
+.SS "bool BJ_S\&.Partie\&.fermeture\fC [private]\fP"
+
+.PP
+Definition at line 16 of file Partie\&.cs\&.
+.SS "List<\fBJoueurs\fP> BJ_S\&.Partie\&.listeActif\fC [private]\fP"
+
+.PP
+Definition at line 10 of file Partie\&.cs\&.
+.SS "\fBUI\fP BJ_S\&.Partie\&.m_UI\fC [private]\fP"
+
+.PP
+Definition at line 17 of file Partie\&.cs\&.
+.SS "\fBJoueurs\fP BJ_S\&.Partie\&.moi\fC [private]\fP"
+
+.PP
+Definition at line 11 of file Partie\&.cs\&.
+.SS "\fBSabot\fP BJ_S\&.Partie\&.sabot\fC [private]\fP"
+
+.PP
+Definition at line 13 of file Partie\&.cs\&.
+.SS "\fBJoueurs\fP [] BJ_S\&.Partie\&.tabJoueur"
+
+.PP
+Definition at line 9 of file Partie\&.cs\&.
+.SS "System\&.Timers\&.Timer BJ_S\&.Partie\&.tempsAttente\fC [private]\fP"
+
+.PP
+Definition at line 19 of file Partie\&.cs\&.
+.SS "System\&.Timers\&.Timer BJ_S\&.Partie\&.tMoins1\fC [private]\fP"
+
+.PP
+Definition at line 19 of file Partie\&.cs\&.
+.SS "bool BJ_S\&.Partie\&.tour\fC [private]\fP"
+
+.PP
+Definition at line 15 of file Partie\&.cs\&.
+.SH "Property Documentation"
+.PP 
+.SS "\fBJoueurs\fP BJ_S\&.Partie\&.Moi\fC [get]\fP"
+
+.PP
+Definition at line 66 of file Partie\&.cs\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Black Jack from the source code\&.

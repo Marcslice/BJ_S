@@ -1,5 +1,9 @@
 ﻿namespace BJ_S
 {
+
+    /// <summary>
+    /// Cartes de jeu.
+    /// </summary>
     public class Cartes
     {
         char sorte; //spade,heart,clove,diamond,

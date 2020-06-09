@@ -1,0 +1,107 @@
+.TH "BJ_S.BlackuJacku" 3 "Mon Jun 8 2020" "Version Alpha" "Black Jack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BJ_S.BlackuJacku
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBlackuJacku\fP ()"
+.br
+.ti -1c
+.RI "void \fBNouvellePartie\fP (int type)"
+.br
+.ti -1c
+.RI "void \fBQuitter\fP ()"
+.br
+.RI "Quit l'application\&. "
+.ti -1c
+.RI "string \fBQuelEstMonIP\fP ()"
+.br
+.RI "Demande ton ip externe à un serveur et l'affiche dans le menu principale\&. "
+.in -1c
+.SS "Static Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBMain\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBMenu\fP \fBm_Menu\fP"
+.br
+.RI "The main entry point for the application\&. "
+.ti -1c
+.RI "\fBPartie\fP \fBm_Partie\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 8 of file BlackuJAcku\&.cs\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "BJ_S\&.BlackuJacku\&.BlackuJacku ()\fC [inline]\fP"
+
+.PP
+Definition at line 17 of file BlackuJAcku\&.cs\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "static void BJ_S\&.BlackuJacku\&.Main ()\fC [inline]\fP, \fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 23 of file BlackuJAcku\&.cs\&.
+.SS "void BJ_S\&.BlackuJacku\&.NouvellePartie (int type)\fC [inline]\fP"
+
+.PP
+
+.PP
+\fBParameters\fP
+.RS 4
+\fItype\fP 0 -> local Humain 1 -> local Bot 2 -> Online Humain Guest 3 -> Online Bot Guest 4 -> Online Humain Host 5 -> ONline Bot Host 
+.RE
+.PP
+
+.PP
+Definition at line 43 of file BlackuJAcku\&.cs\&.
+.SS "string BJ_S\&.BlackuJacku\&.QuelEstMonIP ()\fC [inline]\fP"
+
+.PP
+Demande ton ip externe à un serveur et l'affiche dans le menu principale\&. 
+.PP
+\fBReturns\fP
+.RS 4
+String : IP Formatté
+.RE
+.PP
+
+.PP
+Definition at line 70 of file BlackuJAcku\&.cs\&.
+.SS "void BJ_S\&.BlackuJacku\&.Quitter ()\fC [inline]\fP"
+
+.PP
+Quit l'application\&. 
+.PP
+Definition at line 61 of file BlackuJAcku\&.cs\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBMenu\fP BJ_S\&.BlackuJacku\&.m_Menu\fC [private]\fP"
+
+.PP
+The main entry point for the application\&. 
+.PP
+Definition at line 14 of file BlackuJAcku\&.cs\&.
+.SS "\fBPartie\fP BJ_S\&.BlackuJacku\&.m_Partie\fC [private]\fP"
+
+.PP
+Definition at line 15 of file BlackuJAcku\&.cs\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Black Jack from the source code\&.

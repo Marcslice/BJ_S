@@ -1,5 +1,9 @@
 ﻿namespace BJ_S
 {
+
+    /// <summary>
+    /// Intelligence artificiel représantant le croupier.
+    /// </summary>
     public class Croupier
     {
         Mains main;//utiliser par partie pour generer les carte dans le UI et pour le faire le compte avec le dll
